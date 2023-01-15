@@ -1,1 +1,0 @@
-SConscript(['build/SConscript'])
