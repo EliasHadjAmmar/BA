@@ -1,0 +1,11 @@
+# SCons actually does this import for you, but I like the added clarity.
+from SCons.Script import Command
+
+# Assign our input filenames to some variables for convenience
+territories = 'input/territories.csv'
+
+# Our first step is to create the alignment file. 
+clean_data = Command('output/clean_data.csv',   # Path of the target (output) file
+        'input/territories.csv',           # Source (input)
+        'Rscript clean_territories.R')     # Action executed; Note the use of
+                                           # $SOURCE and $TARGET
