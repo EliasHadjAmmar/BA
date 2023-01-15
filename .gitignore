@@ -21,9 +21,11 @@
 *.blg
 *.synctex.gz
 *.Rhistory
+*.RData
 .Rproj.user/
 *.Rapp.history
 *Rplots.pdf
+*.html
 *.ipynb_checkpoints/
 *.DS_Store
 *.sconsign.dblite

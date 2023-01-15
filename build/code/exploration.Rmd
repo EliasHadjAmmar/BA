@@ -1,0 +1,41 @@
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = '~/GitHub/BA')
+library(tidyverse)
+```
+
+## Ruler changes, family extinctions and territory outcomes
+
+Questions I can think of:
+- how are family extinctions different from regular successions?
+- how can I get a list of these events from the data? How many are there?
+- what kind of outcome data can I find on a city or territory level?
+
+```{r data import}
+territories <- read.csv("build/input/territories.csv")
+summary(territories)
+```
+
+Is the variable `sovereign_number` the same as `ruler_id` in my data? The first thing to do is really really understand the data I have at my disposal. If the published data set doesn't have what I need, I would have to talk to Matthias and Prof. Cantoni about using the unpublished data.
+
+First of all, drop a shitton of useless variables.
+
+```{r variable selection}
+territories <- territories %>%
+  select(city_id, terr_id, sovereign_number, time_point, observation, point_id, 
+         type_reign, type_change, city_status, foreign_rule)
+
+View(territories)
+```
+
+From just viewing this, I can already see that this is not the data I want, at least not fully. 
+These are city-year level observations of `terr_id`, that is, of ruling dynasty. So this - the already-published `territories` data - is basically a key to link `rulers` and `cities` data. I know that the `rulers` data exist, because I worked on them, and I am sure there is city-level data on outcomes like economic performance (wages, population, urbanisation) for the HRE out there. 
+
+So I need to 
+- ask Prof. Cantoni for permission to use the `rulers` data
+- identify and filter out family extinction events
+- compile my own `outcomes` data set from other sources
+- match it to the cities in the published `territories` data
+- run a staggered diff-in-diff on that.
+
