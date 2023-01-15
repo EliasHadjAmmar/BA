@@ -21,6 +21,7 @@
 *.blg
 *.synctex.gz
 *.Rhistory
+.Rproj.user/
 *.Rapp.history
 *Rplots.pdf
 *.ipynb_checkpoints/
