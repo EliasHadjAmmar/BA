@@ -17,8 +17,9 @@
 *.Rhistory
 *.Rapp.history
 *Rplots.pdf
-*.DS_Store
 *.ipynb_checkpoints/
+*.DS_Store
+*.sconsign.dblite
 
 # Personal conda info
 .conda_info
