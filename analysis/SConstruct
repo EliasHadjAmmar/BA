@@ -1,0 +1,7 @@
+
+from SCons.Script import Command
+
+clean_data = Command('',   # target path (output file)
+        '',                # source path (input file)
+        '')                # command line string
+                                           
