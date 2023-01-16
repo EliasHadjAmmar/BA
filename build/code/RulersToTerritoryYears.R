@@ -9,7 +9,7 @@ Main <- function(){
   cities <- ImportCities()
   lineage_years <- LineageYearObs(cities)
   
-  rulers_linked <- MapToRulers(lineage_years) # takes 17 minutes
+  rulers_linked <- MapToRulers(lineage_years) # takes 15-20 minutes
   WriteSeparateCSV(rulers_linked)
   
   return(0)
@@ -18,8 +18,8 @@ Main <- function(){
 TestOnSubset <- function(size){
   rulers <- ImportRulers()
   rulers_lite <<- SelectVariables(rulers) # same as above
-  cities <- ImportCities()
-  lineage_years <- LineageYearObs(cities)
+  cities <- ImportCities() 
+  lineage_years <- LineageYearObs(cities) # longest part if n<1000
   
   testdata <- slice_sample(lineage_years, n=size)
   sample_linked <- MapToRulers(testdata)
@@ -63,7 +63,8 @@ CurrentRuler <- function(lineage, year){
   result <- rulers_lite %>% # problematic global here
     filter(terr_id == lineage, year >= start_reign, year < end_reign) %>% 
     select(id) %>% 
-    pluck(1)
+    pluck(1) # very important; makes it return a list instead of an array
+  # (plucking another 1 from the list unfortunately doesn't work)
   return(result)
 }
 
@@ -78,17 +79,17 @@ MapToRulers <- function(lineage_years){
 WriteSeparateCSV <- function(rulers_linked){
   rulers_linked %>% 
     filter(matches == 1) %>% 
-    mutate(id = as.character(ruler_id)) %>% 
-    select(terr_id, year, id, matches) %>% 
+    mutate(id = as.character(ruler_id)) %>% # you have to make a new column 
+    select(terr_id, year, id, matches) %>% # to get rid of the lists in ruler_id
     write.csv("build/temp/rulers_linked.csv")
   
   rulers_linked %>% 
     filter(matches != 1) %>% 
-    select(-ruler_id) %>% 
+    select(-ruler_id) %>% # variables that are lists can't be encoded in a .csv
     write.csv("build/temp/rulers_not_linked.csv")
 }
 
-TestOnSubset(20)
+Main()
 
 # In its current state, I do match some rulers to territory-years. Many others
 # have terr_id equal to integer(0), though. That's an empty vector. This means
