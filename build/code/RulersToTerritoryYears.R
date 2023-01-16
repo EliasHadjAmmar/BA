@@ -5,9 +5,27 @@ setwd("~/GitHub/BA")
 
 Main <- function(){
   rulers <- ImportRulers()
-  rulers_lite <- SelectVariables(rulers)
+  rulers_lite <<- SelectVariables(rulers) # global is necessary I tried everything
+  cities <- ImportCities()
+  lineage_years <- LineageYearObs(cities)
   
+  rulers_linked <- MapToRulers(lineage_years) # takes 17 minutes
+  WriteSeparateCSV(rulers_linked)
   
+  return(0)
+}
+
+TestOnSubset <- function(size){
+  rulers <- ImportRulers()
+  rulers_lite <<- SelectVariables(rulers) # same as above
+  cities <- ImportCities()
+  lineage_years <- LineageYearObs(cities)
+  
+  testdata <- slice_sample(lineage_years, n=size)
+  sample_linked <- MapToRulers(testdata)
+  WriteSeparateCSV(sample_linked)
+  #return(sample_linked)
+  return(0)
 }
 
 ImportRulers <- function(){
@@ -36,32 +54,45 @@ LineageYearObs <- function(cities){
   return(result)
 }
 
-CurrentRuler <- function(lineage, year, rulers=rulers_lite){
+CurrentRuler <- function(lineage, year){
   # We want this to return
   # - the unique ruler of that year and lineage if there is only one
   # - the ruler who was in power at the end of the year if there are more
   # end_reign is the year in which the ruler lost power.
-  result <- rulers_lite %>%
-    filter(terr_id == lineage, year >= start_reign, year < end_reign)
-  return(result$id)
-}
-
-MapToRulers <- function(lineage_years){
-  # Using rulers_lite as first arg should improve performance
-  result <- lineage_years %>% 
-    mutate(ruler_id = purrr::map2(terr_id, year, CurrentRuler))
+  # We use this in a map2() call in MapToRulers().
+  result <- rulers_lite %>% # problematic global here
+    filter(terr_id == lineage, year >= start_reign, year < end_reign) %>% 
+    select(id) %>% 
+    pluck(1)
   return(result)
 }
 
-rulers_lite <- ImportRulers() %>% SelectVariables()
-CurrentRuler("A260", 1667)
+MapToRulers <- function(lineage_years){
+  # room for performance improvements
+  result <- lineage_years %>% 
+    mutate(ruler_id = purrr::map2(terr_id, year, CurrentRuler)) %>% 
+    mutate(matches = map_int(ruler_id, length))
+  return(result)
+}
 
-lineage_years <- LineageYearObs(ImportCities())
-with_rulers <- MapToRulers(lineage_years)
+WriteSeparateCSV <- function(rulers_linked){
+  rulers_linked %>% 
+    filter(matches == 1) %>% 
+    mutate(id = as.character(ruler_id)) %>% 
+    select(terr_id, year, id, matches) %>% 
+    write.csv("build/temp/rulers_linked.csv")
+  
+  rulers_linked %>% 
+    filter(matches != 1) %>% 
+    select(-ruler_id) %>% 
+    write.csv("build/temp/rulers_not_linked.csv")
+}
+
+TestOnSubset(20)
+
+# In its current state, I do match some rulers to territory-years. Many others
+# have terr_id equal to integer(0), though. That's an empty vector. This means
+# that there was nothing left after filtering for ruler_id and reign.
+# How can that be?
 
 
-# Finished after 17 minutes! And didn't work. Ideas to speed this up: 
-# - do this step last, and only after you've filtered out NA outcome years
-# - rather than map, just join the rulers to the lineage_years table directly
-#   and then R can optimise / vectorise more efficiently because it doesn't 
-#   have to navigate two nested tibbles
