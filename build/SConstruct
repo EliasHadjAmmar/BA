@@ -1,7 +1,13 @@
 
 from SCons.Script import Command
 
-clean_data = Command('output/clean_data.csv',   # target path (output file)
-        'input/territories.csv',                # source path (input file)
-        'Rscript code/clean_territories.R')     # command line string
+rulers = Command('temp/rulers.csv',            # target path (output file)
+        'input/rulers_families_imputed.dta',   # source path (input file)
+        'Rscript code/GetRulers.R')            # command line string
+
+rulers_linked = Command(['temp/rulers_linked.csv', # I don't think multiple targets work,
+    'temp/rulers_not_linked.csv'],                 # but that's something to figure out later.
+    [rulers,                                       # Since you found the solution to the list
+    'input/cities_families_1300_1918.dta'],        # problem (new column), maybe just make one csv.
+    'Rscript code/RulersToTerritoryYears.R')       # If you do that, do it in a branch.
                                            
