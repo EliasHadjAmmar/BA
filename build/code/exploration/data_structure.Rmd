@@ -1,0 +1,56 @@
+---
+title: "Target for the data"
+output: html_document
+date: "2023-01-16"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = '~/GitHub/BA')
+library(tidyverse)
+library(haven)
+```
+
+## What would I run the regressions on?
+
+The regression would look something like this:
+
+```{r cars}
+reg1 <- lm(pop ~ city_fe + year_fe + treat*post + controls)
+```
+
+Ideally, I want a city-year level dataset with an entry for every year, based on the ruler dataset, not the territories dataset. For any given year, I want to know immediately not only the city's ruling lineage, but also the ruler. And then, for these city-year observations, I can add my outcome variables.
+
+## Relational database approach
+
+How do I do that? It seems to me that this kind of works like a relational database.
+Each city-year observation must have non-missing lineage. Each lineage-year observation must have a non-missing ruler. That's how I could get there.
+
+### Lineage for all city-year observations
+
+But first let me check whether this is already in `cities_families.dta`.
+
+```{r cities data}
+cities <- read_dta('build/input/cities_families_1300_1918.dta')
+summary(cities)
+view(cities)
+```
+
+Okay, perfect. That file already contains the lineages for all cities for all years. At first glance it seems to be exactly what I would have had to do with the territories data - expand it so there's an observation for each year, based on the exact years in the commentary fields. That would have been a huge pain.
+
+### Ruler for all lineage-year observations
+
+The file `family_rulers_imputed.dta` is a list of ruler-level observations. These rulers happen to be in chronological order, but they're not lineage-year observations. Yet. How do I get them there?
+
+```{text pseudo-code}
+lineages <- expand(terr_id x year)
+lineages <- mutate(ruler_id = case_when(
+  year %in% start_reign:end_reign ~ ruler_id
+))
+```
+
+Something like that may get the job done, but it seems computationally intensive and unelegant. Mathematically, what am I trying to do? I'm not trying to map lineage-year observations to rulers. I'm 
+
+Maybe do a function, or a dictionary. You input a terr_id and a year. It filters the rulers data down to the terr_id. Then it drops all rulers with reigns ending before or starting after that year. it returns the ruler of that lineage of that year. 
+
+Then `map` year-lineage entries to rulers with that function.
