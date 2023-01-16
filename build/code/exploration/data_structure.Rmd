@@ -16,8 +16,11 @@ library(haven)
 The regression would look something like this:
 
 ```{r cars}
-reg1 <- lm(pop ~ city_fe + year_fe + treat*post + controls)
+reg1 <- lm(pop ~ city_fe + year_fe + treat*post + treat*post*channel + controls)
 ```
+
+In the end, `treat`x`post` will be 1 for all city-years after that city's extinction year. That's my intuition. But I haven't read up about staggered diff-in-diff yet.
+
 
 Ideally, I want a city-year level dataset with an entry for every year, based on the ruler dataset, not the territories dataset. For any given year, I want to know immediately not only the city's ruling lineage, but also the ruler. And then, for these city-year observations, I can add my outcome variables.
 
@@ -49,8 +52,27 @@ lineages <- mutate(ruler_id = case_when(
 ))
 ```
 
-Something like that may get the job done, but it seems computationally intensive and unelegant. Mathematically, what am I trying to do? I'm not trying to map lineage-year observations to rulers. I'm 
+I did something like that in `RulersToTerritoryYears.R`. Surprisingly, only about one-third of territory-year observation have a corresponding ruler who was alive at the time. But I don't think that should be an issue. I should look at some descriptive stats.
 
-Maybe do a function, or a dictionary. You input a terr_id and a year. It filters the rulers data down to the terr_id. Then it drops all rulers with reigns ending before or starting after that year. it returns the ruler of that lineage of that year. 
+```{r descriptive stats of rulers_linked}
+rulers <- read.csv("build/temp/rulers_linked.csv")
+print(rulers %>% group_by(terr_id) %>% summarise(years = n()) %>% summary())
 
-Then `map` year-lineage entries to rulers with that function.
+```
+The median dynasty in my data lasted 106 years. That seems plausible. 
+
+```{r more descriptive stats}
+print(rulers %>% group_by(year) %>% summarise(territories = n()) %>% summary())
+```
+If I did it right, this means that there were on average 75 dynasties with rulers coexisting in the same year. Also plausible.
+
+It would be interesting why the other 100,000 dynasty-year observations fell through.
+Is it that some years (e.g. early years) are often missing rulers?
+Is it that some dynasties (e.g. small ones) are often missing rulers?
+Could there be an explanation other than data quality?
+This is a potential source of bias; I should address it. Maybe limit the analysis to cities in territories larger than a certain threshold, and to recent centuries in which there are few missing links.
+
+One more note: `rulers_linked.csv` essentially contains the personal history of all these dynasties. It contains the extinction events and, crucially, the last ruler of that dynasty, whose characteristics I can link to the event from elsewhere.
+# 
+
+
