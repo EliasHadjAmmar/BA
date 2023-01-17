@@ -1,0 +1,28 @@
+---
+title: "Europop Data (De Vries 1984)"
+output: html_document
+date: "2023-01-17"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = '~/GitHub/BA')
+library(tidyverse)
+library(haven)
+```
+
+## First look at the population data
+
+```{r first look}
+devries <- read.csv("build/input/devries1984.csv")
+bairoch <- read.csv("build/input/bairoch1988.csv")
+bairoch %>% drop_na(population) %>% view()
+```
+
+Um. Okay, that's really not super granular. 50 is the coarsest I would have gone, and it is apparently also the finest I can go. But it will do. I just need to limit my analysis to only those extinction events with at least 50 or 100 years of stability afterwards.
+
+## Extracting the cities I want (all in `cities`)
+
+
+## Adding a population variable to the city-year observations
+

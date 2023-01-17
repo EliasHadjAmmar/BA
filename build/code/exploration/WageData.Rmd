@@ -1,0 +1,25 @@
+---
+title: "cities with wage data"
+output: html_document
+date: "2023-01-17"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = '~/GitHub/BA')
+library(tidyverse)
+library(haven)
+```
+
+## Cities with wage data
+
+See below for a list of cities in the wage data (also in my data if `city_id` not NA):
+
+```{r overview of Allen's data}
+wage_list <- read.csv("build/input/CitiesWagesList.csv")
+wage_list %>% drop_na(crafts) %>% view()
+```
+
+I'm thinking I should just manually add Vienna as a city to the build. It should be easy to verify that it never changes territory and always belongs to the main line of the Habsburgs. Adding it anyway may help with estimating year fixed effects (see Olken). But which `terr_id` are the main Habsburgs?
+
+Anyways, the craftsmen data contains more cities - Augsburg, Leipzig, Munich, Vienna, Gdansk, Hamburg. The labourer data is missing Munich and Hamburg, so I guess the crafts wages will have to do. And since they're available for such a small amount of cities (some of which probably won't have any usable extinction events), I definitely should rely on population / urbanisation for the most part, and only use wages for specific things. For example, I could use it for a short-term event study in the style of Jones and Olken.
