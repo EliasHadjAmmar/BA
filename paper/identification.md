@@ -28,7 +28,13 @@ Bring some order into this section.
 
 Before making the final decisions, think hard about the variation in your variables (see [John Cochrane](https://web.archive.org/web/20110411061350/https://faculty.chicagobooth.edu/john.cochrane/research/papers/phd_paper_writing.pdf), section 3).
 
-Potential source of OVB: leader quality (part of the error term) may be correlated with terr size (maybe not systematically though) as well as construction. this will always have to remain an omitted variable I guess. Unless I do something *really* fancy.
+Potential source of OVB: leader quality (part of the error term) may be correlated with terr size (maybe not systematically though) as well as construction. this will always have to remain an omitted variable I guess. Unless I do something *really* fancy. 
+
+That's a much bigger problem than I initially thought. If I look at short-term effects, then who's to say that the explanation is on the lineage level, rather than the ruler level? Just read the introduction of Dube and Harish (2020) to understand what I mean here.
+
+Maybe here's a way around this: 
+- you estimate the effects of ruler changes in normal successions, and show that they're an order of magnitude smaller than dynasty switches.
+- you control for the city's ruler in period t (ruler fixed effects). could this lead to a multicollinearity problem though?
 
 
 (this is older) Two dimensions to the exogenous variation:
@@ -109,6 +115,11 @@ My hunch: split / prune the data so that there is at most one switch per city pe
 
 -> exclude munich from the analysis. when the switches are sufficiently close together, omit the middle one and recode it as a single switch in the data. when there are multiple switches with like a century between them, and if this is the case for many cities, then run separate regressions for each century, omitting all cities that have multiple switches within that century only.
 
+Another option could be to just add another diff. Run the following regression: 
+construction_it = city + year + beta * diff1 * post1 + gamma * diff2 * post2. 
+
+What would be the implications of this?
+
 
 
 #### Probably even less relevant
@@ -118,10 +129,14 @@ maybe a small city does well in a big territory and a big city does well in a sm
 Well, that’s why it will be important to split the sample along all possible dimensions, like city size at the time of split, and see where the effects come from.
 
 
+## Validity
+
+If I do a DiD, I definitely need an event study (or the staggered equivalent) to show parallel trends / no pre-trends.
+
+I'm a bit scared that there *is* no staggered equivalent to an event study? I'm sure it will be in the Baker et al. (2022) paper.
 
 
+Acharya and Lee (2019) show that a shortage of male heirs led to worse development. Intuitively, this seems like a glaring weakness of my approach. But is it?
+If I compare cities with no territory switches to cities *with* territory switches, then I should expect a negative effect of the switch. (Check whether they find this for the long term or short term). But if I restrict the sample to cities that switched, and the only variation I use is variation in new-territory size, then it should be a non-issue.
 
-
-
-
-
+I definitely need a glanceable list of all issues.
