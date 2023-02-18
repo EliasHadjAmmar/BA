@@ -52,4 +52,8 @@ Papers whose methodology I could imitate:
 - [Acemoglu, Johnson, and Robinson (2005)](https://doi.org/10.1257/0002828054201305): Triple diff to identify drivers of aggregate effect
 
 
-## Measures used in these historical studies
+## Generalised Diff-in-Diff
+
+Prominent papers using this methodology:
+- [Nunn and Qian (2011)](): not generalised, but full set of lags for time-varying effects
+- 

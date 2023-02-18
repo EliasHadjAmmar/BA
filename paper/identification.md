@@ -1,18 +1,127 @@
-# Identification
+# Empirical approach
+## Exploration and descriptive props
 
-Two dimensions to the exogenous variation:
+Plot switching events across time (no. of cities that switched per year). this would actually be important upfront, to determine the ideal specification.
+
+For cities with available craftsman wage data in Allen (2001), overlay wages and construction activity to show that they match.
+
+For some exemplary cities (to be identified), plot the construction time series and add vertical lines where the city switches territory. See if there's a break in the time trends afterwards. Maybe talk to Elvira about how she did it with the names.
+
+## Identification
+
+the most braindead version of the analysis is:
+
+construction_{it} = city + year + β treat x post_{it} + e_{it}
+
+what i currently wanna do is:
+
+construction_{it} = city + year + β sizediff_{e} x post_{et} + e_{it}
+
+Next steps here: 
+- read Cantoni and Yuchtman's chapter in the Handbook
+- read the relevant chapters of Mostly Harmless Econometrics
+- read the paper by Baker et al. (2022) on staggered DiD
+
+### The variation
+
+Bring some order into this section.
+
+Before making the final decisions, think hard about the variation in your variables (see [John Cochrane](https://web.archive.org/web/20110411061350/https://faculty.chicagobooth.edu/john.cochrane/research/papers/phd_paper_writing.pdf), section 3).
+
+Potential source of OVB: leader quality (part of the error term) may be correlated with terr size (maybe not systematically though) as well as construction. this will always have to remain an omitted variable I guess. Unless I do something *really* fancy.
+
+
+(this is older) Two dimensions to the exogenous variation:
 - quasi-random timing: *when* does the ruling lineage go extinct?
 - quasi-random succession: *which lineage's territory* will the city join?
 
 I feel like the second one is way more imporant, and the first one is barely important at all. I also feel like the second is way harder to argue for than the first.
 
 What are the implications of this?
-Well, I could exclude acquisitions by e.g. the Habsburgs. Or I could control for this - and I should do this anyway - by **interacting the treatment dummy with the size of the new territory,** i.e. to use a treatment with varying intensity. Or use other interactions, such as wealth of the acquiring family (proxied by construction in their city of residence?).
+Well, I could exclude acquisitions by e.g. the Habsburgs. But what does this achieve?
 
-## Diff-in-diff
+Or I could control for this - and I should do this anyway - by **interacting the treatment dummy with the size of the new territory,** i.e. to use a treatment with varying intensity. Or use other interactions, such as wealth of the acquiring family (proxied by construction in their city of residence?).
+
+### Initial idea: basic staggered Diff-in-diff, no size
 
 My instinct says to just plot the construction time series for each city, add vertical lines where there's a territory change for the city, and see if there's a break in the time series afterwards. Check this for all cities and see whether there is an effect on average.
 
 In other words, run a generalised diff-in-diff, using lineage extinctions as treatment.
 
 To refine the analysis, split the sample or interact the treatment with city or lineage characteristics.
+
+
+## Chaotic writings from 17.02.2023
+
+Don’t glorify it.
+What you do is run a regression. Your thesis is just presenting that regression.
+
+You have what are essentially OLS results. Don’t have any pretensions about causal identification. 
+Do get MHE and try to find the best spec possible. But don’t wax poetic about the importance of the results; it comes off as delusional.
+
+
+Show that construction is good: overlay construction and crafts wages. That’s also a good descriptive prop. Could be Fig. 1.
+
+Use # of children as IV for dynasty extinction?
+Use # of daughters?
+All of this depends on what exactly the endogeneity problem is. If there even is one.
+Issue: This would work on the ruler level. But on the city-year level the first stage would not exist.
+
+The problem of selection in terms of which lineage takes over can probably be solved by splitting the sample / using interactions.
+
+### This is the important part
+But what if the size of the city plays a role? What if bigger, faster-growing cities go to bigger, faster-growing territories?
+
+*That is the main endogeneity problem, the main source of bias.*
+
+What if I regress on the difference between before and after?
+**Treat the size increase like a random cash transfer. The size increase is the treatment. If a city’s territory’s size didn’t change then it didn’t get treatment.**
+
+That's a big conceptual step right there.
+
+### What kind of variation to use
+Faction-year fixed effects?
+
+Essentially what you would ideally want to do:
+take the same city twice. put one in a big terr and put one in a small terr.
+
+What seems like a good approximation:
+take two similar cities from the same terr. one of them goes to a big terr and another to a small. compare the trends.
+do this for all similar-city pairs from all terrs and average the effects.
+
+**this means that i want territory-of-origin fixed effects.**
+**i want to know the effect of going to a bigger territory, holding the territory of origin constant. i want to essentially run an epidemiological study. or something like a border-discontinuity.**
+
+if cities are people, construction is some behavioural outcome, territory size is income, and the treatment is a cash transfer, then I want to control for pre-treatment income. this is what holding pre-switch territory constant amounts to.
+
+one small thing with that: **territory of origin is time-invariant and will be included in the city fixed effect.**
+
+
+isnt pre-treatment income included in the person fixed effect? but then what are we comparing?
+honestly, I think this is me worrying about something that the DiD already takes care of. I might want to just write down a regression equation, a working version, and then see whether it’s fine. iteratively. 
+
+My working version of the equation: see above.
+
+#### Detour: multiple switches
+Territory-of-origin is actually not time-invariant if there are multiple switches. Or is it? Yes it should be. Lets say munich goes to hannover in 1700 then to prussia in 1703. open question: what should the regression look like?
+
+My hunch: split / prune the data so that there is at most one switch per city per regression.
+
+-> exclude munich from the analysis. when the switches are sufficiently close together, omit the middle one and recode it as a single switch in the data. when there are multiple switches with like a century between them, and if this is the case for many cities, then run separate regressions for each century, omitting all cities that have multiple switches within that century only.
+
+
+
+#### Probably even less relevant
+isnt it, worst case, about how the city and the territory match?
+maybe a small city does well in a big territory and a big city does well in a small territory. in that case i wont be able to get a meaningful estimate -
+
+Well, that’s why it will be important to split the sample along all possible dimensions, like city size at the time of split, and see where the effects come from.
+
+
+
+
+
+
+
+
+
