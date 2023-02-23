@@ -11,73 +11,39 @@ library(tidyverse)
 library(haven)
 ```
 
-## What would I run the regressions on?
 
-The regression would look something like this:
+I want a city-year panel of
+- construction activity
+- ruling lineage (terr_id)
+- ruling lineage's extinction in that year
+- cities held by ruling lineage in that year
+- controls (capital status, conflict)
 
-```{r cars}
-reg1 <- lm(pop ~ city_fe + year_fe + treat*post + treat*post*channel + controls)
-```
-
-In the end, `treat`x`post` will be 1 for all city-years after that city's extinction year. That's my intuition. But I haven't read up about staggered diff-in-diff yet.
-
-
-Ideally, I want a city-year level dataset with an entry for every year, based on the ruler dataset, not the territories dataset. For any given year, I want to know immediately not only the city's ruling lineage, but also the ruler. And then, for these city-year observations, I can add my outcome variables.
 
 ## Relational database approach
 
-How do I do that? It seems to me that this kind of works like a relational database.
-Each city-year observation must have non-missing lineage. Each lineage-year observation must have a non-missing ruler. That's how I could get there.
+It seems to me that this kind of works like a relational database. Each city-year observation has non-missing ruling lineage. Each lineage-year observation has non-missing extinction dummy and size.
 
 ### Lineage for all city-year observations
 
-But first let me check whether this is already in `cities_families.dta`.
+This is already in `cities_families.dta`. The lineage is given for every city-year observation.
 
 ```{r cities data}
 cities <- read_dta('build/input/cities_families_1300_1918.dta')
 summary(cities)
 view(cities)
 ```
-
-Okay, perfect. That file already contains the lineages for all cities for all years. At first glance it seems to be exactly what I would have had to do with the territories data - expand it so there's an observation for each year, based on the exact years in the commentary fields. That would have been a huge pain.
-
-### Ruler for all lineage-year observations
+### Extinction for all lineage-year observations
 
 The file `family_rulers_imputed.dta` is a list of person-level observations. I turn this into a lineage-year panel of rulers in the same way I did for work: filter for non-missing terr_id. 
-This relies on what Matthias told me to do in summer being correct. I should verify that non-rulers in `family_rulers_imputed.dta` have missing terr_id.
+(This relies on what Matthias told me to do in summer being correct. I should verify my implicit assumptions about the dataset - that non-rulers in `family_rulers_imputed.dta` have missing terr_id, and that the ruler list is therefore a lineage-year panel of rulers.)
 
-Discount the rest of this document. Commit it one more time, then remove it in a housekeeping commit. Also remove `RulersToTerritoryYears.R` in that commit.
+Then I can obtain the extinction year of each lineage by filtering for the last ruler in each lineage (max start_reign). This ruler's death_year is the extinction year of the lineage (or where our data ends. In a future iteration of this, I could use the `territories.csv` data to cross-validate.)
 
-This is what I previously thought I had to do (but I think it's unnecessary):
+### Size for all lineage-year observations
 
-```{text pseudo-code}
-lineages <- expand(terr_id x year)
-lineages <- mutate(ruler_id = case_when(
-  year %in% start_reign:end_reign ~ ruler_id
-))
-```
+Use number of cities. You can recycle code you wrote in the territories project.
 
-This is implemented in `RulersToTerritoryYears.R`. Surprisingly, only about one-third of territory-year observation have a corresponding ruler who was alive at the time. But I don't think that should be an issue. I should look at some descriptive stats.
+## Merging / joining the relational data
 
-```{r descriptive stats of rulers_linked}
-rulers <- read.csv("build/temp/rulers_linked.csv")
-print(rulers %>% group_by(terr_id) %>% summarise(years = n()) %>% summary())
-
-```
-The median dynasty in my data lasted 106 years. That seems plausible. 
-
-```{r more descriptive stats}
-print(rulers %>% group_by(year) %>% summarise(territories = n()) %>% summary())
-```
-If I did it right, this means that there were on average 75 dynasties with rulers coexisting in the same year. Also plausible.
-
-It would be interesting why the other 100,000 dynasty-year observations fell through.
-Is it that some years (e.g. early years) are often missing rulers?
-Is it that some dynasties (e.g. small ones) are often missing rulers?
-Could there be an explanation other than data quality?
-This is a potential source of bias; I should address it. Maybe limit the analysis to cities in territories larger than a certain threshold, and to recent centuries in which there are few missing links.
-
-One more note: `rulers_linked.csv` essentially contains the personal history of all these dynasties. It contains the extinction events and, crucially, the last ruler of that dynasty, whose characteristics I can link to the event from elsewhere.
-# 
-
-
+Find out how this works once you have constructed everything.
