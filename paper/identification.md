@@ -17,10 +17,29 @@ what i currently wanna do is:
 
 construction_{it} = city + year + β sizediff_{e} x post_{et} + e_{it}
 
+What if I used "extinction of dynasty ruling i in period t" **as an IV** for "increase in territory size of city i"? Wouldn't this solve the problem of selection into the territories of more/less prosperous families, if such a problem exists? The reduced form is equivalent to my "braindead" specification, but with 2SLS I actually do get the effect of *size* rather than ruler quality difference. Dittmar and Seabold (2018) do something similar using the deaths of printers as an IV for higher printed output, to estimate the effect of printed output on growth. This would be exactly analogous.
+
 Next steps here: 
 - read Cantoni and Yuchtman's chapter in the Handbook
 - read the relevant chapters of Mostly Harmless Econometrics
 - read the paper by Baker et al. (2022) on staggered DiD
+- if I want to use the IV: read Dittmar and Seabold (2018)
+
+### NEW: switching and non-switching cities
+
+This is absolutely *crucial*. 
+
+There are two things that can lead to a sizediff treatment for a city. One is being a city in a territory that is taken over. The other one, which I totally haven't considered so far, is *being a city in a territory that takes over another.*
+
+I have not thought at all about how to incorporate these into the analysis, or whether I should. My hunch is that I may want to drop those, or else I may really be able to exploit them? Or do the analysis for both separately. Or jointly.
+
+Parallel trends means that construction in all cities would have trended the same without the size increases. It means assignment of treatment that is as good as random.
+What this means for takeover victims: your propensity to grow does not determine whether the ruler of a small or large territory gets you.
+What this means for the previous holdings of the successor: your propensity to grow does not determine whether your ruler acquires more or less new territory.
+
+If the two cases are not exactly the same, then it must also hold that growth potential does not affect the probability of being on either side of a takeover. But I think that is the one thing I've been assuming so far, because that's determined by ruler fertility etc.
+
+Worst case, which empirical strategy best supports these assumptions?
 
 ### The variation
 
