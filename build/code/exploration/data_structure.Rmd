@@ -43,7 +43,12 @@ Okay, perfect. That file already contains the lineages for all cities for all ye
 
 ### Ruler for all lineage-year observations
 
-The file `family_rulers_imputed.dta` is a list of ruler-level observations. These rulers happen to be in chronological order, but they're not lineage-year observations. Yet. How do I get them there?
+The file `family_rulers_imputed.dta` is a list of person-level observations. I turn this into a lineage-year panel of rulers in the same way I did for work: filter for non-missing terr_id. 
+This relies on what Matthias told me to do in summer being correct. I should verify that non-rulers in `family_rulers_imputed.dta` have missing terr_id.
+
+Discount the rest of this document. Commit it one more time, then remove it in a housekeeping commit. Also remove `RulersToTerritoryYears.R` in that commit.
+
+This is what I previously thought I had to do (but I think it's unnecessary):
 
 ```{text pseudo-code}
 lineages <- expand(terr_id x year)
@@ -52,7 +57,7 @@ lineages <- mutate(ruler_id = case_when(
 ))
 ```
 
-I did something like that in `RulersToTerritoryYears.R`. Surprisingly, only about one-third of territory-year observation have a corresponding ruler who was alive at the time. But I don't think that should be an issue. I should look at some descriptive stats.
+This is implemented in `RulersToTerritoryYears.R`. Surprisingly, only about one-third of territory-year observation have a corresponding ruler who was alive at the time. But I don't think that should be an issue. I should look at some descriptive stats.
 
 ```{r descriptive stats of rulers_linked}
 rulers <- read.csv("build/temp/rulers_linked.csv")

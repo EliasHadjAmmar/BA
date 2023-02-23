@@ -1,3 +1,9 @@
+# Input: ruler list.
+# Output: territory-year panel of ruler id.
+# Note: I no longer need this; I think there is a simpler approach. For the
+# rationale behind what happens in this file, look at `data_structure.rmd`. 
+# Commit one more time with this note, then delete in housekeeping commit.
+
 library(tidyverse)
 library(haven)
 

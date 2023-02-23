@@ -1,3 +1,8 @@
+# Input: the *published* (coarse) territories data.
+# Output: the territory-timepoint observations following an extinction.
+# Note: this script can probably be discarded; I want to get extinctions from rulers
+# and takeovers from cities.
+
 library(tidyverse)
 
 setwd("~/GitHub/BA")

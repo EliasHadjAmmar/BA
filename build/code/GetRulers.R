@@ -1,3 +1,7 @@
+# Input: list of people.
+# Output: territory-year panel of rulers.
+
+
 library(tidyverse)
 library(haven)
 

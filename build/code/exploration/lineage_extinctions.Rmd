@@ -41,3 +41,5 @@ view(city_events)
 ```
 
 Oh yeah, right. For each family extinction (a family-level event), this will give me *multiple* city-level events. First, because for each extinction, multiple cities change hands. Second, because the event shows up for all years afterwards until a new event happens, I also get all city-year observations *after* the city event.
+
+Conclusion: don't get extinctions from the terr data. Get it from the rulers data. Commit this file, then delete it in a housekeeping commit after that.
