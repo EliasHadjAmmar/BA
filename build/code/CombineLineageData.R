@@ -47,7 +47,8 @@ AddLineageNames <- function(lineages, terr_codes){
 
 TidyOutput <- function(lineages){
   lineages_final <- lineages %>% 
-    select(terr_id, year, terr_name, final_year, extinction, count_cities)
+    select(terr_id, year, terr_name, final_year, extinction, count_cities) %>% 
+    rename(territory = terr_name)
   return(lineages_final)
 }
 
