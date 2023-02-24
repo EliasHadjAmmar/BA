@@ -3,12 +3,11 @@
 # Currently not functional.
 
 library(tidyverse)
-library(haven)
 
 setwd("~/GitHub/BA")
 
 Main <- function(){
-  return()
+  return(0)
 }
 
 ImportConstruction <- function(){
@@ -23,5 +22,7 @@ ImportConstruction <- function(){
 # Or make fake data.
 
 FakeConstructionData <- function(dat){
-  set.seed(1234)
+  return(0)
 }
+
+Main()

@@ -12,8 +12,18 @@ library(tidyverse)
 
 setwd("~/GitHub/BA")
 
-cities <- read.csv("build/output/cities.csv")
-lineages <- read.csv("build/output/lineages.csv")
+Main <- function(){
+  cities <- read.csv("build/output/cities.csv")
+  lineages <- read.csv("build/output/lineages.csv")
+  
+  build <- CombineTables(cities, lineages)
+  build <- AddSizeDiffs(build)
+  build <- TidyOutput(build)
+  
+  build %>% write.csv("build/output/build.csv")
+}
+
+
 
 CombineTables <- function(cities, lineages){
   joined <- inner_join(cities, lineages, by=c("terr_id", "year")) 
@@ -35,4 +45,4 @@ TidyOutput <- function(table){
   return(final)
 }
 
-test <- CombineTables(cities, lineages) %>% AddSizeDiffs() %>% TidyOutput()
+Main()

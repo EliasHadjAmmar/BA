@@ -32,5 +32,8 @@
 
 # Personal conda info
 .conda_info
+
+# Other
 literature
 drive
+*.xlsx

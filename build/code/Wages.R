@@ -8,7 +8,7 @@ setwd("~/GitHub/BA")
 
 Main <- function(){
   keys <- ImportKeys()
-  excel_path <- "drive/raw/clean_crafts.xlsx"
+  excel_path <- "build/input/clean_crafts.xlsx"
   
   real_wages <- ProcessTable(excel_path, "realwages", keys)
   welfare_ratios <- ProcessTable(excel_path, "wratios", keys)

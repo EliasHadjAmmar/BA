@@ -1,0 +1,1441 @@
+"","city_id","year","city","terr_id","territory","final_year","extinction","count_cities","count_diff","real_wage","welfare_ratio"
+"1",1013,1300,"Gdansk","P166","Przemysliden; Premysliden",1305,0,34,NA,NA,NA
+"2",1013,1301,"Gdansk","P166","Przemysliden; Premysliden",1305,0,34,0,NA,NA
+"3",1013,1302,"Gdansk","P166","Przemysliden; Premysliden",1305,0,34,0,NA,NA
+"4",1013,1303,"Gdansk","P166","Przemysliden; Premysliden",1305,0,33,-1,NA,NA
+"5",1013,1304,"Gdansk","P166","Przemysliden; Premysliden",1305,0,32,-1,NA,NA
+"6",1013,1305,"Gdansk","P166","Przemysliden; Premysliden",1305,1,32,0,NA,NA
+"7",1013,1306,"Gdansk","B374","Askanier in Brandenburg (Mark; Markgrafschaft; Kurfürstentum; Provinz; Land)",1319,0,194,162,NA,NA
+"8",1013,1307,"Gdansk","B374","Askanier in Brandenburg (Mark; Markgrafschaft; Kurfürstentum; Provinz; Land)",1319,0,192,-2,NA,NA
+"9",1013,1308,"Gdansk","B374","Askanier in Brandenburg (Mark; Markgrafschaft; Kurfürstentum; Provinz; Land)",1319,0,188,-4,NA,NA
+"10",1013,1793,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,668,480,4.57186183116959,0.874541609980825
+"11",1013,1794,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,668,0,6.40682680704625,1.22554811094743
+"12",1013,1795,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,661,-7,5.95709401303894,1.13951969271071
+"13",1013,1796,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,659,-2,6.96866424901134,1.33302078601687
+"14",1013,1797,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,659,0,7.09202180541439,1.35661758748723
+"15",1013,1798,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,659,0,6.87770542983169,1.3156214692604
+"16",1013,1799,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,659,0,5.70293078434441,1.09090135571176
+"17",1013,1800,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,659,0,4.84141582979404,0.926104014235176
+"18",1013,1801,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,654,-5,NA,0.964934626969947
+"19",1013,1802,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,672,18,NA,1.04595270169076
+"20",1013,1803,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,718,46,NA,1.048621361482
+"21",1013,1804,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,722,4,NA,1.07656798388343
+"22",1013,1805,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,697,-25,NA,0.860933324934712
+"23",1013,1806,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,678,-19,NA,0.958010068398895
+"24",1013,1807,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,463,-215,NA,0.6032867129106
+"25",1013,1808,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,463,0,NA,0.66850511956347
+"26",1013,1809,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,463,0,NA,1.07501061418531
+"27",1013,1810,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,459,-4,NA,1.35657674478278
+"28",1013,1811,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,458,-1,NA,1.26104797197467
+"29",1013,1812,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,458,0,NA,1.03671177114171
+"30",1013,1813,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,558,100,NA,0.731770528353115
+"31",1013,1814,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,584,26,NA,0.729824821196855
+"32",1013,1815,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,998,414,NA,NA
+"33",1013,1816,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1010,12,NA,NA
+"34",1013,1817,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1008,-2,NA,NA
+"35",1013,1818,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1009,1,NA,NA
+"36",1013,1819,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1010,1,NA,NA
+"37",1013,1820,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1010,0,NA,NA
+"38",1013,1821,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1010,0,NA,NA
+"39",1013,1822,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1010,0,NA,NA
+"40",1013,1823,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1010,0,NA,NA
+"41",1013,1824,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1010,0,NA,NA
+"42",1013,1825,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1010,0,NA,NA
+"43",1013,1826,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1010,0,NA,NA
+"44",1013,1827,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1010,0,NA,NA
+"45",1013,1828,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1010,0,NA,NA
+"46",1013,1829,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1010,0,NA,NA
+"47",1013,1830,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1010,0,NA,NA
+"48",1013,1831,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1010,0,NA,NA
+"49",1013,1832,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1010,0,NA,NA
+"50",1013,1833,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1010,0,NA,NA
+"51",1013,1834,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1011,1,NA,NA
+"52",1013,1835,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1011,0,NA,NA
+"53",1013,1836,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1011,0,NA,NA
+"54",1013,1837,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1011,0,NA,NA
+"55",1013,1838,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1011,0,NA,NA
+"56",1013,1839,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1011,0,NA,NA
+"57",1013,1840,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1011,0,NA,NA
+"58",1013,1841,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1011,0,NA,NA
+"59",1013,1842,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1011,0,NA,NA
+"60",1013,1843,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1011,0,NA,NA
+"61",1013,1844,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1011,0,NA,NA
+"62",1013,1845,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1011,0,NA,NA
+"63",1013,1846,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1011,0,NA,NA
+"64",1013,1847,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1011,0,NA,NA
+"65",1013,1848,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1011,0,NA,NA
+"66",1013,1849,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1011,0,NA,NA
+"67",1013,1850,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1019,8,NA,NA
+"68",1013,1851,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1019,0,NA,NA
+"69",1013,1852,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1019,0,NA,NA
+"70",1013,1853,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1019,0,NA,NA
+"71",1013,1854,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1019,0,NA,NA
+"72",1013,1855,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1019,0,NA,NA
+"73",1013,1856,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1019,0,NA,NA
+"74",1013,1857,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1019,0,NA,NA
+"75",1013,1858,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1019,0,NA,NA
+"76",1013,1859,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1019,0,NA,NA
+"77",1013,1860,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1019,0,NA,NA
+"78",1013,1861,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1019,0,NA,NA
+"79",1013,1862,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1019,0,NA,NA
+"80",1013,1863,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1019,0,NA,NA
+"81",1013,1864,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1021,2,NA,NA
+"82",1013,1865,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1034,13,NA,NA
+"83",1013,1866,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1251,217,NA,NA
+"84",1013,1867,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,28,NA,NA
+"85",1013,1868,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"86",1013,1869,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"87",1013,1870,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"88",1013,1871,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"89",1013,1872,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"90",1013,1873,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"91",1013,1874,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"92",1013,1875,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"93",1013,1876,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"94",1013,1877,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"95",1013,1878,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"96",1013,1879,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"97",1013,1880,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"98",1013,1881,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"99",1013,1882,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"100",1013,1883,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"101",1013,1884,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"102",1013,1885,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"103",1013,1886,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"104",1013,1887,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"105",1013,1888,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"106",1013,1889,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"107",1013,1890,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"108",1013,1891,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"109",1013,1892,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"110",1013,1893,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"111",1013,1894,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"112",1013,1895,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"113",1013,1896,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"114",1013,1897,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"115",1013,1898,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"116",1013,1899,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"117",1013,1900,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"118",1013,1901,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"119",1013,1902,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"120",1013,1903,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"121",1013,1904,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"122",1013,1905,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"123",1013,1906,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"124",1013,1907,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"125",1013,1908,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"126",1013,1909,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"127",1013,1910,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"128",1013,1911,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"129",1013,1912,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"130",1013,1913,"Gdansk","B3742","(Hohenzollern-)Brandenburg (jüngere Linie)",1940,0,1279,0,NA,NA
+"131",6001,1300,"Hamburg","S037","Sachsen-Lauenburg",1688,0,40,NA,NA,NA
+"132",6001,1301,"Hamburg","S037","Sachsen-Lauenburg",1688,0,40,0,NA,NA
+"133",6001,1302,"Hamburg","S037","Sachsen-Lauenburg",1688,0,40,0,NA,NA
+"134",6001,1303,"Hamburg","S037","Sachsen-Lauenburg",1688,0,40,0,NA,NA
+"135",6001,1304,"Hamburg","S037","Sachsen-Lauenburg",1688,0,40,0,NA,NA
+"136",6001,1305,"Hamburg","S037","Sachsen-Lauenburg",1688,0,38,-2,NA,NA
+"137",6001,1306,"Hamburg","S037","Sachsen-Lauenburg",1688,0,38,0,NA,NA
+"138",6001,1307,"Hamburg","S037","Sachsen-Lauenburg",1688,0,38,0,NA,NA
+"139",6001,1308,"Hamburg","S037","Sachsen-Lauenburg",1688,0,38,0,NA,NA
+"140",6001,1309,"Hamburg","S037","Sachsen-Lauenburg",1688,0,38,0,NA,NA
+"141",6001,1310,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,1,NA,NA
+"142",6001,1311,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"143",6001,1312,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"144",6001,1313,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"145",6001,1314,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"146",6001,1315,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"147",6001,1316,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"148",6001,1317,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"149",6001,1318,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"150",6001,1319,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"151",6001,1320,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"152",6001,1321,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"153",6001,1322,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"154",6001,1323,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"155",6001,1324,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"156",6001,1325,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"157",6001,1326,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"158",6001,1327,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"159",6001,1328,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"160",6001,1329,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"161",6001,1330,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"162",6001,1331,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"163",6001,1332,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"164",6001,1333,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"165",6001,1334,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"166",6001,1335,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"167",6001,1336,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"168",6001,1337,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"169",6001,1338,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"170",6001,1339,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"171",6001,1340,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"172",6001,1341,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"173",6001,1342,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"174",6001,1343,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"175",6001,1344,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"176",6001,1345,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"177",6001,1346,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"178",6001,1347,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"179",6001,1348,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"180",6001,1349,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"181",6001,1350,"Hamburg","S037","Sachsen-Lauenburg",1688,0,39,0,NA,NA
+"182",6001,1351,"Hamburg","S037","Sachsen-Lauenburg",1688,0,40,1,NA,NA
+"183",6001,1352,"Hamburg","S037","Sachsen-Lauenburg",1688,0,40,0,NA,NA
+"184",6001,1353,"Hamburg","S037","Sachsen-Lauenburg",1688,0,40,0,NA,NA
+"185",6001,1354,"Hamburg","S037","Sachsen-Lauenburg",1688,0,40,0,NA,NA
+"186",6001,1355,"Hamburg","S037","Sachsen-Lauenburg",1688,0,40,0,NA,NA
+"187",6001,1356,"Hamburg","S037","Sachsen-Lauenburg",1688,0,40,0,NA,NA
+"188",6001,1357,"Hamburg","S037","Sachsen-Lauenburg",1688,0,33,-7,NA,NA
+"189",6001,1358,"Hamburg","S037","Sachsen-Lauenburg",1688,0,33,0,NA,NA
+"190",6001,1359,"Hamburg","S037","Sachsen-Lauenburg",1688,0,33,0,NA,NA
+"191",6001,1360,"Hamburg","S037","Sachsen-Lauenburg",1688,0,33,0,NA,NA
+"192",6001,1361,"Hamburg","S037","Sachsen-Lauenburg",1688,0,33,0,NA,NA
+"193",6001,1362,"Hamburg","S037","Sachsen-Lauenburg",1688,0,33,0,NA,NA
+"194",6001,1363,"Hamburg","S037","Sachsen-Lauenburg",1688,0,33,0,NA,NA
+"195",6001,1364,"Hamburg","S037","Sachsen-Lauenburg",1688,0,33,0,NA,NA
+"196",6001,1365,"Hamburg","S037","Sachsen-Lauenburg",1688,0,33,0,NA,NA
+"197",6001,1366,"Hamburg","S037","Sachsen-Lauenburg",1688,0,33,0,NA,NA
+"198",6001,1367,"Hamburg","S037","Sachsen-Lauenburg",1688,0,33,0,NA,NA
+"199",6001,1368,"Hamburg","S037","Sachsen-Lauenburg",1688,0,33,0,NA,NA
+"200",6001,1369,"Hamburg","S037","Sachsen-Lauenburg",1688,0,33,0,NA,NA
+"201",6001,1370,"Hamburg","S037","Sachsen-Lauenburg",1688,0,33,0,NA,NA
+"202",6001,1371,"Hamburg","S037","Sachsen-Lauenburg",1688,0,33,0,NA,NA
+"203",6001,1372,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,-1,NA,NA
+"204",6001,1373,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"205",6001,1374,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"206",6001,1375,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"207",6001,1376,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"208",6001,1377,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"209",6001,1378,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"210",6001,1379,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"211",6001,1380,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"212",6001,1381,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"213",6001,1382,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"214",6001,1383,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"215",6001,1384,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"216",6001,1385,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"217",6001,1386,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"218",6001,1387,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"219",6001,1388,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"220",6001,1389,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"221",6001,1390,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"222",6001,1391,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"223",6001,1392,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"224",6001,1393,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"225",6001,1394,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,-1,NA,NA
+"226",6001,1395,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"227",6001,1396,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"228",6001,1397,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"229",6001,1398,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"230",6001,1399,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"231",6001,1400,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"232",6001,1401,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,1,NA,NA
+"233",6001,1402,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"234",6001,1403,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"235",6001,1404,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"236",6001,1405,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"237",6001,1406,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"238",6001,1407,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"239",6001,1408,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"240",6001,1409,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"241",6001,1410,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"242",6001,1411,"Hamburg","S037","Sachsen-Lauenburg",1688,0,32,0,NA,NA
+"243",6001,1412,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,-1,NA,NA
+"244",6001,1413,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"245",6001,1414,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"246",6001,1415,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"247",6001,1416,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"248",6001,1417,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"249",6001,1418,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"250",6001,1419,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"251",6001,1420,"Hamburg","S037","Sachsen-Lauenburg",1688,0,29,-2,NA,NA
+"252",6001,1421,"Hamburg","S037","Sachsen-Lauenburg",1688,0,29,0,NA,NA
+"253",6001,1422,"Hamburg","S037","Sachsen-Lauenburg",1688,0,29,0,NA,NA
+"254",6001,1423,"Hamburg","S037","Sachsen-Lauenburg",1688,0,29,0,NA,NA
+"255",6001,1424,"Hamburg","S037","Sachsen-Lauenburg",1688,0,30,1,NA,NA
+"256",6001,1425,"Hamburg","S037","Sachsen-Lauenburg",1688,0,30,0,NA,NA
+"257",6001,1426,"Hamburg","S037","Sachsen-Lauenburg",1688,0,30,0,NA,NA
+"258",6001,1427,"Hamburg","S037","Sachsen-Lauenburg",1688,0,30,0,NA,NA
+"259",6001,1428,"Hamburg","S037","Sachsen-Lauenburg",1688,0,30,0,NA,NA
+"260",6001,1429,"Hamburg","S037","Sachsen-Lauenburg",1688,0,30,0,NA,NA
+"261",6001,1430,"Hamburg","S037","Sachsen-Lauenburg",1688,0,30,0,NA,NA
+"262",6001,1431,"Hamburg","S037","Sachsen-Lauenburg",1688,0,30,0,NA,NA
+"263",6001,1432,"Hamburg","S037","Sachsen-Lauenburg",1688,0,30,0,NA,NA
+"264",6001,1433,"Hamburg","S037","Sachsen-Lauenburg",1688,0,30,0,NA,NA
+"265",6001,1434,"Hamburg","S037","Sachsen-Lauenburg",1688,0,30,0,NA,NA
+"266",6001,1435,"Hamburg","S037","Sachsen-Lauenburg",1688,0,30,0,NA,NA
+"267",6001,1436,"Hamburg","S037","Sachsen-Lauenburg",1688,0,30,0,NA,NA
+"268",6001,1437,"Hamburg","S037","Sachsen-Lauenburg",1688,0,30,0,NA,NA
+"269",6001,1438,"Hamburg","S037","Sachsen-Lauenburg",1688,0,30,0,NA,NA
+"270",6001,1439,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,1,NA,NA
+"271",6001,1440,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"272",6001,1441,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"273",6001,1442,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"274",6001,1443,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"275",6001,1444,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"276",6001,1445,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"277",6001,1446,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"278",6001,1447,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"279",6001,1448,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"280",6001,1449,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"281",6001,1450,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"282",6001,1451,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"283",6001,1452,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"284",6001,1453,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"285",6001,1454,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"286",6001,1455,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"287",6001,1456,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"288",6001,1457,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"289",6001,1458,"Hamburg","S037","Sachsen-Lauenburg",1688,0,31,0,NA,NA
+"290",9070,1485,"Leipzig","A060","Albertiner",1931,0,115,NA,NA,NA
+"291",9070,1486,"Leipzig","A060","Albertiner",1931,0,115,0,NA,NA
+"292",9070,1487,"Leipzig","A060","Albertiner",1931,0,115,0,NA,NA
+"293",9070,1488,"Leipzig","A060","Albertiner",1931,0,115,0,NA,NA
+"294",9070,1489,"Leipzig","A060","Albertiner",1931,0,115,0,NA,NA
+"295",9070,1490,"Leipzig","A060","Albertiner",1931,0,116,1,NA,NA
+"296",9070,1491,"Leipzig","A060","Albertiner",1931,0,116,0,NA,NA
+"297",9070,1492,"Leipzig","A060","Albertiner",1931,0,116,0,NA,NA
+"298",9070,1493,"Leipzig","A060","Albertiner",1931,0,116,0,NA,NA
+"299",9070,1494,"Leipzig","A060","Albertiner",1931,0,116,0,NA,NA
+"300",9070,1495,"Leipzig","A060","Albertiner",1931,0,116,0,NA,NA
+"301",9070,1496,"Leipzig","A060","Albertiner",1931,0,116,0,NA,NA
+"302",9070,1497,"Leipzig","A060","Albertiner",1931,0,115,-1,NA,NA
+"303",9070,1498,"Leipzig","A060","Albertiner",1931,0,115,0,NA,NA
+"304",9070,1499,"Leipzig","A060","Albertiner",1931,0,115,0,NA,NA
+"305",9070,1500,"Leipzig","A060","Albertiner",1931,0,114,-1,NA,NA
+"306",9070,1501,"Leipzig","A060","Albertiner",1931,0,114,0,NA,NA
+"307",9070,1502,"Leipzig","A060","Albertiner",1931,0,114,0,NA,NA
+"308",9070,1503,"Leipzig","A060","Albertiner",1931,0,114,0,NA,NA
+"309",9070,1504,"Leipzig","A060","Albertiner",1931,0,114,0,NA,NA
+"310",9070,1505,"Leipzig","A060","Albertiner",1931,0,114,0,NA,NA
+"311",9070,1506,"Leipzig","A060","Albertiner",1931,0,114,0,NA,NA
+"312",9070,1507,"Leipzig","A060","Albertiner",1931,0,114,0,NA,NA
+"313",9070,1508,"Leipzig","A060","Albertiner",1931,0,114,0,NA,NA
+"314",9070,1509,"Leipzig","A060","Albertiner",1931,0,114,0,NA,NA
+"315",9070,1510,"Leipzig","A060","Albertiner",1931,0,114,0,NA,NA
+"316",9070,1511,"Leipzig","A060","Albertiner",1931,0,114,0,NA,NA
+"317",9070,1512,"Leipzig","A060","Albertiner",1931,0,113,-1,NA,NA
+"318",9070,1513,"Leipzig","A060","Albertiner",1931,0,113,0,NA,NA
+"319",9070,1514,"Leipzig","A060","Albertiner",1931,0,113,0,NA,NA
+"320",9070,1515,"Leipzig","A060","Albertiner",1931,0,113,0,NA,NA
+"321",9070,1516,"Leipzig","A060","Albertiner",1931,0,113,0,NA,NA
+"322",9070,1517,"Leipzig","A060","Albertiner",1931,0,113,0,NA,NA
+"323",9070,1518,"Leipzig","A060","Albertiner",1931,0,113,0,NA,NA
+"324",9070,1519,"Leipzig","A060","Albertiner",1931,0,113,0,NA,NA
+"325",9070,1520,"Leipzig","A060","Albertiner",1931,0,113,0,NA,NA
+"326",9070,1521,"Leipzig","A060","Albertiner",1931,0,113,0,NA,NA
+"327",9070,1522,"Leipzig","A060","Albertiner",1931,0,113,0,NA,NA
+"328",9070,1523,"Leipzig","A060","Albertiner",1931,0,114,1,NA,NA
+"329",9070,1524,"Leipzig","A060","Albertiner",1931,0,114,0,NA,NA
+"330",9070,1525,"Leipzig","A060","Albertiner",1931,0,114,0,NA,NA
+"331",9070,1526,"Leipzig","A060","Albertiner",1931,0,115,1,NA,NA
+"332",9070,1527,"Leipzig","A060","Albertiner",1931,0,115,0,NA,NA
+"333",9070,1528,"Leipzig","A060","Albertiner",1931,0,115,0,NA,NA
+"334",9070,1529,"Leipzig","A060","Albertiner",1931,0,115,0,NA,NA
+"335",9070,1530,"Leipzig","A060","Albertiner",1931,0,115,0,NA,NA
+"336",9070,1531,"Leipzig","A060","Albertiner",1931,0,115,0,NA,NA
+"337",9070,1532,"Leipzig","A060","Albertiner",1931,0,115,0,NA,NA
+"338",9070,1533,"Leipzig","A060","Albertiner",1931,0,115,0,NA,NA
+"339",9070,1534,"Leipzig","A060","Albertiner",1931,0,115,0,NA,NA
+"340",9070,1535,"Leipzig","A060","Albertiner",1931,0,115,0,NA,NA
+"341",9070,1536,"Leipzig","A060","Albertiner",1931,0,117,2,NA,NA
+"342",9070,1537,"Leipzig","A060","Albertiner",1931,0,117,0,NA,NA
+"343",9070,1538,"Leipzig","A060","Albertiner",1931,0,120,3,NA,NA
+"344",9070,1539,"Leipzig","A060","Albertiner",1931,0,120,0,NA,NA
+"345",9070,1540,"Leipzig","A060","Albertiner",1931,0,121,1,NA,NA
+"346",9070,1541,"Leipzig","A060","Albertiner",1931,0,121,0,NA,NA
+"347",9070,1542,"Leipzig","A060","Albertiner",1931,0,121,0,NA,NA
+"348",9070,1543,"Leipzig","A060","Albertiner",1931,0,121,0,NA,NA
+"349",9070,1544,"Leipzig","A060","Albertiner",1931,0,123,2,NA,NA
+"350",9070,1545,"Leipzig","A060","Albertiner",1931,0,123,0,NA,NA
+"351",9070,1546,"Leipzig","A060","Albertiner",1931,0,122,-1,NA,NA
+"352",9070,1547,"Leipzig","A060","Albertiner",1931,0,190,68,NA,NA
+"353",9070,1548,"Leipzig","A060","Albertiner",1931,0,188,-2,NA,NA
+"354",9070,1549,"Leipzig","A060","Albertiner",1931,0,187,-1,NA,NA
+"355",9070,1550,"Leipzig","A060","Albertiner",1931,0,187,0,NA,NA
+"356",9070,1551,"Leipzig","A060","Albertiner",1931,0,188,1,NA,NA
+"357",9070,1552,"Leipzig","A060","Albertiner",1931,0,189,1,NA,NA
+"358",9070,1553,"Leipzig","A060","Albertiner",1931,0,189,0,NA,NA
+"359",9070,1554,"Leipzig","A060","Albertiner",1931,0,180,-9,NA,NA
+"360",9070,1555,"Leipzig","A060","Albertiner",1931,0,180,0,NA,NA
+"361",9070,1556,"Leipzig","A060","Albertiner",1931,0,180,0,NA,NA
+"362",9070,1557,"Leipzig","A060","Albertiner",1931,0,181,1,NA,NA
+"363",9070,1558,"Leipzig","A060","Albertiner",1931,0,181,0,NA,NA
+"364",9070,1559,"Leipzig","A060","Albertiner",1931,0,186,5,NA,NA
+"365",9070,1560,"Leipzig","A060","Albertiner",1931,0,187,1,NA,NA
+"366",9070,1561,"Leipzig","A060","Albertiner",1931,0,193,6,NA,NA
+"367",9070,1562,"Leipzig","A060","Albertiner",1931,0,193,0,NA,NA
+"368",9070,1563,"Leipzig","A060","Albertiner",1931,0,193,0,NA,NA
+"369",9070,1564,"Leipzig","A060","Albertiner",1931,0,196,3,NA,NA
+"370",9070,1565,"Leipzig","A060","Albertiner",1931,0,196,0,4.76013164074699,0.91055533665473
+"371",9070,1566,"Leipzig","A060","Albertiner",1931,0,196,0,3.97542848760482,0.760451159352763
+"372",9070,1567,"Leipzig","A060","Albertiner",1931,0,198,2,3.96133046335753,0.757754378636705
+"373",9070,1568,"Leipzig","A060","Albertiner",1931,0,199,1,3.96133046335753,0.757754378636705
+"374",9070,1569,"Leipzig","A060","Albertiner",1931,0,209,10,3.94855298509123,0.755310202319233
+"375",9070,1570,"Leipzig","A060","Albertiner",1931,0,210,1,3.94855298509123,0.755310202319233
+"376",9070,1571,"Leipzig","A060","Albertiner",1931,0,214,4,3.94855298509123,0.755310202319233
+"377",9070,1572,"Leipzig","A060","Albertiner",1931,0,216,2,3.58042403825237,0.684891608377027
+"378",9070,1573,"Leipzig","A060","Albertiner",1931,0,218,2,2.81435102481401,0.538351150402631
+"379",9070,1574,"Leipzig","A060","Albertiner",1931,0,217,-1,3.64283864197333,0.696830763592152
+"380",9070,1575,"Leipzig","A060","Albertiner",1931,0,217,0,4.43248119907906,0.847879788847572
+"381",9070,1576,"Leipzig","A060","Albertiner",1931,0,217,0,4.22743007656662,0.808656000939587
+"382",9070,1577,"Leipzig","A060","Albertiner",1931,0,218,1,4.73912138601913,0.906536330246764
+"383",9070,1578,"Leipzig","A060","Albertiner",1931,0,218,0,4.6349828220338,0.886615888472275
+"384",9070,1579,"Leipzig","A060","Albertiner",1931,0,218,0,3.81904919252148,0.730537700560666
+"385",9070,1580,"Leipzig","A060","Albertiner",1931,0,219,1,3.9727900693778,0.759946462008602
+"386",9070,1581,"Leipzig","A060","Albertiner",1931,0,221,2,4.01483345215704,0.767988850213362
+"387",9070,1582,"Leipzig","A060","Albertiner",1931,0,221,0,4.20902941702571,0.805136178378479
+"388",9070,1583,"Leipzig","A060","Albertiner",1931,0,228,7,4.09646046359488,0.783603105551108
+"389",9070,1584,"Leipzig","A060","Albertiner",1931,0,228,0,4.17919163727838,0.799428573708413
+"390",9070,1585,"Leipzig","A060","Albertiner",1931,0,228,0,4.23888929739793,0.810848010629515
+"391",9070,1586,"Leipzig","A060","Albertiner",1931,0,228,0,3.76716490955536,0.720612867739048
+"392",9070,1587,"Leipzig","A060","Albertiner",1931,0,228,0,4.64537332679238,0.888603465764775
+"393",9070,1588,"Leipzig","A060","Albertiner",1931,0,229,1,4.75449498890305,0.909477113654881
+"394",9070,1589,"Leipzig","A060","Albertiner",1931,0,229,0,4.74728509418116,0.908097948410891
+"395",9070,1590,"Leipzig","A060","Albertiner",1931,0,230,1,3.96558131521799,0.758567514940278
+"396",9070,1591,"Leipzig","A060","Albertiner",1931,0,230,0,4.38772901381687,0.839319239645816
+"397",9070,1592,"Leipzig","A060","Albertiner",1931,0,230,0,5.0198512871896,0.960236548846015
+"398",9070,1593,"Leipzig","A060","Albertiner",1931,0,230,0,4.54081606052259,0.868602931331436
+"399",9070,1594,"Leipzig","A060","Albertiner",1931,0,230,0,4.518791649015,0.864389929055775
+"400",9070,1595,"Leipzig","A060","Albertiner",1931,0,230,0,4.64674485535893,0.888865822512425
+"401",9070,1596,"Leipzig","A060","Albertiner",1931,0,230,0,4.5138037943646,0.863435813074716
+"402",9070,1597,"Leipzig","A060","Albertiner",1931,0,230,0,4.18491742957976,0.800523848194514
+"403",9070,1598,"Leipzig","A060","Albertiner",1931,0,230,0,4.37854397709645,0.837562253739888
+"404",9070,1599,"Leipzig","A060","Albertiner",1931,0,230,0,4.27787393161391,0.818305297404746
+"405",9070,1600,"Leipzig","A060","Albertiner",1931,0,230,0,4.46950395190031,0.854961791553226
+"406",9070,1601,"Leipzig","A060","Albertiner",1931,0,230,0,4.63659650977945,0.886924567328112
+"407",9070,1602,"Leipzig","A060","Albertiner",1931,0,230,0,4.66647752811574,0.892640443014802
+"408",9070,1603,"Leipzig","A060","Albertiner",1931,0,230,0,4.83529097381707,0.924932403717447
+"409",9070,1604,"Leipzig","A060","Albertiner",1931,0,230,0,4.89031466823947,0.935457767799796
+"410",9070,1605,"Leipzig","A060","Albertiner",1931,0,230,0,4.71527736288182,0.901975258378678
+"411",9070,1606,"Leipzig","A060","Albertiner",1931,0,230,0,4.70836794216154,0.900653570159767
+"412",9070,1607,"Leipzig","A060","Albertiner",1931,0,230,0,4.56605512152173,0.873430856989667
+"413",9070,1608,"Leipzig","A060","Albertiner",1931,0,230,0,4.85699627218953,0.929084363528293
+"414",9070,1609,"Leipzig","A060","Albertiner",1931,0,230,0,4.6293702292722,0.885542267682506
+"415",9070,1610,"Leipzig","A060","Albertiner",1931,0,230,0,4.2895984114016,0.820548047909541
+"416",9070,1611,"Leipzig","A060","Albertiner",1931,0,230,0,4.38336194558655,0.838483872562978
+"417",9070,1612,"Leipzig","A060","Albertiner",1931,0,230,0,4.33660837952026,0.82954048353464
+"418",9070,1613,"Leipzig","A060","Albertiner",1931,0,230,0,4.61682941685816,0.883143362666551
+"419",9070,1614,"Leipzig","A060","Albertiner",1931,0,230,0,4.4695538732237,0.854971340895733
+"420",9070,1615,"Leipzig","A060","Albertiner",1931,0,231,1,4.97928921121169,0.952477516631167
+"421",9070,1616,"Leipzig","A060","Albertiner",1931,0,231,0,4.21801764341108,0.806855516858996
+"422",9070,1617,"Leipzig","A060","Albertiner",1931,0,231,0,4.76163172759716,0.910842285039766
+"423",9070,1618,"Leipzig","A060","Albertiner",1931,0,231,0,4.84953986421134,0.927658043294059
+"424",9070,1619,"Leipzig","A060","Albertiner",1931,0,231,0,4.69132971284994,0.897394363944958
+"425",9070,1620,"Leipzig","A060","Albertiner",1931,0,231,0,3.77944445556022,0.722961795665896
+"426",9070,1621,"Leipzig","A060","Albertiner",1931,0,231,0,4.92337239335873,0.941781308889993
+"427",9070,1622,"Leipzig","A060","Albertiner",1931,0,231,0,2.90806756668581,0.556277985997625
+"428",9070,1623,"Leipzig","A060","Albertiner",1931,0,232,1,4.00549925693042,0.766203332097808
+"429",9070,1624,"Leipzig","A060","Albertiner",1931,0,233,1,4.57924855815852,0.875954601088594
+"430",9070,1625,"Leipzig","A060","Albertiner",1931,0,233,0,4.96662544415028,0.950055091885344
+"431",9070,1626,"Leipzig","A060","Albertiner",1931,0,233,0,5.12005980806146,0.979405221131689
+"432",9070,1627,"Leipzig","A060","Albertiner",1931,0,233,0,5.39978733806207,1.03291369830719
+"433",9070,1628,"Leipzig","A060","Albertiner",1931,0,233,0,5.48900922123637,1.04998076031349
+"434",9070,1629,"Leipzig","A060","Albertiner",1931,0,233,0,5.14967862960793,0.985070941758762
+"435",9070,1630,"Leipzig","A060","Albertiner",1931,0,233,0,5.43139562638604,1.03895997975234
+"436",9070,1631,"Leipzig","A060","Albertiner",1931,0,233,0,5.92972267206326,1.13428388780493
+"437",9070,1632,"Leipzig","A060","Albertiner",1931,0,233,0,6.22720514529418,1.19118866985822
+"438",9070,1633,"Leipzig","A060","Albertiner",1931,0,233,0,6.84433987198799,1.30923904351087
+"439",9070,1634,"Leipzig","A060","Albertiner",1931,0,233,0,5.98729719411894,1.14529719421528
+"440",9070,1635,"Leipzig","A060","Albertiner",1931,0,286,53,5.55418023527097,1.06244718332507
+"441",9070,1636,"Leipzig","A060","Albertiner",1931,0,286,0,5.52285838949155,1.05645569485778
+"442",9070,1637,"Leipzig","A060","Albertiner",1931,0,286,0,4.2570919468764,0.814329956271942
+"443",9070,1638,"Leipzig","A060","Albertiner",1931,0,286,0,3.77873422183308,0.72282593658482
+"444",9070,1639,"Leipzig","A060","Albertiner",1931,0,286,0,5.01068708314834,0.958483547978448
+"445",9070,1640,"Leipzig","A060","Albertiner",1931,0,286,0,5.30746934095286,1.01525438732984
+"446",9070,1641,"Leipzig","A060","Albertiner",1931,0,286,0,5.26149356288958,1.00645977969462
+"447",9070,1642,"Leipzig","A060","Albertiner",1931,0,286,0,5.31599307174941,1.01688487344888
+"448",9070,1643,"Leipzig","A060","Albertiner",1931,0,286,0,5.78552725438242,1.10670105669864
+"449",9070,1644,"Leipzig","A060","Albertiner",1931,0,286,0,6.87367187327986,1.31484989890874
+"450",9070,1645,"Leipzig","A060","Albertiner",1931,0,286,0,7.44671889141852,1.42446682967883
+"451",9070,1646,"Leipzig","A060","Albertiner",1931,0,286,0,7.56936744882861,1.44792800825775
+"452",9070,1647,"Leipzig","A060","Albertiner",1931,0,286,0,7.7688566561333,1.48608786937617
+"453",9070,1648,"Leipzig","A060","Albertiner",1931,0,285,-1,7.69620999997838,1.4721914468727
+"454",9070,1649,"Leipzig","A060","Albertiner",1931,0,285,0,7.47107301069013,1.4291254767386
+"455",9070,1650,"Leipzig","A060","Albertiner",1931,0,285,0,7.049957005508,1.34857110244631
+"456",9070,1651,"Leipzig","A060","Albertiner",1931,0,285,0,6.12462532575976,1.17156639695496
+"457",9070,1652,"Leipzig","A060","Albertiner",1931,0,285,0,6.77817949452393,1.2965833672982
+"458",9070,1653,"Leipzig","A060","Albertiner",1931,0,285,0,7.00056928136867,1.3391238309895
+"459",9070,1654,"Leipzig","A060","Albertiner",1931,0,285,0,7.7644271918256,1.48524056668199
+"460",9070,1655,"Leipzig","A060","Albertiner",1931,0,285,0,7.88804567416473,1.50888728011309
+"461",9070,1656,"Leipzig","A060","Albertiner",1931,0,285,0,7.89582827064589,1.51037599624402
+"462",9070,1657,"Leipzig","A060","Albertiner",1931,0,189,-96,8.22451973161524,1.57325067839283
+"463",9070,1658,"Leipzig","A060","Albertiner",1931,0,189,0,8.12253150045772,1.55374156915696
+"464",9070,1659,"Leipzig","A060","Albertiner",1931,0,189,0,7.73692369518265,1.47997948200304
+"465",9070,1660,"Leipzig","A060","Albertiner",1931,0,186,-3,7.17769863892278,1.37300652457269
+"466",9070,1661,"Leipzig","A060","Albertiner",1931,0,186,0,6.67263882535306,1.27639471984042
+"467",9070,1662,"Leipzig","A060","Albertiner",1931,0,186,0,6.59861314106152,1.26223450601268
+"468",9070,1663,"Leipzig","A060","Albertiner",1931,0,186,0,7.17912873449856,1.37328008447749
+"469",9070,1664,"Leipzig","A060","Albertiner",1931,0,186,0,7.35543774316593,1.40700585528772
+"470",9070,1665,"Leipzig","A060","Albertiner",1931,0,186,0,7.56896328276542,1.44785069620138
+"471",9070,1666,"Leipzig","A060","Albertiner",1931,0,186,0,7.85121012971693,1.50184108809427
+"472",9070,1667,"Leipzig","A060","Albertiner",1931,0,186,0,7.70348295055203,1.47358267393486
+"473",9070,1668,"Leipzig","A060","Albertiner",1931,0,186,0,7.71893314867772,1.47653810908193
+"474",9070,1669,"Leipzig","A060","Albertiner",1931,0,186,0,7.38670999227559,1.4129878565148
+"475",9070,1670,"Leipzig","A060","Albertiner",1931,0,186,0,7.59708585075993,1.45323020170679
+"476",9070,1671,"Leipzig","A060","Albertiner",1931,0,186,0,7.56042747544977,1.446217899991
+"477",9070,1672,"Leipzig","A060","Albertiner",1931,0,186,0,7.21868885423423,1.3808474546392
+"478",9070,1673,"Leipzig","A060","Albertiner",1931,0,186,0,7.50263814101346,1.43516350258269
+"479",9070,1674,"Leipzig","A060","Albertiner",1931,0,186,0,7.10671566429364,1.35942834412766
+"480",9070,1675,"Leipzig","A060","Albertiner",1931,0,186,0,6.27601767437386,1.20052591349002
+"481",9070,1676,"Leipzig","A060","Albertiner",1931,0,186,0,6.55032442833286,1.25299746208329
+"482",9070,1677,"Leipzig","A060","Albertiner",1931,0,186,0,6.99447045370074,1.33795719937098
+"483",9070,1678,"Leipzig","A060","Albertiner",1931,0,186,0,6.54951489190172,1.25284260760169
+"484",9070,1679,"Leipzig","A060","Albertiner",1931,0,186,0,6.72333377500315,1.28609204765174
+"485",9070,1680,"Leipzig","A060","Albertiner",1931,0,186,0,7.49021025336841,1.43278619870276
+"486",9070,1681,"Leipzig","A060","Albertiner",1931,0,186,0,7.44267085133999,1.42369248880452
+"487",9070,1682,"Leipzig","A060","Albertiner",1931,0,186,0,7.74101915704226,1.48076289408778
+"488",9070,1683,"Leipzig","A060","Albertiner",1931,0,186,0,7.28777731519925,1.39406323764286
+"489",9070,1684,"Leipzig","A060","Albertiner",1931,0,186,0,6.03332840079242,1.15410240467005
+"490",9070,1685,"Leipzig","A060","Albertiner",1931,0,186,0,7.17151221771508,1.37182313737448
+"491",9070,1686,"Leipzig","A060","Albertiner",1931,0,186,0,7.21485053727779,1.38011323124955
+"492",9070,1687,"Leipzig","A060","Albertiner",1931,0,186,0,7.69649661100969,1.47224627208002
+"493",9070,1688,"Leipzig","A060","Albertiner",1931,0,186,0,7.7066831307562,1.47419482951859
+"494",9070,1689,"Leipzig","A060","Albertiner",1931,0,186,0,7.7401201541258,1.48059092575475
+"495",9070,1690,"Leipzig","A060","Albertiner",1931,0,186,0,7.50151614028168,1.43494887747751
+"496",9070,1691,"Leipzig","A060","Albertiner",1931,0,186,0,7.6760230592518,1.46832993042808
+"497",9070,1692,"Leipzig","A060","Albertiner",1931,0,186,0,7.12120791783656,1.3622005361172
+"498",9070,1693,"Leipzig","A060","Albertiner",1931,0,186,0,6.2084056991682,1.18759256426953
+"499",9070,1694,"Leipzig","A060","Albertiner",1931,0,186,0,6.3764832686344,1.21974376079093
+"500",9070,1695,"Leipzig","A060","Albertiner",1931,0,186,0,7.03970851150265,1.34661069008515
+"501",9070,1696,"Leipzig","A060","Albertiner",1931,0,237,51,7.24184540601271,1.38527702159065
+"502",9070,1697,"Leipzig","A060","Albertiner",1931,0,237,0,6.83333564048483,1.30713406775028
+"503",9070,1698,"Leipzig","A060","Albertiner",1931,0,237,0,6.37693490105341,1.21983015258435
+"504",9070,1699,"Leipzig","A060","Albertiner",1931,0,237,0,5.90308349982888,1.12918813788187
+"505",9070,1700,"Leipzig","A060","Albertiner",1931,0,237,0,6.60494556450922,1.26344582166515
+"506",9070,1701,"Leipzig","A060","Albertiner",1931,0,237,0,6.88892787009821,1.31776818570569
+"507",9070,1702,"Leipzig","A060","Albertiner",1931,0,237,0,7.1280327492401,1.36350604342777
+"508",9070,1703,"Leipzig","A060","Albertiner",1931,0,237,0,6.75907191527717,1.29292831958801
+"509",9070,1704,"Leipzig","A060","Albertiner",1931,0,237,0,6.2796920030606,1.2012287679165
+"510",9070,1705,"Leipzig","A060","Albertiner",1931,0,237,0,6.7953644851774,1.29987064717423
+"511",9070,1706,"Leipzig","A060","Albertiner",1931,0,237,0,6.87734389262191,1.31555231158565
+"512",9070,1707,"Leipzig","A060","Albertiner",1931,0,237,0,6.51134497191651,1.24554116575821
+"513",9070,1708,"Leipzig","A060","Albertiner",1931,0,237,0,6.64322428695813,1.27076807609774
+"514",9070,1709,"Leipzig","A060","Albertiner",1931,0,237,0,6.4323753744634,1.23043524142223
+"515",9070,1710,"Leipzig","A060","Albertiner",1931,0,237,0,6.63562927121089,1.26931524188168
+"516",9070,1711,"Leipzig","A060","Albertiner",1931,0,237,0,6.45572581916327,1.23490189773331
+"517",9070,1712,"Leipzig","A060","Albertiner",1931,0,237,0,6.24665580274666,1.19490934425999
+"518",9070,1713,"Leipzig","A060","Albertiner",1931,0,237,0,6.2034730770176,1.18664901359449
+"519",9070,1714,"Leipzig","A060","Albertiner",1931,0,237,0,6.15784105508905,1.17792016233043
+"520",9070,1715,"Leipzig","A060","Albertiner",1931,0,237,0,6.6955514583354,1.28077762809033
+"521",9070,1716,"Leipzig","A060","Albertiner",1931,0,237,0,6.58821837484472,1.26024611355501
+"522",9070,1717,"Leipzig","A060","Albertiner",1931,0,237,0,6.40366876901878,1.22494401664998
+"523",9070,1718,"Leipzig","A060","Albertiner",1931,0,271,34,6.30850063359342,1.20673950884829
+"524",9070,1719,"Leipzig","A060","Albertiner",1931,0,271,0,5.6203841915442,1.07511119563436
+"525",9070,1720,"Leipzig","A060","Albertiner",1931,0,271,0,6.14871614362518,1.17617467765543
+"526",9070,1721,"Leipzig","A060","Albertiner",1931,0,271,0,6.62169926732589,1.26665060141911
+"527",9070,1722,"Leipzig","A060","Albertiner",1931,0,271,0,6.80989360804467,1.30264989181748
+"528",9070,1723,"Leipzig","A060","Albertiner",1931,0,271,0,6.6020528365703,1.26289247796354
+"529",9070,1724,"Leipzig","A060","Albertiner",1931,0,271,0,6.28388541767474,1.20203091717284
+"530",9070,1725,"Leipzig","A060","Albertiner",1931,0,271,0,6.76225757910507,1.29353769836537
+"531",9070,1726,"Leipzig","A060","Albertiner",1931,0,271,0,6.37611259804752,1.21967285601214
+"532",9070,1727,"Leipzig","A060","Albertiner",1931,0,271,0,6.65933056706132,1.27384901175424
+"533",9070,1728,"Leipzig","A060","Albertiner",1931,0,271,0,6.78191384941565,1.29729770400824
+"534",9070,1729,"Leipzig","A060","Albertiner",1931,0,271,0,6.66411525933616,1.27476426524173
+"535",9070,1730,"Leipzig","A060","Albertiner",1931,0,271,0,6.87008083987928,1.31416297785828
+"536",9070,1731,"Leipzig","A060","Albertiner",1931,0,271,0,6.80775143953699,1.30224012101409
+"537",9070,1732,"Leipzig","A060","Albertiner",1931,0,271,0,6.94996299036293,1.32944346249944
+"538",9070,1733,"Leipzig","A060","Albertiner",1931,0,271,0,6.53249753922594,1.24958739483361
+"539",9070,1734,"Leipzig","A060","Albertiner",1931,0,271,0,6.92137670437577,1.32397525337726
+"540",9070,1735,"Leipzig","A060","Albertiner",1931,0,271,0,6.39885820675929,1.22402381454881
+"541",9070,1736,"Leipzig","A060","Albertiner",1931,0,271,0,5.82047717778762,1.1133865523265
+"542",9070,1737,"Leipzig","A060","Albertiner",1931,0,271,0,5.99756470625308,1.14726124451336
+"543",9070,1738,"Leipzig","A060","Albertiner",1931,0,308,37,6.09867040204063,1.16660153545773
+"544",9070,1739,"Leipzig","A060","Albertiner",1931,0,308,0,5.73929977294749,1.09785830126718
+"545",9070,1740,"Leipzig","A060","Albertiner",1931,0,317,9,5.39353248513632,1.03171722095292
+"546",9070,1741,"Leipzig","A060","Albertiner",1931,0,317,0,5.73421929624064,1.09688646781228
+"547",9070,1742,"Leipzig","A060","Albertiner",1931,0,317,0,6.02697424367263,1.15288693163022
+"548",9070,1743,"Leipzig","A060","Albertiner",1931,0,317,0,6.22326708037241,1.19043536589496
+"549",9070,1744,"Leipzig","A060","Albertiner",1931,0,317,0,6.03117127318116,1.15368977237193
+"550",9070,1745,"Leipzig","A060","Albertiner",1931,0,317,0,5.5630752199809,1.06414868580617
+"551",9070,1746,"Leipzig","A060","Albertiner",1931,0,342,25,5.47045597437536,1.04643174965232
+"552",9070,1747,"Leipzig","A060","Albertiner",1931,0,342,0,5.66916641633814,1.08444264242457
+"553",9070,1748,"Leipzig","A060","Albertiner",1931,0,342,0,5.42434934533909,1.0376121118161
+"554",9070,1749,"Leipzig","A060","Albertiner",1931,0,342,0,5.76946492301966,1.10362852790211
+"555",9070,1750,"Leipzig","A060","Albertiner",1931,0,342,0,6.13555956739848,1.17365798450502
+"556",9070,1751,"Leipzig","A060","Albertiner",1931,0,342,0,6.1667594765976,1.1796261479863
+"557",9070,1752,"Leipzig","A060","Albertiner",1931,0,342,0,6.15728012383339,1.17781286299779
+"558",9070,1753,"Leipzig","A060","Albertiner",1931,0,342,0,5.77607359817861,1.10489268714986
+"559",9070,1754,"Leipzig","A060","Albertiner",1931,0,342,0,5.62188628938804,1.07539852869805
+"560",9070,1755,"Leipzig","A060","Albertiner",1931,0,342,0,5.53895520606729,1.05953482025649
+"561",9070,1756,"Leipzig","A060","Albertiner",1931,0,342,0,4.77568393651486,0.91353030184003
+"562",9070,1757,"Leipzig","A060","Albertiner",1931,0,342,0,5.4077516038435,1.03443716556758
+"563",9070,1758,"Leipzig","A060","Albertiner",1931,0,342,0,5.81600768782231,1.11253159321041
+"564",9070,1759,"Leipzig","A060","Albertiner",1931,0,342,0,5.48055234276011,1.04836306223092
+"565",9070,1760,"Leipzig","A060","Albertiner",1931,0,342,0,3.84939908223122,0.736343265643264
+"566",9070,1761,"Leipzig","A060","Albertiner",1931,0,342,0,2.36225288071259,0.451870269437194
+"567",9070,1762,"Leipzig","A060","Albertiner",1931,0,342,0,2.46011246327769,0.470589618369628
+"568",9070,1763,"Leipzig","A060","Albertiner",1931,0,291,-51,5.37150138070957,1.02750293840315
+"569",9070,1764,"Leipzig","A060","Albertiner",1931,0,291,0,5.71938353972735,1.09404856787883
+"570",9070,1765,"Leipzig","A060","Albertiner",1931,0,293,2,5.45684249314819,1.04382765612773
+"571",9070,1766,"Leipzig","A060","Albertiner",1931,0,293,0,5.94099783966334,1.13644069034838
+"572",9070,1767,"Leipzig","A060","Albertiner",1931,0,293,0,5.86493649100464,1.12189107866507
+"573",9070,1768,"Leipzig","A060","Albertiner",1931,0,293,0,6.13065858246743,1.17272048564561
+"574",9070,1769,"Leipzig","A060","Albertiner",1931,0,293,0,6.11449063111413,1.16962775302841
+"575",9070,1770,"Leipzig","A060","Albertiner",1931,0,293,0,4.74022701817564,0.906747824242406
+"576",9070,1771,"Leipzig","A060","Albertiner",1931,0,293,0,3.61328703031554,0.691177899400033
+"577",9070,1772,"Leipzig","A060","Albertiner",1931,0,293,0,5.12062630957533,0.979513585987036
+"578",9070,1773,"Leipzig","A060","Albertiner",1931,0,293,0,6.06458587453384,1.16008157954874
+"579",9070,1774,"Leipzig","A060","Albertiner",1931,0,293,0,6.32520850788144,1.20993552216164
+"580",9070,1775,"Leipzig","A060","Albertiner",1931,0,293,0,6.19872518577837,1.18574079969789
+"581",9070,1776,"Leipzig","A060","Albertiner",1931,0,293,0,5.99897965552688,1.14753190711465
+"582",9070,1777,"Leipzig","A060","Albertiner",1931,0,293,0,6.05420866095593,1.15809654469758
+"583",9070,1778,"Leipzig","A060","Albertiner",1931,0,293,0,5.8510625700427,1.11923716618414
+"584",9070,1779,"Leipzig","A060","Albertiner",1931,0,293,0,5.89840975181944,1.12829410668413
+"585",9070,1780,"Leipzig","A060","Albertiner",1931,0,293,0,6.07868665688851,1.16277888785722
+"586",9070,1781,"Leipzig","A060","Albertiner",1931,0,293,0,5.6967741013783,1.08972365707778
+"587",9070,1782,"Leipzig","A060","Albertiner",1931,0,293,0,5.41266436428444,1.03537691693893
+"588",9070,1783,"Leipzig","A060","Albertiner",1931,0,293,0,5.28943693753032,1.01180500768905
+"589",9070,1784,"Leipzig","A060","Albertiner",1931,0,293,0,5.19077465604295,0.992932112207368
+"590",9070,1785,"Leipzig","A060","Albertiner",1931,0,293,0,5.10251091680326,0.97604833149218
+"591",9070,1786,"Leipzig","A060","Albertiner",1931,0,293,0,5.14991091974038,0.985115376038258
+"592",9070,1787,"Leipzig","A060","Albertiner",1931,0,293,0,5.12044715579925,0.97947931604679
+"593",9070,1788,"Leipzig","A060","Albertiner",1931,0,293,0,4.98296518037286,0.95318068486047
+"594",9070,1789,"Leipzig","A060","Albertiner",1931,0,293,0,4.70057211168248,0.899162322525857
+"595",9070,1790,"Leipzig","A060","Albertiner",1931,0,293,0,4.66306263006432,0.891987214516194
+"596",9070,1791,"Leipzig","A060","Albertiner",1931,0,293,0,5.02940886768275,0.962064797848428
+"597",9070,1792,"Leipzig","A060","Albertiner",1931,0,293,0,5.05806874577435,0.967547084245886
+"598",9070,1793,"Leipzig","A060","Albertiner",1931,0,293,0,5.18029549287897,0.990927575639312
+"599",9070,1794,"Leipzig","A060","Albertiner",1931,0,293,0,4.7479532326184,0.908225755174563
+"600",9070,1795,"Leipzig","A060","Albertiner",1931,0,293,0,4.56714361801951,0.873639073142033
+"601",9070,1796,"Leipzig","A060","Albertiner",1931,0,293,0,4.61076552628924,0.881983414090518
+"602",9070,1797,"Leipzig","A060","Albertiner",1931,0,293,0,NA,NA
+"603",9070,1798,"Leipzig","A060","Albertiner",1931,0,293,0,NA,NA
+"604",9070,1799,"Leipzig","A060","Albertiner",1931,0,293,0,NA,NA
+"605",9070,1800,"Leipzig","A060","Albertiner",1931,0,293,0,NA,NA
+"606",9070,1801,"Leipzig","A060","Albertiner",1931,0,293,0,NA,NA
+"607",9070,1802,"Leipzig","A060","Albertiner",1931,0,293,0,NA,NA
+"608",9070,1803,"Leipzig","A060","Albertiner",1931,0,293,0,NA,NA
+"609",9070,1804,"Leipzig","A060","Albertiner",1931,0,293,0,NA,NA
+"610",9070,1805,"Leipzig","A060","Albertiner",1931,0,293,0,NA,NA
+"611",9070,1806,"Leipzig","A060","Albertiner",1931,0,295,2,NA,NA
+"612",9070,1807,"Leipzig","A060","Albertiner",1931,0,293,-2,NA,NA
+"613",9070,1808,"Leipzig","A060","Albertiner",1931,0,293,0,NA,NA
+"614",9070,1809,"Leipzig","A060","Albertiner",1931,0,293,0,NA,NA
+"615",9070,1810,"Leipzig","A060","Albertiner",1931,0,293,0,NA,NA
+"616",9070,1811,"Leipzig","A060","Albertiner",1931,0,292,-1,NA,NA
+"617",9070,1812,"Leipzig","A060","Albertiner",1931,0,292,0,NA,NA
+"618",9070,1813,"Leipzig","A060","Albertiner",1931,0,292,0,NA,NA
+"619",9070,1814,"Leipzig","A060","Albertiner",1931,0,292,0,NA,NA
+"620",9070,1815,"Leipzig","A060","Albertiner",1931,0,164,-128,NA,NA
+"621",9070,1816,"Leipzig","A060","Albertiner",1931,0,164,0,NA,NA
+"622",9070,1817,"Leipzig","A060","Albertiner",1931,0,164,0,NA,NA
+"623",9070,1818,"Leipzig","A060","Albertiner",1931,0,163,-1,NA,NA
+"624",9070,1819,"Leipzig","A060","Albertiner",1931,0,163,0,NA,NA
+"625",9070,1820,"Leipzig","A060","Albertiner",1931,0,163,0,NA,1.01861082052465
+"626",9070,1821,"Leipzig","A060","Albertiner",1931,0,163,0,NA,1.19192838992466
+"627",9070,1822,"Leipzig","A060","Albertiner",1931,0,163,0,NA,1.20441267187341
+"628",9070,1823,"Leipzig","A060","Albertiner",1931,0,163,0,NA,1.15605210613105
+"629",9070,1824,"Leipzig","A060","Albertiner",1931,0,163,0,NA,1.55721623197648
+"630",9070,1825,"Leipzig","A060","Albertiner",1931,0,163,0,NA,1.62727205770162
+"631",9070,1826,"Leipzig","A060","Albertiner",1931,0,163,0,NA,1.44440279961816
+"632",9070,1827,"Leipzig","A060","Albertiner",1931,0,163,0,NA,1.23435115644749
+"633",9070,1828,"Leipzig","A060","Albertiner",1931,0,163,0,NA,1.21535244538761
+"634",9070,1829,"Leipzig","A060","Albertiner",1931,0,163,0,NA,1.22721251323892
+"635",9070,1830,"Leipzig","A060","Albertiner",1931,0,163,0,NA,1.15262565682813
+"636",9070,1831,"Leipzig","A060","Albertiner",1931,0,163,0,NA,1.00074611915324
+"637",9070,1832,"Leipzig","A060","Albertiner",1931,0,163,0,NA,1.07471720578116
+"638",9070,1833,"Leipzig","A060","Albertiner",1931,0,163,0,NA,1.15877525876743
+"639",9070,1834,"Leipzig","A060","Albertiner",1931,0,163,0,NA,1.39082470540052
+"640",9070,1835,"Leipzig","A060","Albertiner",1931,0,164,1,NA,1.36670833720715
+"641",9070,1836,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.41646809534931
+"642",9070,1837,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.39167690110465
+"643",9070,1838,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.21268465809158
+"644",9070,1839,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.17027234065395
+"645",9070,1840,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.20682067520298
+"646",9070,1841,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.27398449065551
+"647",9070,1842,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.17781643303482
+"648",9070,1843,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.13451417165609
+"649",9070,1844,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.25680054209696
+"650",9070,1845,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.13331742674928
+"651",9070,1846,"Leipzig","A060","Albertiner",1931,0,164,0,NA,0.924567283234238
+"652",9070,1847,"Leipzig","A060","Albertiner",1931,0,164,0,NA,0.83267762134263
+"653",9070,1848,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.2618385954572
+"654",9070,1849,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.44044560963203
+"655",9070,1850,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.4687748729224
+"656",9070,1851,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.23080977753612
+"657",9070,1852,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.06047532147139
+"658",9070,1853,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.14399590397227
+"659",9070,1854,"Leipzig","A060","Albertiner",1931,0,164,0,NA,0.955941782771349
+"660",9070,1855,"Leipzig","A060","Albertiner",1931,0,164,0,NA,0.897399437257005
+"661",9070,1856,"Leipzig","A060","Albertiner",1931,0,164,0,NA,0.921015211921663
+"662",9070,1857,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.12098749738853
+"663",9070,1858,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.18639247637367
+"664",9070,1859,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.30228378574753
+"665",9070,1860,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.22701307723566
+"666",9070,1861,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.20182549140919
+"667",9070,1862,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.23241122727524
+"668",9070,1863,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.38929665945543
+"669",9070,1864,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.52457960954438
+"670",9070,1865,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.50681235692492
+"671",9070,1866,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.41926627410801
+"672",9070,1867,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.2030583399469
+"673",9070,1868,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.22961963688321
+"674",9070,1869,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.38361957927948
+"675",9070,1870,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.43204118729424
+"676",9070,1871,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.38178967435408
+"677",9070,1872,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.52484926932255
+"678",9070,1873,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.39504360931111
+"679",9070,1874,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.37848064957058
+"680",9070,1875,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.52706409902932
+"681",9070,1876,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.5968472275447
+"682",9070,1877,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.56430431015951
+"683",9070,1878,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.63879518593073
+"684",9070,1879,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.67592821765401
+"685",9070,1880,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.6726554355305
+"686",9070,1881,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.68583947128949
+"687",9070,1882,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.78272176445457
+"688",9070,1883,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.79893901872257
+"689",9070,1884,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.93139138432983
+"690",9070,1885,"Leipzig","A060","Albertiner",1931,0,164,0,NA,1.96008402549796
+"691",9070,1886,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.19068214614478
+"692",9070,1887,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.30598120646819
+"693",9070,1888,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.29609842986904
+"694",9070,1889,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.57764474586033
+"695",9070,1890,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.35210083059755
+"696",9070,1891,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.38462544892666
+"697",9070,1892,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.330082436683
+"698",9070,1893,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.31449739665743
+"699",9070,1894,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.03954689139653
+"700",9070,1895,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.25543915262779
+"701",9070,1896,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.45010503187245
+"702",9070,1897,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.51632408678792
+"703",9070,1898,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.54810923314735
+"704",9070,1899,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.55326734900392
+"705",9070,1900,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.52010803278309
+"706",9070,1901,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.48779895543972
+"707",9070,1902,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.48779895543972
+"708",9070,1903,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.48779895543972
+"709",9070,1904,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.55720666955262
+"710",9070,1905,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.58157408236317
+"711",9070,1906,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.50755577055084
+"712",9070,1907,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.55776116206079
+"713",9070,1908,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.55776116206079
+"714",9070,1909,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.53939774858958
+"715",9070,1910,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.60776396435816
+"716",9070,1911,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.55154797705173
+"717",9070,1912,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.49322688043341
+"718",9070,1913,"Leipzig","A060","Albertiner",1931,0,164,0,NA,2.66636763601906
+"719",23006,1806,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,254,NA,NA,NA
+"720",23006,1807,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,254,0,NA,NA
+"721",23006,1808,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,254,0,NA,NA
+"722",23006,1809,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,254,0,NA,NA
+"723",23006,1810,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,274,20,NA,NA
+"724",23006,1811,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,274,0,NA,NA
+"725",23006,1812,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,274,0,NA,NA
+"726",23006,1813,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,276,2,NA,NA
+"727",23006,1814,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,312,36,NA,NA
+"728",23006,1815,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,333,21,NA,NA
+"729",23006,1816,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,15,NA,NA
+"730",23006,1817,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"731",23006,1818,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"732",23006,1819,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"733",23006,1820,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"734",23006,1821,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"735",23006,1822,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"736",23006,1823,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"737",23006,1824,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"738",23006,1825,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"739",23006,1826,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"740",23006,1827,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"741",23006,1828,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"742",23006,1829,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"743",23006,1830,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"744",23006,1831,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"745",23006,1832,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"746",23006,1833,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"747",23006,1834,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"748",23006,1835,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"749",23006,1836,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"750",23006,1837,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"751",23006,1838,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"752",23006,1839,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"753",23006,1840,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"754",23006,1841,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"755",23006,1842,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"756",23006,1843,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"757",23006,1844,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"758",23006,1845,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"759",23006,1846,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"760",23006,1847,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"761",23006,1848,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"762",23006,1849,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"763",23006,1850,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"764",23006,1851,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"765",23006,1852,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"766",23006,1853,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"767",23006,1854,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"768",23006,1855,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"769",23006,1856,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"770",23006,1857,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"771",23006,1858,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"772",23006,1859,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"773",23006,1860,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"774",23006,1861,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"775",23006,1862,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"776",23006,1863,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"777",23006,1864,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"778",23006,1865,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"779",23006,1866,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"780",23006,1867,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"781",23006,1868,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"782",23006,1869,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"783",23006,1870,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"784",23006,1871,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"785",23006,1872,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"786",23006,1873,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"787",23006,1874,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"788",23006,1875,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"789",23006,1876,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"790",23006,1877,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"791",23006,1878,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"792",23006,1879,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"793",23006,1880,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"794",23006,1881,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"795",23006,1882,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"796",23006,1883,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"797",23006,1884,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"798",23006,1885,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"799",23006,1886,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"800",23006,1887,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"801",23006,1888,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"802",23006,1889,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"803",23006,1890,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"804",23006,1891,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"805",23006,1892,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"806",23006,1893,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"807",23006,1894,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"808",23006,1895,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"809",23006,1896,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"810",23006,1897,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"811",23006,1898,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"812",23006,1899,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"813",23006,1900,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"814",23006,1901,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"815",23006,1902,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"816",23006,1903,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"817",23006,1904,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"818",23006,1905,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"819",23006,1906,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"820",23006,1907,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"821",23006,1908,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"822",23006,1909,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"823",23006,1910,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"824",23006,1911,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"825",23006,1912,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"826",23006,1913,"Augsburg","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"827",23092,1300,"Munich","W400","Wittelsbach (Grafen)",1362,0,78,NA,NA,NA
+"828",23092,1301,"Munich","W400","Wittelsbach (Grafen)",1362,0,76,-2,NA,NA
+"829",23092,1302,"Munich","W400","Wittelsbach (Grafen)",1362,0,76,0,NA,NA
+"830",23092,1303,"Munich","W400","Wittelsbach (Grafen)",1362,0,76,0,NA,NA
+"831",23092,1304,"Munich","W400","Wittelsbach (Grafen)",1362,0,76,0,NA,NA
+"832",23092,1305,"Munich","W400","Wittelsbach (Grafen)",1362,0,81,5,NA,NA
+"833",23092,1306,"Munich","W400","Wittelsbach (Grafen)",1362,0,81,0,NA,NA
+"834",23092,1307,"Munich","W400","Wittelsbach (Grafen)",1362,0,83,2,NA,NA
+"835",23092,1308,"Munich","W400","Wittelsbach (Grafen)",1362,0,83,0,NA,NA
+"836",23092,1309,"Munich","W400","Wittelsbach (Grafen)",1362,0,83,0,NA,NA
+"837",23092,1310,"Munich","W400","Wittelsbach (Grafen)",1362,0,81,-2,NA,NA
+"838",23092,1311,"Munich","W400","Wittelsbach (Grafen)",1362,0,81,0,NA,NA
+"839",23092,1312,"Munich","W400","Wittelsbach (Grafen)",1362,0,81,0,NA,NA
+"840",23092,1313,"Munich","W400","Wittelsbach (Grafen)",1362,0,81,0,NA,NA
+"841",23092,1314,"Munich","W400","Wittelsbach (Grafen)",1362,0,81,0,NA,NA
+"842",23092,1315,"Munich","W400","Wittelsbach (Grafen)",1362,0,81,0,NA,NA
+"843",23092,1316,"Munich","W400","Wittelsbach (Grafen)",1362,0,81,0,NA,NA
+"844",23092,1317,"Munich","W400","Wittelsbach (Grafen)",1362,0,81,0,NA,NA
+"845",23092,1318,"Munich","W400","Wittelsbach (Grafen)",1362,0,81,0,NA,NA
+"846",23092,1319,"Munich","W400","Wittelsbach (Grafen)",1362,0,81,0,NA,NA
+"847",23092,1320,"Munich","W400","Wittelsbach (Grafen)",1362,0,219,138,NA,NA
+"848",23092,1321,"Munich","W400","Wittelsbach (Grafen)",1362,0,219,0,NA,NA
+"849",23092,1322,"Munich","W400","Wittelsbach (Grafen)",1362,0,217,-2,NA,NA
+"850",23092,1323,"Munich","W400","Wittelsbach (Grafen)",1362,0,214,-3,NA,NA
+"851",23092,1324,"Munich","W400","Wittelsbach (Grafen)",1362,0,215,1,NA,NA
+"852",23092,1325,"Munich","W400","Wittelsbach (Grafen)",1362,0,216,1,NA,NA
+"853",23092,1326,"Munich","W400","Wittelsbach (Grafen)",1362,0,216,0,NA,NA
+"854",23092,1327,"Munich","W400","Wittelsbach (Grafen)",1362,0,215,-1,NA,NA
+"855",23092,1328,"Munich","W400","Wittelsbach (Grafen)",1362,0,215,0,NA,NA
+"856",23092,1329,"Munich","W400","Wittelsbach (Grafen)",1362,0,175,-40,NA,NA
+"857",23092,1330,"Munich","W400","Wittelsbach (Grafen)",1362,0,175,0,NA,NA
+"858",23092,1331,"Munich","W400","Wittelsbach (Grafen)",1362,0,175,0,NA,NA
+"859",23092,1332,"Munich","W400","Wittelsbach (Grafen)",1362,0,176,1,NA,NA
+"860",23092,1333,"Munich","W400","Wittelsbach (Grafen)",1362,0,175,-1,NA,NA
+"861",23092,1334,"Munich","W400","Wittelsbach (Grafen)",1362,0,175,0,NA,NA
+"862",23092,1335,"Munich","W400","Wittelsbach (Grafen)",1362,0,174,-1,NA,NA
+"863",23092,1336,"Munich","W400","Wittelsbach (Grafen)",1362,0,174,0,NA,NA
+"864",23092,1337,"Munich","W400","Wittelsbach (Grafen)",1362,0,175,1,NA,NA
+"865",23092,1338,"Munich","W400","Wittelsbach (Grafen)",1362,0,174,-1,NA,NA
+"866",23092,1339,"Munich","W400","Wittelsbach (Grafen)",1362,0,176,2,NA,NA
+"867",23092,1340,"Munich","W400","Wittelsbach (Grafen)",1362,0,213,37,NA,NA
+"868",23092,1341,"Munich","W400","Wittelsbach (Grafen)",1362,0,214,1,NA,NA
+"869",23092,1342,"Munich","W400","Wittelsbach (Grafen)",1362,0,216,2,NA,NA
+"870",23092,1343,"Munich","W400","Wittelsbach (Grafen)",1362,0,217,1,NA,NA
+"871",23092,1344,"Munich","W400","Wittelsbach (Grafen)",1362,0,216,-1,NA,NA
+"872",23092,1345,"Munich","W400","Wittelsbach (Grafen)",1362,0,216,0,NA,NA
+"873",23092,1346,"Munich","W400","Wittelsbach (Grafen)",1362,0,216,0,NA,NA
+"874",23092,1347,"Munich","W400","Wittelsbach (Grafen)",1362,0,175,-41,NA,NA
+"875",23092,1348,"Munich","W400","Wittelsbach (Grafen)",1362,0,44,-131,NA,NA
+"876",23092,1349,"Munich","W400","Wittelsbach (Grafen)",1362,0,44,0,NA,NA
+"877",23092,1350,"Munich","W400","Wittelsbach (Grafen)",1362,0,175,131,NA,NA
+"878",23092,1351,"Munich","W400","Wittelsbach (Grafen)",1362,0,43,-132,NA,NA
+"879",23092,1352,"Munich","W400","Wittelsbach (Grafen)",1362,0,43,0,NA,NA
+"880",23092,1353,"Munich","W400","Wittelsbach (Grafen)",1362,0,42,-1,NA,NA
+"881",23092,1354,"Munich","W400","Wittelsbach (Grafen)",1362,0,42,0,NA,NA
+"882",23092,1355,"Munich","W400","Wittelsbach (Grafen)",1362,0,42,0,NA,NA
+"883",23092,1356,"Munich","W400","Wittelsbach (Grafen)",1362,0,42,0,NA,NA
+"884",23092,1357,"Munich","W400","Wittelsbach (Grafen)",1362,0,42,0,NA,NA
+"885",23092,1358,"Munich","W400","Wittelsbach (Grafen)",1362,0,42,0,NA,NA
+"886",23092,1359,"Munich","W400","Wittelsbach (Grafen)",1362,0,42,0,NA,NA
+"887",23092,1360,"Munich","W400","Wittelsbach (Grafen)",1362,0,42,0,NA,NA
+"888",23092,1361,"Munich","W400","Wittelsbach (Grafen)",1362,0,41,-1,NA,NA
+"889",23092,1362,"Munich","W400","Wittelsbach (Grafen)",1362,1,41,0,NA,NA
+"890",23092,1363,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,61,20,NA,NA
+"891",23092,1364,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,61,0,NA,NA
+"892",23092,1365,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,61,0,NA,NA
+"893",23092,1366,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,61,0,NA,NA
+"894",23092,1367,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,61,0,NA,NA
+"895",23092,1368,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,61,0,NA,NA
+"896",23092,1369,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,61,0,NA,NA
+"897",23092,1370,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,61,0,NA,NA
+"898",23092,1371,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,61,0,NA,NA
+"899",23092,1372,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,61,0,NA,NA
+"900",23092,1373,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,68,7,NA,NA
+"901",23092,1374,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,68,0,NA,NA
+"902",23092,1375,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,69,1,NA,NA
+"903",23092,1376,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,69,0,NA,NA
+"904",23092,1377,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,69,0,NA,NA
+"905",23092,1378,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,69,0,NA,NA
+"906",23092,1379,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,69,0,NA,NA
+"907",23092,1380,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,69,0,NA,NA
+"908",23092,1381,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,69,0,NA,NA
+"909",23092,1382,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,70,1,NA,NA
+"910",23092,1383,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,70,0,NA,NA
+"911",23092,1384,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,70,0,NA,NA
+"912",23092,1385,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,71,1,NA,NA
+"913",23092,1386,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,71,0,NA,NA
+"914",23092,1387,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,71,0,NA,NA
+"915",23092,1388,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,71,0,NA,NA
+"916",23092,1389,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,71,0,NA,NA
+"917",23092,1390,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,72,1,NA,NA
+"918",23092,1391,"Munich","0N0017","Niederbayern (jüngere Linie) (Bayern-Landshut ab 1353)",1502,0,72,0,NA,NA
+"919",23092,1392,"Munich","B108","Bayern-München",1776,0,28,-44,NA,NA
+"920",23092,1393,"Munich","B108","Bayern-München",1776,0,28,0,NA,NA
+"921",23092,1394,"Munich","B108","Bayern-München",1776,0,28,0,NA,NA
+"922",23092,1395,"Munich","B108","Bayern-München",1776,0,29,1,NA,NA
+"923",23092,1396,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"924",23092,1397,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"925",23092,1398,"Munich","B108","Bayern-München",1776,0,28,-1,NA,NA
+"926",23092,1399,"Munich","B108","Bayern-München",1776,0,28,0,NA,NA
+"927",23092,1400,"Munich","B108","Bayern-München",1776,0,29,1,NA,NA
+"928",23092,1401,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"929",23092,1402,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"930",23092,1403,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"931",23092,1404,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"932",23092,1405,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"933",23092,1406,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"934",23092,1407,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"935",23092,1408,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"936",23092,1409,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"937",23092,1410,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"938",23092,1411,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"939",23092,1412,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"940",23092,1413,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"941",23092,1414,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"942",23092,1415,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"943",23092,1416,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"944",23092,1417,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"945",23092,1418,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"946",23092,1419,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"947",23092,1420,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"948",23092,1421,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"949",23092,1422,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"950",23092,1423,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"951",23092,1424,"Munich","B108","Bayern-München",1776,0,29,0,NA,NA
+"952",23092,1425,"Munich","B108","Bayern-München",1776,0,40,11,NA,NA
+"953",23092,1426,"Munich","B108","Bayern-München",1776,0,40,0,NA,NA
+"954",23092,1427,"Munich","B108","Bayern-München",1776,0,40,0,10.5839163184701,2.02457457352538
+"955",23092,1428,"Munich","B108","Bayern-München",1776,0,40,0,9.68363701131583,1.85236208246905
+"956",23092,1429,"Munich","B108","Bayern-München",1776,0,39,-1,9.68363701131583,1.85236208246905
+"957",23092,1430,"Munich","B108","Bayern-München",1776,0,39,0,9.68363701131583,1.85236208246905
+"958",23092,1431,"Munich","B108","Bayern-München",1776,0,39,0,9.68363701131583,1.85236208246905
+"959",23092,1432,"Munich","B108","Bayern-München",1776,0,39,0,9.60866078218267,1.83802004096434
+"960",23092,1433,"Munich","B108","Bayern-München",1776,0,39,0,8.60487537281007,1.64600809038372
+"961",23092,1434,"Munich","B108","Bayern-München",1776,0,39,0,9.87961935242413,1.88985112270035
+"962",23092,1435,"Munich","B108","Bayern-München",1776,0,39,0,11.2036750331092,2.14312688418466
+"963",23092,1436,"Munich","B108","Bayern-München",1776,0,39,0,10.0502293229984,1.9224867367794
+"964",23092,1437,"Munich","B108","Bayern-München",1776,0,39,0,9.92203906237622,1.89796549772006
+"965",23092,1438,"Munich","B108","Bayern-München",1776,0,39,0,10.0466747233912,1.92180678507087
+"966",23092,1439,"Munich","B108","Bayern-München",1776,0,39,0,9.28983102854222,1.7770317835858
+"967",23092,1440,"Munich","B108","Bayern-München",1776,0,39,0,9.13100595897112,1.74665047785581
+"968",23092,1441,"Munich","B108","Bayern-München",1776,0,38,-1,9.30573051708915,1.78007316253057
+"969",23092,1442,"Munich","B108","Bayern-München",1776,0,38,0,9.30573051708915,1.78007316253057
+"970",23092,1443,"Munich","B108","Bayern-München",1776,0,38,0,9.32657264182068,1.78406000771339
+"971",23092,1444,"Munich","B108","Bayern-München",1776,0,38,0,9.32657264182068,1.78406000771339
+"972",23092,1445,"Munich","B108","Bayern-München",1776,0,38,0,9.33311166993682,1.78531084432823
+"973",23092,1446,"Munich","B108","Bayern-München",1776,0,38,0,9.36482867264731,1.79137792151439
+"974",23092,1447,"Munich","B108","Bayern-München",1776,0,38,0,9.36482867264731,1.79137792151439
+"975",23092,1448,"Munich","B108","Bayern-München",1776,0,38,0,9.36482867264731,1.79137792151439
+"976",23092,1449,"Munich","B108","Bayern-München",1776,0,38,0,9.36482867264731,1.79137792151439
+"977",23092,1450,"Munich","B108","Bayern-München",1776,0,42,4,8.90863875218805,1.70411433345592
+"978",23092,1451,"Munich","B108","Bayern-München",1776,0,42,0,8.85321613214566,1.6935126597503
+"979",23092,1452,"Munich","B108","Bayern-München",1776,0,41,-1,8.24718301958743,1.5775858899724
+"980",23092,1453,"Munich","B108","Bayern-München",1776,0,41,0,7.72244432307603,1.47720975407572
+"981",23092,1454,"Munich","B108","Bayern-München",1776,0,41,0,9.24647421285337,1.76873815162657
+"982",23092,1455,"Munich","B108","Bayern-München",1776,0,42,1,8.49306963089973,1.6246210106455
+"983",23092,1456,"Munich","B108","Bayern-München",1776,0,42,0,8.29181789397931,1.58612399903025
+"984",23092,1457,"Munich","B108","Bayern-München",1776,0,42,0,8.47167316689205,1.6205281270956
+"985",23092,1458,"Munich","B108","Bayern-München",1776,0,42,0,8.87952820005829,1.69854583859165
+"986",23092,1459,"Munich","B108","Bayern-München",1776,0,42,0,9.03566829295493,1.72841354091227
+"987",23092,1460,"Munich","B108","Bayern-München",1776,0,42,0,8.53049482705092,1.63177999586958
+"988",23092,1461,"Munich","B108","Bayern-München",1776,0,42,0,8.99859234125084,1.72132136190682
+"989",23092,1462,"Munich","B108","Bayern-München",1776,0,42,0,9.77889052895991,1.87058292285159
+"990",23092,1463,"Munich","B108","Bayern-München",1776,0,42,0,9.77778251785546,1.87037097379212
+"991",23092,1464,"Munich","B108","Bayern-München",1776,0,42,0,10.2500427898244,1.96070862480377
+"992",23092,1465,"Munich","B108","Bayern-München",1776,0,42,0,9.5798497853079,1.83250884738009
+"993",23092,1466,"Munich","B108","Bayern-München",1776,0,42,0,9.24086689232176,1.76766553935033
+"994",23092,1467,"Munich","B108","Bayern-München",1776,0,42,0,9.0858187839474,1.73800672039877
+"995",23092,1468,"Munich","B108","Bayern-München",1776,0,42,0,9.07775783795836,1.73646475938955
+"996",23092,1469,"Munich","B108","Bayern-München",1776,0,41,-1,8.53560510554841,1.63275753004487
+"997",23092,1470,"Munich","B108","Bayern-München",1776,0,41,0,9.37027738183399,1.79242019336783
+"998",23092,1471,"Munich","B108","Bayern-München",1776,0,41,0,9.77043840187474,1.8689661336524
+"999",23092,1472,"Munich","B108","Bayern-München",1776,0,41,0,10.2188360442101,1.95473915359934
+"1000",23092,1473,"Munich","B108","Bayern-München",1776,0,41,0,9.95298443258308,1.90388497098534
+"1001",23092,1474,"Munich","B108","Bayern-München",1776,0,41,0,10.6468352870348,2.03661020760597
+"1002",23092,1475,"Munich","B108","Bayern-München",1776,0,41,0,10.7912917103073,2.06424296591014
+"1003",23092,1476,"Munich","B108","Bayern-München",1776,0,41,0,10.556909800128,2.019408554756
+"1004",23092,1477,"Munich","B108","Bayern-München",1776,0,41,0,9.00784010977109,1.72309034764372
+"1005",23092,1478,"Munich","B108","Bayern-München",1776,0,41,0,9.79962732472962,1.874549619884
+"1006",23092,1479,"Munich","B108","Bayern-München",1776,0,41,0,9.6070848873278,1.83771859142925
+"1007",23092,1480,"Munich","B108","Bayern-München",1776,0,41,0,10.0029938013665,1.9134511555082
+"1008",23092,1481,"Munich","B108","Bayern-München",1776,0,41,0,9.1414234544384,1.74864321814289
+"1009",23092,1482,"Munich","B108","Bayern-München",1776,0,41,0,8.30371527672993,1.5883998237707
+"1010",23092,1483,"Munich","B108","Bayern-München",1776,0,41,0,10.4205542147893,1.99332538830529
+"1011",23092,1484,"Munich","B108","Bayern-München",1776,0,41,0,10.5355940972298,2.01533111982492
+"1012",23092,1485,"Munich","B108","Bayern-München",1776,0,42,1,10.0518528428843,1.92279729640419
+"1013",23092,1486,"Munich","B108","Bayern-München",1776,0,43,1,10.0572154202926,1.92382309229511
+"1014",23092,1487,"Munich","B108","Bayern-München",1776,0,43,0,10.3113702560421,1.97243982382567
+"1015",23092,1488,"Munich","B108","Bayern-München",1776,0,43,0,10.497298663106,2.00800566865201
+"1016",23092,1489,"Munich","B108","Bayern-München",1776,0,43,0,8.73339824248404,1.67059295351273
+"1017",23092,1490,"Munich","B108","Bayern-München",1776,0,43,0,7.95272078521016,1.52125884290917
+"1018",23092,1491,"Munich","B108","Bayern-München",1776,0,43,0,7.63581966431358,1.46063950953734
+"1019",23092,1492,"Munich","B108","Bayern-München",1776,0,42,-1,8.96545384175152,1.71498236965931
+"1020",23092,1493,"Munich","B108","Bayern-München",1776,0,42,0,8.88572607379628,1.69973141651974
+"1021",23092,1494,"Munich","B108","Bayern-München",1776,0,42,0,10.0406993593315,1.92066377054024
+"1022",23092,1495,"Munich","B108","Bayern-München",1776,0,42,0,10.1347338019421,1.93865141668336
+"1023",23092,1496,"Munich","B108","Bayern-München",1776,0,42,0,8.53407788212726,1.63246539076357
+"1024",23092,1497,"Munich","B108","Bayern-München",1776,0,42,0,8.17705513109145,1.56417127711343
+"1025",23092,1498,"Munich","B108","Bayern-München",1776,0,42,0,9.46023342280635,1.80962769083924
+"1026",23092,1499,"Munich","B108","Bayern-München",1776,0,42,0,9.15221006357187,1.75070656538875
+"1027",23092,1500,"Munich","B108","Bayern-München",1776,0,42,0,8.77753928840762,1.67903659918571
+"1028",23092,1501,"Munich","B108","Bayern-München",1776,0,42,0,7.53091736640457,1.44057297474432
+"1029",23092,1502,"Munich","B108","Bayern-München",1776,0,42,0,6.98930530794568,1.33696916975609
+"1030",23092,1503,"Munich","B108","Bayern-München",1776,0,68,26,8.85079100312041,1.6930487620385
+"1031",23092,1504,"Munich","B108","Bayern-München",1776,0,68,0,8.82590951446162,1.68828923562367
+"1032",23092,1505,"Munich","B108","Bayern-München",1776,0,68,0,9.5286272619758,1.82271060113461
+"1033",23092,1506,"Munich","B108","Bayern-München",1776,0,68,0,9.9871179628087,1.91041430051895
+"1034",23092,1507,"Munich","B108","Bayern-München",1776,0,68,0,9.88351464468213,1.89059624477281
+"1035",23092,1508,"Munich","B108","Bayern-München",1776,0,68,0,10.3468883244242,1.97923399868339
+"1036",23092,1509,"Munich","B108","Bayern-München",1776,0,69,1,10.6350905630093,2.03436358462448
+"1037",23092,1510,"Munich","B108","Bayern-München",1776,0,69,0,10.451068726645,1.9991624436039
+"1038",23092,1511,"Munich","B108","Bayern-München",1776,0,69,0,9.46684387240352,1.81089218951547
+"1039",23092,1512,"Munich","B108","Bayern-München",1776,0,69,0,9.20977991559521,1.76171897847867
+"1040",23092,1513,"Munich","B108","Bayern-München",1776,0,69,0,9.75260308627525,1.8655544545171
+"1041",23092,1514,"Munich","B108","Bayern-München",1776,0,69,0,10.2929175707544,1.96891004937143
+"1042",23092,1515,"Munich","B108","Bayern-München",1776,0,69,0,9.50806938759331,1.81877812958928
+"1043",23092,1516,"Munich","B108","Bayern-München",1776,0,69,0,8.85903629370968,1.69462598592955
+"1044",23092,1517,"Munich","B108","Bayern-München",1776,0,70,1,8.51397466057488,1.6286198887796
+"1045",23092,1518,"Munich","B108","Bayern-München",1776,0,70,0,9.52535300315412,1.82208427521157
+"1046",23092,1519,"Munich","B108","Bayern-München",1776,0,70,0,10.18078489804,1.94746043174332
+"1047",23092,1520,"Munich","B108","Bayern-München",1776,0,70,0,9.86409649097056,1.88688178794168
+"1048",23092,1521,"Munich","B108","Bayern-München",1776,0,70,0,9.61500256221665,1.83923314641807
+"1049",23092,1522,"Munich","B108","Bayern-München",1776,0,70,0,9.6475515700221,1.84545937606818
+"1050",23092,1523,"Munich","B108","Bayern-München",1776,0,70,0,9.59816692006867,1.83601269266577
+"1051",23092,1524,"Munich","B108","Bayern-München",1776,0,70,0,9.69455320673382,1.85445021799638
+"1052",23092,1525,"Munich","B108","Bayern-München",1776,0,70,0,10.0534503616375,1.92310288232825
+"1053",23092,1526,"Munich","B108","Bayern-München",1776,0,70,0,10.1350827178899,1.93871816006408
+"1054",23092,1527,"Munich","B108","Bayern-München",1776,0,70,0,9.39489167185551,1.79712860793041
+"1055",23092,1528,"Munich","B108","Bayern-München",1776,0,70,0,8.67402998875545,1.65923652803119
+"1056",23092,1529,"Munich","B108","Bayern-München",1776,0,70,0,8.14936731453605,1.55887493427513
+"1057",23092,1530,"Munich","B108","Bayern-München",1776,0,70,0,6.49680974768424,1.24276075399798
+"1058",23092,1531,"Munich","B108","Bayern-München",1776,0,70,0,6.53530990317671,1.2501253658809
+"1059",23092,1532,"Munich","B108","Bayern-München",1776,0,70,0,7.28159032824646,1.39287974222449
+"1060",23092,1533,"Munich","B108","Bayern-München",1776,0,70,0,6.23927877292428,1.19349820810234
+"1061",23092,1534,"Munich","B108","Bayern-München",1776,0,70,0,6.15483057537548,1.17734429414528
+"1062",23092,1535,"Munich","B108","Bayern-München",1776,0,70,0,8.07499571347993,1.54464855077398
+"1063",23092,1536,"Munich","B108","Bayern-München",1776,0,70,0,8.23283232889128,1.57484077723514
+"1064",23092,1537,"Munich","B108","Bayern-München",1776,0,70,0,8.21069652541324,1.57060646702919
+"1065",23092,1538,"Munich","B108","Bayern-München",1776,0,70,0,7.40675665142834,1.41682253879908
+"1066",23092,1539,"Munich","B108","Bayern-München",1776,0,70,0,6.5190099092003,1.24700737511451
+"1067",23092,1540,"Munich","B108","Bayern-München",1776,0,70,0,6.57992599393146,1.25865988185723
+"1068",23092,1541,"Munich","B108","Bayern-München",1776,0,70,0,8.17089377102022,1.56299268380608
+"1069",23092,1542,"Munich","B108","Bayern-München",1776,0,70,0,7.56488780419787,1.44707110667757
+"1070",23092,1543,"Munich","B108","Bayern-München",1776,0,70,0,7.00835163694613,1.34061250103848
+"1071",23092,1544,"Munich","B108","Bayern-München",1776,0,70,0,7.07699565895891,1.3537432682715
+"1072",23092,1545,"Munich","B108","Bayern-München",1776,0,70,0,7.41564698254215,1.4185231511038
+"1073",23092,1546,"Munich","B108","Bayern-München",1776,0,70,0,7.7174079965792,1.47624636601948
+"1074",23092,1547,"Munich","B108","Bayern-München",1776,0,70,0,8.11476068328239,1.55225510626409
+"1075",23092,1548,"Munich","B108","Bayern-München",1776,0,70,0,7.57124874473995,1.44828787730365
+"1076",23092,1549,"Munich","B108","Bayern-München",1776,0,70,0,6.84022984943757,1.30845284614292
+"1077",23092,1550,"Munich","B108","Bayern-München",1776,0,70,0,6.19853957786468,1.18570529515956
+"1078",23092,1551,"Munich","B108","Bayern-München",1776,0,70,0,5.80706628616988,1.11082121173228
+"1079",23092,1552,"Munich","B108","Bayern-München",1776,0,70,0,6.66620511939714,1.27516403007494
+"1080",23092,1553,"Munich","B108","Bayern-München",1776,0,70,0,7.25991341359711,1.38873321187494
+"1081",23092,1554,"Munich","B108","Bayern-München",1776,0,70,0,7.38959211750244,1.41353917204644
+"1082",23092,1555,"Munich","B108","Bayern-München",1776,0,70,0,7.18279857888182,1.37398208111121
+"1083",23092,1556,"Munich","B108","Bayern-München",1776,0,70,0,6.99256049789826,1.33759184803619
+"1084",23092,1557,"Munich","B108","Bayern-München",1776,0,70,0,7.22415286079346,1.38189265269411
+"1085",23092,1558,"Munich","B108","Bayern-München",1776,0,70,0,6.99771328406019,1.33857751341112
+"1086",23092,1559,"Munich","B108","Bayern-München",1776,0,70,0,6.80446986742075,1.30161239614667
+"1087",23092,1560,"Munich","B108","Bayern-München",1776,0,70,0,6.16809805033118,1.17988220087488
+"1088",23092,1561,"Munich","B108","Bayern-München",1776,0,70,0,6.29883911262772,1.20489137729659
+"1089",23092,1562,"Munich","B108","Bayern-München",1776,0,70,0,6.87091849804412,1.3143232116858
+"1090",23092,1563,"Munich","B108","Bayern-München",1776,0,70,0,6.81749294141435,1.30410355194224
+"1091",23092,1564,"Munich","B108","Bayern-München",1776,0,70,0,6.53420034796958,1.24991312145335
+"1092",23092,1565,"Munich","B108","Bayern-München",1776,0,70,0,6.36478471230539,1.21750596912876
+"1093",23092,1566,"Munich","B108","Bayern-München",1776,0,70,0,5.24935158334916,1.00413716656068
+"1094",23092,1567,"Munich","B108","Bayern-München",1776,0,70,0,5.37648917861554,1.02845704352969
+"1095",23092,1568,"Munich","B108","Bayern-München",1776,0,70,0,5.10686263687466,0.97688076265873
+"1096",23092,1569,"Munich","B108","Bayern-München",1776,0,70,0,4.76153670873283,0.910824109085712
+"1097",23092,1570,"Munich","B108","Bayern-München",1776,0,70,0,4.11889289331516,0.787894156752525
+"1098",23092,1571,"Munich","B108","Bayern-München",1776,0,70,0,4.26436724093504,0.815721631614305
+"1099",23092,1572,"Munich","B108","Bayern-München",1776,0,70,0,5.31482321193731,1.01666109348323
+"1100",23092,1573,"Munich","B108","Bayern-München",1776,0,70,0,5.36517689521104,1.02629314118389
+"1101",23092,1574,"Munich","B108","Bayern-München",1776,0,70,0,5.05614235044892,0.967178588230134
+"1102",23092,1575,"Munich","B108","Bayern-München",1776,0,70,0,6.06884207244496,1.16089573848683
+"1103",23092,1576,"Munich","B108","Bayern-München",1776,0,70,0,6.29359051125904,1.20388738363698
+"1104",23092,1577,"Munich","B108","Bayern-München",1776,0,70,0,6.36398127776473,1.21735228186465
+"1105",23092,1578,"Munich","B108","Bayern-München",1776,0,70,0,6.34636168043755,1.21398186701338
+"1106",23092,1579,"Munich","B108","Bayern-München",1776,0,70,0,5.53179733265483,1.05816560605682
+"1107",23092,1580,"Munich","B108","Bayern-München",1776,0,70,0,5.54009987343334,1.05975378121335
+"1108",23092,1581,"Munich","B108","Bayern-München",1776,0,70,0,6.0086779168864,1.14938706665721
+"1109",23092,1582,"Munich","B108","Bayern-München",1776,0,70,0,5.79136238135261,1.10781724557822
+"1110",23092,1583,"Munich","B108","Bayern-München",1776,0,70,0,5.66123922202962,1.08292626648645
+"1111",23092,1584,"Munich","B108","Bayern-München",1776,0,70,0,5.79171875695851,1.10788541590087
+"1112",23092,1585,"Munich","B108","Bayern-München",1776,0,70,0,5.67909007273091,1.08634091729794
+"1113",23092,1586,"Munich","B108","Bayern-München",1776,0,70,0,5.28555047525592,1.01106157468514
+"1114",23092,1587,"Munich","B108","Bayern-München",1776,0,70,0,5.07777581377396,0.971316806869365
+"1115",23092,1588,"Munich","B108","Bayern-München",1776,0,70,0,5.31250326542389,1.01621731590774
+"1116",23092,1589,"Munich","B108","Bayern-München",1776,0,70,0,4.05846039474522,0.776334154165789
+"1117",23092,1590,"Munich","B108","Bayern-München",1776,0,70,0,4.33720631485172,0.8296548612973
+"1118",23092,1591,"Munich","B108","Bayern-München",1776,0,70,0,4.7419938889526,0.907085805150617
+"1119",23092,1592,"Munich","B108","Bayern-München",1776,0,70,0,4.85249997225211,0.928224275990342
+"1120",23092,1593,"Munich","B108","Bayern-München",1776,0,70,0,4.66656013867429,0.89265624541075
+"1121",23092,1594,"Munich","B108","Bayern-München",1776,0,70,0,4.66909663326582,0.89314144600204
+"1122",23092,1595,"Munich","B108","Bayern-München",1776,0,70,0,5.9960564096962,1.1469727257112
+"1123",23092,1596,"Munich","B108","Bayern-München",1776,0,70,0,6.00362456125863,1.14842042113516
+"1124",23092,1597,"Munich","B108","Bayern-München",1776,0,70,0,5.53273437614031,1.05834485108842
+"1125",23092,1598,"Munich","B108","Bayern-München",1776,0,70,0,5.2031255195754,0.995294682310576
+"1126",23092,1599,"Munich","B108","Bayern-München",1776,0,70,0,5.1220463024001,0.979785213358334
+"1127",23092,1600,"Munich","B108","Bayern-München",1776,0,70,0,5.02345771693582,0.960926415030299
+"1128",23092,1601,"Munich","B108","Bayern-München",1776,0,70,0,4.69448299344757,0.89799754820389
+"1129",23092,1602,"Munich","B108","Bayern-München",1776,0,71,1,5.08484290703761,0.972668655929751
+"1130",23092,1603,"Munich","B108","Bayern-München",1776,0,71,0,5.30671483935263,1.0151100603426
+"1131",23092,1604,"Munich","B108","Bayern-München",1776,0,71,0,5.45763921163625,1.04398005869259
+"1132",23092,1605,"Munich","B108","Bayern-München",1776,0,71,0,5.41564351298459,1.03594679188197
+"1133",23092,1606,"Munich","B108","Bayern-München",1776,0,71,0,5.03160692688609,0.962485259862703
+"1134",23092,1607,"Munich","B108","Bayern-München",1776,0,72,1,5.30091835193989,1.0140012627408
+"1135",23092,1608,"Munich","B108","Bayern-München",1776,0,72,0,5.35052946949638,1.02349126664358
+"1136",23092,1609,"Munich","B108","Bayern-München",1776,0,72,0,5.43532622529276,1.03971185555765
+"1137",23092,1610,"Munich","B108","Bayern-München",1776,0,72,0,5.46328929727949,1.045060851415
+"1138",23092,1611,"Munich","B108","Bayern-München",1776,0,72,0,5.04905933542625,0.965823693530732
+"1139",23092,1612,"Munich","B108","Bayern-München",1776,0,72,0,4.92035625103807,0.941204357516909
+"1140",23092,1613,"Munich","B108","Bayern-München",1776,0,72,0,5.28381569298379,1.01072973191796
+"1141",23092,1614,"Munich","B108","Bayern-München",1776,0,72,0,4.58719145354285,0.877473980451714
+"1142",23092,1615,"Munich","B108","Bayern-München",1776,0,72,0,5.02468542641275,0.961161260933827
+"1143",23092,1616,"Munich","B108","Bayern-München",1776,0,73,1,4.88511041691049,0.934462257763828
+"1144",23092,1617,"Munich","B108","Bayern-München",1776,0,73,0,5.42929553284404,1.03855825737858
+"1145",23092,1618,"Munich","B108","Bayern-München",1776,0,73,0,5.89308536868724,1.12727561689408
+"1146",23092,1619,"Munich","B108","Bayern-München",1776,0,73,0,6.23042423575139,1.19180444274355
+"1147",23092,1620,"Munich","B108","Bayern-München",1776,0,73,0,6.72359279914606,1.28614159582255
+"1148",23092,1621,"Munich","B108","Bayern-München",1776,0,73,0,6.78021713997313,1.29697314411069
+"1149",23092,1622,"Munich","B108","Bayern-München",1776,0,73,0,7.08610782593482,1.35548631508083
+"1150",23092,1623,"Munich","B108","Bayern-München",1776,0,74,1,6.55893638783224,1.254644825281
+"1151",23092,1624,"Munich","B108","Bayern-München",1776,0,74,0,6.61945636499296,1.26622156145909
+"1152",23092,1625,"Munich","B108","Bayern-München",1776,0,74,0,4.04754669273454,0.774246495596976
+"1153",23092,1626,"Munich","B108","Bayern-München",1776,0,74,0,3.57935040253649,0.684686234911647
+"1154",23092,1627,"Munich","B108","Bayern-München",1776,0,74,0,4.03033462999483,0.770954037159836
+"1155",23092,1628,"Munich","B108","Bayern-München",1776,0,97,23,3.97305772794493,0.759997661839844
+"1156",23092,1629,"Munich","B108","Bayern-München",1776,0,96,-1,4.0256177236707,0.770051750300965
+"1157",23092,1630,"Munich","B108","Bayern-München",1776,0,96,0,4.04328559478368,0.773431399340824
+"1158",23092,1631,"Munich","B108","Bayern-München",1776,0,96,0,4.08846205014666,0.782073106257033
+"1159",23092,1632,"Munich","B108","Bayern-München",1776,0,96,0,3.55342851626386,0.679727693076448
+"1160",23092,1633,"Munich","B108","Bayern-München",1776,0,96,0,3.34715856422059,0.640270757890715
+"1161",23092,1634,"Munich","B108","Bayern-München",1776,0,96,0,3.50391823929191,0.670256978752046
+"1162",23092,1635,"Munich","B108","Bayern-München",1776,0,97,1,3.32058744099342,0.635188024915788
+"1163",23092,1636,"Munich","B108","Bayern-München",1776,0,97,0,3.6240173516801,0.693230479479728
+"1164",23092,1637,"Munich","B108","Bayern-München",1776,0,97,0,4.13394106003607,0.790772688177435
+"1165",23092,1638,"Munich","B108","Bayern-München",1776,0,97,0,4.44197774788973,0.849696363230795
+"1166",23092,1639,"Munich","B108","Bayern-München",1776,0,97,0,4.60622536141929,0.881114935724029
+"1167",23092,1640,"Munich","B108","Bayern-München",1776,0,97,0,5.27268985492115,1.00860149430033
+"1168",23092,1641,"Munich","B108","Bayern-München",1776,0,97,0,4.1680004169634,0.797287829260453
+"1169",23092,1642,"Munich","B108","Bayern-München",1776,0,97,0,3.83630340968565,0.733838222626935
+"1170",23092,1643,"Munich","B108","Bayern-München",1776,0,97,0,4.40623250290524,0.842858732249743
+"1171",23092,1644,"Munich","B108","Bayern-München",1776,0,97,0,4.66221124169186,0.891824354266812
+"1172",23092,1645,"Munich","B108","Bayern-München",1776,0,97,0,4.67749369763145,0.894747702372117
+"1173",23092,1646,"Munich","B108","Bayern-München",1776,0,97,0,4.44921136857834,0.851080066963895
+"1174",23092,1647,"Munich","B108","Bayern-München",1776,0,97,0,4.13958198917033,0.791851729370944
+"1175",23092,1648,"Munich","B108","Bayern-München",1776,0,96,-1,3.76951174421523,0.721061788690205
+"1176",23092,1649,"Munich","B108","Bayern-München",1776,0,96,0,3.17690775290389,0.607703846613048
+"1177",23092,1650,"Munich","B108","Bayern-München",1776,0,96,0,4.59630534746636,0.879217357605136
+"1178",23092,1651,"Munich","B108","Bayern-München",1776,0,96,0,5.17219757521634,0.989378542398218
+"1179",23092,1652,"Munich","B108","Bayern-München",1776,0,97,1,5.35435909115303,1.02422382672805
+"1180",23092,1653,"Munich","B108","Bayern-München",1776,0,97,0,5.50147851557641,1.05236598479099
+"1181",23092,1654,"Munich","B108","Bayern-München",1776,0,97,0,5.67506518775905,1.08557100571416
+"1182",23092,1655,"Munich","B108","Bayern-München",1776,0,97,0,5.99721920097999,1.14719515355328
+"1183",23092,1656,"Munich","B108","Bayern-München",1776,0,97,0,5.45072246854756,1.04265696979359
+"1184",23092,1657,"Munich","B108","Bayern-München",1776,0,97,0,5.52903960414516,1.05763808610547
+"1185",23092,1658,"Munich","B108","Bayern-München",1776,0,97,0,5.9174943569886,1.13194475973246
+"1186",23092,1659,"Munich","B108","Bayern-München",1776,0,97,0,5.99356986376248,1.14649707969116
+"1187",23092,1660,"Munich","B108","Bayern-München",1776,0,97,0,4.80524034449738,0.919184083510784
+"1188",23092,1661,"Munich","B108","Bayern-München",1776,0,97,0,4.28825787213986,0.820291619039313
+"1189",23092,1662,"Munich","B108","Bayern-München",1776,0,98,1,4.17027292895053,0.7977225331875
+"1190",23092,1663,"Munich","B108","Bayern-München",1776,0,98,0,4.45119448993367,0.851459413979822
+"1191",23092,1664,"Munich","B108","Bayern-München",1776,0,98,0,4.7325515419702,0.905279598918467
+"1192",23092,1665,"Munich","B108","Bayern-München",1776,0,98,0,4.92570710529142,0.942227910910757
+"1193",23092,1666,"Munich","B108","Bayern-München",1776,0,98,0,5.37980340914574,1.02909101555482
+"1194",23092,1667,"Munich","B108","Bayern-München",1776,0,98,0,5.88207264518247,1.12516901671678
+"1195",23092,1668,"Munich","B108","Bayern-München",1776,0,98,0,5.86923463612977,1.12271326159545
+"1196",23092,1669,"Munich","B108","Bayern-München",1776,0,98,0,5.79236673736655,1.10800936667852
+"1197",23092,1670,"Munich","B108","Bayern-München",1776,0,98,0,6.27380612388508,1.20010287075679
+"1198",23092,1671,"Munich","B108","Bayern-München",1776,0,98,0,6.37343500799291,1.21916066557339
+"1199",23092,1672,"Munich","B108","Bayern-München",1776,0,98,0,6.32723006710418,1.2103222218745
+"1200",23092,1673,"Munich","B108","Bayern-München",1776,0,98,0,5.88569039418749,1.12586104813771
+"1201",23092,1674,"Munich","B108","Bayern-München",1776,0,98,0,4.98128860203959,0.952859975799484
+"1202",23092,1675,"Munich","B108","Bayern-München",1776,0,98,0,4.57731830010376,0.87558536617966
+"1203",23092,1676,"Munich","B108","Bayern-München",1776,0,98,0,4.90491729343823,0.938251072545842
+"1204",23092,1677,"Munich","B108","Bayern-München",1776,0,98,0,4.89822622482952,0.936971152432408
+"1205",23092,1678,"Munich","B108","Bayern-München",1776,0,98,0,5.10528235527775,0.97657847399319
+"1206",23092,1679,"Munich","B108","Bayern-München",1776,0,98,0,4.41589638763679,0.844707315961127
+"1207",23092,1680,"Munich","B108","Bayern-München",1776,0,98,0,4.55381981386291,0.871090391320824
+"1208",23092,1681,"Munich","B108","Bayern-München",1776,0,98,0,4.82831429992268,0.923597850783603
+"1209",23092,1682,"Munich","B108","Bayern-München",1776,0,98,0,5.37516824842247,1.02820436563601
+"1210",23092,1683,"Munich","B108","Bayern-München",1776,0,98,0,5.30123596451286,1.01406201816631
+"1211",23092,1684,"Munich","B108","Bayern-München",1776,0,98,0,4.97853631557268,0.952333496844785
+"1212",23092,1685,"Munich","B108","Bayern-München",1776,0,98,0,5.13937827133602,0.983100608393682
+"1213",23092,1686,"Munich","B108","Bayern-München",1776,0,98,0,5.30866406738908,1.0154829239785
+"1214",23092,1687,"Munich","B108","Bayern-München",1776,0,98,0,5.26054247191321,1.00627784754872
+"1215",23092,1688,"Munich","B108","Bayern-München",1776,0,98,0,4.85541697404928,0.92878226298606
+"1216",23092,1689,"Munich","B108","Bayern-München",1776,0,98,0,4.26794303260766,0.81640563710743
+"1217",23092,1690,"Munich","B108","Bayern-München",1776,0,98,0,4.67376417263333,0.894034289562028
+"1218",23092,1691,"Munich","B108","Bayern-München",1776,0,98,0,4.46933458717855,0.854929394140111
+"1219",23092,1692,"Munich","B108","Bayern-München",1776,0,98,0,3.47386041241354,0.664507281739874
+"1220",23092,1693,"Munich","B108","Bayern-München",1776,0,98,0,3.37905361399893,0.646371893317293
+"1221",23092,1694,"Munich","B108","Bayern-München",1776,0,98,0,3.78126872802616,0.723310756819649
+"1222",23092,1695,"Munich","B108","Bayern-München",1776,0,98,0,4.3402744917686,0.830241766256305
+"1223",23092,1696,"Munich","B108","Bayern-München",1776,0,98,0,4.62454934937782,0.884620091943157
+"1224",23092,1697,"Munich","B108","Bayern-München",1776,0,98,0,4.64280304631276,0.888111802343667
+"1225",23092,1698,"Munich","B108","Bayern-München",1776,0,98,0,4.11256805632986,0.78668429229812
+"1226",23092,1699,"Munich","B108","Bayern-München",1776,0,98,0,3.40682756003559,0.651684711678692
+"1227",23092,1700,"Munich","B108","Bayern-München",1776,0,99,1,3.86550682399919,0.739424480898473
+"1228",23092,1701,"Munich","B108","Bayern-München",1776,0,99,0,3.62567667352372,0.693547887583951
+"1229",23092,1702,"Munich","B108","Bayern-München",1776,0,99,0,4.18481704163003,0.80050464519967
+"1230",23092,1703,"Munich","B108","Bayern-München",1776,0,98,-1,4.33326698907597,0.828901316147996
+"1231",23092,1704,"Munich","B108","Bayern-München",1776,0,97,-1,4.283065078161,0.819298300655189
+"1232",23092,1705,"Munich","B108","Bayern-München",1776,0,96,-1,4.36114849742236,0.834234709872126
+"1233",23092,1706,"Munich","B108","Bayern-München",1776,0,96,0,4.55897864416736,0.872077212866765
+"1234",23092,1707,"Munich","B108","Bayern-München",1776,0,96,0,4.5197367705842,0.864570719326626
+"1235",23092,1708,"Munich","B108","Bayern-München",1776,0,95,-1,4.34366369784797,0.830890080192872
+"1236",23092,1709,"Munich","B108","Bayern-München",1776,0,95,0,4.15711618259804,0.795205807494093
+"1237",23092,1710,"Munich","B108","Bayern-München",1776,0,94,-1,3.95507819694077,0.756558396050166
+"1238",23092,1711,"Munich","B108","Bayern-München",1776,0,94,0,3.76308994636348,0.719833376800338
+"1239",23092,1712,"Munich","B108","Bayern-München",1776,0,94,0,3.2907674548473,0.629483823945401
+"1240",23092,1713,"Munich","B108","Bayern-München",1776,0,94,0,3.69389890358219,0.706597971141824
+"1241",23092,1714,"Munich","B108","Bayern-München",1776,0,97,3,3.96392843977983,0.758251339955082
+"1242",23092,1715,"Munich","B108","Bayern-München",1776,0,97,0,3.91981630888477,0.749813225375669
+"1243",23092,1716,"Munich","B108","Bayern-München",1776,0,97,0,3.72939371809775,0.713387697817459
+"1244",23092,1717,"Munich","B108","Bayern-München",1776,0,97,0,3.85210061010662,0.736860035096235
+"1245",23092,1718,"Munich","B108","Bayern-München",1776,0,97,0,4.17452706973007,0.798536298621323
+"1246",23092,1719,"Munich","B108","Bayern-München",1776,0,97,0,3.89936294534297,0.745900745484126
+"1247",23092,1720,"Munich","B108","Bayern-München",1776,0,98,1,3.72826983645421,0.71317271291672
+"1248",23092,1721,"Munich","B108","Bayern-München",1776,0,98,0,3.99801542757902,0.764771766488111
+"1249",23092,1722,"Munich","B108","Bayern-München",1776,0,98,0,4.14661622841103,0.793197293855989
+"1250",23092,1723,"Munich","B108","Bayern-München",1776,0,98,0,3.9963979436678,0.764462361471933
+"1251",23092,1724,"Munich","B108","Bayern-München",1776,0,99,1,3.94976219785348,0.755541510026018
+"1252",23092,1725,"Munich","B108","Bayern-München",1776,0,99,0,4.08028971824274,0.78050983847588
+"1253",23092,1726,"Munich","B108","Bayern-München",1776,0,99,0,3.8753135259755,0.741300383813232
+"1254",23092,1727,"Munich","B108","Bayern-München",1776,0,99,0,3.92605335722662,0.751006296929412
+"1255",23092,1728,"Munich","B108","Bayern-München",1776,0,99,0,4.0431371102417,0.773402996052362
+"1256",23092,1729,"Munich","B108","Bayern-München",1776,0,99,0,4.17799493888411,0.799199659848144
+"1257",23092,1730,"Munich","B108","Bayern-München",1776,0,99,0,4.36696048271793,0.835346472030579
+"1258",23092,1731,"Munich","B108","Bayern-München",1776,0,99,0,3.98993222894027,0.763225548817415
+"1259",23092,1732,"Munich","B108","Bayern-München",1776,0,99,0,4.40164421556562,0.841981048639603
+"1260",23092,1733,"Munich","B108","Bayern-München",1776,0,99,0,4.35530817980229,0.833117528084295
+"1261",23092,1734,"Munich","B108","Bayern-München",1776,0,100,1,4.28798123058439,0.820238700871564
+"1262",23092,1735,"Munich","B108","Bayern-München",1776,0,100,0,3.99655019016648,0.764491484376994
+"1263",23092,1736,"Munich","B108","Bayern-München",1776,0,100,0,3.6871864245609,0.705313955476647
+"1264",23092,1737,"Munich","B108","Bayern-München",1776,0,100,0,3.5125517246864,0.671908459591901
+"1265",23092,1738,"Munich","B108","Bayern-München",1776,0,100,0,3.64273638276682,0.696811202648624
+"1266",23092,1739,"Munich","B108","Bayern-München",1776,0,100,0,3.39401870615985,0.649234533588417
+"1267",23092,1740,"Munich","B108","Bayern-München",1776,0,100,0,2.85842405414259,0.546781785327547
+"1268",23092,1741,"Munich","B108","Bayern-München",1776,0,100,0,2.97410765052704,0.568910651502085
+"1269",23092,1742,"Munich","B108","Bayern-München",1776,0,100,0,3.15841450849809,0.604166313692401
+"1270",23092,1743,"Munich","B108","Bayern-München",1776,0,100,0,3.41663750889637,0.653561235682994
+"1271",23092,1744,"Munich","B108","Bayern-München",1776,0,100,0,3.69166839295441,0.70617130156441
+"1272",23092,1745,"Munich","B108","Bayern-München",1776,0,100,0,3.61401207693304,0.691316592007027
+"1273",23092,1746,"Munich","B108","Bayern-München",1776,0,100,0,3.45379819732438,0.660669623793995
+"1274",23092,1747,"Munich","B108","Bayern-München",1776,0,100,0,3.70105336390164,0.707966532458279
+"1275",23092,1748,"Munich","B108","Bayern-München",1776,0,100,0,3.61343778271016,0.691206736501147
+"1276",23092,1749,"Munich","B108","Bayern-München",1776,0,100,0,3.51670796709395,0.672703498256847
+"1277",23092,1750,"Munich","B108","Bayern-München",1776,0,100,0,3.91713754355306,0.749300810120689
+"1278",23092,1751,"Munich","B108","Bayern-München",1776,0,100,0,3.55238641619439,0.679528351997
+"1279",23092,1752,"Munich","B108","Bayern-München",1776,0,101,1,3.58254271950624,0.685296886354188
+"1280",23092,1753,"Munich","B108","Bayern-München",1776,0,101,0,3.65174145949521,0.698533764394991
+"1281",23092,1754,"Munich","B108","Bayern-München",1776,0,101,0,3.60200000128159,0.689018827908425
+"1282",23092,1755,"Munich","B108","Bayern-München",1776,0,101,0,3.4310614551199,0.656320361312425
+"1283",23092,1756,"Munich","B108","Bayern-München",1776,0,101,0,3.27912363781715,0.62725650324589
+"1284",23092,1757,"Munich","B108","Bayern-München",1776,0,102,1,3.14810751638039,0.602194711353234
+"1285",23092,1758,"Munich","B108","Bayern-München",1776,0,102,0,2.7372869844625,0.523609735983423
+"1286",23092,1759,"Munich","B108","Bayern-München",1776,0,102,0,3.10013652275763,0.593018443227807
+"1287",23092,1760,"Munich","B108","Bayern-München",1776,0,102,0,3.34656572805341,0.640157355536215
+"1288",23092,1761,"Munich","B108","Bayern-München",1776,0,102,0,3.31074465644458,0.633305219843389
+"1289",23092,1762,"Munich","B108","Bayern-München",1776,0,102,0,3.02162706419775,0.578000537870391
+"1290",23092,1763,"Munich","B108","Bayern-München",1776,0,102,0,2.97768695321992,0.569595328610719
+"1291",23092,1764,"Munich","B108","Bayern-München",1776,0,103,1,2.87752808112221,0.550436153532197
+"1292",23092,1765,"Munich","B108","Bayern-München",1776,0,103,0,2.98983572874854,0.571919241734616
+"1293",23092,1766,"Munich","B108","Bayern-München",1776,0,103,0,NA,NA
+"1294",23092,1767,"Munich","B108","Bayern-München",1776,0,103,0,NA,NA
+"1295",23092,1768,"Munich","B108","Bayern-München",1776,0,103,0,NA,NA
+"1296",23092,1769,"Munich","B108","Bayern-München",1776,0,103,0,NA,NA
+"1297",23092,1770,"Munich","B108","Bayern-München",1776,0,103,0,NA,NA
+"1298",23092,1771,"Munich","B108","Bayern-München",1776,0,103,0,NA,NA
+"1299",23092,1772,"Munich","B108","Bayern-München",1776,0,103,0,NA,NA
+"1300",23092,1773,"Munich","B108","Bayern-München",1776,0,103,0,NA,NA
+"1301",23092,1774,"Munich","B108","Bayern-München",1776,0,103,0,NA,NA
+"1302",23092,1775,"Munich","B108","Bayern-München",1776,0,103,0,NA,NA
+"1303",23092,1776,"Munich","B108","Bayern-München",1776,1,103,0,NA,NA
+"1304",23092,1777,"Munich","P058","Pfalz-Sulzbach",1798,0,230,127,NA,NA
+"1305",23092,1778,"Munich","P058","Pfalz-Sulzbach",1798,0,229,-1,NA,NA
+"1306",23092,1779,"Munich","P058","Pfalz-Sulzbach",1798,0,229,0,NA,NA
+"1307",23092,1780,"Munich","P058","Pfalz-Sulzbach",1798,0,230,1,NA,NA
+"1308",23092,1781,"Munich","P058","Pfalz-Sulzbach",1798,0,230,0,NA,NA
+"1309",23092,1782,"Munich","P058","Pfalz-Sulzbach",1798,0,230,0,NA,NA
+"1310",23092,1783,"Munich","P058","Pfalz-Sulzbach",1798,0,230,0,NA,NA
+"1311",23092,1784,"Munich","P058","Pfalz-Sulzbach",1798,0,229,-1,NA,NA
+"1312",23092,1785,"Munich","P058","Pfalz-Sulzbach",1798,0,229,0,NA,NA
+"1313",23092,1786,"Munich","P058","Pfalz-Sulzbach",1798,0,229,0,NA,NA
+"1314",23092,1787,"Munich","P058","Pfalz-Sulzbach",1798,0,229,0,NA,NA
+"1315",23092,1788,"Munich","P058","Pfalz-Sulzbach",1798,0,229,0,NA,NA
+"1316",23092,1789,"Munich","P058","Pfalz-Sulzbach",1798,0,229,0,NA,NA
+"1317",23092,1790,"Munich","P058","Pfalz-Sulzbach",1798,0,229,0,NA,NA
+"1318",23092,1791,"Munich","P058","Pfalz-Sulzbach",1798,0,229,0,NA,NA
+"1319",23092,1792,"Munich","P058","Pfalz-Sulzbach",1798,0,230,1,NA,NA
+"1320",23092,1793,"Munich","P058","Pfalz-Sulzbach",1798,0,230,0,NA,NA
+"1321",23092,1794,"Munich","P058","Pfalz-Sulzbach",1798,0,230,0,NA,NA
+"1322",23092,1795,"Munich","P058","Pfalz-Sulzbach",1798,0,229,-1,NA,NA
+"1323",23092,1796,"Munich","P058","Pfalz-Sulzbach",1798,0,229,0,NA,NA
+"1324",23092,1797,"Munich","P058","Pfalz-Sulzbach",1798,0,229,0,NA,NA
+"1325",23092,1798,"Munich","P058","Pfalz-Sulzbach",1798,1,225,-4,NA,NA
+"1326",23092,1799,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,232,7,NA,NA
+"1327",23092,1800,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,232,0,NA,NA
+"1328",23092,1801,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,183,-49,NA,NA
+"1329",23092,1802,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,208,25,NA,NA
+"1330",23092,1803,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,256,48,NA,NA
+"1331",23092,1804,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,254,-2,NA,NA
+"1332",23092,1805,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,261,7,NA,NA
+"1333",23092,1806,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,254,-7,NA,NA
+"1334",23092,1807,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,254,0,NA,NA
+"1335",23092,1808,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,254,0,NA,NA
+"1336",23092,1809,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,254,0,NA,NA
+"1337",23092,1810,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,274,20,NA,NA
+"1338",23092,1811,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,274,0,NA,NA
+"1339",23092,1812,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,274,0,NA,NA
+"1340",23092,1813,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,276,2,NA,NA
+"1341",23092,1814,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,312,36,NA,NA
+"1342",23092,1815,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,333,21,NA,NA
+"1343",23092,1816,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,15,NA,NA
+"1344",23092,1817,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1345",23092,1818,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1346",23092,1819,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1347",23092,1820,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1348",23092,1821,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1349",23092,1822,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1350",23092,1823,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1351",23092,1824,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1352",23092,1825,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1353",23092,1826,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1354",23092,1827,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1355",23092,1828,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1356",23092,1829,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1357",23092,1830,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1358",23092,1831,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1359",23092,1832,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1360",23092,1833,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1361",23092,1834,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1362",23092,1835,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1363",23092,1836,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1364",23092,1837,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1365",23092,1838,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1366",23092,1839,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1367",23092,1840,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1368",23092,1841,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1369",23092,1842,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1370",23092,1843,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1371",23092,1844,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1372",23092,1845,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1373",23092,1846,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1374",23092,1847,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1375",23092,1848,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1376",23092,1849,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1377",23092,1850,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1378",23092,1851,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1379",23092,1852,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1380",23092,1853,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1381",23092,1854,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1382",23092,1855,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1383",23092,1856,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1384",23092,1857,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1385",23092,1858,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1386",23092,1859,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1387",23092,1860,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1388",23092,1861,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1389",23092,1862,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1390",23092,1863,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1391",23092,1864,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1392",23092,1865,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1393",23092,1866,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1394",23092,1867,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1395",23092,1868,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1396",23092,1869,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1397",23092,1870,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1398",23092,1871,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1399",23092,1872,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1400",23092,1873,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1401",23092,1874,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1402",23092,1875,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1403",23092,1876,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1404",23092,1877,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1405",23092,1878,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1406",23092,1879,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1407",23092,1880,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1408",23092,1881,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1409",23092,1882,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1410",23092,1883,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1411",23092,1884,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1412",23092,1885,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1413",23092,1886,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1414",23092,1887,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1415",23092,1888,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1416",23092,1889,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1417",23092,1890,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1418",23092,1891,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1419",23092,1892,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1420",23092,1893,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1421",23092,1894,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1422",23092,1895,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1423",23092,1896,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1424",23092,1897,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1425",23092,1898,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1426",23092,1899,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1427",23092,1900,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1428",23092,1901,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1429",23092,1902,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1430",23092,1903,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1431",23092,1904,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1432",23092,1905,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1433",23092,1906,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1434",23092,1907,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1435",23092,1908,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1436",23092,1909,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1437",23092,1910,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1438",23092,1911,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1439",23092,1912,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA
+"1440",23092,1913,"Munich","P049","Pfalz(-Zweibrücken)-Birkenfeld",1920,0,348,0,NA,NA

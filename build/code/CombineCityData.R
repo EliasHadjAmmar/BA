@@ -5,6 +5,7 @@
 # Note: until I get yearly construction data, this outputs the smaller wage panel.
 
 library(tidyverse)
+library(haven)
 
 setwd("~/GitHub/BA")
 
