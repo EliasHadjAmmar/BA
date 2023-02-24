@@ -7,6 +7,8 @@ library(tidyverse)
 setwd("~/GitHub/BA")
 
 Main <- function(){
+  construction <- ImportConstruction()
+  construction %>% write.csv("build/temp/construction_new.csv")
   return(0)
 }
 

@@ -3,10 +3,9 @@ from SCons.Script import Command
 
 rulers = Command('temp/rulers.csv',            # target path (output file)
         'input/families_rulers_imputed.dta',   # source path (input file)
-        'Rscript code/Rulers.R')            # command line string
+        'Rscript code/Rulers.R')               # command line string
 
-
-construction = Command('temp/construction.csv',
+construction = Command('temp/construction_new.csv',
         'input/construction.csv',
         'Rscript code/Construction.R')
 

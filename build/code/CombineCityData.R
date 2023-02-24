@@ -13,7 +13,7 @@ Main <- function(){
   cities <- read_dta("build/input/cities_families_1300_1918.dta") %>% 
     select(city_id, year, terr_id)
   wages <- read.csv("build/temp/wages.csv")
-  # construction <- read.csv("build/temp/construction_clean.csv")
+  # construction <- read.csv("build/temp/construction_new.csv")
   
   
   cities <- AddConstruction(cities, 0)
