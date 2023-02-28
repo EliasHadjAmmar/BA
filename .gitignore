@@ -1,8 +1,9 @@
 
 
-# `/external/` and `/input/` subdirectories are ignored as they should contain symbolic links, which are user-specific
+# `/external/` and `/input/` subdirectories are ignored as they should contain symbolic links, which are user-specific. `/output/` is ignored because the files are way too large.
 *external/
 *input/
+*output/
 
 # NOTE: in the GSlab template, they make an exception for paper_slides/input, where they create copies instead of symbolic links
 

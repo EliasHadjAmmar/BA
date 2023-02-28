@@ -2,7 +2,7 @@
 # - city-year panel of lineage.
 # - city-year panels of outcomes
 # Output: tidy city-year panel of lineage and outcomes.
-# Note: until I get yearly construction data, this outputs the smaller wage panel.
+# Note: to drop cities with missing outcomes, use inner joins.
 
 library(tidyverse)
 library(haven)
@@ -28,7 +28,7 @@ AddConstruction <- function(cities, construction){
 }
 
 AddWages <- function(cities, wages){
-  joined <- inner_join(cities, wages, by=c("city_id", "year"))
+  joined <- left_join(cities, wages, by=c("city_id", "year"))
   return(joined)
 }
 
