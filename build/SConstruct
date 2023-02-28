@@ -2,36 +2,44 @@
 from SCons.Script import Command
 
 rulers = Command('temp/rulers.csv',            # target path (output file)
-        'input/families_rulers_imputed.dta',   # source path (input file)
+        ['input/families_rulers_imputed.dta',
+         'code/Rulers.R'],                     # source paths (input file)
         'Rscript code/Rulers.R')               # command line string
 
 construction = Command('temp/construction_new.csv',
-        'input/construction.csv',
+        ['input/construction.csv',
+         'code/Construction.R'],
         'Rscript code/Construction.R')
 
 terr_sizes = Command('temp/terr_sizes.csv',
-        'input/cities_families_1300_1918.dta',
+        ['input/cities_families_1300_1918.dta',
+         'code/LineageSize.R'],
         'Rscript code/LineageSize.R')
 
 wages = Command('temp/wages.csv',
-        'input/clean_crafts.xlsx',
+        ['input/clean_crafts.xlsx',
+         'code/Wages.R'],
         'Rscript code/Wages.R')
 
 extinctions = Command('temp/last_rulers.csv',
-        rulers,
+        [rulers, 
+         'code/LineageExtinctions.R'],
         'Rscript code/LineageExtinctions.R')
 
 cities = Command('output/cities.csv',
         ['input/cities_families_1300_1918.dta',
-        construction, wages],
+        construction, wages, 
+        'code/CombineCityData.R'],
         'Rscript code/CombineCityData.R')
 
 lineages = Command('output/lineages.csv',
         ['input/territory_codes.csv',
-        terr_sizes, extinctions],
+        terr_sizes, extinctions,
+        'code/CombineLineageData.R'],
         'Rscript code/CombineLineageData.R')
 
 data_build = Command('output/build.csv',
-        [cities, lineages],
+        [cities, lineages,
+         'code/CombineAll.R'],
         'Rscript code/CombineAll.R')
 
