@@ -1,0 +1,142 @@
+## Exploration
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = '~/GitHub/BA')
+library(tidyverse)
+library(cowplot)
+setwd('~/GitHub/BA')
+```
+
+```{r data import}
+data <- read.csv("analysis/input/build.csv")
+```
+
+### Observations
+
+```{r observations across time}
+ggplot(data) + 
+  geom_bar(aes(x=year))
+```
+
+Looks fairly smooth except for the big jump around 1800.
+
+It's promising that there's a large number of observations (which should correspond to cities 1:1) for every single year.
+
+```{r duplicate keys}
+obs_vs_distinct <- data %>% count - data %>% distinct() %>% count()
+obs_vs_city_year <- data %>% count() - data %>% distinct(city_id, year) %>% count()
+
+sprintf("%s, %s, %s", obs_vs_distinct, obs_vs_city_year, (obs_vs_city_year/data %>% count))
+
+
+```
+
+There are no duplicate rows, but there are 3708 observations with duplicate city-year keys.
+These observations make up 0.3% of the data set. I can probably drop them? Unless they contain all the extinction events for some reason.
+
+### Lineages
+
+```{r lineage level data}
+terrs <- data %>% 
+  distinct(terr_id, year, .keep_all=TRUE)
+```
+
+
+```{r number of lineages across time}
+yearly_plot <- terrs %>% 
+  ggplot(aes(x=year))+
+  geom_bar()
+
+decades_plot <- terrs %>% 
+  mutate(decade = year - year %% 10) %>% # averaging would be better
+  distinct(decade, terr_id) %>% # pretty sure this is necessary
+  ggplot(aes(x=decade))+
+  geom_bar()
+
+plot_grid(yearly_plot, decades_plot, labels = c("Yearly", "Decades"))
+```
+
+This counts the number of lineages that show up in that year or decade.
+
+That is pretty cool. The most striking thing is Napoleon, of course.
+This is the Number of Nations. I also want the Size of Nations.
+
+```{r territory size across time}
+terrs_centuries <- terrs %>% 
+  mutate(century = year - year %% 100) %>% 
+  mutate(century = factor(century)) # necessary or else year = width
+  
+# create plot with outliers
+size_time <- terrs_centuries %>% 
+  ggplot() + 
+  geom_boxplot(aes(x = century, y = count_cities))
+
+# create plot with no outliers
+size_time_no_outliers <- terrs_centuries %>% 
+  ggplot() + 
+  geom_boxplot(aes(x = century, y = count_cities), outlier.shape = NA) +
+  coord_cartesian(ylim = quantile(terrs_centuries$count_cities, c(0, 0.96)))
+
+# plot side by side
+plot_grid(size_time, size_time_no_outliers, labels = c("Full plot", "Zoom"))
+```
+
+Note: grouping by century and calculating average size of each territory across that century would be better than flooring the year of each observation and dropping duplicates. The way it's currently implemented only leaves the earliest count_cities observation for a territory in a century.
+
+### Extinctions
+
+```{r extinction treatments across time}
+data %>%
+  filter(extinction == 1) %>% 
+  ggplot(aes(x=year))+
+  geom_bar()
+```
+
+(make a second plot side-by-side to the above with century bins)
+
+The lineages for which an extinction year is recorded, how large are they compared to others?
+
+```{r extinct vs non-extinct}
+terrs_life <- terrs %>% 
+  group_by(terr_id) %>% 
+  summarise(
+    extinction_ever = max(extinction), 
+    max_size = max(count_cities), # compare maximum size across lifespan
+    lifespan = max(year) - min(year)
+    ) %>% 
+  mutate(extinction_ever = factor(extinction_ever)) # necessary or else year = width
+
+size_ext <- terrs_life %>% 
+  ggplot() + 
+  geom_boxplot(aes(x = extinction_ever, y=max_size))
+
+size_ext_no_outliers <- terrs_life %>% 
+  ggplot() + 
+  geom_boxplot(aes(x = extinction_ever, y=max_size), outlier_shape = NA) +
+  coord_cartesian(ylim = quantile(terrs_life$max_size, c(0, 0.9)))
+
+plot_grid(size_ext, size_ext_no_outliers, labels = c("Full plot", "Zoom"))
+```
+
+How is the lifespan of lineages distributed?
+
+```{r lifespan of lineages}
+terrs_life %>% 
+  ggplot()+
+  geom_histogram(aes(x=lifespan))
+```
+
+Left: Is the lifespan of a lineage correlated to its (maximum lifetime) size? 
+Right: Are lineages less likely to go extinct when they are larger? (extinction on contemp. size)
+
+```{r}
+lifespan_on_max_size <- terrs_life %>% 
+  ggplot(aes(x=log(max_size), y=lifespan))+
+  geom_point()
+```
+
+
+
+
+### Example cities
