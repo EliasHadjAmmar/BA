@@ -5,67 +5,135 @@ knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_knit$set(root.dir = '~/GitHub/BA')
 library(tidyverse)
 library(cowplot)
-setwd('~/GitHub/BA')
 ```
+
+### Data import and summary
 
 ```{r data import}
 data <- read.csv("analysis/input/build.csv")
+
+summary(data)
 ```
 
+Some initial takeaways:
+
+- there are almost 1,100,000 observations in my dataset.
+- the min of final_year is 1101 while the min of year is 1300. This means that the ruler dataset is not complete, i.e. lack of a recorded ruler doesn't necessarily mean that the lineage is extinct. I should definitely cross-check my extinction list with the territories extinction list before picking out sub-experiments.
+- the median final ruler dies in 1920.
+- the share of city-year observations in which the ruling lineage goes extinct is 0.374%.
+
 ### Observations
+
+#### Number of observations per year
 
 ```{r observations across time}
 ggplot(data) + 
   geom_bar(aes(x=year))
 ```
 
-Looks fairly smooth except for the big jump around 1800.
+Looks fairly smooth except for the big jump around 1800, and the drop around 1350.
 
 It's promising that there's a large number of observations (which should correspond to cities 1:1) for every single year.
 
+#### Is each observation a unique city-year?
+
 ```{r duplicate keys}
-obs_vs_distinct <- data %>% count - data %>% distinct() %>% count()
+obs_vs_distinct <- data %>% count() - data %>% distinct() %>% count()
 obs_vs_city_year <- data %>% count() - data %>% distinct(city_id, year) %>% count()
+share_dupes <- obs_vs_city_year/(data %>% count())
 
-sprintf("%s, %s, %s", obs_vs_distinct, obs_vs_city_year, (obs_vs_city_year/data %>% count))
-
+sprintf("Duplicate rows: %s", obs_vs_distinct)
+sprintf("Rows wih duplicate keys: %s", obs_vs_city_year)
+sprintf("Share of rows with duplicate keys: %s", share_dupes)
 
 ```
 
-There are no duplicate rows, but there are 3708 observations with duplicate city-year keys.
-These observations make up 0.3% of the data set. I can probably drop them? Unless they contain all the extinction events for some reason.
+There are no duplicate rows, but there are 3708 observations with duplicate city-year keys. These observations make up 0.3% of the data set. I can probably drop them? Unless they are very different from the rest for some reason. *0.337% is suspiciously close to the share of city-years with extinctions.*
+
+```{r get obs with dupe keys}
+
+# if there are multiple observations for a city-year key, number them
+data_count_dupes <- data %>% 
+  group_by(city_id, year) %>% 
+  mutate(count_dupe = row_number()) %>% 
+  ungroup()
+
+# show that all observations with duplicate keys have terr_id A1341
+data_count_dupes %>% filter(count_dupe != 1) %>% ggplot() + geom_bar(aes(x=terr_id))
+
+# show that exactly half of all A1341 observations are dupes
+data_count_dupes %>% 
+  filter(terr_id == "A1341") %>% 
+  mutate(count_dupe = factor(count_dupe)) %>% 
+  ggplot(aes(x=count_dupe)) + 
+  geom_bar() +
+  geom_text(stat='count', aes(label=after_stat(count)), vjust=0)
+
+# suspicion: the only thing that varies for dupes is `X` (auto-generated while joining)
+# and `count_diff` (only calculated for the first instance of a city-year observation).
+data %>% filter(terr_id == "A1341") %>% select(-X, -count_diff) %>% distinct() %>% count()
+
+```
+
+Conclusion: for some reason, all observations with terr_id "A1341" got duplicated somewhere along the way. I *could* just drop all the dupes, because the `count_diff` is always with the first version:
+
+```{r}
+data_count_dupes %>% 
+  filter(terr_id == "A1341") %>% 
+  mutate(count_dupe = factor(count_dupe)) %>% 
+  ggplot(aes(x=count_dupe)) + 
+  geom_boxplot(aes(y=count_diff))
+```
+
+But because this isn't actually the final version of the data, and this might happen again, it's probably prudent to check where the duplication occurs. I do this in a separate Rmd.
 
 ### Lineages
 
+#### Getting lineage-year observations
+
 ```{r lineage level data}
 terrs <- data %>% 
-  distinct(terr_id, year, .keep_all=TRUE)
+  distinct(terr_id, year, .keep_all=TRUE) %>% 
+  select(terr_id, year, territory, count_cities, final_year, extinction)
 ```
 
+Note: this only keeps the first city-year observation for each lineage-year.
+However, we only use this data set to look at variables that are identical for 
+all city-years in a lineage-year, so `count_cities` and `extinction`.
+
+#### Number of distinct lineages across time
 
 ```{r number of lineages across time}
 yearly_plot <- terrs %>% 
   ggplot(aes(x=year))+
   geom_bar()
 
-decades_plot <- terrs %>% 
-  mutate(decade = year - year %% 10) %>% # averaging would be better
-  distinct(decade, terr_id) %>% # pretty sure this is necessary
-  ggplot(aes(x=decade))+
+# count distinct terr_ids that show up in a century
+centuries_plot <- terrs %>% 
+  mutate(century = year - year %% 100) %>% # round year down to century
+  distinct(century, terr_id) %>% # else counts territory-year observations
+  ggplot(aes(x=century))+
   geom_bar()
 
-plot_grid(yearly_plot, decades_plot, labels = c("Yearly", "Decades"))
+plot_grid(yearly_plot, centuries_plot, labels = c("Yearly", "Centuries"))
 ```
 
-This counts the number of lineages that show up in that year or decade.
-
 That is pretty cool. The most striking thing is Napoleon, of course.
+But it's also important to note that the number of territories continues to
+steeply decline throughout the entire 19th century. Keep that in mind when you
+summarise by century later.
+
 This is the Number of Nations. I also want the Size of Nations.
+
+#### Territory size across time
 
 ```{r territory size across time}
 terrs_centuries <- terrs %>% 
   mutate(century = year - year %% 100) %>% 
-  mutate(century = factor(century)) # necessary or else year = width
+  mutate(century = factor(century)) %>% # necessary for boxplots or else year = width
+  group_by(century, terr_id) %>% # group and average because the total no. of cities per year
+  summarise(count_cities = mean(count_cities)) # jumps in 1800; I ASSUME this is an artifact
+  # comment out the last two lines to see the effect of that!
   
 # create plot with outliers
 size_time <- terrs_centuries %>% 
@@ -82,21 +150,43 @@ size_time_no_outliers <- terrs_centuries %>%
 plot_grid(size_time, size_time_no_outliers, labels = c("Full plot", "Zoom"))
 ```
 
-Note: grouping by century and calculating average size of each territory across that century would be better than flooring the year of each observation and dropping duplicates. The way it's currently implemented only leaves the earliest count_cities observation for a territory in a century.
+It would be good to zoom into the 17th to 20th century and use half-centuries, because this hides the considerable within-century variation in the 1800s. 
 
 ### Extinctions
 
+#### Cities affected by lineage extinction across time
 ```{r extinction treatments across time}
-data %>%
-  filter(extinction == 1) %>% 
-  ggplot(aes(x=year))+
-  geom_bar()
+
+CityExtPlot <- function(full_data, bins){
+  plt <- full_data %>% 
+    filter(extinction == 1) %>% 
+    ggplot(aes(x=year))+
+    geom_histogram(binwidth = bins)
+  return(plt)
+}
+
+plot_grid(CityExtPlot(data, 1), CityExtPlot(data, 10),
+          CityExtPlot(data, 30), CityExtPlot(data, 50))
+
 ```
 
-(make a second plot side-by-side to the above with century bins)
+#### Lineages that go extinct across time
+```{r lineage extinctions across time}
 
-The lineages for which an extinction year is recorded, how large are they compared to others?
+TerrExtPlot <- function(terrs, bins){
+  plt <- terrs %>% 
+    filter(extinction == 1) %>% 
+    ggplot(aes(x=year))+
+    geom_histogram(binwidth = bins)
+  return(plt)
+}
 
+plot_grid(TerrExtPlot(terrs, 1), TerrExtPlot(terrs, 10),
+          TerrExtPlot(terrs, 30), TerrExtPlot(terrs, 50))
+
+```
+
+#### Are larger lineages more or less likely to have a recorded extinction?
 ```{r extinct vs non-extinct}
 terrs_life <- terrs %>% 
   group_by(terr_id) %>% 
@@ -119,7 +209,7 @@ size_ext_no_outliers <- terrs_life %>%
 plot_grid(size_ext, size_ext_no_outliers, labels = c("Full plot", "Zoom"))
 ```
 
-How is the lifespan of lineages distributed?
+#### Distribution of lineage lifespan
 
 ```{r lifespan of lineages}
 terrs_life %>% 
@@ -133,7 +223,17 @@ Right: Are lineages less likely to go extinct when they are larger? (extinction 
 ```{r}
 lifespan_on_max_size <- terrs_life %>% 
   ggplot(aes(x=log(max_size), y=lifespan))+
+  geom_point()+
+  geom_smooth(method="lm", se=FALSE)
+
+ext_on_cities <- terrs %>% 
+  ggplot(aes(x=count_cities, y=extinction))+
   geom_point()
+  
+plot_grid(lifespan_on_max_size, ext_on_cities)
+
+#mod_lifespan_size <- lm(lifespan ~ log(max_size), data=terrs_life)
+#summary(mod_lifespan_size)
 ```
 
 

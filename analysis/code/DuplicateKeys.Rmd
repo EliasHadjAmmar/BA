@@ -1,0 +1,129 @@
+## Ensuring that city-year keys are unique
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = '~/GitHub/BA')
+library(tidyverse)
+library(cowplot)
+library(haven)
+```
+
+What I've established in Exploration.Rmd:
+
+- In the current version of build.csv, there are 3708 rows that have duplicate city-year keys.
+- It turns out that all these rows have `terr_id` "A1341" (Anhalt-Dessau, younger line).
+- It turns out that exactly half of all observations with "A1341" are dupes.
+- It turns out that the only things that vary for dupes are `X` (a key that was automatically generated in some join operation) and `count_diff` (the difference between `count_cities` and `lag(count_cities)`, which is calculated rowwise).
+- It turns out that for each city-year, only the first dupe has the right `count_diff`.
+
+It does seem like I could simply run distinct(city_id, year) on my current data build and get unique city-year keys without losing any information. But this could happen again, on a larger scale, for more territories, if I change the build code somehow. So I want to find out where the duplication happens - in the original cities data, or at any point in the build pipeline - and fix the bug properly.
+
+```{r data import, message=FALSE}
+cities_orig <- read_dta("build/input/cities_families_1300_1918.dta") %>% 
+  select(city_id, year, terr_id)
+
+cities <- read_csv("build/output/cities.csv", show_col_types = FALSE)
+lineages <- read_csv("build/output/lineages.csv", show_col_types = FALSE)
+build <- read_csv("build/output/build.csv", col_types = cols( # necessary because first 1000 are NA
+  city="c", 
+  real_wage="d", 
+  welfare_ratio="d"
+  ))
+```
+
+### Are there dupes in the original cities data?
+
+```{r check cities_orig}
+summary(cities_orig) # no missing terr_id for any city-year - good
+
+cities_orig %>% filter(terr_id == "A1341") %>% count() # the dupes are not in the original file!
+
+# double-check: yes, no duplicate keys in cities_orig.
+cities_orig %>% count() - cities_orig %>% distinct(city_id, year) %>% count()
+```
+
+### Are there dupes in the output of CombineCityData.R?
+
+No. As of now, the output of that file (cities.csv) has the same city-years as the original data. Also, it uses a left join to add wages to cities - I think this is inherently less problematic.
+
+Just for good measure (and I can just re-run this when cities.csv changes):
+
+```{r check cities.csv}
+summary(cities) # yep, same as above
+
+cities %>% filter(terr_id == "A1341") %>% count() # same as above
+
+# no dupes in cities
+cities %>% count() - cities %>% distinct(city_id, year) %>% count()
+```
+
+This means that the bug must be in CombineAll.R.
+
+### Where in CombineAll.R does the duplication happen?
+
+It must be in CombineTables because as I've seen, the AddSizeDiff already operates on data that contains duplicates. It's the inner join between the lineages and the cities data in CombineTables.
+
+What if I just do a left join instead? 
+
+Expected result:
+
+- a data frame that is the same length as cities (1.4 million obs. rather than 1.1 million)
+- cities with `terr_id` that doesn't show up in the lineages data have NA values
+- no duplicate city-year keys
+- summary statistics identical to the previous build (after dropping `count_cities` = NA)
+
+```{r try left join in CombineTables}
+CombineTables <- function(cities, lineages){
+  joined <- left_join(cities, lineages, by=c("terr_id", "year")) 
+  return(joined)
+}
+
+new_build <- CombineTables(cities, lineages)
+summary(new_build)
+```
+
+I did not get the expected result. Why?
+I think it must be because "A1341" shows up twice in the lineage data.
+
+### Are there dupes in the lineage data?
+
+```{r check lineage data}
+# Yes, there are dupes in lineages.csv:
+lineages %>% count() - lineages %>% distinct(terr_id, year) %>% count()
+
+# The 315 dupes in lineages.csv are 315 dupes of terr-years of A1341:
+lineages %>% filter(terr_id == "A1341") %>% count()
+lineages %>% filter(terr_id == "A1341") %>% distinct(terr_id, year) %>% count()
+
+# The duplicate terr-year keys are full duplicates of rows:
+lineages %>% select(-...1) %>% filter(terr_id == "A1341") %>% distinct() %>% count()
+```
+
+### Where do the dupes in the lineage data come from?
+
+It must be CombineLineageData.R, and within that file it must be AddExtinctionDummies or AddLineageNames.
+
+Old Hypothesis:
+There is no reason to use an inner join in any of the functions there, and using a left join instead will solve the duplicates problem. EXCEPT if there are two last rulers (or two lineage names) for A1341.
+
+New Hypothesis:
+In the year Anhalt-Dessau went extinct, there were two rulers.
+
+```{r check last_rulers.csv}
+last_rulers <- read_csv("build/temp/last_rulers.csv")
+
+last_rulers %>% filter(terr_id == "A1341") # HAH, I knew it.
+
+# Very interesting - there are *two* lineages with two last rulers.
+last_rulers %>% count() - last_rulers %>% distinct(terr_id) %>% count()
+
+# Which ones:
+anti_join(last_rulers, last_rulers %>% distinct(terr_id, .keep_all=TRUE), by="...1")
+
+# The other one is of Wessex, terr_id "0W0079". Do we have cities in Wessex? No...
+cities_orig %>% filter(terr_id == "0W0079")
+
+# ... which is why this other duplicate extinction doesn't lead to dupes in the build.
+```
+
+Solution: modify LineageExtinctions.R so that last_rulers.csv has `terr_id` as a *unique* key. See if that fixes the problem.
