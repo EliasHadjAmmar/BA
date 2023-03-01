@@ -48,44 +48,7 @@ sprintf("Share of rows with duplicate keys: %s", share_dupes)
 
 ```
 
-There are no duplicate rows, but there are 3708 observations with duplicate city-year keys. These observations make up 0.3% of the data set. I can probably drop them? Unless they are very different from the rest for some reason. *0.337% is suspiciously close to the share of city-years with extinctions.*
-
-```{r get obs with dupe keys}
-
-# if there are multiple observations for a city-year key, number them
-data_count_dupes <- data %>% 
-  group_by(city_id, year) %>% 
-  mutate(count_dupe = row_number()) %>% 
-  ungroup()
-
-# show that all observations with duplicate keys have terr_id A1341
-data_count_dupes %>% filter(count_dupe != 1) %>% ggplot() + geom_bar(aes(x=terr_id))
-
-# show that exactly half of all A1341 observations are dupes
-data_count_dupes %>% 
-  filter(terr_id == "A1341") %>% 
-  mutate(count_dupe = factor(count_dupe)) %>% 
-  ggplot(aes(x=count_dupe)) + 
-  geom_bar() +
-  geom_text(stat='count', aes(label=after_stat(count)), vjust=0)
-
-# suspicion: the only thing that varies for dupes is `X` (auto-generated while joining)
-# and `count_diff` (only calculated for the first instance of a city-year observation).
-data %>% filter(terr_id == "A1341") %>% select(-X, -count_diff) %>% distinct() %>% count()
-
-```
-
-Conclusion: for some reason, all observations with terr_id "A1341" got duplicated somewhere along the way. I *could* just drop all the dupes, because the `count_diff` is always with the first version:
-
-```{r}
-data_count_dupes %>% 
-  filter(terr_id == "A1341") %>% 
-  mutate(count_dupe = factor(count_dupe)) %>% 
-  ggplot(aes(x=count_dupe)) + 
-  geom_boxplot(aes(y=count_diff))
-```
-
-But because this isn't actually the final version of the data, and this might happen again, it's probably prudent to check where the duplication occurs. I do this in a separate Rmd.
+Yes. each observation has a unique city-year key.
 
 ### Lineages
 
@@ -95,11 +58,13 @@ But because this isn't actually the final version of the data, and this might ha
 terrs <- data %>% 
   distinct(terr_id, year, .keep_all=TRUE) %>% 
   select(terr_id, year, territory, count_cities, final_year, extinction)
+
+# terrs <- read_csv("build/output/lineages.csv") # comment out for sanity check
 ```
 
 Note: this only keeps the first city-year observation for each lineage-year.
 However, we only use this data set to look at variables that are identical for 
-all city-years in a lineage-year, so `count_cities` and `extinction`.
+all city-years in a lineage-year, so `count_cities` and `extinction`. I did a sanity check: the following plots look exactly the same for the lineages.csv data.
 
 #### Number of distinct lineages across time
 
@@ -217,10 +182,12 @@ terrs_life %>%
   geom_histogram(aes(x=lifespan))
 ```
 
-Left: Is the lifespan of a lineage correlated to its (maximum lifetime) size? 
-Right: Are lineages less likely to go extinct when they are larger? (extinction on contemp. size)
+#### Correlation between size and survival
 
 ```{r}
+#mod_lifespan_size <- lm(lifespan ~ log(max_size), data=terrs_life)
+#summary(mod_lifespan_size)
+
 lifespan_on_max_size <- terrs_life %>% 
   ggplot(aes(x=log(max_size), y=lifespan))+
   geom_point()+
@@ -232,11 +199,46 @@ ext_on_cities <- terrs %>%
   
 plot_grid(lifespan_on_max_size, ext_on_cities)
 
-#mod_lifespan_size <- lm(lifespan ~ log(max_size), data=terrs_life)
-#summary(mod_lifespan_size)
 ```
 
+Left: The lifespan of a lineage is weakly correlated to its maximum lifetime size.
+Right: This honestly doesn't say much. What it tries to say is that lineages may be less likely to go extinct when they are larger.
+
+### Cities
+
+#### Lifetime summary statistics for cities
+
+```{r}
+cities_life <- data %>% 
+  group_by(city_id) %>% 
+  summarise(
+    years_exists = max(year) - min(year),
+    rulers_count = n_distinct(terr_id),
+    extinctions_count = sum(extinction),
+    diffs_count = sum(count_diff != 0, na.rm=TRUE),
+    mean_integ = mean(count_cities),
+    lifetime_integ_diff = sum(count_diff, na.rm=TRUE),
+    mean_yearly_diff = mean(count_diff, na.rm=TRUE),
+    sd_yearly_diff = sd(count_diff, na.rm=TRUE)
+    )
+
+# check whether diffs_count works:
+# only1001 <- data[data$city_id == 1001,]
+# sum(only1001$count_diff != 0, na.rm = TRUE) # there are 57 nonzero countdiffs
+# cities_life %>% filter(city_id == 1001) %>% select(diffs_count) # yes it works
+
+summary(cities_life)
+```
+
+This is very insightful. Some takeaways:
+
+- I have almost 500 observations on average for each city.
+- **A normal city changes hands 3-4 times throughout its history.**
+- **Of these territory changes, 1-2 are due to extinction.**
+- **A normal city undergoes around 60 changes in integration.**
+- Less than a quarter of cities is integrated with less than 100 other cities on average throughout its history.
+- Most cities become drastically more integrated over time.
+- Yearly differences in integration are positive on average but vary a lot.
 
 
 
-### Example cities
