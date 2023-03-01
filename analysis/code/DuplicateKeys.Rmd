@@ -127,3 +127,5 @@ cities_orig %>% filter(terr_id == "0W0079")
 ```
 
 Solution: modify LineageExtinctions.R so that last_rulers.csv has `terr_id` as a *unique* key. See if that fixes the problem.
+
+Update: It did. Running the code in this file on the newly generated output files returns all the right results (so the comments don't make sense anymore). Bug fixed. Yay!
