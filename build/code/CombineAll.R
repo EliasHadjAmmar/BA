@@ -48,15 +48,16 @@ PushExtinctions1Year <- function(table){
   # count_diff, i.e. in the first year under the new lineage.
   pushed <- table %>% 
     group_by(city_id) %>% 
-    mutate(treatment = lag(extinction)) %>% # there's no way to avoid leading NA
-    ungroup() # because I don't know the previous terr_id of those observations
+    mutate(treatment = lag(extinction)) %>% # there's no way to avoid leading NA because I don't know the previous terr_id of those observations
+    mutate(extinction_of = if_else(treatment==1, lag(terr_id), "")) %>% 
+    ungroup()
   return(pushed)
 }
 
 TidyOutput <- function(table){
   final <- table %>% 
     select(city_id, year, city, terr_id, territory, final_full_year, extinction, 
-           treatment, count_cities, count_diff, real_wage, welfare_ratio)
+           treatment, extinction_of, count_cities, count_diff, real_wage, welfare_ratio)
   return(final)
 }
 
