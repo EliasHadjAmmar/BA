@@ -8,14 +8,14 @@ setwd("~/GitHub/BA")
 
 Main <- function(){
   data <- read_csv("analysis/input/build.csv")
-  extinctions <- read_csv("build/temp/last_rulers.csv")
+  extinctions <- read_csv("analysis/input/extinctions.csv")
   
   W <- 10
   
   subexps <- IdentifySubExps(extinctions, data, W)
   assignment <- AssignCitiesAll(subexps, data)
   
-  assignment <- DropEmptySubExps(assignment, threshold=4)
+  assignment <- DropEmptySubExps(assignment, threshold=10)
   
   assignment %>% write.csv("analysis/temp/assignment.csv")
   #return(assignment)
