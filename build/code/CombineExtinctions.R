@@ -5,7 +5,8 @@ library(tidyverse)
 setwd("~/GitHub/BA")
 
 Main <- function(){
-  ext_rulers <- read_csv("build/temp/last_rulers.csv")
+  ext_rulers <- read_csv("build/temp/last_rulers.csv") %>% 
+    select(terr_id, death_year, end_reign, dupe_rulers)
   ext_terrs <- read_csv("build/temp/ext_terrs.csv")
   
   final_list <- CombineBoth(ext_rulers, ext_terrs)
