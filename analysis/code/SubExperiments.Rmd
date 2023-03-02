@@ -140,8 +140,9 @@ build %>%
   filter(year %in% inclusion_range) %>% 
   group_by(city_id) %>% 
   filter(n() == 3*W+1) %>% 
-  ggplot()+
-  geom_bar(aes(x=year))
+  summarise() # %>% 
+  # ggplot()+
+  # geom_bar(aes(x=year))
 
 # this is how it works. But after this I still have to check the other criteria.
 ```
