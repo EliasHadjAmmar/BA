@@ -1,5 +1,6 @@
 # Input: lineage-year panel of rulers.
 # Output: lineage-level data set of last ruler (max start_reign) with death_year.
+# NOTE: death years are correct (not 1 year lower) because I added 1 in Rulers.R.
 
 library(tidyverse)
 

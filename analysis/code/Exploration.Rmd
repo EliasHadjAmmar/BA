@@ -57,7 +57,7 @@ Yes. each observation has a unique city-year key.
 ```{r lineage level data}
 terrs <- data %>% 
   distinct(terr_id, year, .keep_all=TRUE) %>% 
-  select(terr_id, year, territory, count_cities, final_year, extinction)
+  select(terr_id, year, territory, count_cities, final_full_year, extinction)
 
 # terrs <- read_csv("build/output/lineages.csv") # comment out for sanity check
 ```
@@ -109,7 +109,7 @@ size_time <- terrs_centuries %>%
 size_time_no_outliers <- terrs_centuries %>% 
   ggplot() + 
   geom_boxplot(aes(x = century, y = count_cities), outlier.shape = NA) +
-  coord_cartesian(ylim = quantile(terrs_centuries$count_cities, c(0, 0.96)))
+  coord_cartesian(ylim = quantile(terrs_centuries$count_cities, c(0, 0.93)))
 
 # plot side by side
 plot_grid(size_time, size_time_no_outliers, labels = c("Full plot", "Zoom"))
@@ -168,8 +168,8 @@ size_ext <- terrs_life %>%
 
 size_ext_no_outliers <- terrs_life %>% 
   ggplot() + 
-  geom_boxplot(aes(x = extinction_ever, y=max_size), outlier_shape = NA) +
-  coord_cartesian(ylim = quantile(terrs_life$max_size, c(0, 0.9)))
+  geom_boxplot(aes(x = extinction_ever, y=max_size), outlier.shape = NA) +
+  coord_cartesian(ylim = quantile(terrs_life$max_size, c(0, 0.93)))
 
 plot_grid(size_ext, size_ext_no_outliers, labels = c("Full plot", "Zoom"))
 ```

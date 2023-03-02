@@ -18,6 +18,7 @@ Main <- function(){
   
   build <- CombineTables(cities, lineages)
   build <- AddSizeDiffs(build)
+  build <- PushExtinctions1Year(build)
   build <- TidyOutput(build)
   
   build %>% write.csv("build/output/build.csv")
@@ -38,10 +39,24 @@ AddSizeDiffs <- function(table){
   return(diffed)
 }
 
+PushExtinctions1Year <- function(table){
+  # reasoning: the extinction dummy shows up in the last year of the 
+  # dying lineage. That was necessary because the extinction list was 
+  # easier to join to the old lineage than to the lineage that takes its 
+  # place.
+  # But I want a treatment dummy to show up in the same year as the
+  # count_diff, i.e. in the first year under the new lineage.
+  pushed <- table %>% 
+    group_by(city_id) %>% 
+    mutate(treatment = lag(extinction)) %>% # there's no way to avoid leading NA
+    ungroup() # because I don't know the previous terr_id of those observations
+  return(pushed)
+}
+
 TidyOutput <- function(table){
   final <- table %>% 
-    select(city_id, year, city, terr_id, territory, final_year, extinction, 
-           count_cities, count_diff, real_wage, welfare_ratio)
+    select(city_id, year, city, terr_id, territory, final_full_year, extinction, 
+           treatment, count_cities, count_diff, real_wage, welfare_ratio)
   return(final)
 }
 
