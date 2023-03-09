@@ -15,7 +15,7 @@ setwd("~/GitHub/BA")
 Main <- function(){
   lineages <- read.csv("build/temp/terr_sizes.csv")
   terr_codes <- read.csv("build/input/territory_codes.csv")
-  extinctions <- read.csv("build/temp/last_rulers.csv") %>% 
+  extinctions <- read.csv("build/output/extinctions.csv") %>% 
     select(terr_id, death_year)
   
   lineages <- AddLineageNames(lineages, terr_codes)

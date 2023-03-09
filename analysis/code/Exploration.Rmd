@@ -241,4 +241,72 @@ This is very insightful. Some takeaways:
 - Yearly differences in integration are positive on average but vary a lot.
 
 
+#### City size across time
 
+```{r}
+
+plot_integ <- function(data, width, startyear=0, endyear=2000){
+  cities <- data %>% 
+    filter(year >= startyear & year <= endyear) %>% 
+    mutate(period = year - year %% width) %>% 
+    mutate(period = factor(period)) %>%
+    group_by(period, city_id) %>% 
+    summarise(mean_integ = mean(count_cities))
+  
+  plot <- cities %>% 
+    ggplot() +
+    geom_boxplot(aes(x = period, y = mean_integ))
+  
+  return(plot)
+}
+
+#plot_integ(data, 10, startyear=1800)
+
+integ_50y <- plot_integ(data, 50)
+integ_1600_25y <- plot_integ(data, 25, startyear=1600)
+integ_1800_10y <- plot_integ(data, 10, startyear=1750)
+
+plot_grid(integ_50y, integ_1600_25y, integ_1800_10y,
+          align="v", ncol=1, labels = c("Full", "1600+", "1800+"))
+```
+
+The political integration of cities stagnates until 1750, starts to quickly and steadily increase from the late 18th to mid-19th century, and then jumps abruptly with Prussia getting the Norddeutscher Bund in 1866. 
+
+Because we average within decades, this is kind of misleading. It appears like the jump happens in two stages: one in the 1860s and one in the 1870s. As we see below, that's not what's really in the data: there is only one jump for Prussia, in 1866. Because it's in the middle of the 1860s, the 1860 boxplot is halfway between 1850 and 1870, making it seem like there's another jump in the 1870s. This isn't actually the case, though (at least not for Prussia).
+
+#### Dynamics of the largest territories
+```{r}
+plot_top_terrs <- function(data, how_many, window=0:2000){
+  threshold = 2
+  
+  top_terrs <- data %>% 
+    group_by(terr_id) %>% 
+    summarise(
+      max_size = max(count_cities),
+      years_in_window = sum(year %in% window)) %>% 
+    filter(years_in_window > threshold) %>% 
+    arrange(desc(max_size)) %>% 
+    slice(1:how_many)
+  
+  top_data <- data %>% 
+    filter(year %in% window) %>% 
+    filter(terr_id %in% top_terrs$terr_id) %>% 
+    distinct(year, terr_id, .keep_all = TRUE)
+  
+  plot <- top_data %>% 
+    ggplot(aes(x=year, y=count_cities))+
+    geom_line(aes(colour=terr_id))
+  
+  return(plot)
+}
+
+full_plot <- plot_top_terrs(data, 9)
+zoom_plot <- plot_top_terrs(data, 6, window = 1800:1900)
+
+plot_grid(full_plot, zoom_plot, align="v", ncol=1, labels=c("Full", "1800s"))
+
+```
+
+The top panel shows that there's a problem with H010. Apparently there are some missing values, i.e. the territory disappears from the dataset for around 300 years and then reappears. Before I output any exploration graphs that will go in the paper, I should take care of this in Cleaning.R.
+
+Also, this is very messy. If I put something like this in the paper, I should probably use facets of a single ggplot, so the colour-territory-correspondence is the same and there is only one legend.
