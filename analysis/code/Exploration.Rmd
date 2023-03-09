@@ -209,6 +209,7 @@ Right: This honestly doesn't say much. What it tries to say is that lineages may
 #### Lifetime summary statistics for cities
 
 ```{r}
+
 cities_life <- data %>% 
   group_by(city_id) %>% 
   summarise(
@@ -219,8 +220,15 @@ cities_life <- data %>%
     mean_integ = mean(count_cities),
     lifetime_integ_diff = sum(count_diff, na.rm=TRUE),
     mean_yearly_diff = mean(count_diff, na.rm=TRUE),
-    sd_yearly_diff = sd(count_diff, na.rm=TRUE)
-    )
+    sd_yearly_diff = sd(count_diff, na.rm=TRUE),
+    lifetime_construction = sum(construction, na.rm=TRUE),
+    across( # count non-missing observations of each outcome
+      c(real_wage, welfare_ratio, construction), 
+      ~ sum(!is.na(.x)),
+      .names = "years_{.col}"
+      )
+    ) %>% 
+  mutate(years_construction = years_construction * 25)
 
 # check whether diffs_count works:
 # only1001 <- data[data$city_id == 1001,]

@@ -18,9 +18,9 @@ Main <- function(){
 CountBuildings <- function(cons_raw){
   # experiment with filter settings!
   cons <- cons_raw %>% 
-    filter(building %in% c(6:9, 13:16) & range == 2) %>% 
+    filter(building %in% c(5:9, 13:16) & uncertainty==0) %>% 
     group_by(city_id, time_point) %>% 
-    summarise(buildings = n())
+    summarise(construction = n())
   
   return(cons)
 }
@@ -33,7 +33,7 @@ AddGaps <- function(cons){
   
    with_gaps <- cons %>% 
      right_join(all_keys, by=c("city_id", "time_point")) %>% 
-     replace_na(list(buildings = 0)) %>% 
+     replace_na(list(construction = 0)) %>% 
      arrange(city_id, time_point)
    
    return(with_gaps)
@@ -43,7 +43,7 @@ TidyOutput <- function(cons){
   # change this when you get the full data
   clean <- cons %>% 
     rename(year = time_point) %>% 
-    select(city_id, year, buildings)
+    select(city_id, year, construction)
 
   return(clean)
 }
