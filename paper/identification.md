@@ -159,3 +159,77 @@ Acharya and Lee (2019) show that a shortage of male heirs led to worse developme
 If I compare cities with no territory switches to cities *with* territory switches, then I should expect a negative effect of the switch. (Check whether they find this for the long term or short term). But if I restrict the sample to cities that switched, and the only variation I use is variation in new-territory size, then it should be a non-issue.
 
 I definitely need a glanceable list of all issues.
+
+
+# Note from 24.02.2023
+Save progress on id writeup
+Rewrite id writeup:
+- old spec doesn’t include non-extinction takeovers -> problem?
+- alternative: use all size changes and iv for size change with extinction
+- problem: overlapping; if there is a post for each size change then there may be a lot more of them (data?)
+- -> actually compute
+    - the share of cities that switch never, once, twice
+    - the number of size diff events
+    - the number of switching events
+    - the share of extinctions in them
+    - the share of terrs that doesn’t go extinct
+    - the share of terrs that doesn’t cease to exist
+    - extinction events ranked by affected cities, and by no. of beneficiaries
+and (first of all) make a simple graph of terr size for terrs across time
+to see whether splitting into period regressions is feasible / how many cities I would have to drop
+also to see how much it varies across time
+
+For the purpose of computing these summary statistics, make a simple script in the analysis folder. Build the data once it becomes necessary (except for regression dummies).
+
+BUT NOT NOW
+Do your laundry first, then eat, then do bar stuff, then clean your room, then at night you can play.
+
+—
+
+And then, with the IV, there‘s a different issue. I‘m not sure it‘s valid. I‘m not sure it works exactly like in Dittmar and Seabold.
+
+Reason being: in DS the ER holds because why would a printer‘s death affect growth through any channel other than his printing?
+
+—
+
+Run a stacked DiD / event study, following the IU slides.
+This involves partitioning observations into cleanly separable sub-experiments and dropping everything else, then stacking the sub-experiments, then running a regular old DiD on the stacked data.
+Stacked DiD: gives you the unbiased average of the time-varying effects.
+Stacked event study: gives you the unbiased effect in each post period.
+see how many observations you can keep for treatment windows of varying size.
+
+
+can I do „department-specific trends“ as Banerjee et al. (2010) do on p. 
+
+—-
+definition of „size“?
+if it’s about integration, maybe it should be „number of cities“, „number of markets“, or „number of larger cities. Or „number of people“.
+
+
+control for leader death for city i in year t!! this is what jones and olken tells us. for sure I should do that. As summarised by CY, „they find that when a leader happens to die, growth trajectories significantly change.
+
+——
+
+Power and prosperity
+Territory-level outcome aggregation
+Control for capitals
+Enlightened despots vs church (g_A)
+alesina spolaore state /elite formation
+
+measure segregation:
+overfit a polynomial regression of population on x and y coordinates
+add race FEs and interactions with each term of the polynomial
+somehow evaluate how much of a difference the interactions make
+
+——
+
+Naive OLS
+Reverse causality from growth to size -> solution: HNE(s)
+Properties of the HNE -> challenges -> solutions:
+- staggered treatment and dynamic effects -> stacked event study
+- selection into treatment -> use extinction as IV
+- differential effects -> slice and dice
+
+I just realised: the predicted values for sizediff will all be the same: the mean sizediff in extinction years among all cities (holding controls constant). So I should look at the distribution of the true sizediffs to see if that reduction misses something important.
+
+# Note End

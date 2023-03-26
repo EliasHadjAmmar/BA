@@ -28,7 +28,12 @@ Some initial takeaways:
 
 ```{r observations across time}
 ggplot(data) + 
-  geom_bar(aes(x=year))
+  geom_bar(aes(x=year)) +
+  labs(
+    title="Number of observations across time"
+  )
+
+ggsave("obs_yearly.png", device="png", path="analysis/output/exploration")
 ```
 
 Looks fairly smooth except for the big jump around 1800, and the drop around 1350.
@@ -71,16 +76,23 @@ all city-years in a lineage-year, so `count_cities` and `extinction`. I did a sa
 ```{r number of lineages across time}
 yearly_plot <- terrs %>% 
   ggplot(aes(x=year))+
-  geom_bar()
+  geom_bar()+
+  labs(
+    title="Distinct lineages across time"
+  )
 
 # count distinct terr_ids that show up in a century
 centuries_plot <- terrs %>% 
   mutate(century = year - year %% 100) %>% # round year down to century
   distinct(century, terr_id) %>% # else counts territory-year observations
   ggplot(aes(x=century))+
-  geom_bar()
+  geom_bar()+
+  labs(
+    title="Distinct lineages in each century"
+  )
 
-plot_grid(yearly_plot, centuries_plot, labels = c("Yearly", "Centuries"))
+plot_grid(yearly_plot, centuries_plot)
+ggsave("terrs_yearly_cents.png", device="png", path="analysis/output/exploration")
 ```
 
 That is pretty cool. The most striking thing is Napoleon, of course.
@@ -103,16 +115,26 @@ terrs_centuries <- terrs %>%
 # create plot with outliers
 size_time <- terrs_centuries %>% 
   ggplot() + 
-  geom_boxplot(aes(x = century, y = count_cities))
+  geom_boxplot(aes(x = century, y = count_cities))+
+  labs(
+    title="Territory size across time",
+    y = "Mean city count"
+  )
 
 # create plot with no outliers
 size_time_no_outliers <- terrs_centuries %>% 
   ggplot() + 
   geom_boxplot(aes(x = century, y = count_cities), outlier.shape = NA) +
-  coord_cartesian(ylim = quantile(terrs_centuries$count_cities, c(0, 0.93)))
+  coord_cartesian(ylim = quantile(terrs_centuries$count_cities, c(0, 0.93)))+
+    labs(
+    title="Zoom",
+    y = "Mean city count"
+  )
 
 # plot side by side
-plot_grid(size_time, size_time_no_outliers, labels = c("Full plot", "Zoom"))
+plot_grid(size_time, size_time_no_outliers)
+ggsave("terrsize_cents_boxplot.png", device="png", path="analysis/output/exploration")
+
 ```
 
 It would be good to zoom into the 17th to 20th century and use half-centuries, because this hides the considerable within-century variation in the 1800s. 
@@ -122,32 +144,40 @@ It would be good to zoom into the 17th to 20th century and use half-centuries, b
 #### Cities affected by lineage extinction across time
 ```{r extinction treatments across time}
 
-CityExtPlot <- function(full_data, bins){
+CityExtPlot <- function(full_data, bins, title){
   plt <- full_data %>% 
     filter(extinction == 1) %>% 
     ggplot(aes(x=year))+
-    geom_histogram(binwidth = bins)
+    geom_histogram(binwidth = bins)+
+    labs(
+      title=title
+    )
   return(plt)
 }
 
-plot_grid(CityExtPlot(data, 1), CityExtPlot(data, 10),
-          CityExtPlot(data, 30), CityExtPlot(data, 50))
+plot_grid(CityExtPlot(data, 1, "Cities affected by extinction, yearly"), CityExtPlot(data, 10, "10-year bins"),
+          CityExtPlot(data, 30, "30-year bins"), CityExtPlot(data, 50, "50-year bins"))
 
+ggsave("cities_ext.png", device="png", path="analysis/output/exploration")
 ```
 
 #### Lineages that go extinct across time
 ```{r lineage extinctions across time}
 
-TerrExtPlot <- function(terrs, bins){
+TerrExtPlot <- function(terrs, bins, title){
   plt <- terrs %>% 
     filter(extinction == 1) %>% 
     ggplot(aes(x=year))+
-    geom_histogram(binwidth = bins)
+    geom_histogram(binwidth = bins)+
+    labs(
+      title=title
+    )
   return(plt)
 }
 
-plot_grid(TerrExtPlot(terrs, 1), TerrExtPlot(terrs, 10),
-          TerrExtPlot(terrs, 30), TerrExtPlot(terrs, 50))
+plot_grid(TerrExtPlot(terrs, 1, "Lineage extinctions, yearly"), TerrExtPlot(terrs, 10, "10-year bins"),
+          TerrExtPlot(terrs, 30, "30-year bins"), TerrExtPlot(terrs, 50, "50-year bins"))
+ggsave("terrs_ext.png", device="png", path="analysis/output/exploration")
 
 ```
 
@@ -164,14 +194,24 @@ terrs_life <- terrs %>%
 
 size_ext <- terrs_life %>% 
   ggplot() + 
-  geom_boxplot(aes(x = extinction_ever, y=max_size))
+  geom_boxplot(aes(x = extinction_ever, y=max_size))+
+  coord_flip()+
+  labs(
+    title="Maximum size of lineages with recorded extinction"
+  )
 
 size_ext_no_outliers <- terrs_life %>% 
   ggplot() + 
   geom_boxplot(aes(x = extinction_ever, y=max_size), outlier.shape = NA) +
-  coord_cartesian(ylim = quantile(terrs_life$max_size, c(0, 0.93)))
+  coord_flip(ylim = quantile(terrs_life$max_size, c(0, 0.915)))+
+  labs(
+    title="Zoom"
+  )
 
-plot_grid(size_ext, size_ext_no_outliers, labels = c("Full plot", "Zoom"))
+
+plot_grid(size_ext, size_ext_no_outliers, ncol = 1)
+ggsave("ext_max_size.png", device="png", path="analysis/output/exploration")
+
 ```
 
 #### Distribution of lineage lifespan
@@ -179,12 +219,18 @@ plot_grid(size_ext, size_ext_no_outliers, labels = c("Full plot", "Zoom"))
 ```{r lifespan of lineages}
 terrs_life %>% 
   ggplot()+
-  geom_histogram(aes(x=lifespan))
+  geom_histogram(aes(x=lifespan))+
+  labs(
+    title="Distribution of lineage lifespan",
+    subtitle="(Last year minus first year that lineage shows up in the city data)"
+  )
+
+ggsave("lifespan_histo.png", device="png", path="analysis/output/exploration")
 ```
 
 #### Correlation between size and survival
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 #mod_lifespan_size <- lm(lifespan ~ log(max_size), data=terrs_life)
 #summary(mod_lifespan_size)
 
@@ -201,6 +247,7 @@ plot_grid(lifespan_on_max_size, ext_on_cities)
 
 ```
 
+(The below refers to the output of a deactivated cell.)
 Left: The lifespan of a lineage is weakly correlated to its maximum lifetime size.
 Right: This honestly doesn't say much. What it tries to say is that lineages may be less likely to go extinct when they are larger.
 
@@ -253,7 +300,7 @@ This is very insightful. Some takeaways:
 
 ```{r}
 
-plot_integ <- function(data, width, startyear=0, endyear=2000){
+plot_integ <- function(data, width, startyear=1300, endyear=1918){
   cities <- data %>% 
     filter(year >= startyear & year <= endyear) %>% 
     mutate(period = year - year %% width) %>% 
@@ -263,7 +310,10 @@ plot_integ <- function(data, width, startyear=0, endyear=2000){
   
   plot <- cities %>% 
     ggplot() +
-    geom_boxplot(aes(x = period, y = mean_integ))
+    geom_boxplot(aes(x = period, y = mean_integ))+
+    labs(
+      title=sprintf("Integration of cities (period mean), %i-%i", startyear, endyear)
+    )
   
   return(plot)
 }
@@ -275,7 +325,8 @@ integ_1600_25y <- plot_integ(data, 25, startyear=1600)
 integ_1800_10y <- plot_integ(data, 10, startyear=1750)
 
 plot_grid(integ_50y, integ_1600_25y, integ_1800_10y,
-          align="v", ncol=1, labels = c("Full", "1600+", "1800+"))
+          align="v", ncol=1)
+ggsave("city_integ_boxplots.png", device="png", path="analysis/output/exploration")
 ```
 
 The political integration of cities stagnates until 1750, starts to quickly and steadily increase from the late 18th to mid-19th century, and then jumps abruptly with Prussia getting the Norddeutscher Bund in 1866. 
@@ -312,6 +363,8 @@ full_plot <- plot_top_terrs(data, 9)
 zoom_plot <- plot_top_terrs(data, 6, window = 1800:1900)
 
 plot_grid(full_plot, zoom_plot, align="v", ncol=1, labels=c("Full", "1800s"))
+
+# figure out how to unify the colour legends before saving this!
 
 ```
 
