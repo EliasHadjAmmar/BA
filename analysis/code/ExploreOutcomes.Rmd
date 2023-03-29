@@ -5,6 +5,7 @@ knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_knit$set(root.dir = '~/GitHub/BA')
 library(tidyverse)
 library(cowplot)
+library(viridisLite)
 ```
 
 ### Data import and summary
@@ -29,8 +30,10 @@ ListCitiesNotNA <- function(data, outcome, window=1300:1918){
 const_cities <- ListCitiesNotNA(data, construction)
 allen_cities <- ListCitiesNotNA(data, real_wage)
 both <- intersect(const_cities, allen_cities)
+colour_vec <- c("gold", "cornflowerblue", "coral")
+names(colour_vec) <- allen_cities
 
-PlotOutcomeLines <- function(outcome, dt=data, city_list=NULL, window=1300:1918){
+PlotOutcomeLines <- function(outcome, colour_vec, dt=data, city_list=NULL, window=1300:1918){
   if (length(city_list) == 0){
     city_list <- ListCitiesNotNA(dt, {{outcome}}, window)
   }
@@ -39,18 +42,20 @@ PlotOutcomeLines <- function(outcome, dt=data, city_list=NULL, window=1300:1918)
     filter(city_id %in% city_list & year %in% window) %>% 
     mutate(city_id = factor(city_id)) %>% 
     drop_na({{outcome}}) %>% 
-    ggplot(aes(x=year, colour=city_id))+
-    geom_line(aes(y={{outcome}}))+
+    ggplot(aes(x=year, y={{outcome}}))+
+    geom_line(aes(colour=city_id))+
+    scale_color_manual("City", values=colour_vec)+
     scale_x_continuous(limits=c(min(window), max(window)))
-    
+
   return(plot)
 }
 
-wage_plot <- PlotOutcomeLines(real_wage)
-wratio_plot <- PlotOutcomeLines(welfare_ratio)
-const_plot <- PlotOutcomeLines(construction, city_list = both)
+wage_plot <- PlotOutcomeLines(real_wage, colour_vec)
+wratio_plot <- PlotOutcomeLines(welfare_ratio, colour_vec)
+const_plot <- PlotOutcomeLines(construction, colour_vec, city_list = both)
 
 plot_grid(wage_plot, wratio_plot, const_plot, align="v", axis="b", ncols=1)
+ggsave("const_wages.png", device = "png", path="analysis/output/exploration")
 ```
 
 The line plots work really well for the wage data, but not so much for the 25-yearly construction data. It may look better for the yearly construction data, though.
@@ -61,7 +66,7 @@ Now I want to see construction for some more cities, but not for multiple thousa
 
 ```{r}
 
-TopConstCities <- function(data, howmany=8, by="obs", window=1300:1918){
+TopConstCities <- function(data, which=1:8, by="obs", window=1300:1918){
   cities_life <- data %>% 
     filter(year %in% window) %>% 
     group_by(city_id) %>% 
@@ -78,12 +83,27 @@ TopConstCities <- function(data, howmany=8, by="obs", window=1300:1918){
       arrange(desc(lifetime_construction), desc(observations))
   }
   
-  return(top_ids$city_id[1:howmany])
+  return(top_ids$city_id[which])
 }
 
-city_list <- TopConstCities(data, howmany=5)
+Plot4 <- function(which4){
+  upper <- 1 + 4*which4
+  lower <- 4 + 4*which4
+  city_list <- TopConstCities(data, lower:upper)
+  colour_vec <- viridis(4)
+  names(colour_vec) <- city_list
+  PlotOutcomeLines(construction, colour_vec, city_list = city_list)
+}
 
-PlotOutcomeLines(construction, city_list = city_list)
+
+plot1 <- Plot4(0)
+plot2 <- Plot4(1)
+plot3 <- Plot4(2)
+plot4 <- Plot4(3)
+
+plot_grid(plot1, plot2, plot3, plot4)
+ggsave("const_four.png", device = "png", path="analysis/output/exploration")
+
 ```
 
 This looks messy as fuck, even for only five cities. Again, I hope that this will look better when the changes happen yearly, not simultaneously every 25 years. Actually, since most cities in most years will have only a single event recorded, I will probably plot it as a histogram and try out various bin sizes. Write a separate Plot function for that.
