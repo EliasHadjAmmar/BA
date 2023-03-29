@@ -1,7 +1,8 @@
 
 from SCons.Script import Command
 
-clean_data = Command('',   # target path (output file)
-        '',                # source path (input file)
-        '')                # command line string
-                                           
+build = 'input/build.csv'
+
+assignment = Command('temp/assignment.csv',           # target path (output file)
+        [build, 'code/stacked_did/GetSubExps.R'],  # source path (input file)
+        'Rscript code/stacked_did/GetSubExps.R')   # command line string
