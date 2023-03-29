@@ -7,7 +7,9 @@ library(tidyverse)
 setwd("~/GitHub/BA")
 
 Main <- function(){
-  cons_raw <- read.csv("build/input/construction.csv")
+  cons_raw <- read.csv("build/input/construction.csv") %>% 
+    select(city_id, city_name, year_clear, building, buildgen, newbuild, uncertainty) %>% 
+    rename(year = year_clear)
   cons <- CountBuildings(cons_raw)
   cons_gaps <- AddGaps(cons)
   cons_clean <- TidyOutput(cons_gaps)
@@ -15,26 +17,26 @@ Main <- function(){
 }
 
 
-CountBuildings <- function(cons_raw){
+CountBuildings <- function(cons_raw, exclude=NULL){
   # experiment with filter settings!
   cons <- cons_raw %>% 
-    filter(building %in% c(5:9, 13:16) & uncertainty==0) %>% 
-    group_by(city_id, time_point) %>% 
+    filter(!building %in% exclude & uncertainty==0) %>% 
+    group_by(city_id, year) %>% 
     summarise(construction = n())
-  
   return(cons)
 }
+
 
 AddGaps <- function(cons){
   all_keys <- cons %>% 
     group_by(city_id) %>% 
-    expand(full_seq(time_point, 25)) %>% # change to 1 later
-    rename(time_point = `full_seq(time_point, 25)`)
+    expand(full_seq(year, 1)) %>% # change to 1 later
+    rename(year = `full_seq(year, 1)`)
   
    with_gaps <- cons %>% 
-     right_join(all_keys, by=c("city_id", "time_point")) %>% 
+     right_join(all_keys, by=c("city_id", "year")) %>% 
      replace_na(list(construction = 0)) %>% 
-     arrange(city_id, time_point)
+     arrange(city_id, year)
    
    return(with_gaps)
 }
@@ -42,8 +44,8 @@ AddGaps <- function(cons){
 TidyOutput <- function(cons){
   # change this when you get the full data
   clean <- cons %>% 
-    rename(year = time_point) %>% 
-    select(city_id, year, construction)
+    select(city_id, year, construction) %>% 
+    mutate(construction_any = as.numeric(construction > 0))
 
   return(clean)
 }
@@ -51,4 +53,4 @@ TidyOutput <- function(cons){
 # Turns out that the publicly available construction data is coarsened.
 # I have to ask Prof. Cantoni for the raw data before I can proceed 
 
-Main()
+test <- Main()
