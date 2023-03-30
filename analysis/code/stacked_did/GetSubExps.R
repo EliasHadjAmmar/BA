@@ -3,12 +3,15 @@
 # list of cities with a huge amount of dummies.
 
 library(tidyverse)
+library(furrr)
+
 setwd("~/GitHub/BA")
+plan(multisession, workers=4)
 
 
 Main <- function(){
-  build <- read_csv("analysis/input/build.csv")
-  extinctions <- read_csv("analysis/input/extinctions.csv")
+  build <- read_csv("analysis/input/build.csv", show_col_types = F)
+  extinctions <- read_csv("analysis/input/extinctions.csv", show_col_types = F)
   
   W <- 10
   
@@ -40,13 +43,14 @@ IdentifySubExps <- function(extinctions, build, W){
 
 
 AssignToAllSubExps <- function(build, subexps){
-  all_cities <- build$city_id |> unique() |> as_tibble_col(column_name="city_id")
+  # this environment gets exported to all the workers
   
-  subexps <- subexps |> select(-treat_year, -exp_start, -exp_end)
-  subexps.list <- split(subexps, seq(nrow(subexps)))
+  subexps.list <- subexps |> 
+    select(-treat_year, -exp_start, -exp_end) |> 
+    {\(.) split(., seq(nrow(.)))}()
   
   assignment <- subexps.list |> 
-    map(\(d) AssignCitiesSubExp(d, build), .progress=TRUE) |> 
+    furrr::future_map(\(d) AssignCitiesSubExp(d, build), .progress=TRUE) |> 
     reduce(left_join, by = "city_id")
   
   return(assignment)
