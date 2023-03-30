@@ -7,13 +7,13 @@ setwd("~/GitHub/BA")
 
 
 Main <- function(){
-  data <- read_csv("analysis/input/build.csv")
+  build <- read_csv("analysis/input/build.csv")
   extinctions <- read_csv("analysis/input/extinctions.csv")
   
   W <- 10
   
-  subexps <- IdentifySubExps(extinctions, data, W)
-  assignment <- AssignCitiesAll(subexps, data)
+  subexps <- IdentifySubExps(extinctions, build, W)
+  assignment <- AssignToAllSubExps(build, subexps)
   
   assignment <- DropEmptySubExps(assignment, threshold=10)
   
@@ -38,8 +38,25 @@ IdentifySubExps <- function(extinctions, build, W){
   return(subexps)
 }
 
+
+AssignToAllSubExps <- function(build, subexps){
+  all_cities <- build$city_id |> unique() |> as_tibble_col(column_name="city_id")
+  
+  subexps <- subexps |> select(-treat_year, -exp_start, -exp_end)
+  subexps.list <- split(subexps, seq(nrow(subexps)))
+  
+  assignment <- subexps.list |> 
+    map(\(d) AssignCitiesSubExp(d, build), .progress=TRUE) |> 
+    reduce(left_join, by = "city_id")
+  
+  return(assignment)
+}
+
+
 AssignCitiesSubExp <- function(d, build){
-  # returns the city-year observations for sub-experiment d.
+  # returns the assignment of cities to treat, control, or exclude for subexp d.
+
+  # get city-year observations from build for sub-experiment d
   incl_range <- d$lower_inclusion_bound:d$upper_inclusion_bound
   
   # find eligible cities (full available data) and ungroup back to city-year
@@ -64,38 +81,26 @@ AssignCitiesSubExp <- function(d, build){
     filter(sum(treatment) == 0) %>% # zero treatments in the inclusion period
     summarise(d_treat = FALSE)
   
-  # get all cities in the experiment
+  # get vector of all city_ids that are in the experiment
   d_cities <- bind_rows(d_treat_cities, d_control_cities) %>% 
     select(city_id, d_treat)
+  
+  # make output vector that can be cbound to others later
+  varname <- paste("treat_", d$terr_id, sep="")
+  all_cities <- build$city_id |> unique() |> as_tibble_col(column_name="city_id")
+  d_assignment <- left_join(all_cities, d_cities, by="city_id") |> # expands to all city_ids
+    rename("{varname}" := d_treat)
     
-  return(d_cities)
+  return(d_assignment)
 }
 
-AssignCitiesAll <- function(subexps, build){
-  all_cities <- build %>% 
-    group_by(city_id) %>% 
-    summarise()
-  
-  for (row in rownames(subexps)){
-    d <- subexps[row,]
-    varname <- paste("treat_", d$terr_id, sep="")
-    
-    d_assignment <- AssignCitiesSubExp(d, build) %>% 
-      rename("{varname}" := d_treat)
-    
-    all_cities <- left_join(all_cities, d_assignment, key="city_id")
-  }
-  
-  return(all_cities)
-}  
 
 DropEmptySubExps <- function(assignment, threshold=0){
+  # drops sub-experiments where the treatment group is too small
   assignment %>% 
     select_if(colSums(., na.rm=TRUE) > threshold) %>% 
     return()
 }
 
-#subexps <- IdentifySubExps(extinctions, data, 10)
-#test <- Main()
 
 Main()
