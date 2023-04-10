@@ -57,7 +57,8 @@ PushExtinctions1Year <- function(table){
 TidyOutput <- function(table){
   final <- table %>% 
     select(city_id, year, city, terr_id, territory, final_full_year, extinction, 
-           treatment, extinction_of, count_cities, count_diff, construction, real_wage, welfare_ratio)
+           treatment, extinction_of, count_cities, count_diff, pop1875,
+           construction, real_wage, welfare_ratio)
   return(final)
 }
 

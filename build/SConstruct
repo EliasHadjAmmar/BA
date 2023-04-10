@@ -17,6 +17,12 @@ terr_sizes = Command('temp/terr_sizes.csv',
          'code/LineageSize.R'],
         'Rscript code/LineageSize.R')
 
+cities1875 = Command('temp/cities1875.csv',
+        ['input/city_locations.csv',
+         'input/destatis1881.csv',
+         'code/Population1875.R'],
+         'Rscript code/Population1875.R')
+
 wages = Command('temp/wages.csv',
         ['input/clean_crafts.xlsx',
          'code/Wages.R'],
@@ -39,7 +45,8 @@ extinctions = Command('output/extinctions.csv',
 
 cities = Command('output/cities.csv',
         ['input/cities_families_1300_1918.dta',
-        construction, wages, 
+         'input/city_locations.csv',
+        construction, cities1875, wages, 
         'code/CombineCityData.R'],
         'Rscript code/CombineCityData.R')
 
