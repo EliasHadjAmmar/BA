@@ -1,13 +1,13 @@
 # Input: cross-section of city populations in 1875.
 # Output: 1875 population of cities that are in the Städtebuch data, with city_id.
 
-library(tidyverse)
+suppressPackageStartupMessages(library(tidyverse))
 
 setwd("~/GitHub/BA")
 
 Main <- function(){
-  staedtebuch <- read_csv("build/input/city_locations.csv")
-  cities1875 <- read_csv("build/input/destatis1881.csv")
+  staedtebuch <- read_csv("build/input/city_locations.csv", show_col_types = F)
+  cities1875 <- read_csv("build/input/destatis1881.csv", show_col_types = F)
   
   cities1875 <- UnifyNames(cities1875)
   

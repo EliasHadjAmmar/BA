@@ -1,17 +1,17 @@
 # Inputs: extinction list from rulers, and extinction list from territories.
 # Output: the final extinction list that gets turned into sub-experiments.
 
-library(tidyverse)
+suppressPackageStartupMessages(library(tidyverse))
 setwd("~/GitHub/BA")
 
 Main <- function(){
-  ext_rulers <- read_csv("build/temp/last_rulers.csv") %>% 
+  ext_rulers <- read_csv("build/temp/last_rulers.csv", show_col_types = F) |>  
     select(terr_id, death_year, end_reign, dupe_rulers)
-  ext_terrs <- read_csv("build/temp/ext_terrs.csv")
+  ext_terrs <- read_csv("build/temp/ext_terrs.csv", show_col_types = F)
   
   final_list <- CombineBoth(ext_rulers, ext_terrs)
   
-  final_list %>% write.csv("build/output/extinctions.csv")
+  final_list |> write_csv("build/output/extinctions.csv")
 }
 
 CombineBoth <- function(ext_rulers, ext_terrs){

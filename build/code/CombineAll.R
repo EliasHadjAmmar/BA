@@ -8,20 +8,20 @@
 # - size change from last year
 # - construction
 
-library(tidyverse)
+suppressPackageStartupMessages(library(tidyverse))
 
 setwd("~/GitHub/BA")
 
 Main <- function(){
-  cities <- read.csv("build/output/cities.csv")
-  lineages <- read.csv("build/output/lineages.csv")
+  cities <- read_csv("build/output/cities.csv", show_col_types = F)
+  lineages <- read_csv("build/output/lineages.csv", show_col_types = F)
   
   build <- CombineTables(cities, lineages)
   build <- AddSizeDiffs(build)
   build <- PushExtinctions1Year(build)
   build <- TidyOutput(build)
   
-  build %>% write.csv("build/output/build.csv")
+  build |> write_csv("build/output/build.csv")
 }
 
 
@@ -32,9 +32,9 @@ CombineTables <- function(cities, lineages){
 }
 
 AddSizeDiffs <- function(table){
-  diffed <- table %>% 
-    group_by(city_id) %>% 
-    mutate(count_diff = count_cities - lag(count_cities)) %>% 
+  diffed <- table |> 
+    group_by(city_id) |> 
+    mutate(count_diff = count_cities - lag(count_cities)) |> 
     ungroup()
   return(diffed)
 }
@@ -46,16 +46,16 @@ PushExtinctions1Year <- function(table){
   # place.
   # But I want a treatment dummy to show up in the same year as the
   # count_diff, i.e. in the first year under the new lineage.
-  pushed <- table %>% 
-    group_by(city_id) %>% 
-    mutate(treatment = lag(extinction)) %>% # there's no way to avoid leading NA because I don't know the previous terr_id of those observations
-    mutate(extinction_of = if_else(treatment==1, lag(terr_id), "")) %>% 
+  pushed <- table |> 
+    group_by(city_id) |> 
+    mutate(treatment = lag(extinction)) |> # there's no way to avoid leading NA because I don't know the previous terr_id of those observations
+    mutate(extinction_of = if_else(treatment==1, lag(terr_id), "")) |> 
     ungroup()
   return(pushed)
 }
 
 TidyOutput <- function(table){
-  final <- table %>% 
+  final <- table |> 
     select(city_id, year, city, terr_id, territory, final_full_year, extinction, 
            treatment, extinction_of, count_cities, count_diff, pop1875,
            construction, real_wage, welfare_ratio)
