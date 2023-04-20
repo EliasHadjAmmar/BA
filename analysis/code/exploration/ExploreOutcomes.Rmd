@@ -12,6 +12,16 @@ library(viridisLite)
 
 ```{r data import}
 data <- read.csv("analysis/input/build.csv")
+
+cities_life <- data %>% 
+  group_by(city_id) %>% 
+  summarise(
+    lifetime_construction = sum(construction, na.rm=TRUE),
+    observations = sum(!is.na(construction)), # not super meaningful
+    pop1875 = min(pop1875), # should be same as max(pop1875)
+    datayears = max(year) - min(year)
+    )
+
 ```
 
 ### List cities to plot
@@ -28,19 +38,19 @@ ListCitiesNotNA <- function(data, outcome, window=1300:1918){
 
 
 ListTopCities <- function(data, which=1:8, by="obs", window=1300:1918){
-  cities_life <- data %>% 
-    filter(year %in% window) %>% 
-    group_by(city_id) %>% 
+  cities_life <- data |> 
+    filter(year %in% window) |> 
+    group_by(city_id) |> 
     summarise(
       lifetime_construction = sum(construction, na.rm=TRUE),
-      observations = sum(!is.na(construction))
+      observations = sum(!is.na(construction)) # not super meaningful
       )
   
   if (by == "obs"){
-    top_ids <- cities_life %>% 
+    top_ids <- cities_life |> 
       arrange(desc(observations), desc(lifetime_construction))
   } else {
-    top_ids <- cities_life %>% 
+    top_ids <- cities_life |> 
       arrange(desc(lifetime_construction), desc(observations))
   }
   
@@ -139,3 +149,20 @@ PlotHistograms(data, top16) +
 I want to see how the number of recorded events is related to
 - a city's population in 1875
 - a city's age
+
+```{r}
+cities_life |> 
+  ggplot(aes(x=log(pop1875), y=lifetime_construction))+
+  geom_point()+
+  geom_smooth(method = "lm")
+  
+```
+
+That's definitely a positive association right there. The slope is about 8, which means that all else being equal, a twice-as-large city will have eight more construction events recorded in the Städtebuch (if we extrapolate down from the 89 most populous cities in 1875). That sounds reasonable. Maybe the quality of the data isn't so bad after all? Maybe there just wasn't that much construction of notable public buildings in all these tiny cities?
+
+
+If construction happens rarely, and possibly in bursts / waves (insert mental model of construction here), then it could well be that these bursts happen to be closer in time, on average, to territorial takeovers.
+
+Two possible channels: takeover per se (gaining favour), or size.
+
+Another idea: add ordinal minimum "<20000" for pop1875 so it's never missing

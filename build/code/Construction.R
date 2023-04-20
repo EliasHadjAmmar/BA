@@ -6,9 +6,8 @@ suppressPackageStartupMessages(library(tidyverse))
 setwd("~/GitHub/BA")
 
 Main <- function(){
-  cons_raw <- read_csv("build/input/construction.csv", show_col_types = F) |> 
-    select(city_id, city_name, year_clear, building, buildgen, newbuild, uncertainty) |> 
-    rename(year = year_clear)
+  cons_raw <- read_csv("build/input/construction_all.csv", show_col_types = F) |> 
+    rename(year = time_point)
   cons <- CountBuildings(cons_raw)
   cons_gaps <- AddGaps(cons)
   cons_clean <- TidyOutput(cons_gaps)
@@ -49,7 +48,8 @@ TidyOutput <- function(cons){
   return(clean)
 }
 
-# Turns out that the publicly available construction data is coarsened.
-# I have to ask Prof. Cantoni for the raw data before I can proceed 
+# There are some impurities in the new data - specifically, some entries have comments
+# as city ids and single-digit years. But they should fall away with the join in
+# CombineCityData.R, I think.
 
 test <- Main()
