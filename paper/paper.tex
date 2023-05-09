@@ -119,6 +119,31 @@ Evidence: \cite{olken2005}, \cite{dube2020}, \cite{ottinger2022}
 
 % --------------------------------------------------------
 
+\subsection{Description of the sample}
+
+I have an unbalanced panel of cities.
+
+The basic version of my build has two problems that stop me from running a staggered DiD on it straight-out-the-box:
+\begin{itemize}
+    \item there are missing values to be dealt with [where?]
+    \item it is unclear how to deal with cities that get treated multiple times    
+\end{itemize}
+
+To deal with these issues, I do the following:
+\begin{itemize}
+    \item don't bother with a DiD and do an event study from the start
+    \item version 1: exclude all cities with multiple treatments and, if that doesn't shrink the sample by a ridiculous amount, run the regression on that
+    \item version 2: exclude cities with multiple treatments only if the event windows overlap
+    \item worry about missing values when they actually become a problem.
+\end{itemize}
+
+Since the non-stacked version is biased, I shouldn't be super worried if I see pre-trends here. Run it for good measure, but then argue (based on the literature) that while this looks weird, we should not take it seriously.
+
+After I've implemented my restricted sample, I could run the Exploration.Rmd notebook on that build, too, and see which graphics and stats to include here. However, if there are two different builds to discuss (the "build" build and the sample for the baseline), I should be mindful of redundancy and think about the optimal arrangement.
+    
+
+
+
 \subsection{Pooled OLS regression}
 
 % --------------------------------------------------------
