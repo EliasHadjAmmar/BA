@@ -9,9 +9,13 @@ library(fixest)
 setwd("~/GitHub/BA")
 
 Main <- function(){
+  
+  NLEADS <- 10
+  NLAGS <- 15
+  
   build <- read_csv("analysis/input/build.csv", show_col_types = FALSE)
   clean <- CleanData(build)
-  with_window <- AddLeadsLags(clean, 20, 20)
+  with_window <- AddLeadsLags(clean, NLEADS, NLAGS)
   
   
   mod <- fixest::feols(construction ~ i(time_to_treat, treat, ref = -1) |  
