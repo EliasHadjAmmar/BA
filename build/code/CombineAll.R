@@ -21,7 +21,7 @@ Main <- function(){
   build <- PushExtinctions1Year(build)
   build <- TidyOutput(build)
   
-  build |> write_csv("build/output/build.csv")
+  build |> write_csv("build/output/build_full.csv")
 }
 
 
