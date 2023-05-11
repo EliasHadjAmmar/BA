@@ -11,7 +11,7 @@ library(viridisLite)
 ### Data import and summary
 
 ```{r data import}
-data <- read.csv("analysis/input/build.csv")
+data <- read.csv("analysis/input/build_full.csv")
 
 cities_life <- data %>% 
   group_by(city_id) %>% 
@@ -128,7 +128,7 @@ wratio_plot <- PlotOutcomeLines(data, citylist=both, welfare_ratio, colour_vec, 
 const_plot <- PlotDensity(data, citylist = both, colour_vec, window=1400:1800)
 
 plot_grid(wage_plot, wratio_plot, const_plot, align="v", axis="b", ncols=1)
-ggsave("const_wages.png", device = "png", path="analysis/output/exploration")
+# ggsave("const_wages.png", device = "png", path="analysis/output/exploration")
 ```
 
 What's striking and concerning is that they really don't match at all. Maybe I need to control for something? How would that work, though?
