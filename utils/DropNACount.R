@@ -1,4 +1,4 @@
-dropNACount <- function(dat, varname){
+DropNACount <- function(dat, varname){
   # Drops observations with the specified variable missing, 
   # and prints the number of observations that were dropped
   clean <- dat |> 
