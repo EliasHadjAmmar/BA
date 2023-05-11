@@ -3,8 +3,8 @@
 # Drop all city-years with missing outcomes.
 # See what happens.
 
-library(tidyverse)
-library(fixest)
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(fixest))
 
 setwd("~/GitHub/BA")
 
