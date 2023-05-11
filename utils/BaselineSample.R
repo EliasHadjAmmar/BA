@@ -14,7 +14,7 @@ BaselineSample <- function(build){
   
   # Remove superfluous columns
   clean <- max1treat |> 
-    select(year, city_id, construction, treatment) |> 
+    select(year, city_id, construction, treatment, count_cities, count_diff) |> 
     as.data.frame()
   
   return(clean)
