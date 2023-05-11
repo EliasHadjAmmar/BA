@@ -36,139 +36,42 @@ I use historical data on construction activity and territorial history to estima
 \setcounter{page}{1}
 \doublespacing
 
-% ########################################################
+% ######################################################
  
 \section{Introduction}
 
-The political history of Europe, until fairly recently, was defined by ruling families passing their territorial holdings down in hereditary monarchies. Land and cities changed hands often throughout the history of Europe. Which territory a city belonged to had economic as well as political consequences, and it is not hard to imagine that the fortunes of whole stretches of land could be decided by such dynastic takeovers. For example, (good example of a takeover and its consequences here).
 
-In this paper I investigate changes in territory size as one possible channel through which dynastic takeovers could affect development. There exists a literature on the optimal size of state (e.g. \cite{as1997}, \cite{aw1998}, \cite{asw2000}, \cite{easterly2000}). This literature focuses on the tradeoffs between scale effects in government on one hand and conflict on the other, as well as trade and openness.
-
-background on the hre / motivation for using city-level data and territory switches
-
-I use a stacked event study framework with varying intensity of treatment. The treatment is the size difference between the old and the new rulers' territorial holdings. I will argue that the takeover constitutes a shock to territory size that is exogenous to development. The event study shows that cities with different takeover experiences did not differ in growth (conditional on city and year fixed effects) before their respective takeovers. 
-
-The outcome variable used throughout the analysis is yearly construction activity. I go to some lenghts to show that this is a good proxy for growth, comparing the present data from the Deutsches St\"adtebuch to the craftsmen real wage time series by Allen for available cities. The two measures generally align.
-
-Results indicate that territory size has a large, significant and positive effect on city growth. Cities that joined a twice-as-big territory experienced 10 \% higher construction activity in subsequent years. Splitting the sample into cities from big, medium-sized and small territories reveals that the effect is mostly driven by cities from small territories. However, cities in big territories generally changed hands less often, making it more difficult to find a meaningful and significant effect in that subsample.
-
-The literature says that benefits of larger states include free trade within a larger area. Trade within the HRE was not exactly free. I'm not currently aware of data on historical trade flows between German cities. However, I use the establishment of historical markets (Cantoni et al) and the presence of Jews (data from Voigtl\"ander and Voth) to investigate this channel. I find that trade increases (cities are (insignificantly) more likely to establish markets, and the presence of Jews increases) when cities join larger territories.
-
-% ########################################################
+% ######################################################
 
 \section{Literature review}
 
-You should ultimately boil this down to one page. Identify strengths and weaknesses of related studies as they relate to my project. Contrast sharply. Highlight your contribution in the context of the rest. Give your best answer to the ``So What?'' question \textit{now}.
 
-Begin with comments about the body of research as a whole. 
-First of all, which field is your project located in? Or at the intersection of which fields?
-
-Have there been many or few studies? Have they focused on similar questions, or different? Are they empirical or theoretical? Which kind of setting do they use? What kind of data do they use? Do they use fancy structural estimation of specific parameters in trade models? What about the others, that are more like yours? What are recent papers on? When was this topic popular?
-
-Once you've set the stage, locate your project in it.
-As of now, I think this project makes two main contributions: it shows the effects of integration in a historical context, and it's novel in using detailed regionally disaggregated panel data to attempt causal inference.
-
-Then sharpen this localisation by comparing your project to salient papers from the different strands (thematic groups): first papers from a). then from b). then c). Explain merits and shortcomings of these papers in relation to the question. Explain how your study hopes to avoid flaws in their analyses, and, in stark terms, what it ultimately contributes. This concludes your lit review.
-
-Strands of relevant literature (gradually copy these upward): 
-
-% --------------------------------------------------------
-
-\subsection{State size and capacity}
-
-Theory: \cite{as1997}
-
-Historical evidence: \cite{cervellati2022}, \cite{koyama2017}, \cite{schoenholzer2018}, \cite{sng2014}
-
-% --------------------------------------------------------
-
-\subsection{Economic and political integration}
-
-Theory: \cite{sapir2011}, \cite{asw2000}
-
-Historical evidence: \cite{chilosi2013}, \cite{kindleberger1975}, \cite{wolf2009}, \cite{chen2004}
-
-\cite{chilosi2013} use  to find . for instance Give a figure: within central europe, what was the dispersion of prices in the first, second and third period each?
-
-Effects: \cite{campos2019}
-
-% --------------------------------------------------------
-
-\subsection{HNEs in the HRE}
-
-Papers using similar approaches: \cite{cantoni2011}
-
-% --------------------------------------------------------
-
-\subsection{Hereditary rule as a HNE}
-
-Theory: \cite{besley2017}
-
-Evidence: \cite{olken2005}, \cite{dube2020}, \cite{ottinger2022}
-
-% ########################################################
+% ######################################################
 
 \section{Cities, lineages, and territories}
 
-% --------------------------------------------------------
 
-\subsection{What do I measure?}
-
-% ########################################################
+% #####################################################
 
 \section{Empirical approach}
 
-% --------------------------------------------------------
 
-\subsection{Description of the sample}
-
-I have an unbalanced panel of cities.
-
-The basic version of my build has two problems that stop me from running a staggered DiD on it straight-out-the-box:
-\begin{itemize}
-    \item there are missing values to be dealt with [where?]
-    \item it is unclear how to deal with cities that get treated multiple times    
-\end{itemize}
-
-To deal with these issues, I do the following:
-\begin{itemize}
-    \item don't bother with a DiD and do an event study from the start
-    \item version 1: exclude all cities with multiple treatments and, if that doesn't shrink the sample by a ridiculous amount, run the regression on that
-    \item version 2: exclude cities with multiple treatments only if the event windows overlap
-    \item worry about missing values when they actually become a problem.
-\end{itemize}
-
-Since the non-stacked version is biased, I shouldn't be super worried if I see pre-trends here. Run it for good measure, but then argue (based on the literature) that while this looks weird, we should not take it seriously.
-
-After I've implemented my restricted sample, I could run the Exploration.Rmd notebook on that build, too, and see which graphics and stats to include here. However, if there are two different builds to discuss (the "build" build and the sample for the baseline), I should be mindful of redundancy and think about the optimal arrangement.
-    
-
-\subsection{Pooled OLS regression}
-
-\input{paper/input/tables/baseline_did}
-
-
-% --------------------------------------------------------
-
-\subsection{Obtaining a dataset of stacked natural experiments}
-
-% --------------------------------------------------------
-
-\subsection{Stacked event study and extinction IV}
-
-% ########################################################
+% #####################################################
 
 \section{Results}
 
-% ########################################################
+
+% #####################################################
 
 \section{Validity and robustness}
 
-% ########################################################
+
+% ######################################################
 
 \section{Conclusion}
 
-% ########################################################
+
+% ######################################################
 
 
 
