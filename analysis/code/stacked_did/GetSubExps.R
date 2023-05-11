@@ -31,7 +31,7 @@ IdentifySubExps <- function(extinctions, build, W){
   
   subexps <- extinctions %>% 
     filter(between(death_year, min(build$year) + W, max(build$year) - W)) %>% 
-    rename(treat_year = death_year) %>% 
+    rename(treat_year = death_year) %>% # not clear whether this needs to be +1!
     select(terr_id, treat_year) %>% 
     mutate(
       lower_inclusion_bound = treat_year - 2*W, # this is a choice
@@ -45,7 +45,7 @@ IdentifySubExps <- function(extinctions, build, W){
 AssignToAllSubExps <- function(build, subexps){
   # this environment gets exported to all the workers
   
-  subexps.list <- subexps |> 
+  subexps.list <- subexps |> # get list of rows of subexps
     select(-treat_year, -exp_start, -exp_end) |> 
     {\(.) split(., seq(nrow(.)))}()
   
@@ -59,15 +59,15 @@ AssignToAllSubExps <- function(build, subexps){
 
 AssignCitiesSubExp <- function(d, build){
   # returns the assignment of cities to treat, control, or exclude for subexp d.
-
-  # get city-year observations from build for sub-experiment d
-  incl_range <- d$lower_inclusion_bound:d$upper_inclusion_bound
   
-  # find eligible cities (full available data) and ungroup back to city-year
+  # get city-year observations from build for sub-experiment d
+  incl_window <- d$lower_inclusion_bound:d$upper_inclusion_bound
+  
+  # find eligible cities (data for full window) and ungroup back to city-year
   d_base_data <- build %>% 
-    filter(year %in% incl_range) %>% 
+    filter(year %in% incl_window) %>% 
     group_by(city_id) %>% 
-    filter(n() == length(incl_range)) %>% 
+    filter(n() == length(incl_window)) %>% 
     ungroup()
   
   # get treatment group

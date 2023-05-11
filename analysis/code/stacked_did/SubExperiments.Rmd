@@ -41,8 +41,7 @@ A sub-experiment is a subset of the build, i.e. a city-year data set, so that
 
 ```{r data import}
 build <- read_csv("analysis/input/build.csv") %>% 
-  select(city_id, year, terr_id, final_full_year, 
-        extinction, treatment, extinction_of, count_diff)
+  select(city_id, year, terr_id, treatment, extinction_of, count_diff)
 
 ```
 
