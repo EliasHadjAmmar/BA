@@ -8,13 +8,15 @@ library(fixest)
 
 setwd("~/GitHub/BA")
 
+source("analysis/code/lib/SampleSelection.R")
+
 Main <- function(){
   
   NLEADS <- 10
   NLAGS <- 15
   
   build <- read_csv("analysis/input/build.csv", show_col_types = FALSE)
-  clean <- CleanData(build)
+  clean <- BaselineSample(build)
   with_window <- AddLeadsLags(clean, NLEADS, NLAGS)
   
   
@@ -30,46 +32,6 @@ Main <- function(){
   # tex_output <- etable(mod, tex=TRUE)
   # write(tex_output, file="analysis/output/tables/baseline_did.tex")
 }
-
-
-CleanData <- function(build){
-  # should be same as in baseline_did.R - ideally source from shared util file
-  clean <- build |> 
-    DropNACount("year") |> 
-    DropNACount("city_id") |> 
-    DropNACount("construction") |> 
-    DropNACount("treatment")
-  
-  
-  max1treat <- clean |> 
-    group_by(city_id) |> 
-    mutate(treatments_total = sum(treatment)) |> 
-    filter(treatments_total < 2)
-  
-  n_dropped <- nrow(clean)-nrow(max1treat)
-  cities_dropped <- n_distinct(clean$city_id)-n_distinct(max1treat$city_id)
-  
-  print(sprintf("Dropped %d observations with multiple treatments (%d cities)", 
-                n_dropped, cities_dropped))
-  
-  clean <- max1treat |> 
-    select(year, city_id, construction, treatment) |> 
-    as.data.frame()
-  
-  return(clean)
-}
-
-
-DropNACount <- function(dat, varname){
-  # should be same as in baseline_did.R - ideally source from shared file
-  clean <- dat |> 
-    drop_na(!!sym(varname))
-  
-  n_dropped <- nrow(dat)-nrow(clean)
-  print(sprintf("Dropped %d observations with missing %s", n_dropped, varname))
-  return(clean)
-}
-
 
 AddLeadsLags <- function(clean, nleads, nlags){
   timing <- clean |> 
