@@ -56,8 +56,13 @@ lineages = Command('output/lineages.csv',
         'code/CombineLineageData.R'],
         'Rscript code/CombineLineageData.R')
 
-data_build = Command('output/build_full.csv',
+build_full = Command('output/build_full.csv',
         [cities, lineages,
          'code/CombineAll.R'],
         'Rscript code/CombineAll.R')
+
+build = Command('output/build.csv',
+        [build_full,
+         'code/CleanBuild.R'],
+         'Rscript code/CleanBuild.R')
 
