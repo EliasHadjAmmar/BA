@@ -1,7 +1,7 @@
 
 from SCons.Script import Command
 
-# Assign input file paths to variables for convenience
+# Assigning input file paths to variables for convenience
 raw_rulers = "build/input/families_rulers_imputed.dta"
 raw_construction = "build/input/construction_all_xl.csv"
 raw_cities = "build/input/cities_families_1300_1918.dta"
@@ -11,8 +11,18 @@ destatis1881 = "build/input/destatis1881.csv"
 city_locations = "build/input/city_locations.csv"
 territory_codes = "build/input/territory_codes.csv"
 
+# Assigning utility script paths to variables for convenience
+# (varnames in CamelCase to be distinguishable from data)
+DropNACount = "utils/DropNACount.R"
+BaselineSample = "utils/BaselineSample.R"
+AggregateYears = "utils/AggregateYears.R"
 
-# Build the list of extinction events
+
+###############################################################################
+###                          BUILDING THE DATASET                           ###
+###############################################################################
+
+# This builds the list of extinction events
 rulers = Command('build/temp/rulers.csv',        # target path (output file)
     [raw_rulers, 'build/code/Rulers.R'],         # source paths (input files)
     'Rscript build/code/Rulers.R')               # command line string
@@ -30,7 +40,7 @@ extinctions = Command('build/output/extinctions.csv',
     'Rscript build/code/CombineExtinctions.R')
 
 
-# Build the lineages-level dataset
+# This builds the lineages-level dataset
 terr_sizes = Command('build/temp/terr_sizes.csv',
     [raw_cities, 'build/code/LineageSize.R'],
     'Rscript build/code/LineageSize.R')
@@ -40,7 +50,7 @@ lineages = Command('build/output/lineages.csv',
     'Rscript build/code/CombineLineageData.R')
 
 
-# Build the city-level dataset
+# This builds the city-level dataset
 construction = Command('build/temp/construction_new.csv',
     [raw_construction, 'build/code/Construction.R'],
     'Rscript build/code/Construction.R')
@@ -58,12 +68,29 @@ cities = Command('build/output/cities.csv',
     'Rscript build/code/CombineCityData.R')
 
 
-# Build the full dataset
+# This builds the full dataset
 build_full = Command('build/output/build_full.csv',
     [cities, lineages, 'build/code/CombineAll.R'],
     'Rscript build/code/CombineAll.R')
 
 build = Command('build/output/build.csv',
-    [build_full, 'build/code/CleanBuild.R'],
+    [build_full, DropNACount, 'build/code/CleanBuild.R'],
     'Rscript build/code/CleanBuild.R')
+
+
+###############################################################################
+###                OUTPUTTING REGRESSION TABLES AND FIGURES                 ###
+###############################################################################
+
+baseline_did = Command('analysis/output/tables/baseline_did.tex',
+    [build, BaselineSample, 'analysis/code/baseline/BaselineDiD.R'],
+    'Rscript analysis/code/baseline/BaselineDiD.R')
+
+baseline_did_countdiff = Command('analysis/output/tables/baseline_did_countdiff.tex',
+    [build, BaselineSample, 'analysis/code/baseline/BaselineDiD_countdiff.R'],
+    'Rscript analysis/code/baseline/BaselineDiD_countdiff.R')
+
+# baseline_es = Command('analysis/output/tables/???.png',
+#     [build, BaselineSample, AggregateYears, 'analysis/code/baseline/BaselineEventStudy.R'],
+#     'Rscript analysis/code/BaselineEventStudy.R')
 

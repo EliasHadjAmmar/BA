@@ -19,7 +19,7 @@ Main <- function(){
   #summary(mod)
   
   tex_output <- etable(mod, tex=TRUE)
-  write(tex_output, file="analysis/output/tables/baseline_did_size.tex")
+  write(tex_output, file="analysis/output/tables/baseline_did_countdiff.tex")
 }
 
 
