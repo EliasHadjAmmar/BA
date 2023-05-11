@@ -8,7 +8,7 @@ library(fixest)
 
 setwd("~/GitHub/BA")
 
-source("analysis/code/lib/SampleSelection.R")
+source("utils/BaselineSample.R")
 
 Main <- function(){
   build <- read_csv("analysis/input/build.csv", show_col_types = FALSE)

@@ -10,7 +10,7 @@ library(cowplot)
 ### Data import and summary
 
 ```{r data import}
-data <- read.csv("analysis/input/build.csv")
+data <- read.csv("analysis/input/build_full.csv")
 
 summary(data)
 ```
@@ -33,7 +33,7 @@ ggplot(data) +
     title="Number of observations across time"
   )
 
-ggsave("obs_yearly.png", device="png", path="analysis/output/exploration")
+#ggsave("obs_yearly.png", device="png", path="analysis/output/exploration")
 ```
 
 Looks fairly smooth except for the big jump around 1800, and the drop around 1350.
@@ -92,7 +92,7 @@ centuries_plot <- terrs %>%
   )
 
 plot_grid(yearly_plot, centuries_plot)
-ggsave("terrs_yearly_cents.png", device="png", path="analysis/output/exploration")
+#ggsave("terrs_yearly_cents.png", device="png", path="analysis/output/exploration")
 ```
 
 That is pretty cool. The most striking thing is Napoleon, of course.
@@ -133,7 +133,7 @@ size_time_no_outliers <- terrs_centuries %>%
 
 # plot side by side
 plot_grid(size_time, size_time_no_outliers)
-ggsave("terrsize_cents_boxplot.png", device="png", path="analysis/output/exploration")
+#ggsave("terrsize_cents_boxplot.png", device="png", path="analysis/output/exploration")
 
 ```
 
@@ -158,7 +158,7 @@ CityExtPlot <- function(full_data, bins, title){
 plot_grid(CityExtPlot(data, 1, "Cities affected by extinction, yearly"), CityExtPlot(data, 10, "10-year bins"),
           CityExtPlot(data, 30, "30-year bins"), CityExtPlot(data, 50, "50-year bins"))
 
-ggsave("cities_ext.png", device="png", path="analysis/output/exploration")
+#ggsave("cities_ext.png", device="png", path="analysis/output/exploration")
 ```
 
 #### Lineages that go extinct across time
@@ -177,7 +177,7 @@ TerrExtPlot <- function(terrs, bins, title){
 
 plot_grid(TerrExtPlot(terrs, 1, "Lineage extinctions, yearly"), TerrExtPlot(terrs, 10, "10-year bins"),
           TerrExtPlot(terrs, 30, "30-year bins"), TerrExtPlot(terrs, 50, "50-year bins"))
-ggsave("terrs_ext.png", device="png", path="analysis/output/exploration")
+#ggsave("terrs_ext.png", device="png", path="analysis/output/exploration")
 
 ```
 
@@ -210,7 +210,7 @@ size_ext_no_outliers <- terrs_life %>%
 
 
 plot_grid(size_ext, size_ext_no_outliers, ncol = 1)
-ggsave("ext_max_size.png", device="png", path="analysis/output/exploration")
+#ggsave("ext_max_size.png", device="png", path="analysis/output/exploration")
 
 ```
 
@@ -225,7 +225,7 @@ terrs_life %>%
     subtitle="(Last year minus first year that lineage shows up in the city data)"
   )
 
-ggsave("lifespan_histo.png", device="png", path="analysis/output/exploration")
+#ggsave("lifespan_histo.png", device="png", path="analysis/output/exploration")
 ```
 
 #### Correlation between size and survival
@@ -326,7 +326,7 @@ integ_1800_10y <- plot_integ(data, 10, startyear=1750)
 
 plot_grid(integ_50y, integ_1600_25y, integ_1800_10y,
           align="v", ncol=1)
-ggsave("city_integ_boxplots.png", device="png", path="analysis/output/exploration")
+#ggsave("city_integ_boxplots.png", device="png", path="analysis/output/exploration")
 ```
 
 The political integration of cities stagnates until 1750, starts to quickly and steadily increase from the late 18th to mid-19th century, and then jumps abruptly with Prussia getting the Norddeutscher Bund in 1866. 
