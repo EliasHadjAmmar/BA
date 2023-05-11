@@ -3,8 +3,8 @@
 # Drop all cities with more than one treatment.
 # Drop all city-years with missing outcomes.
 
-library(tidyverse)
-library(fixest)
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(fixest))
 
 setwd("~/GitHub/BA")
 
