@@ -4,6 +4,7 @@ The project is structured as a code pipeline consisting of `build`, `analysis` a
 
 The `build` and `analysis` folders each contain an `SConstruct` file which specifies the dependencies between the code files in that folder.
 If you have the Open Source build utility [SCons](https://scons.org/pages/download.html) installed on your computer, you can conveniently run all the code in the correct order from the command line by following these steps:
+- CREATE SYMLINKS ELSE IT WILL NOT WORK (consider going for a full `drive` approach to avoid this)
 - `cd` to the `build` folder.
 - Enter `SCONS` into the command line. This will output the data set.
 - `cd` to the `analysis` folder.
