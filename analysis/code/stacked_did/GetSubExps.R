@@ -20,7 +20,7 @@ Main <- function(){
   
   assignment <- DropEmptySubExps(assignment, threshold=10)
   
-  assignment %>% write.csv("analysis/temp/assignment.csv")
+  assignment |> write_csv("analysis/temp/assignment.csv")
   #return(assignment)
 }
 
@@ -29,10 +29,10 @@ IdentifySubExps <- function(extinctions, build, W){
   # returns extinctions with (2*)W years of data before/after,
   # and their sub-experiment and inclusion windows.
   
-  subexps <- extinctions %>% 
-    filter(between(death_year, min(build$year) + W, max(build$year) - W)) %>% 
-    rename(treat_year = death_year) %>% # not clear whether this needs to be +1!
-    select(terr_id, treat_year) %>% 
+  subexps <- extinctions |> 
+    filter(between(death_year, min(build$year) + W, max(build$year) - W)) |> 
+    rename(treat_year = death_year) |>  # not clear whether this needs to be +1!
+    select(terr_id, treat_year) |>  
     mutate(
       lower_inclusion_bound = treat_year - 2*W, # this is a choice
       upper_inclusion_bound = treat_year + W,
@@ -64,29 +64,30 @@ AssignCitiesSubExp <- function(d, build){
   incl_window <- d$lower_inclusion_bound:d$upper_inclusion_bound
   
   # find eligible cities (data for full window) and ungroup back to city-year
-  d_base_data <- build %>% 
-    filter(year %in% incl_window) %>% 
-    group_by(city_id) %>% 
-    filter(n() == length(incl_window)) %>% 
+  d_base_data <- build |>  
+    filter(year %in% incl_window) |>  
+    group_by(city_id) |> 
+    filter(n() == length(incl_window)) |> 
     ungroup()
   
   # get treatment group
-  d_treat_cities <- d_base_data %>% # this is all cities satisfying:
-    group_by(city_id) %>% 
-    filter(sum(treatment) == 1) %>% # 1) there must be exactly one treatment AND
-    ungroup() %>% 
-    filter(treatment == 1) %>% 
-    filter(extinction_of == d$terr_id) %>% # 2) that one treatment is d
+  d_treat_cities <- d_base_data |>  # this is all cities satisfying:
+    group_by(city_id) |>  
+    filter(sum(treatment) == 1) |>  # 1) there must be exactly one treatment AND
+    ungroup() |> 
+    filter(treatment == 1) |> 
+    filter(extinction_of == d$terr_id) |>  # 2) that one treatment is d
     mutate(d_treat = TRUE)
   
   # get control group
-  d_control_cities <- d_base_data %>% # this is all cities satisfying:
-    group_by(city_id) %>% 
-    filter(sum(treatment) == 0) %>% # zero treatments in the inclusion period
+  d_control_cities <- d_base_data |>  # this is all cities satisfying:
+    group_by(city_id) |> 
+    filter(sum(treatment) == 0) |>  # zero treatments in the inclusion period
+    # note: shouldn't this maybe be "never treated before the inclusion period"?
     summarise(d_treat = FALSE)
   
   # get vector of all city_ids that are in the experiment
-  d_cities <- bind_rows(d_treat_cities, d_control_cities) %>% 
+  d_cities <- bind_rows(d_treat_cities, d_control_cities) |> 
     select(city_id, d_treat)
   
   # make output vector that can be cbound to others later
@@ -101,9 +102,10 @@ AssignCitiesSubExp <- function(d, build){
 
 DropEmptySubExps <- function(assignment, threshold=0){
   # drops sub-experiments where the treatment group is too small
-  assignment %>% 
-    select_if(colSums(., na.rm=TRUE) > threshold) %>% 
-    return()
+  output <- assignment |> 
+    select_if(\(.) sum(., na.rm=TRUE) > threshold)
+  
+  return(output)
 }
 
 
