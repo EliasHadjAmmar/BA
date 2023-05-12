@@ -13,17 +13,19 @@
 library(tidyverse) |> suppressPackageStartupMessages()
 library(fixest) |> suppressPackageStartupMessages()
 
+setwd("~/GitHub/BA")
+
+source("utils/GetAssignment.R")
 source("utils/GetStackedData.R")
 
-setwd("~/GitHub/BA")
 
 Main <- function(){
   build <- read_csv("analysis/input/build.csv", show_col_types = F)
   extinctions <- read_csv("analysis/input/extinctions.csv", show_col_types = F)
-  assignment <- read_csv("analysis/temp/assignment.csv", show_col_types = F)
-
+  
   W <- 10
   
+  assignment <- GetAssignment(build, extinctions, W, threshold=10)
   stacked_data <- GetStackedData(assignment, build, extinctions, W)
 
   mod <- fixest::feols(construction ~ D | city_id^subexp + year^subexp, stacked_data)

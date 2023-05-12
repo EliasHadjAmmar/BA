@@ -1,27 +1,19 @@
-# Input: build data and lineage-level list of extinctions
-# Output: assignment of cities to groups in sub-experiments.
-# list of cities with a huge amount of dummies.
-
-library(tidyverse)
 library(furrr)
-
-setwd("~/GitHub/BA")
 plan(multisession, workers=4)
 
 
-Main <- function(){
-  build <- read_csv("analysis/input/build.csv", show_col_types = F)
-  extinctions <- read_csv("analysis/input/extinctions.csv", show_col_types = F)
-  
-  W <- 10
+GetAssignment <- function(build, extinctions, W, threshold=10){
+  # Input: build data, lineage-level list of extinctions, size of treatment window,
+  # and minimum number of treated cities a sub-experiment must have to be included.
+  # Output: assignment of cities to groups in sub-experiments
+  # (list of cities with a huge amount of dummies).
   
   subexps <- IdentifySubExps(extinctions, build, W)
   assignment <- AssignToAllSubExps(build, subexps)
   
   assignment <- DropEmptySubExps(assignment, threshold=10)
   
-  assignment |> write_csv("analysis/temp/assignment.csv")
-  #return(assignment)
+  return(assignment)
 }
 
 
@@ -107,6 +99,3 @@ DropEmptySubExps <- function(assignment, threshold=0){
   
   return(output)
 }
-
-
-Main()
