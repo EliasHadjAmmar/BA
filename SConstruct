@@ -16,6 +16,7 @@ territory_codes = "build/input/territory_codes.csv"
 DropNACount = "utils/DropNACount.R"
 BaselineSample = "utils/BaselineSample.R"
 AggregateYears = "utils/AggregateYears.R"
+GetStackedData = "utils/GetStackedData.R"
 
 
 ###############################################################################
@@ -94,3 +95,10 @@ baseline_did_countdiff = Command('analysis/output/tables/baseline_did_countdiff.
 #     [build, BaselineSample, AggregateYears, 'analysis/code/baseline/BaselineEventStudy.R'],
 #     'Rscript analysis/code/BaselineEventStudy.R')
 
+assignment = Command('analysis/temp/assignment.csv',
+    [build, extinctions, 'analysis/code/stacked/GetSubExps.R'],
+    'Rscript analysis/code/stacked/GetSubExps.R')
+
+stacked_did = Command('analysis/output/tables/stacked_did.tex',
+    [build, extinctions, assignment, GetStackedData, 'analysis/code/stacked/StackedDiD.R'],
+    'Rscript analysis/code/stacked/StackedDiD.R')
