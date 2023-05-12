@@ -23,7 +23,7 @@ Main <- function(){
   build <- read_csv("analysis/input/build.csv", show_col_types = F)
   extinctions <- read_csv("analysis/input/extinctions.csv", show_col_types = F)
   
-  W <- 10
+  W <- 20
   
   assignment <- GetAssignment(build, extinctions, W, threshold=10)
   stacked_data <- GetStackedData(assignment, build, extinctions, W)
