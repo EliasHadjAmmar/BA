@@ -10,15 +10,8 @@ source("utils/GetStackedData.R")
 source("utils/AggregateYears.R")
 
 Main <- function(){
-  args <- commandArgs(trailingOnly = TRUE)
-  if (length(args) > 1){
-    stop("Can only pass one argument (spacing)\n")
-  }
-  if (!is_empty(args) && is.na(as.integer(args))) {
-    stop("Argument must be an integer (spacing)\n")
-  }
-
-  spacing <- ifelse(!is_empty(args), as.integer(args)[1], 5)
+  
+  spacing <- HandleCommandArgs(default_spacing=5)
   
   build <- read_csv("analysis/input/build.csv", show_col_types = F)
   extinctions <- read_csv("analysis/input/extinctions.csv", show_col_types = F)
@@ -62,5 +55,21 @@ PeriodES <- function(stacked_data, spacing){
   iplot(mod)
 }
   
+
+HandleCommandArgs <- function(default_spacing){
+  # This is so I don't need 3 scripts to output 3 figures with different spacing.
+  # In the future, expand this functionality to be able to pass W, too.
   
+  args <- commandArgs(trailingOnly = TRUE)
+  if (length(args) > 1){
+    stop("Can only pass one argument (spacing)\n")
+  }
+  if (!is_empty(args) && is.na(as.integer(args))) {
+    stop("Argument must be an integer (spacing)\n")
+  }
+  
+  spacing <- ifelse(!is_empty(args), as.integer(args)[1], default_spacing)
+  return(spacing)
+}
+
 Main()
