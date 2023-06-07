@@ -26,7 +26,7 @@ IdentifySubExps <- function(extinctions, build, W){
     rename(treat_year = death_year) |>  # not clear whether this needs to be +1!
     select(terr_id, treat_year) |>  
     mutate(
-      lower_inclusion_bound = treat_year - 2*W, # this is a choice
+      lower_inclusion_bound = treat_year - W, # previously was 2W
       upper_inclusion_bound = treat_year + W,
       exp_start = treat_year - W,
       exp_end = treat_year + W)
