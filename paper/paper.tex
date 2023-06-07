@@ -14,7 +14,9 @@
 \usepackage{graphicx} % we need this so we can add figures
 \usepackage{booktabs}
 
-\title{Dynastic Extinctions and Urban Economic Development: \\Evidence from the Holy Roman Empire\footnote{I thank Davide Cantoni, Matthias Weigand, and my RA colleagues at the Chair of Economic History for helpful comments and feedback. I thank Matthias Weigand in particular for providing me with his own data and for pointing me towards the paper by \cite{schoenholzer2018}.}
+\title{Dynastic Extinctions and Urban Economic Development: \\Evidence from the Holy Roman Empire\footnote{
+I thank Davide Cantoni, Matthias Weigand, and my RA colleagues at the Chair of Economic History for helpful comments and feedback. I thank Matthias Weigand in particular for providing me with his own data and for pointing me towards the paper by \cite{schoenholzer2022}.
+}
 }
 \author{Elias Hadj Ammar}
 \date{May 2023}
@@ -25,21 +27,13 @@
 \thispagestyle{empty}
 
 \begin{abstract}
-When a ruling dynasty goes extinct, what happens to their lands? I use historical data on construction activity and territorial history to estimate the effect of switching between territories on urban construction in the Holy Roman Empire. I exploit variation from dynastic extinctions, which caused cities to become part of different lineages' territorial holdings. I find that an X\% increase in the number of cities possessed by the ruling family is associated with a Y\% increase in construction activity.
+How does switching between states affect the long-run development of cities, and why? I study this question in the setting of the Holy Roman Empire, using historical data on construction activity and the territorial history of cities. I specifically test the hypothesis that competition between states, in which higher-quality states dominated, caused cities to benefit from permanent ownership changes. I find evidence in support of this.
 \end{abstract}
-
-
-
 
 \newpage
 
 \setcounter{page}{1}
 \doublespacing
-
-% ######################################################
- 
-Make me care.
-Make the reader care. That's your challenge.
 
 
 % ######################################################
@@ -47,100 +41,18 @@ Make the reader care. That's your challenge.
 \section{Introduction}
 
 % one paragraph to get the reader from where he stands, to understanding and caring about the research question.
-The geopolitics of central Europe, throughout its history and until very recently, have been defined by noble families struggling over control of a vast array of fragmented territories - unlike, for example, China. Rulers have played an important role in the fates of their nations. Examples come to mind. But did such geopolitical drama have real effects on the lives of people? 
-
-Let us consider Example city A. From 1XXX on, A belonged to the dukedom of Saxe-Weimar-Eisenach, until its rulers, the House of Ascania, went extinct in 1XYZ. The territory of Saxe-Weimar-Eisenach was then subsumed into the much larger Electorate of Saxony, ruled by the Albertine branch of the House of Wettin. By the same token, A changed hands from the Ascanians to the Albertines.
-
-What happens on the political stage is clear; the economic ("real") implications are not. In the language of business acquisitions: do such extinction-and-succession events manifest similar to a strategic acquisition, with some degree of reorientation? Do the participants benefit from synergies and reduced transaction costs? Or are these events more akin to mere ownership transfers?
+ 
 
 
-\subsection{Disambiguation}
-Let me be more precise. Concepts to be defined:
-\begin{itemize}
-    \item[ruling dynasty] In the context of the HRE. Until the 19th century geopolitics was not done in terms of nation-states, but in terms of the territorial holdings of noble families. Leadership changes can be split into within-family and across-family - we care about the latter.
-    \item[their lands] The cities in that dynasty's possession at the time of its extinction.
-    \item[what happens] It's complicated and precisely this is what I need to clarify first.
-\end{itemize}
 
-What \textit{could} it mean?
-\begin{itemize}
-    \item economic prosperity.
-    \item public goods provision.
-    \item quality of government.
-\end{itemize}
-
-The whole thing is that construction by itself is just barely not interesting enough. i need just one intermediate step to motivate me using construction.
-
-i could be intellectually honest and just state the process i went through. i initially thought about economic prosperity, then it didn't line up with the wages, then i focused on public goods and ruler commitment instead.
-
-and i can actually do all of those by splitting my construction variable up! one outcome variable with all buildings (as a benchmark), another with public goods buildings, and the other with representative buildings.
-
-I love that idea.
-
-So my chain of reasoning will go the following way:
-\begin{itemize}
-    \item get to stating the research question in the shortest possible way
-    \item explain ruling dynasty
-    \item explain their lands
-    \item explain the aspects i'm interested in: economic prosperity, public goods provision, ruler commitment / quality of government
-\end{itemize}
-
-Where in this do i discuss the issue with the wages? The intro is no place for it, but i can't bring economic prosperity up as a serious goal of the analysis in the intro if i'm going to discredit it two sections later. i need to be cautious about it from the start, maybe mention it as a detour / side note but refer to the wages figure in the appendix.
-
-John H. Cochrane says "Figure out the \textit{one} central and novel contribution of your paper. Write this down in one paragraph. As with all your writing, this must be concrete."
-
-My central contribution is the finding that dynastic extinctions have (no/an/X) effect on urban economic development.
-
-
-\subsection{Issues to address}
-
-What are the most interesting aspects of that, for the purpose of this thesis? Which are the issues I want to discuss? What are secondary research questions?
-
-The effect of size changes is a secondary research question.
-
-The effects of different types of rule.
-
-Leaning on Dube and Harish (2022): family-individual characteristics vs family-leadership characteristics (Habsburgs may be docile by nature but make aggressive decisions in the interest of their realm out of geopolitical necessity)
-
-% ######################################################
-
-\section{Literature review}
-
-A seminal paper is that of \cite{as1997}. It suggests a theoretical model for determining the optimal size and number of states. The authors model the tradeoff between BLANK and BLANK.
-
-More recently, a lot of empirical research has been done using city-level historical data and investigating the effects of Europe's political landscape on the economy. In a way, this started with the Neo-Institutionalists - e.g. \cite{delong1993}, who investigate the effect of absolutist vs non-absolutist rule and find that self-governance is advantageous. 
-
-\cite{diamond1997} discusses some ways in which the geography of a place, via its geopolitical implications, can affect the long-run development of civilisation: he contrasts remote and unified China with geographically and politically fragmented Europe, suggesting that BLANK.
-
-\cite{cervellati2022} provide a very rich survey of the literature on the state system in pre-industrial Europe. They also provide empirical evidence for BLANK.
-
-The next big thing in the economic history literature appears to be fiscal capacity. I'm not yet sure how that is relevant to my project, but I feel like I ought to mention it.
-
-Finally, \cite{schoenholzer2018} are the closest paper to this one. They ask a very similar question: How does switching between states affect long-run urban growth? To answer this, they do BLANK. They find that BLANK. The present project differs from theirs in a few ways: firstly, conflict is explicitly part of their analysis; it is part of what causes the tradeoff between short-run costs and long-run benefits. In my survey, conflict is merely a confounder whose effect I wish to exclude.
-
-
-2-3 pubs each on
-public goods provision
-transaction costs
-strategic motives
 
 
 
 
 % ######################################################
 
-\section{The Economics / Hypotheses}
-
 
 % ######################################################
-
-\section{The Econometrics / Evidence}
-
-Do mention that, because construction is a rare event, the time series for individual cities aren't as meaningful as averages.
-
-% ######################################################
-
-\section{Conclusion}
 
 
 % ######################################################
