@@ -45,7 +45,7 @@ ConstructionTable <- function(construction){
   
   # Join into one table and replace NAs (from missing join keys) with 0
   together <- list(counts_all, counts_state, counts_private, counts_public) |> 
-    reduce(left_join) |> 
+    reduce(full_join) |> 
     mutate(across(everything(), \(col) replace_na(col, 0)))
   
   return(together)
