@@ -5,35 +5,55 @@ library(tidyverse) |> suppressPackageStartupMessages()
 setwd("~/GitHub/BA")
 
 source("newbuild/ConstructionLib.R")
+source("newbuild/ConflictLib.R")
 
 Main <- function(){
   
-  t <- HandleCommandArgs(default_length=50) 
+  t <- HandleCommandArgs(default_length=1) 
   
   switches <- read_csv("newbuild/temp/cities_switches.csv", show_col_types = F)
-  construction <- read_delim("build/input/construction_all_xl.csv", delim=";", show_col_types = F)
-  
+  construction_raw <- read_delim("build/input/construction_all_xl.csv", delim=";", show_col_types = F)
+  conflict_raw <- read_csv("build/input/conflict_incidents.csv", show_col_types = F)
   
   switches_t <- AggregateSwitches(switches, t)
-  construction_t <- AggregateConstruction(construction, t)
+  construction_t <- AggregateConstruction(construction_raw, t)
+  conflict_t <- AggregateConflict(conflict_raw, t)
   
+  cities_data <- list(switches_t, conflict_t, construction_t) |> 
+    reduce(left_join) |> 
+    drop_na(c_all)
+  
+  
+  filename <- sprintf("newbuild/temp/cities_data_%iy.csv", t)
+  write_csv(cities_data, filename)
   
   return(0)
 }
 
 
-AggregateConstruction <- function(construction, t){
+AggregateSwitches <- function(switches, t){
   
-  if (t < 50) {ACCEPTABLE_RANGE <- 0
-    } else if (t %in% 50:99) {ACCEPTABLE_RANGE <- 3
-    } else if (t >= 100) {ACCEPTABLE_RANGE <- 4
-      }
+  aggregated_t <- switches |> 
+    arrange(city_id, year) |> 
+    mutate(period = year - year %% t) |> 
+    group_by(city_id, period) |> 
+    summarise(
+      terr_id = first(terr_id), # set to owner at the start of the period
+      switches = sum(switch),
+      conquest = last(conquest), # we want the info about the *final* switch
+      succession = last(succession),
+      duration = n() # some periods may be cut off in the data
+    )
   
-  construction_clean <- construction |> 
-    filter(uncertainty == 0) |> 
-    filter(range <= ACCEPTABLE_RANGE)
+  return(aggregated_t)
+}
+
+
+AggregateConstruction <- function(construction_raw, t){
   
-  counts_yearly <- ProcessConstruction(construction_clean)
+  clean <- CleanEvents(construction_raw, t)
+  
+  counts_yearly <- ProcessConstruction(clean)
   
   aggregated_t <- counts_yearly |> 
     mutate(period = time_point - time_point %% t) |> 
@@ -45,21 +65,36 @@ AggregateConstruction <- function(construction, t){
 }
 
 
-AggregateSwitches <- function(switches, t){
+AggregateConflict <- function(conflict_raw, t){
   
-  aggregated_t <- switches |> 
-    arrange(city_id, year) |> 
-    mutate(period = year - year %% t) |> 
+  clean <- CleanEvents(conflict_raw, t)
+  
+  events_yearly <- ProcessConflict(clean)
+  
+  aggregated_t <- events_yearly |> 
+    mutate(period = time_point - time_point %% t) |> 
+    select(-time_point) |> 
     group_by(city_id, period) |> 
-    summarise(
-      first_terr_id = first(terr_id), # set to owner at the start of the period
-      switches = sum(switch),
-      conquest = last(conquest), # we want the info about the *final* switch
-      succession = last(succession),
-      duration = n() # some periods may be cut off in the data
-    )
+    summarise(conflict = max(conflict))
   
   return(aggregated_t)
+}
+
+
+CleanEvents <- function(raw, t){
+  # Drops observations that are too imprecise from conflict & construction.
+  
+  if (t < 50) {ACCEPTABLE_RANGE <- 0
+  } else if (t %in% 50:99) {ACCEPTABLE_RANGE <- 3
+  } else if (t >= 100) {ACCEPTABLE_RANGE <- 4
+  }
+  
+  clean <- raw |> 
+    drop_na(city_id, time_point) |> 
+    filter(uncertainty == 0) |> 
+    filter(range <= ACCEPTABLE_RANGE)
+  
+  return(clean)
 }
 
 
