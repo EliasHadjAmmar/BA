@@ -1,4 +1,4 @@
-# Input: city-year panel of construction from Princes and Townspeople.
+# Input: list of construction events from Princes and Townspeople.
 # Output: city-year panel of custom aggregates of construction.
 
 suppressPackageStartupMessages(library(tidyverse))
@@ -12,9 +12,10 @@ Main <- function(){
   # by reading the file into an Excel sheet and exporting it back to .csv.
   construction_raw <- read_delim("build/input/construction_all_xl.csv", delim = ";", show_col_types = F)
   
-  # Drop events with uncertain years (4900 obs, 18.2% of total)
+  # Drop events with uncertain years (10678 obs, 39.7% of total)
   construction <- construction_raw |> 
     filter(uncertainty == 0) |> 
+    filter(range == 0) |> 
     rename(year = time_point) # |> 
   # filter(newbuild == 1) # to exclude repairs
   
@@ -36,6 +37,8 @@ Main <- function(){
     mutate(across(everything(), \(col) replace_na(col, 0)))
   
  write_csv(together, "newbuild/temp/construction_new.csv")
+ 
+ 
  
  return(0)
 }
