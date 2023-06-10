@@ -13,6 +13,7 @@ raw_conflict = build_inputs_path + "conflict_incidents.csv"
 
 # Assigning utility script paths to variables for convenience
 # (varnames in CamelCase to be distinguishable from data)
+HandleCommandArgs = "source/utils/HandleCommandArgs.R"
 DropNACount = "source/utils/DropNACount.R"
 GetAssignment = "source/utils/GetAssignment.R"
 GetStackedData = "source/utils/GetStackedData.R"
@@ -40,7 +41,8 @@ for t in [100, 50, 10, 1]:
     build_command = f'Rscript source/build/Aggregate.R {t}'
 
     build = Command(build_target,
-                    [switches, ConstructionLib, ConflictLib, 
+                    [switches, 
+                     ConstructionLib, ConflictLib, HandleCommandArgs,
                      "source/build/Aggregate.R"],
                     build_command)
     

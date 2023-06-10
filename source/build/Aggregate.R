@@ -6,10 +6,11 @@ setwd("~/GitHub/BA")
 
 source("source/build/lib/ProcessConstruction.R")
 source("source/build/lib/ProcessConflict.R")
+source("source/utils/HandleCommandArgs.R")
 
 Main <- function(){
   
-  t <- HandleCommandArgs(default_length=1) 
+  t <- HandleCommandArgs(default_length=50) 
   
   switches <- read_csv("drive/derived/cities_switches.csv", show_col_types = F)
   construction_raw <- read_delim("drive/raw/base/construction_all_xl.csv", delim=";", show_col_types = F)
@@ -97,20 +98,5 @@ CleanEvents <- function(raw, t){
   return(clean)
 }
 
-
-HandleCommandArgs <- function(default_length){
-  # This is so I don't need 3 scripts to output 3 datasets with different spacing.
-  
-  args <- commandArgs(trailingOnly = TRUE)
-  if (length(args) > 1){
-    stop("Can only pass one argument (period length)\n")
-  }
-  if (!is_empty(args) && is.na(as.integer(args))) {
-    stop("Argument must be an integer (period length)\n")
-  }
-  
-  t <- ifelse(!is_empty(args), as.integer(args)[1], default_length)
-  return(t)
-}
 
 Main()
