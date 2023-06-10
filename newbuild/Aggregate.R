@@ -4,7 +4,7 @@ library(tidyverse) |> suppressPackageStartupMessages()
 
 setwd("~/GitHub/BA")
 
-source("newbuild/LibConstruction.R")
+source("newbuild/ConstructionLib.R")
 
 Main <- function(){
   
@@ -33,7 +33,7 @@ AggregateConstruction <- function(construction, t){
     filter(uncertainty == 0) |> 
     filter(range <= ACCEPTABLE_RANGE)
   
-  counts_yearly <- ConstructionTable(construction_clean)
+  counts_yearly <- ProcessConstruction(construction_clean)
   
   aggregated_t <- counts_yearly |> 
     mutate(period = time_point - time_point %% t) |> 
@@ -77,3 +77,5 @@ HandleCommandArgs <- function(default_length){
   t <- ifelse(!is_empty(args), as.integer(args)[1], default_length)
   return(t)
 }
+
+Main()

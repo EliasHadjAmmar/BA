@@ -1,4 +1,4 @@
-ConstructionTable <- function(construction){
+ProcessConstruction <- function(construction){
   
   # Define types of buildings included in each category
   ALL_CATS <- 1:16
