@@ -4,16 +4,16 @@ library(tidyverse) |> suppressPackageStartupMessages()
 
 setwd("~/GitHub/BA")
 
-source("newbuild/ConstructionLib.R")
-source("newbuild/ConflictLib.R")
+source("source/build/lib/ProcessConstruction.R")
+source("source/build/lib/ProcessConflict.R")
 
 Main <- function(){
   
   t <- HandleCommandArgs(default_length=1) 
   
-  switches <- read_csv("newbuild/temp/cities_switches.csv", show_col_types = F)
-  construction_raw <- read_delim("build/input/construction_all_xl.csv", delim=";", show_col_types = F)
-  conflict_raw <- read_csv("build/input/conflict_incidents.csv", show_col_types = F)
+  switches <- read_csv("drive/derived/cities_switches.csv", show_col_types = F)
+  construction_raw <- read_delim("drive/raw/base/construction_all_xl.csv", delim=";", show_col_types = F)
+  conflict_raw <- read_csv("drive/raw/base/conflict_incidents.csv", show_col_types = F)
   
   switches_t <- AggregateSwitches(switches, t)
   construction_t <- AggregateConstruction(construction_raw, t)
@@ -24,7 +24,7 @@ Main <- function(){
     drop_na(c_all)
   
   
-  filename <- sprintf("newbuild/temp/cities_data_%iy.csv", t)
+  filename <- sprintf("drive/derived/cities_data_%iy.csv", t)
   write_csv(cities_data, filename)
   
   return(0)

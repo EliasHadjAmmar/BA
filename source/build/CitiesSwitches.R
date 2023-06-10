@@ -7,7 +7,7 @@ suppressPackageStartupMessages(library(haven))
 setwd("~/GitHub/BA")
 
 Main <- function(){
-  cities <- read_dta("build/input/cities_families_1300_1918.dta")
+  cities <- read_dta("drive/raw/base/cities_families_1300_1918.dta")
   cities <- cities |> 
     select(city_id, year, terr_id, type_change)
 
@@ -26,7 +26,9 @@ Main <- function(){
     mutate(switch = if_else(year == min(year), 0, switch)) |> # foundation != switch
     select(-type_change)
   
-  write_csv(cities_with_switch_dummies, "newbuild/temp/cities_switches.csv")
+  write_csv(cities_with_switch_dummies, "drive/derived/cities_switches.csv")
+  
+  return(0)
 }
 
 Main()
