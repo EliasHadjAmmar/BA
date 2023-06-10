@@ -9,10 +9,7 @@ source("source/utils/HandleCommandArgs.R")
 
 Main <- function(){
   
-  t <- HandleCommandArgs(default_length=50) 
-  
-  read_path <- sprintf("drive/derived/cities_data_%iy.csv", t)
-  build <- read_csv(read_path)
+  build <- ReadCorrectBuild(default_t = 50) # uses command args if given
   
   # analysis here
   

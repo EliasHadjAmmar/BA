@@ -1,3 +1,15 @@
+ReadCorrectBuild <- function(default_t){
+  # Wrapper around HandleCommandArgs that directly returns the right build.
+  # Basically saves 3 lines of code in each analysis script.
+  
+  t <- HandleCommandArgs(default_t)
+  read_path <- sprintf("drive/derived/cities_data_%iy.csv", t)
+  build <- read_csv(read_path)
+  
+  return(build)
+}
+
+
 HandleCommandArgs <- function(default_length){
   # This is so I don't need 3 scripts to output 3 datasets with different spacing.
   
