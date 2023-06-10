@@ -16,11 +16,14 @@ Main <- function(){
   
   cities_with_switch_dummies <- cities |> 
     group_by(city_id, terr_id) |> 
-    mutate(switch = if_else(year == min(year), 1, 0)) |> 
+    mutate(switch = if_else(year == min(year), 1, 0)) |> # first year @ new territory
     mutate(
       conquest = if_else(type_change %in% CONQUEST_CATS, 1, 0),
       succession = if_else(type_change %in% SUCCESSION_CATS, 1, 0)
       ) |> 
+    ungroup() |> 
+    group_by(city_id) |> 
+    mutate(switch = if_else(year == min(year), 0, switch)) |> # foundation != switch
     select(-type_change)
   
   write_csv(cities_with_switch_dummies, "newbuild/temp/cities_switches.csv")
