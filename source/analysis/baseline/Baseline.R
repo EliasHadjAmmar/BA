@@ -35,9 +35,13 @@ PrepareData <- function(build){
 CheckBadSwitches <- function(build, n = 0){
   
   problems <- build |> PrepareData() |> 
-    filter(lag_switches > 0 & e_another == 0)
+    filter(lag_switches %% 2 != 0 & e_another == 0)
   
   print(sprintf("%i problematic switches", nrow(problems)))
+  
+  if (nrow(problems) == 0){
+    return()
+  }
   
   if (n > 0){
     set.seed(0)
@@ -48,16 +52,10 @@ CheckBadSwitches <- function(build, n = 0){
   check <- build |> PrepareData() |>
     filter(city_id %in% problems$city_id) |> 
     filter(period %in% min(problems$period):max(problems$period)) |>
-    select(city_id, period, terr_id, switches, e_another)
+    select(city_id, period, terr_id, switches, e_another, lag_switches)
 
   return(check)
 }
-
-
-checkproblems <- CheckBadSwitches(build10, n=3)
-checkS581 <- CheckEvent(build1, 1600:1620, terr="S581", city_start="200")
-
-
 
 CheckEvent <- function(build, range, terr="B3742", city_start="1"){
   # shows the structure of switching dummies for the cities that
@@ -73,3 +71,8 @@ CheckEvent <- function(build, range, terr="B3742", city_start="1"){
   
   return(check)
 }
+
+checkproblems <- CheckBadSwitches(build1, n=0)
+checkproblems <- CheckBadSwitches(build10, n=0)
+checkproblems <- CheckBadSwitches(build50, n=0)
+checkproblems <- CheckBadSwitches(build100, n=0)

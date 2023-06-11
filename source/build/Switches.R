@@ -25,8 +25,8 @@ Main <- function(){
     group_by(city_id) |> 
     mutate(terr_id = lag(terr_id)) |>
     drop_na(terr_id) |> 
-    ungroup() |> group_by(city_id, terr_id) |> 
-    mutate(switch = if_else(year == max(year), 1, 0)) # last year @ old territory
+    mutate(switch = if_else(terr_id != lead(terr_id), 1, 0)) |>  # last year @ old territory
+    drop_na(switch)
     
   # I do not lag `type_change` because the year in which the switch takes place
   # has the `type_change` of the new owner's rule (i.e. how the new owner came to power),
@@ -42,9 +42,6 @@ Main <- function(){
       conquest = if_else(type_change %in% CONQUEST_CATS, 1, 0),
       succession = if_else(type_change %in% SUCCESSION_CATS, 1, 0)
       ) |> 
-    ungroup() |> 
-    group_by(city_id) |> 
-    mutate(switch = if_else(year == max(year), 0, switch)) |> # end of series != switch
     select(-type_change)
   
   write_csv(cities_with_switch_types, "drive/derived/cities_switches.csv")
