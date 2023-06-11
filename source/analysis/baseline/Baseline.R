@@ -23,7 +23,7 @@ PrepareData <- function(build){
     mutate(lifetime_switches = sum(switches)) |> 
     filter(lifetime_switches <= 2) |>  # drops 50% of observations
     mutate(lag_switches = lag(switches)) |> 
-    mutate(e_another = if_else(terr_id != lead(terr_id), 1, 0)) |> 
+    mutate(e_another = if_else(terr_id != lag(terr_id), 1, 0)) |> # lag, not lead
     drop_na(e_another, lag_switches) 
   return(clean)
 }
@@ -51,8 +51,10 @@ check1 <- CheckB3742(build1, 1598:1608)
 check10 <- CheckB3742(build10, 1560:1640)
 check50 <- CheckB3742(build50, 1450:1700)
 
-
-
+# check10 and check50 are the way it should be:
+# - terr_id indicates the state at the beginning of the period
+# That's the difference. All I need to do is lag terr_id by one, in the basic switches build.
+# Then e_another will be computed the right way here, too.
 
 # clean50 |>
 #   filter(lag_switches > 0 & e_another == 0) |> view()
