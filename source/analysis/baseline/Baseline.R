@@ -10,6 +10,7 @@ source("source/utils/HandleCommandArgs.R")
 build1 <- ReadCorrectBuild(default_t = 1)
 build10 <- ReadCorrectBuild(default_t = 10)
 build50 <- ReadCorrectBuild(default_t = 50) # uses command args if given
+build100 <- ReadCorrectBuild(default_t = 100)
 
 # How do I get switches that do / do not result in a permanent change?
 # How about this:
@@ -28,35 +29,47 @@ PrepareData <- function(build){
   return(clean)
 }
 
-# I've discovered an issue here that e_another can be 0 if switches == 1. Apparently.
+# I've discovered an issue here that e_another can be 0 if lag_switches == 1. Apparently.
 # I'm trying to find out what went wrong.
 
-CheckB3742 <- function(build, range){
+CheckBadSwitches <- function(build, n = 0){
+  
+  problems <- build |> PrepareData() |> 
+    filter(lag_switches > 0 & e_another == 0)
+  
+  print(sprintf("%i problematic switches", nrow(problems)))
+  
+  if (n > 0){
+    set.seed(0)
+    problems <- problems |> 
+      filter(city_id %in% sample(problems$city_id, n))
+  }
+    
+  check <- build |> PrepareData() |>
+    filter(city_id %in% problems$city_id) |> 
+    filter(period %in% min(problems$period):max(problems$period)) |>
+    select(city_id, period, terr_id, switches, e_another)
+
+  return(check)
+}
+
+
+checkproblems <- CheckBadSwitches(build10, n=3)
+checkS581 <- CheckEvent(build1, 1600:1620, terr="S581", city_start="200")
+
+
+
+CheckEvent <- function(build, range, terr="B3742", city_start="1"){
   # shows the structure of switching dummies for the cities that
-  # switch to B3742 in 1603.
+  # switch to terr in 1603.
   
   clean <- PrepareData(build)
   
   check <- clean |> 
-    filter(startsWith(as.character(city_id), "1") & period %in% range) |> 
+    filter(startsWith(as.character(city_id), city_start) & period %in% range) |> 
     group_by(city_id) |> 
-    filter("B3742" %in% terr_id) |> 
+    filter(terr %in% terr_id) |> 
     select(city_id, period, terr_id, switches, e_another, lag_switches)
   
   return(check)
 }
-
-# The difference between check1 and the rest illustrates the problem.
-check1 <- CheckB3742(build1, 1598:1608)
-check10 <- CheckB3742(build10, 1560:1640)
-check50 <- CheckB3742(build50, 1450:1700)
-
-# check10 and check50 are the way it should be:
-# - terr_id indicates the state at the beginning of the period
-# That's the difference. All I need to do is lag terr_id by one, in the basic switches build.
-# Then e_another will be computed the right way here, too.
-
-# clean50 |>
-#   filter(lag_switches > 0 & e_another == 0) |> view()
-
-
