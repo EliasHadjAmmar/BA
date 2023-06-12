@@ -1,30 +1,32 @@
 \begingroup
 \centering
-\begin{tabular}{lc}
+\begin{tabular}{lcc}
    \tabularnewline \midrule \midrule
-   Dependent Variable:               & All construction (binary)\\  
-   Model:                            & (1)\\  
+   Dependent Variable: & \multicolumn{2}{c}{Construction}\\
+   Model:                                          & (1)      & (2)\\  
    \midrule
    \emph{Variables}\\
-   TREAT x POST $\times$ Type $=$ 1  & 0.0139\\   
-                                     & (0.0274)\\   
-   TREAT x POST $\times$ Type $=$ 3  & 0.0427\\   
-                                     & (0.0372)\\   
-   TREAT x POST                      & 0.0189\\   
-                                     & (0.0256)\\   
-   Switch                            & -0.0084\\   
-                                     & (0.0247)\\   
+   1(t > e\^NewState) $\times$ Switch Type $=$ 1   & 0.0139   & 0.0454\\   
+                                                   & (0.0274) & (0.0529)\\   
+   1(t > e\^NewState) $\times$ Switch Type $=$ 3   & 0.0427   & -0.1473$^{***}$\\   
+                                                   & (0.0372) & (0.0545)\\   
+   1(t > e\^NewState)                              & 0.0189   & -0.0097\\   
+                                                   & (0.0256) & (0.0516)\\   
+   1(S\_{it} > 0                                   & -0.0084  & -0.0876\\   
+                                                   & (0.0247) & (0.0639)\\   
+   Conflict                                        &          & 0.0115\\   
+                                                   &          & (0.0289)\\   
    \midrule
    \emph{Fixed-effects}\\
-   City                              & Yes\\  
-   Period                            & Yes\\  
+   City                                            & Yes      & Yes\\  
+   Period                                          & Yes      & Yes\\  
    \midrule
    \emph{Fit statistics}\\
-   Observations                      & 6,635\\  
-   R$^2$                             & 0.35529\\  
-   Within R$^2$                      & 0.00087\\  
+   Observations                                    & 6,635    & 1,955\\  
+   R$^2$                                           & 0.35529  & 0.42445\\  
+   Within R$^2$                                    & 0.00087  & 0.00707\\  
    \midrule \midrule
-   \multicolumn{2}{l}{\emph{Clustered (City) standard-errors in parentheses}}\\
-   \multicolumn{2}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+   \multicolumn{3}{l}{\emph{Clustered (City) standard-errors in parentheses}}\\
+   \multicolumn{3}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
 \end{tabular}
 \par\endgroup
