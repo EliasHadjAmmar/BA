@@ -41,8 +41,7 @@ AggregateSwitches <- function(switches, t){
     summarise(
       terr_id = first(terr_id), # set to owner at the start of the period
       switches = sum(switch),
-      conquest = last(conquest), # we want the info about the *final* switch
-      succession = last(succession),
+      type_change = first(type_change), # we want to know about *this* owner
       duration = n() # some periods may be cut off in the data
     )
   

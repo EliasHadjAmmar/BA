@@ -60,7 +60,7 @@ PrepareData <- function(build, max_switches, years_pre, years_post,
   # Rearrange columns (for readability)
   clean <- with_leads_lags |> select(
       city_id, treat_time, period, terr_id, switches, e_another, treat, time_to_treat, 
-      conquest, succession, conflict, c_all, c_state, c_private, c_public
+      type_change, conflict, c_all, c_state, c_private, c_public
       )
 
   return(clean)

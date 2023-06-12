@@ -14,39 +14,41 @@ Main <- function(){
   # NOTE: in the Princes and Townspeople data `terr_id` in the year of a switch
   # is recorded at the *end* of the period (i.e. the new owner). To use the empirical
   # framework of Schönholzer and Weese (2022) I have to recode it to the owner at the
-  # *start* of the period. 
+  # *start* of the period. This means lagging it once.
+  
+  # Since I still want `type_change` to encode how the state in `terr_id` came
+  # into power, I need to lag it once, as well.
   
   # This means: 
-  # - `terr_id` is that of the initial ruler in each year
+  # - `terr_id` is that of the initial state in each year
   # - `switch` codes whether a switch took place during this year
+  # - `type_change` is how the state in `terr_id` came into power (as before)
 
   cities_with_switch_dummies <- cities |> 
     arrange(city_id, year) |> 
     group_by(city_id) |> 
-    mutate(terr_id = lag(terr_id)) |>
-    drop_na(terr_id) |> 
+    mutate(
+      terr_id = lag(terr_id),
+      type_change = lag(type_change)) |>
+    drop_na(terr_id, type_change) |> 
     mutate(switch = if_else(terr_id != lead(terr_id), 1, 0)) |>  # last year @ old territory
     drop_na(switch)
     
-  # I do not lag `type_change` because the year in which the switch takes place
-  # has the `type_change` of the new owner's rule (i.e. how the new owner came to power),
-  # which is what I want.
-  
-  # I do get the trailing ones, though, which I'm not sure what I'll do with in the regression.
-  
   CONQUEST_CATS <- c(4, 7) # "Conquest", "Acquisition by conflict"
   SUCCESSION_CATS <- c(3, 11) # "Extinction of lineage", "Inheritance", NOT "Marriage"
+  OTHER_CATS <- 0:13 |> base::setdiff(CONQUEST_CATS) |> base::setdiff(SUCCESSION_CATS)
   
   cities_with_switch_types <- cities_with_switch_dummies |> 
-    mutate(
-      conquest = if_else(type_change %in% CONQUEST_CATS, 1, 0),
-      succession = if_else(type_change %in% SUCCESSION_CATS, 1, 0)
-      ) |> 
-    select(-type_change)
+    mutate(type_change = case_when(
+      type_change %in% CONQUEST_CATS ~ 2,
+      type_change %in% SUCCESSION_CATS ~ 1,
+      type_change %in% OTHER_CATS ~ 0
+    )
+      )
   
   write_csv(cities_with_switch_types, "drive/derived/cities_switches.csv")
   
   return(0)
 }
 
-Main()
+test <- Main()
