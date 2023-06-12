@@ -100,19 +100,30 @@ I also build coarsened versions of this dataset in which I aggregate years into 
 First I replicate the long-term finding of \cite{schoenholzer2022} using the following equation:
 
 \begin{equation}
-    construction_{it} = \alpha_i + \delta_t + 1(Switches_{it} > 0) + 
-    \sum_{s = -100}^{200} 1(t = e^{AnotherState}_i + s)\pi_t + \varepsilon_{it}
+    construction_{it} = \alpha_i + \delta_t + \mathbf{1}(S_{it} > 0) + 
+    \sum_{\tau = -100}^{200} \mathbf{1}(t = e^{NewState}_i + \tau)\pi_t + \varepsilon_{it}
 \end{equation}
 
 I can barely believe it myself, but I replicate their finding:
 
 \begin{figure}
     \centering
-    \includegraphics{}
-    \caption{Caption}
-    \label{fig:enter-label}
+    \includegraphics[scale = 0.4]{paper/output/regressions/SW22_replication_50y.png}
+    \caption{It looks just like it's supposed to!}
+    \label{fig:SW_replication}
 \end{figure}
 
+Next I tried to find the effect of state power - the effect of the difference in selection for state power between conquests and successions:
+
+\begin{multline}
+    construction_{it} = \alpha_i + \delta_t + \mathbf{1}(S_{it} > 0) +
+    \mathbf{1}(t \ge e^{NewState}_i)\beta +
+    \mathbf{1}(t \ge e^{NewState}_i) \times C_i \theta + \varepsilon_{it}
+\end{multline}
+
+Unfortunately it's not as convincing:
+
+\input{paper/output/regressions/baseline_50y}
 
 \newpage
 \onehalfspacing
