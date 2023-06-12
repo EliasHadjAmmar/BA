@@ -40,9 +40,9 @@ Main <- function(){
   
   cities_with_switch_types <- cities_with_switch_dummies |> 
     mutate(type_change = case_when(
-      type_change %in% CONQUEST_CATS ~ 2,
-      type_change %in% SUCCESSION_CATS ~ 1,
-      type_change %in% OTHER_CATS ~ 0
+      type_change %in% CONQUEST_CATS ~ 3,
+      type_change %in% SUCCESSION_CATS ~ 2,
+      type_change %in% OTHER_CATS ~ 1
     )
       )
   
