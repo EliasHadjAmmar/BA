@@ -29,14 +29,7 @@ AddLeadsLags <- function(with_e_dummies, years_pre, years_post){
     mutate(treat = ifelse(time_to_treat %in% -years_pre:years_post, treat, 0)) |> # set treat=0 if not in window
     mutate(time_to_treat = ifelse(treat==0, 0, time_to_treat)) # set redundant times-to-treat vals =0
   
-  # Rearrange columns
-  clean <- with_window |> 
-    #mutate(time_to_treat = as_factor(time_to_treat)) |> 
-    select(city_id, treat_time, period, terr_id, switches, 
-           e_another, treat, time_to_treat, conquest, succession, 
-           conflict, c_all, c_state, c_private, c_public)
-  
-  return(clean)
+  return(with_window)
 }
 
 
@@ -46,9 +39,9 @@ BinariseOutcomes <- function(build){
   return(clean)
 }
 
-BinariseSwitching <- function(build){
+BinariseSwitches <- function(build){
   clean <- build |> 
-    mutate(switches_bin = if_else(switches > 0, 1, 0))
+    mutate(switches = if_else(switches > 0, 1, 0))
   return(clean)
 }
 

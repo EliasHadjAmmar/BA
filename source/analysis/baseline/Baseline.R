@@ -8,29 +8,56 @@ setwd("~/GitHub/BA")
 source("source/utils/HandleCommandArgs.R")
 source("source/utils/PrepareData.R")
 
-t <- HandleCommandArgs(default_length = 50)
-read_path <- sprintf("drive/derived/cities_data_%iy.csv", t)
-build <- read_csv(read_path, show_col_types = F)
+Main <- function(){
+  
+  # Read data
+  t <- HandleCommandArgs(default_length = 50)
+  read_path <- sprintf("drive/derived/cities_data_%iy.csv", t)
+  build <- read_csv(read_path, show_col_types = F)
+  
+  # Select sample, add event study dummies, and binarise counts
+  dat <- PrepareData(build,
+                     max_switches = 2,
+                     years_pre = 100,
+                     years_post = 200,
+                     binarise_construction = T,
+                     binarise_switches = T)
+  
+  # Estimate (3) from Schoenholzer and Weese (2022), p. 12
+  mod <- fixest::feols(
+    c_all ~ i(time_to_treat, treat, ref = -t) + switches | city_id + period, 
+    data = dat)
 
-selected <- FilterBySwitches(build, max_switches = 2)
-with_e_dummies <- AddEAnother(selected)
-with_leads_lags <- AddLeadsLags(with_e_dummies, years_pre = 100, years_post = 200)
-binarised <- with_leads_lags |> BinariseSwitching() |> BinariseOutcomes()
+  iplot(mod) # Replicate Fig. 5
+}
 
-# Replicate their analysis
-# for t=50, outcome c_all, max_switches=2 and binarisation it looks good!!!
 
-mod <- fixest::feols(
-  c_all ~ i(time_to_treat, treat, ref = -t) + switches_bin | city_id + period, 
-  data = binarised)
+PrepareData <- function(build, max_switches, years_pre, years_post, 
+                        binarise_construction, binarise_switches){
+  
+  # Filter out cities with too many lifetime switches
+  selected <- FilterBySwitches(build, max_switches)
+  
+  # Identify across-period switches
+  with_e_dummies <- AddEAnother(selected)
+  
+  # Add event study dummies
+  with_leads_lags <- AddLeadsLags(with_e_dummies, years_pre, years_post)
+  
+  # Binarise construction outcomes, if specified
+  if (binarise_construction) { with_leads_lags <- with_leads_lags |> BinariseOutcomes() }
+  
+  # Binarise no. of switches (control), if specified
+  if (binarise_switches) { with_leads_lags <- with_leads_lags |> BinariseSwitches() }
+  
+  # Rearrange columns (for readability)
+  clean <- with_leads_lags |> select(
+      city_id, treat_time, period, terr_id, switches, e_another, treat, time_to_treat, 
+      conquest, succession, conflict, c_all, c_state, c_private, c_public
+      )
 
-iplot(mod)
+  return(clean)
+}
 
-# Effect disappears if you control for conflict -> state power = less predation?
 
-mod_conflict <- fixest::feols(
-  c_all ~ i(time_to_treat, treat, ref = -t) + switches_bin + conflict | city_id + period, 
-  data = binarised)
-
-iplot(mod_conflict)
-
+Main()
