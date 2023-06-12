@@ -27,7 +27,9 @@ Main <- function(){
   # Match terr_ids to Bairoch city names ()
   matched_keys <- GetBestMatch(bairoch_clean, staedtebuch)
   
-  matched_data <- left_join(bairoch_raw, matched_keys, by="city") |> 
+  matched_data <- bairoch_raw |> 
+    filter(country %in% c("Germany", "Austria", "Poland", "Czechoslovakia")) |> 
+    left_join(matched_keys, by="city") |> 
     drop_na(city_id) |> 
     select(city_id, year, city, population) |> 
     arrange(city_id, year)
