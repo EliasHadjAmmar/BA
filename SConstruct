@@ -39,11 +39,10 @@ for t in [100, 50, 10, 1]:
     # This builds the full data, in multiple versions aggregated to different period lengths t
     script = "source/build/Aggregate.R"
     target = f'drive/derived/cities_data_{t}y.csv'
-    command = f'Rscript {script} {t}'
     build = Command(target, # target path
                     [switches, script, # data and code
                      ConstructionLib, ConflictLib, HandleCommandArgs], # auxiliary code
-                    command) # command line string
+                    f'Rscript {script} {t}') # command line string
     
     ###############################################################################
     ###                OUTPUTTING REGRESSION TABLES AND FIGURES                 ###
@@ -55,12 +54,18 @@ for t in [100, 50, 10, 1]:
     if t in [50, 100]:
         script = "source/analysis/baseline/ReplicateSW22.R"
         target = f'paper/output/regressions/SW22_replication_{t}y.png'
-        command = f'Rscript {script} {t}'
         SW_rep = Command(target, 
                          [build, script, 
                           HandleCommandArgs, DataPrepSuite], 
-                         command)
+                         f'Rscript {script} {t}')
     
+    # This produces the baseline regression.
+    script = "source/analysis/baseline/Baseline.R"
+    target = f'paper/output/regressions/baseline_{t}y.tex'
+    baseline = Command(target, 
+                        [build, script, 
+                        HandleCommandArgs, DataPrepSuite, ], 
+                        f'Rscript {script} {t}')
 
 
 

@@ -10,28 +10,33 @@ source("source/utils/DataPrepSuite.R")
 
 Main <- function(){
   
+  # Read data
   t <- HandleCommandArgs(default_length = 50)
   read_path <- sprintf("drive/derived/cities_data_%iy.csv", t)
   build <- read_csv(read_path, show_col_types = F)
   
+  # Select sample and process data (exact steps documented below)
   dat <- PrepareData(build,
                      max_switches = 2,
                      binarise_construction = T,
                      binarise_switches = T)
   
+  # Estimate my baseline interaction equation
   mod <- fixest::feols(
     c_all ~ i(treat_type, D, ref=2) + D + switches | city_id + period, 
     data = dat)
   
+  # Produce regression table and export to LaTeX
   setFixest_dict(c(city_id = "City", period = "Period",
                    c_all = "All construction (binary)", D = "TREAT x POST",
                    treat_type = "Type", switches = "Switch"))
   
-  # etable(mod)
   tex_output <- etable(mod, tex=TRUE)
-  write(tex_output, file="analysis/output/tables/baseline_did.tex")
   
+  filename <- sprintf("paper/output/regressions/baseline_%iy.tex", t)
+  write(tex_output, file=filename)
   
+  return(0)
 }
 
 
