@@ -1,56 +1,65 @@
-PrepareData <- function(build){
-  
-  clean <- build |> 
+AddEAnother <- function(build){
+  with_e_dummies <- build |> 
     group_by(city_id) |> 
-    mutate(lifetime_switches = sum(switches)) |> 
-    filter(lifetime_switches <= 2) |>  # drops 50% of observations
-    mutate(lag_switches = lag(switches)) |> 
     mutate(e_another = if_else(terr_id != lag(terr_id), 1, 0)) |> # lag, not lead
-    drop_na(e_another, lag_switches) 
+    drop_na(e_another)
+  
+  return(with_e_dummies)
+}
+
+
+AddLeadsLags <- function(with_e_dummies, years_pre, years_post){
+  
+  # Get treatment period(s) for each city
+  timing <- with_e_dummies |> 
+    filter(e_another == 1) |> 
+    mutate(treat_time = period) |> 
+    select(city_id, treat_time)
+  
+  # Join treatment periods to data and add TREAT
+  with_timing <- with_e_dummies |> 
+    left_join(timing, by="city_id", multiple = "all") |> # duplicate cities with multiple switches
+    arrange(city_id, treat_time, period) |> 
+    mutate(key = sprintf("id%i_t%i_s%i", city_id, period, treat_time)) |> # unique keys just in case
+    mutate(treat = ifelse(is.na(treat_time), 0, 1)) # add TREAT dummy
+  
+  # Create time-to-treat variable
+  with_window <- with_timing |> 
+    mutate(time_to_treat = ifelse(treat == 1, period-treat_time, 0)) |> # create time-to-treat
+    mutate(treat = ifelse(time_to_treat %in% -years_pre:years_post, treat, 0)) |> # set treat=0 if not in window
+    mutate(time_to_treat = ifelse(treat==0, 0, time_to_treat)) # set redundant times-to-treat vals =0
+  
+  # Rearrange columns
+  clean <- with_window |> 
+    #mutate(time_to_treat = as_factor(time_to_treat)) |> 
+    select(city_id, treat_time, period, terr_id, switches, 
+           e_another, treat, time_to_treat, conquest, succession, 
+           conflict, c_all, c_state, c_private, c_public)
   
   return(clean)
 }
 
 
+BinariseOutcomes <- function(build){
+  clean <- build |> 
+    mutate(across(starts_with("c_"), \(c) if_else(c > 0, 1, 0)))
+  return(clean)
+}
 
-CheckEvent <- function(build, range, terr="B3742", city_start="1"){
-  # shows a slice of the data containing cities whose id starts with `city_start`
-  # and which at some point belong to `terr`, and years in `range`.
-  
-  clean <- PrepareData(build)
-  
-  check <- clean |> 
-    filter(startsWith(as.character(city_id), city_start) & period %in% range) |> 
+BinariseSwitching <- function(build){
+  clean <- build |> 
+    mutate(switches_bin = if_else(switches > 0, 1, 0))
+  return(clean)
+}
+
+
+FilterBySwitches <- function(build, max_switches){
+  clean <- build |> 
     group_by(city_id) |> 
-    filter(terr %in% terr_id) |> 
-    select(city_id, period, terr_id, switches, e_another, lag_switches)
+    mutate(lifetime_switches = sum(switches)) |> 
+    filter(lifetime_switches <= max_switches)
   
-  return(check)
+  return(clean)
 }
 
 
-CheckBadSwitches <- function(build, n = 0){
-  # prints the number of 
-  
-  problems <- build |> PrepareData() |> 
-    filter(lag_switches %% 2 != 0 & e_another == 0)
-  
-  print(sprintf("%i problematic switches", nrow(problems)))
-  
-  if (nrow(problems) == 0){
-    return()
-  }
-  
-  if (n > 0){
-    set.seed(0)
-    problems <- problems |> 
-      filter(city_id %in% sample(problems$city_id, n))
-  }
-  
-  check <- build |> PrepareData() |>
-    filter(city_id %in% problems$city_id) |> 
-    filter(period %in% min(problems$period):max(problems$period)) |>
-    select(city_id, period, terr_id, switches, e_another, lag_switches)
-  
-  return(check)
-}

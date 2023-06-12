@@ -4,7 +4,7 @@ ReadCorrectBuild <- function(default_t){
   
   t <- HandleCommandArgs(default_t)
   read_path <- sprintf("drive/derived/cities_data_%iy.csv", t)
-  build <- read_csv(read_path)
+  build <- read_csv(read_path, show_col_types = F)
   
   return(build)
 }
