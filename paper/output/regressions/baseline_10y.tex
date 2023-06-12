@@ -1,32 +1,28 @@
-\begingroup
-\centering
-\begin{tabular}{lcc}
-   \tabularnewline \midrule \midrule
-   Dependent Variable: & \multicolumn{2}{c}{Construction}\\
-   Model:                                          & (1)             & (2)\\  
-   \midrule
-   \emph{Variables}\\
-   1(t > e\^NewState) $\times$ Switch Type $=$ 1   & -0.0134         & -0.0198\\   
-                                                   & (0.0106)        & (0.0360)\\   
-   1(t > e\^NewState) $\times$ Switch Type $=$ 3   & -0.0142         & -0.0575$^{**}$\\   
-                                                   & (0.0142)        & (0.0285)\\   
-   1(t > e\^NewState)                              & 0.0190$^{**}$   & 0.0250\\   
-                                                   & (0.0086)        & (0.0275)\\   
-   1(S\_{it} > 0                                   & -0.0322$^{***}$ & -0.0621$^{*}$\\   
-                                                   & (0.0124)        & (0.0356)\\   
-   Conflict                                        &                 & 0.0081\\   
-                                                   &                 & (0.0173)\\   
-   \midrule
-   \emph{Fixed-effects}\\
-   City                                            & Yes             & Yes\\  
-   Period                                          & Yes             & Yes\\  
-   \midrule
-   \emph{Fit statistics}\\
-   Observations                                    & 35,168          & 7,135\\  
-   R$^2$                                           & 0.17707         & 0.22143\\  
-   Within R$^2$                                    & 0.00048         & 0.00104\\  
-   \midrule \midrule
-   \multicolumn{3}{l}{\emph{Clustered (City) standard-errors in parentheses}}\\
-   \multicolumn{3}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
-\end{tabular}
-\par\endgroup
+\begin{table}[htbp]
+   \caption{Test Title}
+   \centering
+   \begin{tabular}{lcc}
+      \tabularnewline \midrule \midrule
+      Dependent Variable: & \multicolumn{2}{c}{Construction}\\
+      Model:                                               & (1)                  & (2)\\  
+      \midrule
+      \emph{Variables}\\
+      Switching to another state $\times$ Selection $=$ 1  & -0.01 (0.01)         & -0.02 (0.04)\\   
+      Switching to another state $\times$ Selection $=$ 3  & -0.01 (0.01)         & -0.06$^{**}$ (0.03)\\   
+      Switching to another state                           & 0.02$^{**}$ (0.009)  & 0.03 (0.03)\\   
+      Switching indicator                                  & -0.03$^{***}$ (0.01) & -0.06$^{*}$ (0.04)\\   
+      Conflict                                             &                      & 0.008 (0.02)\\   
+      \midrule
+      \emph{Fixed-effects}\\
+      City                                                 & Yes                  & Yes\\  
+      Period                                               & Yes                  & Yes\\  
+      \midrule
+      \emph{Fit statistics}\\
+      Observations                                         & 35,168               & 7,135\\  
+      R$^2$                                                & 0.1771               & 0.2214\\  
+      Within R$^2$                                         & 0.0005               & 0.0010\\  
+      \midrule \midrule
+      \multicolumn{3}{l}{\emph{Clustered (City) standard-errors in parentheses}}\\
+      \multicolumn{3}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+   \end{tabular}
+\end{table}
