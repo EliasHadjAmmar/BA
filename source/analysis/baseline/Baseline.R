@@ -22,16 +22,24 @@ Main <- function(){
                      binarise_switches = T)
   
   # Estimate my baseline interaction equation
-  mod <- fixest::feols(
+  mod_basic <- fixest::feols(
     c_all ~ i(treat_type, D, ref=2) + D + switches | city_id + period, 
     data = dat)
   
+  mod_conflict <- fixest::feols(
+    c_all ~ i(treat_type, D, ref=2) + D + switches + conflict | city_id + period, 
+    data = dat)
+  
+  
+  
   # Produce regression table and export to LaTeX
   setFixest_dict(c(city_id = "City", period = "Period",
-                   c_all = "All construction (binary)", D = "TREAT x POST",
-                   treat_type = "Type", switches = "Switch"))
+                   c_all = "Construction", D = "1(t > e^NewState)",
+                   treat_type = "Switch Type", switches = "1(S_{it} > 0"),
+                   conflict = "Conflict")
   
-  tex_output <- etable(mod, tex=TRUE)
+  etable(mod_basic, mod_conflict)
+  tex_output <- etable(mod_basic, mod_conflict, tex=TRUE)
   
   filename <- sprintf("paper/output/regressions/baseline_%iy.tex", t)
   write(tex_output, file=filename)
