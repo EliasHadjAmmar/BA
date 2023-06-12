@@ -28,7 +28,14 @@ Main <- function(){
     c_all ~ i(time_to_treat, treat, ref = -t) + switches | city_id + period, 
     data = dat)
 
-  iplot(mod) # Replicate Fig. 5
+  
+  # Produce replication of Fig. 5 and save as PNG
+  filename <- sprintf("paper/output/regressions/SW22_replication_%iy.png", t)
+  png(filename=filename, width = 800, height = 800, pointsize = 20)
+  iplot(mod)   
+  dev.off()
+  
+  return(0)
 }
 
 
