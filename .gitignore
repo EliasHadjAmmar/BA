@@ -3,7 +3,6 @@
 # `/external/` and `/input/` subdirectories are ignored as they should contain symbolic links, which are user-specific. `/output/` is ignored because the files are way too large. *input is included to ignore the symlink in the analysis folder.
 *external/
 *input/
-*output/
 *input
 !paper/input/
 
