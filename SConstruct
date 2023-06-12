@@ -10,6 +10,7 @@ build_inputs_path = "drive/raw/base/"
 raw_cities = build_inputs_path + "cities_families_1300_1918.dta"
 raw_construction = build_inputs_path + "construction_all_xl.csv"
 raw_conflict = build_inputs_path + "conflict_incidents.csv"
+raw_population = "drive/raw/population/bairoch1988.csv"
 
 # Assigning utility script paths to variables for convenience
 # (varnames in CamelCase to be distinguishable from data)
@@ -32,6 +33,12 @@ ConflictLib = "source/build/lib/ProcessConflict.R"
 switches = Command('drive/derived/cities_switches.csv',   # target path (output file)
     [raw_cities, 'source/build/Switches.R'],              # source paths (input files)
     'Rscript source/build/Switches.R')                    # command line string
+
+
+# This produces a subset of Bairoch (1988)'s population data, matched to city_ids.
+population = Command('drive/derived/population.csv',
+    [raw_population, 'source/build/population/MatchBairoch.R'],
+    'Rscript source/build/population/MatchBairoch.R')
 
 
 for t in [100, 50, 10, 1]:
