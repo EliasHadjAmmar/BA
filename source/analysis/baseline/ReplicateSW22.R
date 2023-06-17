@@ -7,6 +7,7 @@ setwd("~/GitHub/BA")
 
 source("source/utils/HandleCommandArgs.R")
 source("source/utils/DataPrepSuite.R")
+source("source/utils/etableDefaults.R")
 
 Main <- function(){
   
@@ -29,10 +30,19 @@ Main <- function(){
     data = dat)
 
   
+  # Produce regression table and export to LaTeX
+  etableDefaults()
+  tex_output <- etable(mod, tex=TRUE,
+                       title="Dynamic effects of switching")
+  
+  filename <- sprintf("paper/output/regressions/SWW22_replication_%iy.tex", t)
+  write(tex_output, file=filename)
+  
+  
   # Produce replication of Fig. 5 and save as PNG
   filename <- sprintf("paper/output/regressions/SW22_replication_%iy.png", t)
   png(filename=filename, width = 800, height = 800, pointsize = 20)
-  iplot(mod)   
+  iplot(mod) 
   dev.off()
   
   return(0)
