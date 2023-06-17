@@ -57,10 +57,9 @@ remoteness of China deprived it of the benefits of state competition that Europe
 
 The closest relative to this paper is \cite{schoenholzer2022} who investigate how switching between states affects the development of cities. They find that switching states affects population negatively in the short run but positively in the long run. Similar to the evolution metaphor, they interpret this as "creative destruction": the short run cost of destruction is compensated by the long-run benefit of becoming part of a higher-quality state. However, they do not show explicitly how these improvements in state quality are driven by selection through conflict. They use a dataset with a bigger geographical scope (all of Europe) but lower resolution: they use urban population from \cite{bairoch1988} as a proxy for development, which is only available in intervals of 50 or 100 years, and a series of political maps. 
 
+The analysis in this paper builds upon that of \cite{schoenholzer2022} and extends it by identifying special cases of switching events: in \textit{conquests} a city is forcefully absorbed into a new state, while in \textit{successions} a city is absorbed into a new state after the rulers of the old state have gone extinct. Comparing the effects of these two types of switches allows me to tease out the effect of state power. Identification is based on the assumption that conquests imply state power differentials but successions do not. Specifically, if we consider the universe of all switching events, the average increase in state power from the old to the new owner would be higher for the conquests than for the successions. The reasoning is that conflict --- as in a conquest --- selects the new state for power, but conflict-free successions, depending mainly on dynastic marriages, are more "random". This assumption allows me to use conquests as a stand-in for an increase in state power. Several other assumptions are needed to interpret my results causally.
 
-The analysis in this paper builds upon that of \cite{schoenholzer2022} and extends it by identifying special cases of switching events: in \textit{conquests} a city is forcefully absorbed into a new state, while in \textit{successions} a city is absorbed into a new state after the rulers of the old state have gone extinct. Comparing the effects of these two types of switches allows me to tease out the effect of state power. I find a positive and significant effect of state power on the long-run development of cities. This result suggests that conflict-driven evolution indeed played a role in the rise of Europe relative to other regions of the world.
-
-I make a key assumption: conquests imply state power differentials but successions do not. Specifically, if we consider the universe of all switching events, the average increase in state power from the old to the new owner would be higher for the conquests than for the successions. The reasoning is that conflict --- as in a conquest --- selects the new state for power, but conflict-free successions, depending mainly on dynastic marriages, are more "random". This assumption allows me to use conquests as a stand-in for an increase in state power. Several other assumptions are needed to interpret my results causally, which I will discuss in detail below.
+While I am able to replicate \cite{schoenholzer2022}'s result that the long-run effect of switching to another state is positive, I fail to identify a statistically significant effect of state power on urban development. This does not necessarily mean that conflict-driven evolution played no role in the rise of Europe --- several issues limit the statistical power of my test, which might prevent me from finding an effect even if there is one. The biggest one is that the data I use is arguably inadequate for answering the research question.
 
 The rest of the paper proceeds as follows. Section 2 presents some background information. Section 3 describes the data used in the analysis. Section 4 details the empirical approach. Section 5 presents results. Section 6 discusses implications and robustness of the results. Section 7 concludes.
 
@@ -97,6 +96,8 @@ I also build coarsened versions of this dataset in which I aggregate years into 
 
 \section{Empirical strategy}
 
+\subsection{Long-run effect of switching}
+
 First I replicate the long-term finding of \cite{schoenholzer2022} using the following equation:
 
 \begin{equation}
@@ -104,26 +105,33 @@ First I replicate the long-term finding of \cite{schoenholzer2022} using the fol
     \sum_{\tau = -100}^{200} \mathbf{1}(t = e^{NewState}_i + \tau)\pi_t + \varepsilon_{it}
 \end{equation}
 
-I can barely believe it myself, but I replicate their finding:
 
-\begin{figure}
-    \centering
-    \includegraphics[scale = 0.4]{paper/output/regressions/SW22_replication_50y.png}
-    \caption{It looks just like it's supposed to!}
-    \label{fig:SW_replication}
-\end{figure}
+\subsection{Effect of state power}
+
 
 Next I tried to find the effect of state power - the effect of the difference in selection for state power between conquests and successions:
+
+I use a triple interaction. I extend the previous regression
 
 \begin{multline}
     construction_{it} = \alpha_i + \delta_t + \mathbf{1}(S_{it} > 0) +
     \mathbf{1}(t \ge e^{NewState}_i)\beta +
-    \mathbf{1}(t \ge e^{NewState}_i) \times C_i \theta + \varepsilon_{it}
+    \mathbf{1}(t \ge e^{NewState}_i) \times C_i \times \theta + \varepsilon_{it}
 \end{multline}
 
-Unfortunately it's not as convincing:
 
-\input{paper/output/regressions/baseline_50y}
+
+Blah blah.
+
+
+\section{Results}
+
+I can barely believe it myself, but I replicate their finding. Table 
+Figure \ref{fig:SW_replication} shows the dynamic effect of switching. Cities were on average 
+
+The it's not as convincing:
+
+
 
 \newpage
 \onehalfspacing
@@ -132,6 +140,21 @@ Unfortunately it's not as convincing:
 
 \newpage
 \section*{Tables and figures}
+
+\subsection{Tables}
+
+\input{paper/output/regressions/baseline_50y}
+
+\subsection{Figures}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale = 0.4]{paper/output/regressions/SW22_replication_50y.png}
+    \caption{It looks just like it's supposed to!}
+    \label{fig:SW_replication}
+\end{figure}
+
+
 
 
 \end{document}
