@@ -37,7 +37,7 @@ Main <- function(){
                        title="Dynamic effects of switching",
                        label = sprintf("tab:SW22_replication_%iy", t))
   
-  filename <- sprintf("paper/output/regressions/SW22_replication_%iy", t)
+  filename <- sprintf("paper/output/regressions/SW22_replication_%iy.tex", t)
   write(tex_output, file=filename)
   
   
