@@ -34,7 +34,8 @@ Main <- function(){
   # Produce regression table and export to LaTeX
   etableDefaults()
   tex_output <- etable(mod_basic, mod_conflict, tex=TRUE,
-                       title="Test Title")
+                       title="Test Title",
+                       label = sprintf("tab:baseline_%iy", t))
   
   filename <- sprintf("paper/output/regressions/baseline_%iy.tex", t)
   write(tex_output, file=filename)

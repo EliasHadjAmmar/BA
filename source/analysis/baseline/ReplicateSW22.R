@@ -32,10 +32,12 @@ Main <- function(){
   
   # Produce regression table and export to LaTeX
   etableDefaults()
-  tex_output <- etable(mod, tex=TRUE,
-                       title="Dynamic effects of switching")
+  tex_output <- etable(mod, 
+                       tex=TRUE,
+                       title="Dynamic effects of switching",
+                       label = sprintf("tab:SW22_replication_%iy", t))
   
-  filename <- sprintf("paper/output/regressions/SWW22_replication_%iy.tex", t)
+  filename <- sprintf("paper/output/regressions/SW22_replication_%iy", t)
   write(tex_output, file=filename)
   
   

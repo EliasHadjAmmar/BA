@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+   \caption{\label{tab:SW22_replication_50y} Dynamic effects of switching}
+   \centering
+   \begin{tabular}{lc}
+      \tabularnewline \midrule \midrule
+      Dependent Variable:                        & Construction\\  
+      Model:                                     & (1)\\  
+      \midrule
+      \emph{Variables}\\
+      treat $\times$ time\_to\_treat $=$ -100    & 0.0008 (0.03)\\   
+      treat $\times$ time\_to\_treat $=$ 0       & -0.005 (0.02)\\   
+      treat $\times$ time\_to\_treat $=$ 50      & 0.02 (0.02)\\   
+      treat $\times$ time\_to\_treat $=$ 100     & 0.05$^{**}$ (0.03)\\   
+      treat $\times$ time\_to\_treat $=$ 150     & 0.05$^{*}$ (0.03)\\   
+      treat $\times$ time\_to\_treat $=$ 200     & 0.09$^{***}$ (0.03)\\   
+      Switching indicator                        & -0.01 (0.02)\\   
+      \midrule
+      \emph{Fixed-effects}\\
+      City                                       & Yes\\  
+      Period                                     & Yes\\  
+      \midrule
+      \emph{Fit statistics}\\
+      Observations                               & 6,635\\  
+      R$^2$                                      & 0.3563\\  
+      Within R$^2$                               & 0.0024\\  
+      \midrule \midrule
+      \multicolumn{2}{l}{\emph{Clustered (City) standard-errors in parentheses}}\\
+      \multicolumn{2}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+   \end{tabular}
+\end{table}
