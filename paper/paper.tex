@@ -97,12 +97,19 @@ I also build coarsened versions of this dataset in which I aggregate years into 
 
 \subsection{Long-run effect of switching}
 
+\cite{schoenholzer2022} find a short-run cost of switching (presumably due to conflict) and a long-run benefit. They get the short-term result by looking at cities that only switched states briefly before switching back, and the long-run result by comparing that to cities that permanently stayed with their new territory. I operate in the same framework and I borrow their notation: the variable $S_{it}$ is the number of times a city switched states in period $t$. By contrast, the variable $e^{NewState}_i$ denotes the first period in which city $i$ belongs to a different state than the previous. Intuitively, in periods with $S_{it} > 0$ a city suffers short-run effects of contemporary switching, while in periods following $e^{NewState}_i$ it will be under new rule and therefore experience long-run effects of switching. 
+
 First I replicate the long-term finding of \cite{schoenholzer2022} using the following equation:
+
 
 \begin{equation}
     construction_{it} = \alpha_i + \delta_t + \mathbf{1}(S_{it} > 0) + 
-    \sum_{\tau = -100}^{200} \mathbf{1}(t = e^{NewState}_i + \tau)\pi_t + \varepsilon_{it}
+    \sum_{\tau = -100}^{200} \mathbf{1}(t = e^{NewState}_i + \tau)\pi_t + \varepsilon_{it},
 \end{equation}
+
+where the outcome $construction_{it}$ is an indicator that equals 1 if any construction activity was recorded in city $i$ and period $t$,  the variable $S_{it}$ is the number of times a city switched states in period $t$, the variable $e^{NewState}_i$ denotes the first period in which city $i$ belongs to a different state than the previous, and $\alpha_i$ and $\delta_t$ denote city and period fixed effects.
+
+Some comments on this. First, it may seem like a good idea to include state fixed effects. But I cannot because the hypothesised selection effect works through an improvement in state quality. State fixed effects would absorb the variation in time-invariant state quality. 
 
 
 \subsection{Effect of state power}
