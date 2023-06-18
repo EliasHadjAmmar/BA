@@ -103,32 +103,41 @@ First I replicate the long-term finding of \cite{schoenholzer2022} using the fol
 
 
 \begin{equation}
-    construction_{it} = \alpha_i + \delta_t + \mathbf{1}(S_{it} > 0) + 
-    \sum_{\tau = -100}^{200} \mathbf{1}(t = e^{NewState}_i + \tau)\pi_t + \varepsilon_{it},
+\label{eq:sw22}
+    construction_{it} = \alpha_i + \delta_t + \mathbf{1}(S_{it} > 0)\beta + 
+    \sum_{\tau = -100}^{200} \mathbf{1}(t = e^{NewState}_i + \tau)\pi_\tau + \varepsilon_{it},
 \end{equation}
 
-where the outcome $construction_{it}$ is an indicator that equals 1 if any construction activity was recorded in city $i$ and period $t$,  the variable $S_{it}$ is the number of times a city switched states in period $t$, the variable $e^{NewState}_i$ denotes the first period in which city $i$ belongs to a different state than the previous, and $\alpha_i$ and $\delta_t$ denote city and period fixed effects.
+where the outcome $construction_{it}$ is an indicator that equals 1 if any construction activity was recorded in city $i$ and period $t$, the variable $S_{it}$ is the number of times a city switched states in period $t$, the variable $e^{NewState}_i$ denotes the first period in which city $i$ belongs to a different state than the previous, and $\alpha_i$ and $\delta_t$ denote city and period fixed effects. The coefficients of interest are the dynamic effects $\pi_\tau$ of switching to a new state permanently.
 
-Some comments on this. First, it may seem like a good idea to include state fixed effects. But I cannot because the hypothesised selection effect works through an improvement in state quality. State fixed effects would absorb the variation in time-invariant state quality. 
+Since the outcome is binary, equation \ref{eq:sw22} represents a linear probability model: we model $construction_{it}$ as a random variable that follows a Bernoulli distribution with a probability parameter $p$ that is conditional on the right-hand side variables. This way we can interpret the values of coefficients as differences in the probability of recorded construction activity in a given period. 
+
+The coefficient $\pi_\tau$ for given $\tau$ is the difference in the probability of construction between two cities $i$ and $j$ with identical time-invariant characteristics, in the same period, who undergo the same amount of switching turmoil in this period. The only difference is that one city underwent a lasting switch to another state $\tau$ periods ago, while the other did not. 
+
+% Since comparisons between cities at different \tau are problematic, we also use the Sun and Abraham estimator (as do SW22).
+
+Remember, we expect this difference to stem from the fact that switching states generally means switching to a higher-quality state (due to selection). As such, even though it would be possible in principle to include state fixed effects, it is not a good idea here: state fixed effects would absorb the variation in state quality whose effects we want to capture in $\pi_\tau$. 
 
 
 \subsection{Effect of state power}
 
 
-Next I tried to find the effect of state power - the effect of the difference in selection for state power between conquests and successions:
+Next I tried to find the effect of state power - the effect of the difference in selection for state power between conquests and successions.
 
-I use a triple interaction. I extend the previous regression
+I switch to a simple difference-in-differences specification for clarity. I extend the previous regression by interacting with the type of the ownership change:
 
-\begin{multline}
-    construction_{it} = \alpha_i + \delta_t + \mathbf{1}(S_{it} > 0) +
-    \mathbf{1}(t \ge e^{NewState}_i)\beta +
-    \mathbf{1}(t \ge e^{NewState}_i) \times C_i \times \theta + \varepsilon_{it}
-\end{multline}
+\begin{equation}
+\label{eq:baseline}
+    construction_{it} = \alpha_i + \delta_t + \mathbf{1}(S_{it} > 0)\beta +
+    \mathbf{1}(t \ge e^{NewState}_i)\pi +
+    \mathbf{1}(t \ge e^{NewState}_i) T_i \theta + \varepsilon_{it}
+\end{equation}
 
+a second-order interaction necessitates that the first-order interaction pattern and associated coefficient (whether zero or non-zero) is itself different depending on the level of a third predictor. (from stackexchange)
 
+Blah blah. Equation \ref{eq:baseline}
 
-Blah blah.
-
+% ######################################################
 
 \section{Results}
 
@@ -138,6 +147,14 @@ Figure \ref{fig:SW_replication} shows the dynamic effect of switching. Cities we
 The it's not as convincing: \ref{tab:SW22_replication_50y}
 
 
+% ######################################################
+
+\section{Discussion}
+
+
+% ######################################################
+
+\section{Conclusion}
 
 \newpage
 \onehalfspacing
