@@ -125,13 +125,19 @@ Remember, we expect this difference to stem from the fact that switching states 
 Next I tried to find the effect of state power - the effect of the difference in selection for state power between conquests and successions.
 
 I switch to a simple difference-in-differences specification for clarity. I extend the previous regression by interacting with the type of the ownership change:
-
 \begin{equation}
 \label{eq:baseline}
-    construction_{it} = \alpha_i + \delta_t + \mathbf{1}(S_{it} > 0)\beta +
-    \mathbf{1}(t \ge e^{NewState}_i)\pi +
-    \mathbf{1}(t \ge e^{NewState}_i) T_i \theta + \varepsilon_{it}
+\begin{split}
+    construction_{it} &= \alpha_i + \delta_t + \mathbf{1}(S_{it} > 0)\beta +
+    \mathbf{1}(t \ge e^{NewState}_i)\pi \\
+    &+ \mathbf{1}(t \ge e^{NewState}_i) \times
+    \mathbf{1}(Switch Type = conquest) \times \theta_{conquest} \\
+    &+ \mathbf{1}(t \ge e^{NewState}_i) \times
+    \mathbf{1}(Switch Type = other) \times \theta_{other} + \varepsilon_{it}
+\end{split}
 \end{equation}
+
+with the only addition being $T_i$, which denotes the type of switch that brought the new state into power. I distinguish three different categories of switches: conquests, successions, and other. In the above regression, successions are the omitted category. The coefficient of interest is the 
 
 a second-order interaction necessitates that the first-order interaction pattern and associated coefficient (whether zero or non-zero) is itself different depending on the level of a third predictor. (from stackexchange)
 
