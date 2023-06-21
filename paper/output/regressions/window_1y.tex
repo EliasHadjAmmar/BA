@@ -1,0 +1,34 @@
+\begin{table}[htbp]
+   \caption{\label{tab:window_1y} Differences in trends after switching, by switch type}
+   \centering
+   \begin{tabular}{lcccc}
+      \tabularnewline \midrule \midrule
+      Dependent Variables:                       & All construction      & State                & Private               & Public goods\\  
+      Model:                                     & (1)                   & (2)                  & (3)                   & (4)\\  
+      \midrule
+      \emph{Variables}\\
+      Switch to another state                    & -0.0002               & 0.0003               & -0.0009$^{**}$        & -0.001$^{***}$\\   
+                                                 & (0.001)               & (0.0004)             & (0.0004)              & (0.0004)\\   
+      Switch to another state $\times$ Conquest  & -0.001                & -0.001$^{*}$         & 0.0005                & 0.0002\\   
+                                                 & (0.002)               & (0.0008)             & (0.0006)              & (0.0006)\\   
+      Switch to another state $\times$ Other     & 0.0006                & -0.0005              & 0.0006                & 0.001$^{***}$\\   
+                                                 & (0.002)               & (0.0005)             & (0.0005)              & (0.0005)\\   
+      Switching indicator                        & 0.002                 & 0.001                & -0.001                & $5.1\times 10^{-5}$\\    
+                                                 & (0.005)               & (0.002)              & (0.0009)              & (0.002)\\   
+      \midrule
+      \emph{Fixed-effects}\\
+      City                                       & Yes                   & Yes                  & Yes                   & Yes\\  
+      Period                                     & Yes                   & Yes                  & Yes                   & Yes\\  
+      \midrule
+      \emph{Fit statistics}\\
+      Observations                               & 367,370               & 367,370              & 367,370               & 367,370\\  
+      R$^2$                                      & 0.0370                & 0.0143               & 0.0215                & 0.0156\\  
+      Within R$^2$                               & $3.64\times 10^{-6}$  & $1.3\times 10^{-5}$  & $2.16\times 10^{-5}$  & $4.21\times 10^{-5}$\\   
+      \midrule \midrule
+      
+      
+   \end{tabular}
+   
+   \par \raggedright 
+   Note: Table presents results of estimation equation \eqref{eq:baseline}. The switch type "Succession" is omitted as the  reference category. Time periods have a length of 1 year. Observations are at the city-period  level. Dependent variables are indicators that take the value 1 if  construction activity of the respective type was recorded. Standard errors are  clustered at the city level. *, **, and *** denote significance on the 10 percent, 5 percent, and 1 percent  level, respectively.
+\end{table}

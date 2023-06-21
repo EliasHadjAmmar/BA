@@ -19,6 +19,7 @@ DropNACount = "source/utils/DropNACount.R"
 GetAssignment = "source/utils/GetAssignment.R"
 GetStackedData = "source/utils/GetStackedData.R"
 DataPrepSuite = "source/utils/DataPrepSuite.R"
+etableDefaults = "source/utils/etableDefaults.R"
 
 # Scripts that will be sourced from the build lib:
 ConstructionLib = "source/build/lib/ProcessConstruction.R"
@@ -71,8 +72,13 @@ for t in [100, 50, 10, 1]:
     target = f'paper/output/regressions/baseline_{t}y.tex'
     baseline = Command(target, 
                         [build, script, 
-                        HandleCommandArgs, DataPrepSuite, ], 
+                        HandleCommandArgs, DataPrepSuite, etableDefaults], 
                         f'Rscript {script} {t}')
-
-
-
+    
+    # This produces the baseline regression with the post-window limited to 200 years.
+    script = "source/analysis/baseline/Window.R"
+    target = f'paper/output/regressions/window_{t}y.tex'
+    window = Command(target,
+                     [build, script,
+                      HandleCommandArgs, DataPrepSuite, etableDefaults],
+                      f'Rscript {script} {t}')
