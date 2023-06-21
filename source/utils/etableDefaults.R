@@ -10,8 +10,8 @@ etableDefaults <- function(){
   # set default dict
   setFixest_dict(c(city_id = "City", period = "Period",
                    c_all = "All construction", 
-                   c_state = "State construction",
-                   c_private = "Private construction",
+                   c_state = "State",
+                   c_private = "Private",
                    c_public = "Public goods",
                    D = "Switch to another state",
                    rule_conquest = "Conquest", rule_succession = "Succession",

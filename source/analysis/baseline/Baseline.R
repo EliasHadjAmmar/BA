@@ -47,6 +47,16 @@ Main <- function(){
   # Produce regression table and export to LaTeX
   etableDefaults()
   
+  setFixest_dict(c(city_id = "City", period = "Period",
+                   c_all = "All construction", 
+                   c_state = "State",
+                   c_private = "Private",
+                   c_public = "Public goods",
+                   D = "Switch to another state",
+                   rule_conquest = "Conquest", rule_succession = "Succession",
+                   rule_other = "Other", switches = "Switching indicator",
+                   conflict = "Conflict"))
+  
   note <- paste("Note: Table presents results of estimation equation
   \\eqref{eq:baseline}. The switch type \"Succession\" is omitted as the 
   reference category.", PeriodInsert(t), "Observations are at the city-period 
