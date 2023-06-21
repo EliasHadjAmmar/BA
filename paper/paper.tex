@@ -150,11 +150,11 @@ For this purpose I extend Equation \eqref{eq:sw22} by interacting the treatment 
 \end{split}
 \end{equation}
 
-For clarity I have turned the event study into a basic difference-in-differences specification; this way there is only a single coefficient of interest. The lead and lag dummies have simply been replaced with the post-treatment indicator $\mathbf{1}(t \ge e^{NewState}_i)$. The key difference from Equation \eqref{eq:sw22} is the addition of interaction terms. 
+For clarity I move from the event study to a basic difference-in-differences specification; this way there is only a single coefficient of interest. I simply replace the lead and lag dummies with the post-treatment indicator $\mathbf{1}(t \ge e^{NewState}_i)$. The more important novelty are the interaction terms: I interact the type of switch with the post-treatment indicator to obtain estimates of how the trends in construction activity differ after different types of switches. I distinguish three categories: conquests, successions, and other. In all cases this refers to how the state currently owning the city came into power --- for example $conquest_{it} = 1$ means that the state that holds city $i$ at time $t$ acquired city $i$ by conquest. It will be useful to denote the state ruling city $i$ at time $t$ by $\mathbf{J}(i, t)$ in the following.
 
-I distinguish three different categories of switches: conquests, successions, and other. In the above regression, successions are the omitted category. In all cases this refers to how the state currently owning the city came into power. For example, $conquest_{it} = 1$ means that the state $\mathbf{J}(i, t)$ that holds city $i$ at time $t$ acquired city $i$ by conquest.
+A key economic assumption is needed, in addition to the econometric ones, for these interaction terms to tell us anything about state power. It is this: the state power of a city's owner $\mathbf{J}(i, t)$ is correlated with the manner in which the city was acquired by that owner. In particular, I assume that conquests are more strongly positively correlated with state power than successions. Support for this assumption comes from \cite{levine2021}'s model of conflict-driven evolution. BLANK. I will discuss its validity at length later on.
 
-The coefficient of interest in this regression is no longer $\pi$ but $\theta_{conquest}$. 
+The coefficient of interest in this regression is no longer $\pi$ but $\theta_{conquest}$. Note that there is no interaction term between the post-treatment indicator and $\mathbf{1}(Switchtype = succession)$ --- successions are the omitted category. $\theta_{conquest}$, then, captures the difference between the trend of a city acquired by conquest and the trend of a city acquired by succession. 
 
 % ######################################################
 
