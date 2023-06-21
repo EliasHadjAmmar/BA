@@ -129,28 +129,26 @@ Based on the theory of conflict-driven evolution we would expect any such differ
 
 \subsection{Differential effects of switching}
 
-Next I tried to find the effect of state power - the effect of the difference in selection for state power between conquests and successions.
+Next I tried to find the effect of state power - the effect of the difference in selection for state power between conquests and successions. The framework of \cite{schoenholzer2022} only tells us BLANK, but it doesn't tell us BLANK. The reason may be that, having sourced their data on territorial histories from historical maps, they lack information about individual switching events. Because the Städtebuch data compiled by \cite{pt2} records exactly how each city was acquired by the territory holding it, I am able to look at differential trends after different types of ownership changes.
 
-Effect of state power differentials on the effect of switching
-
-I switch to a simple difference-in-differences specification for clarity. I extend the previous regression by interacting with the type of the ownership change:
+For this purpose I extend Equation \eqref{eq:sw22} by interacting the treatment indicator with the type of switch:
 \begin{equation}
 \label{eq:baseline}
 \begin{split}
     construction_{it} &= \alpha_i + \delta_t + \mathbf{1}(S_{it} > 0)\beta +
     \mathbf{1}(t \ge e^{NewState}_i)\pi \\
     &+ \mathbf{1}(t \ge e^{NewState}_i) \times
-    \mathbf{1}(Switch Type = conquest) \times \theta_{conquest} \\
+    \mathbf{1}(Switchtype = conquest) \times \theta_{conquest} \\
     &+ \mathbf{1}(t \ge e^{NewState}_i) \times
-    \mathbf{1}(Switch Type = other) \times \theta_{other} + \varepsilon_{it}
+    \mathbf{1}(Switchtype = other) \times \theta_{other} + \varepsilon_{it},
 \end{split}
 \end{equation}
 
-with the only addition being $T_i$, which denotes the type of switch that brought the new state into power. I distinguish three different categories of switches: conquests, successions, and other. In the above regression, successions are the omitted category. The coefficient of interest is the 
+For clarity I have converted the event study into a basic difference-in-differences specification; the lead and lag dummies have simply been replaced with $\mathbf{1}(t \ge e^{NewState}_i)$ and a single coefficient $\pi$, which is an average treatment effect. The key difference from Equation \eqref{eq:sw22} is the addition of interaction terms. 
 
-a second-order interaction necessitates that the first-order interaction pattern and associated coefficient (whether zero or non-zero) is itself different depending on the level of a third predictor. (from stackexchange)
+I distinguish three different categories of switches: conquests, successions, and other. In the above regression, successions are the omitted category. In all cases this refers to how the state currently owning the city came into power. For example, $conquest_{it} = 1$ means that the state $\mathbf{J}(it)$ that holds city $i$ at time $t$ acquired city $i$ by conquest.
 
-Blah blah. Equation \ref{eq:baseline}
+The coefficient of interest in this regression is no longer $\pi$ but $\theta_{conquest}$. It is the effect of state power differentials on the effect of switching.
 
 % ######################################################
 
