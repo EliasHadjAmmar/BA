@@ -95,7 +95,7 @@ I also build coarsened versions of this dataset in which I aggregate years into 
 
 \section{Empirical strategy}
 
-\subsection{Long-run effect of switching}
+\subsection{Dynamic effects of switching to a new state}
 
 First I attempt to replicate one of the key results of \cite{schoenholzer2022}: that switching states had a positive effect on the growth of cities in the long run. This is an important piece of evidence in support of my hypothesis: states that have successfully taken territory from another are "higher quality", i.e. better for growth. \cite{schoenholzer2022} arrive at this result using an event study with staggered adoption.\footnote
 {
@@ -111,7 +111,7 @@ I will borrow extensively from this framework. The first regression I run is alm
     \sum_{\tau = -100}^{200} \mathbf{1}(t = e^{NewState}_i + \tau)\pi_\tau + \varepsilon_{it},
 \end{equation}
 
-where the outcome $construction_{it}$ is an indicator that equals 1 if any construction activity was recorded in city $i$ and period $t$, the variable $S_{it}$ is the number of times a city switched states in period $t$, the variable $e^{NewState}_i$ denotes the first period in which city $i$ belongs to a different state than the previous, and $\alpha_i$ and $\delta_t$ are city and period fixed effects. The coefficients of interest are the dynamic effects $\pi_\tau$ of switching to a new state permanently. 
+where the outcome $construction_{it}$ is an indicator that equals 1 if any construction activity was observed in city $i$ and period $t$, the variable $S_{it}$ is the number of times a city switched states in period $t$, the variable $e^{NewState}_i$ denotes the first period in which city $i$ belongs to a different state than the previous, and $\alpha_i$ and $\delta_t$ are city and period fixed effects. The coefficients of interest are the dynamic effects $\pi_\tau$ of switching to a new state permanently. 
 
 This is a standard TWFE regression with staggered adoption and dynamic effects. Treatment events are \textit{lasting} switches to another state, i.e. a switching event only counts as treatment if the city belongs to a different state at the beginning of the next period.\footnote
 {
@@ -119,16 +119,18 @@ This is a standard TWFE regression with staggered adoption and dynamic effects. 
 }
 This is because I want the coefficients $\pi_\tau$ to capture the effects of the new state's governance, not just of the political and economic turmoil that may be associated with a transition of power. I separately control for other switches by including the term $\mathbf{1}(S_{it} > 0)$ on the right-hand side so that the coefficient $\beta$ absorbs the effect of switching states in the same period.
 
-Since the outcome is binary in this case, we can interpret Equation \eqref{eq:sw22} as a linear probability model: we model $construction_{it}$ as a random variable that follows a Bernoulli distribution with a probability parameter $p$ that is conditional on the right-hand side variables. This way we can interpret the values of coefficients as differences in the probability of recorded construction activity in a given period. The coefficient $\pi_\tau$ for given $\tau$ is the difference in the probability of construction between two cities $i$ and $j$ with identical time-invariant characteristics, in the same period, who undergo the same amount of switching turmoil in this period. The only difference is that one city underwent a lasting switch to another state $\tau$ periods ago, while the other did not. 
+Since the outcome is binary in this case, we can interpret Equation \eqref{eq:sw22} as a linear probability model: we model $construction_{it}$ as a random variable that follows a Bernoulli distribution with a probability parameter $p$ that is conditional on the right-hand side variables. This way we can interpret the values of coefficients as differences in the probability of construction in a given period. The coefficient $\pi_\tau$ for given $\tau$ is the difference in the probability of construction between two cities $i$ and $j$ with identical time-invariant characteristics, in the same period, who undergo the same amount of switching turmoil in this period. The only difference is that one city underwent a lasting switch to another state $\tau$ periods ago, while the other did not. 
 
 % Since comparisons between cities at different \tau are problematic, we also use the Sun and Abraham estimator (as do SW22).
 
 Based on the theory of conflict-driven evolution we would expect any such difference to stem from the fact that switching states generally means switching to a higher-quality state (due to selection). As such, even though it would be possible in principle to include state fixed effects, it is not a good idea here: state fixed effects would absorb the effect of differences in state quality which we want to capture in $\pi_\tau$. 
 
 
-\subsection{Effect of state power}
+\subsection{Differential effects of switching}
 
 Next I tried to find the effect of state power - the effect of the difference in selection for state power between conquests and successions.
+
+Effect of state power differentials on the effect of switching
 
 I switch to a simple difference-in-differences specification for clarity. I extend the previous regression by interacting with the type of the ownership change:
 \begin{equation}
@@ -167,6 +169,9 @@ differences within HRE may not have been large enough
 successions may also select for state power
 
 different switch sizes for conquests vs extinctions; maybe larger switch sizes caused neglect (-) or integration (+)
+
+
+limit post-window to 200 years
 
 % ######################################################
 
