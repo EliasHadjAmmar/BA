@@ -47,12 +47,13 @@ Main <- function(){
   # Produce regression table and export to LaTeX
   etableDefaults()
   
-  note <- paste("Table presents results of estimation equation
-  \\eqref{eq:baseline}.", PeriodInsert(1), "Observations are at the city-period 
+  note <- paste("Note: Table presents results of estimation equation
+  \\eqref{eq:baseline}. The switch type \"Succession\" is omitted as the 
+  reference category.", PeriodInsert(t), "Observations are at the city-period 
   level. The dependent variables are indicators that take the value 1 if 
   construction activity of the respective type was recorded. Standard errors are 
-  clustered at the city level. The switch type \"Succession\" is omitted as the 
-  reference category.", sep = " ") |> str_replace_all("\n ", "")
+  clustered at the city level.", SignifInsert(), sep = " ") |> 
+    str_replace_all("\n ", "")
   
   tex_output <- etable(mod_all_basic, mod_state_basic,
                        mod_priv_basic, mod_pub_basic,
@@ -103,9 +104,13 @@ PrepareData <- function(build, max_switches,
 
 PostProcessBaseline <- function(tex_output){
   # Post-processing the TeX string to make it neater
+  # If the number of columns changes, the last two lines may show up again
+  # because they specifically contain \multicolumn{5}
   tex_post <- tex_output |> 
     str_replace("Conquest \\$=\\$ 1", "Conquest") |> 
-    str_replace("Other \\$=\\$ 1", "Other")
+    str_replace("Other \\$=\\$ 1", "Other") |> 
+    str_replace(fixed("\\multicolumn{5}{l}{\\emph{Clustered (City) standard-errors in parentheses}}\\\\"), "") |> 
+    str_replace(fixed("\\multicolumn{5}{l}{\\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\\\"), "")
   return(tex_post)
 }
 
