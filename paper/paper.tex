@@ -1,6 +1,6 @@
 \documentclass[11pt, a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[left=2.5cm,right=3cm,top=2.5cm,bottom=2.5cm]{geometry}  
+\usepackage[left=2cm,right=6cm,top=2.5cm,bottom=2.5cm]{geometry}  
 % set 11pt and right=6cm for submission
 
 \usepackage{natbib} % we need this so we can use citation and bib properly
@@ -66,7 +66,7 @@ The rest of the paper proceeds as follows. Section 2 presents some background in
 
 % ######################################################
 
-\section{Background}
+\section{Historical background}
 
 Early modern Europe consisted of many large and small states. 
 
@@ -94,7 +94,7 @@ I also build coarsened versions of this dataset in which I aggregate years into 
 
 % ######################################################
 
-\section{Empirical strategy}
+\section{Regression equations}
 
 \subsection{Dynamic effects of switching to a new state}
 
@@ -120,17 +120,23 @@ This is a standard TWFE regression with staggered adoption and dynamic effects. 
 }
 This is because I want the coefficients $\pi_\tau$ to capture the effects of the new state's governance, not just of the political and economic turmoil that may be associated with a transition of power. I separately control for other switches by including the term $\mathbf{1}(S_{it} > 0)$ on the right-hand side so that the coefficient $\beta$ absorbs the effect of switching states in the same period.
 
-Since the outcome is binary in this case, we can interpret Equation \eqref{eq:sw22} as a linear probability model: we model $construction_{it}$ as a random variable that follows a Bernoulli distribution with a probability parameter $p$ that is conditional on the right-hand side variables. This way we can interpret the values of coefficients as differences in the probability of construction in a given period. The coefficient $\pi_\tau$ for given $\tau$ is the difference in the probability of construction between two cities $i$ and $j$ with identical time-invariant characteristics, in the same period, who undergo the same amount of switching turmoil in this period. The only difference is that one city underwent a lasting switch to another state $\tau$ periods ago, while the other did not. 
+Since the outcome is binary in this case, we can interpret Equation \eqref{eq:sw22} as a linear probability model: we model $construction_{it}$ as a random variable that follows a Bernoulli distribution with a probability parameter $p$ that is conditional on the right-hand side variables. This way we can interpret the values of coefficients as differences in the probability of construction in a given period. The coefficient $\pi_\tau$ for given $\tau$ is the difference in the probability of construction between two cities $i$ and $j$ with identical time-invariant characteristics, in the same period, who undergo the same kind of switching turmoil in this period. The only difference is that one city underwent a lasting switch to another state $\tau$ periods ago, while the other did not. 
 
 % Since comparisons between cities at different \tau are problematic, we also use the Sun and Abraham estimator (as do SW22).
 
 Based on the theory of conflict-driven evolution we would expect any such difference to stem from the fact that switching states generally means switching to a higher-quality state (due to selection). As such, even though it would be possible in principle to include state fixed effects, it is not a good idea here: state fixed effects would absorb the effect of differences in state quality which we want to capture in $\pi_\tau$. 
 
+The basic assumption that needs to be satisfied for a causal interpretation of TWFE estimates is parallel trends. This means that, absent treatment, the outcome in cities that received treatment would have followed the same time trend as the outcome in never-treated cities. While it is impossible to empirically prove this assumption (because we cannot observe the counterfactual trend), it is common to check its validity by estimating pre-treatment effects: if the treatment and control group already showed different trends before being treated, there may be an unobserved variable correlated both with receiving treatment and with the outcome, biasing the estimate. For this reason I also include leads reaching 100 years into the past in my regression (as do \cite{schoenholzer2022}.)
+
 
 \subsection{Differential effects of switching}
 
-Next I tried to find the effect of state power - the effect of the difference in selection for state power between conquests and successions. The framework of \cite{schoenholzer2022} only tells us BLANK, but it doesn't tell us BLANK. The reason may be that, having sourced their data on territorial histories from historical maps, they lack information about individual switching events. Because the Städtebuch data compiled by \cite{pt2} records exactly how each city was acquired by the territory holding it, I am able to look at differential trends after different types of ownership changes.
+Next I attempt to identify the effect of state power --- the effect of the difference in selection for state power between conquests and successions. In the best case, if the identifying assumption is satisfied, the estimates from the previous regression tell us what the effect of switching states is - however, they cannot tell us why. 
 
+Because the \textit{Städtebuch} data compiled by \cite{pt2} records exactly how each city was acquired by the territory holding it, I am able to look at differential trends after different types of ownership changes.\footnote
+{
+Presumably \cite{schoenholzer2022}, having sourced their data on territorial histories from historical maps, lack detailed information about individual switching events. They instead use clever panel decomposition methods (pp. 14-20) and data on state-level characteristics (pp. 21-23) to explain what drives their estimates.
+}
 For this purpose I extend Equation \eqref{eq:sw22} by interacting the treatment indicator with the type of switching event:
 \begin{equation}
 \label{eq:baseline}
@@ -144,11 +150,11 @@ For this purpose I extend Equation \eqref{eq:sw22} by interacting the treatment 
 \end{split}
 \end{equation}
 
-For clarity I have converted the event study into a basic difference-in-differences specification; the lead and lag dummies have simply been replaced with $\mathbf{1}(t \ge e^{NewState}_i)$ and a single coefficient $\pi$, which is an average treatment effect. The key difference from Equation \eqref{eq:sw22} is the addition of interaction terms. 
+For clarity I have turned the event study into a basic difference-in-differences specification; this way there is only a single coefficient of interest. The lead and lag dummies have simply been replaced with the post-treatment indicator $\mathbf{1}(t \ge e^{NewState}_i)$. The key difference from Equation \eqref{eq:sw22} is the addition of interaction terms. 
 
-I distinguish three different categories of switches: conquests, successions, and other. In the above regression, successions are the omitted category. In all cases this refers to how the state currently owning the city came into power. For example, $conquest_{it} = 1$ means that the state $\mathbf{J}(it)$ that holds city $i$ at time $t$ acquired city $i$ by conquest.
+I distinguish three different categories of switches: conquests, successions, and other. In the above regression, successions are the omitted category. In all cases this refers to how the state currently owning the city came into power. For example, $conquest_{it} = 1$ means that the state $\mathbf{J}(i, t)$ that holds city $i$ at time $t$ acquired city $i$ by conquest.
 
-The coefficient of interest in this regression is no longer $\pi$ but $\theta_{conquest}$. It is the effect of state power differentials on the effect of switching.
+The coefficient of interest in this regression is no longer $\pi$ but $\theta_{conquest}$. 
 
 % ######################################################
 
@@ -163,7 +169,7 @@ Figure \ref{fig:SW_replication} shows the dynamic effect of switching. Cities we
 
 \section{Discussion}
 
-How robust this null result is to other specifications: I limit post-window to 200 years; I try Sun and Abraham, I use population data.
+How robust this null result is to other specifications: I limit post-window to 200 years; I try Sun and Abraham, I use population data; I use different granularity.
 
 differences within HRE may not have been large enough
 
