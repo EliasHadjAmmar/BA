@@ -1,28 +1,34 @@
 \begin{table}[htbp]
-   \caption{\label{tab:baseline_100y} Test Title}
+   \caption{\label{tab:baseline_100y} Differences in trends after switching, by switch type}
    \centering
-   \begin{tabular}{lcc}
+   \begin{tabular}{lcccc}
       \tabularnewline \midrule \midrule
-      Dependent Variable: & \multicolumn{2}{c}{Construction}\\
-      Model:                                     & (1)                & (2)\\  
+      Dependent Variables:                       & All construction & State construction & Private construction & Public goods\\  
+      Model:                                     & (1)              & (2)                & (3)                  & (4)\\  
       \midrule
       \emph{Variables}\\
-      Switch to another state $\times$ Conquest  & -0.03 (0.04)       & -0.05 (0.05)\\   
-      Switch to another state $\times$ Other     & -0.02 (0.04)       & 0.04 (0.06)\\   
-      Switch to another state                    & 0.08$^{**}$ (0.04) & -0.04 (0.07)\\   
-      Switching indicator                        & 0.02 (0.03)        & -0.03 (0.07)\\   
-      Conflict                                   &                    & 0.07 (0.05)\\   
+      Switch to another state                    & 0.08$^{**}$      & -0.004             & 0.02                 & -0.05$^{**}$\\   
+                                                 & (0.04)           & (0.03)             & (0.03)               & (0.03)\\   
+      Switch to another state $\times$ Conquest  & -0.03            & -0.09$^{**}$       & -0.03                & 0.003\\   
+                                                 & (0.04)           & (0.05)             & (0.03)               & (0.03)\\   
+      Switch to another state $\times$ Other     & -0.02            & -0.04              & 0.004                & 0.05$^{*}$\\   
+                                                 & (0.04)           & (0.04)             & (0.03)               & (0.03)\\   
+      Switching indicator                        & 0.02             & 0.04               & 0.01                 & -0.02\\   
+                                                 & (0.03)           & (0.03)             & (0.02)               & (0.03)\\   
       \midrule
       \emph{Fixed-effects}\\
-      City                                       & Yes                & Yes\\  
-      Period                                     & Yes                & Yes\\  
+      City                                       & Yes              & Yes                & Yes                  & Yes\\  
+      Period                                     & Yes              & Yes                & Yes                  & Yes\\  
       \midrule
       \emph{Fit statistics}\\
-      Observations                               & 2,955              & 1,018\\  
-      R$^2$                                      & 0.4289             & 0.5268\\  
-      Within R$^2$                               & 0.0024             & 0.0076\\  
+      Observations                               & 2,955            & 2,955              & 2,955                & 2,955\\  
+      R$^2$                                      & 0.4289           & 0.4534             & 0.4801               & 0.4492\\  
+      Within R$^2$                               & 0.0024           & 0.0053             & 0.0005               & 0.0015\\  
       \midrule \midrule
-      \multicolumn{3}{l}{\emph{Clustered (City) standard-errors in parentheses}}\\
-      \multicolumn{3}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+      \multicolumn{5}{l}{\emph{Clustered (City) standard-errors in parentheses}}\\
+      \multicolumn{5}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
    \end{tabular}
+   
+   \par \raggedright 
+   Table presents results of estimation equation \eqref{eq:baseline}. Time periods have a length of 1 year. Observations are at the city-period  level. The dependent variables are indicators that take the value 1 if  construction activity of the respective type was recorded. Standard errors are  clustered at the city level. The switch type "Succession" is omitted as the  reference category.
 \end{table}
