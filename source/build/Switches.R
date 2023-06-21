@@ -22,7 +22,7 @@ Main <- function(){
   # This means: 
   # - `terr_id` is that of the initial state in each year
   # - `switch` codes whether a switch took place during this year
-  # - `type_change` is how the state in `terr_id` came into power (as before)
+  # - `rule_{type}` codes how the state in `terr_id` came into power (as before)
 
   cities_with_switch_dummies <- cities |> 
     arrange(city_id, year) |> 
@@ -39,11 +39,10 @@ Main <- function(){
   OTHER_CATS <- 0:13 |> base::setdiff(CONQUEST_CATS) |> base::setdiff(SUCCESSION_CATS)
   
   cities_with_switch_types <- cities_with_switch_dummies |> 
-    mutate(type_change = case_when(
-      type_change %in% CONQUEST_CATS ~ 3,
-      type_change %in% SUCCESSION_CATS ~ 2,
-      type_change %in% OTHER_CATS ~ 1
-    )
+    mutate(
+      rule_conquest = if_else(type_change %in% CONQUEST_CATS, 1, 0),
+      rule_succession = if_else(type_change %in% SUCCESSION_CATS, 1, 0),
+      rule_other = if_else(type_change %in% OTHER_CATS, 1, 0)
       )
   
   write_csv(cities_with_switch_types, "drive/derived/cities_switches.csv")

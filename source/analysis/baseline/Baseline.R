@@ -24,18 +24,19 @@ Main <- function(){
   
   # Estimate my baseline interaction equation
   mod_basic <- fixest::feols(
-    c_all ~ i(treat_type, D, ref=2) + D + switches | city_id + period, 
+    c_all ~ i(rule_conquest, D, ref=0) + i(rule_other, D, ref=0) + D + switches | city_id + period, 
     data = dat)
   
   mod_conflict <- fixest::feols(
-    c_all ~ i(treat_type, D, ref=2) + D + switches + conflict | city_id + period, 
+    c_all ~ i(rule_conquest, D, ref=0) + i(rule_other, D, ref=0) + D + switches + conflict | city_id + period, 
     data = dat)
   
   # Produce regression table and export to LaTeX
   etableDefaults()
   tex_output <- etable(mod_basic, mod_conflict, tex=TRUE,
                        title="Test Title",
-                       label = sprintf("tab:baseline_%iy", t))
+                       label = sprintf("tab:baseline_%iy", t),
+                       postprocess.tex = PostProcessBaseline)
   
   filename <- sprintf("paper/output/regressions/baseline_%iy.tex", t)
   write(tex_output, file=filename)
@@ -53,7 +54,7 @@ PrepareData <- function(build, max_switches,
   # Identify across-period switches
   with_e_dummies <- AddEAnother(selected)
   
-  # Add TREAT x POST dummies
+  # Add TREAT x POST dummies D
   with_D <- AddTreatXPost(with_e_dummies)
   
   # Binarise construction outcomes, if specified
@@ -67,11 +68,21 @@ PrepareData <- function(build, max_switches,
   
   # Rearrange columns (for readability)
   clean <- with_types |> select(
-    city_id, treat_time, period, terr_id, switches, e_another, D, treat_type,
+    city_id, treat_time, period, terr_id, switches, e_another, D, 
+    rule_conquest, rule_succession, rule_other,
     conflict, c_all, c_state, c_private, c_public
   )
   
   return(clean)
+}
+
+
+PostProcessBaseline <- function(tex_output){
+  # Post-processing the TeX string to make it neater
+  tex_post <- tex_output |> 
+    str_replace("Conquest \\$=\\$ 1", "Conquest") |> 
+    str_replace("Other \\$=\\$ 1", "Other")
+  return(tex_post)
 }
 
 

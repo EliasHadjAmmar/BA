@@ -74,12 +74,11 @@ ProcessTypeChange <- function(with_dummies){
 
   treat_types <- with_dummies |>
     filter(period == treat_time) |>
-    select(city_id, treat_time, type_change) |> 
-    rename(treat_type = type_change)
+    select(city_id, treat_time, rule_conquest, rule_succession, rule_other)
 
   with_types <- with_dummies |>
-    left_join(treat_types, by=c("city_id", "treat_time")) |> 
-    select(-type_change)
+    select(-rule_conquest, -rule_succession, -rule_other) |> 
+    left_join(treat_types, by=c("city_id", "treat_time"))
   
   # I may need to replace NAs in `treat_type` with 0, or anything really.
   # It doesn't matter because if `treat_type` is NA then `treat` = 0 and
@@ -90,7 +89,7 @@ ProcessTypeChange <- function(with_dummies){
   # that NA is a separate thing you can use as a reference category.
   
   with_types <- with_types |> 
-    replace_na(list(treat_type = 1))
+    replace_na(list(rule_conquest = 0, rule_succession = 0, rule_other = 0))
   
   return(with_types)
 }

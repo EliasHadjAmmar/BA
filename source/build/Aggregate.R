@@ -41,7 +41,9 @@ AggregateSwitches <- function(switches, t){
     summarise(
       terr_id = first(terr_id), # set to owner at the start of the period
       switches = sum(switch),
-      type_change = first(type_change), # we want to know about *this* owner
+      rule_conquest = first(rule_conquest), # we want to know about *this* owner
+      rule_succession = first(rule_succession),
+      rule_other = first(rule_other),
       duration = n() # some periods may be cut off in the data
     )
   
