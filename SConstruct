@@ -64,7 +64,7 @@ for t in [100, 50, 10, 1]:
         target = f'paper/output/regressions/SW22_replication_{t}y.png'
         SW_rep = Command(target, 
                          [build, script, 
-                          HandleCommandArgs, DataPrepSuite], 
+                          HandleCommandArgs, DataPrepSuite, etableDefaults], 
                          f'Rscript {script} {t}')
     
     # This produces the baseline regression.

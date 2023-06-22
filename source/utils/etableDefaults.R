@@ -3,7 +3,7 @@ etableDefaults <- function(){
   # uniform defaults (across all tables)
   setFixest_etable(
     se.below = TRUE,
-    digits = 2,
+    digits = "r2",
     digits.stats = 4
   )
   
