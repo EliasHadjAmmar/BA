@@ -61,8 +61,6 @@ Main <- function(){
                        notes = note
                        )
   
-  print(tex_output)
-  
   filename <- sprintf("paper/output/regressions/controls_%iy.tex", t)
   write(tex_output, file=filename)
   
