@@ -16,7 +16,9 @@ etableDefaults <- function(){
                    D = "Switch to another state",
                    rule_conquest = "Conquest", rule_succession = "Succession",
                    rule_other = "Other", switches = "Switching indicator",
-                   conflict = "Conflict"))
+                   conflict = "Conflict",
+                   time_to_treat = "Period",
+                   treat = "Treat"))
 }
 
 PeriodInsert <- function(t){

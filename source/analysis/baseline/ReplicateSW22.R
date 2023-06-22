@@ -25,17 +25,39 @@ Main <- function(){
                      binarise_switches = T)
   
   # Estimate (3) from Schoenholzer and Weese (2022), p. 12
-  mod <- fixest::feols(
+  mod_all <- fixest::feols(
     c_all ~ i(time_to_treat, treat, ref = -t) + switches | city_id + period, 
     data = dat)
-
+  
+  mod_state <- fixest::feols(
+    c_state ~ i(time_to_treat, treat, ref = -t) + switches | city_id + period, 
+    data = dat)
+  
+  mod_priv <- fixest::feols(
+    c_private ~ i(time_to_treat, treat, ref = -t) + switches | city_id + period, 
+    data = dat)
+  
+  mod_pub <- fixest::feols(
+    c_public ~ i(time_to_treat, treat, ref = -t) + switches | city_id + period, 
+    data = dat)
   
   # Produce regression table and export to LaTeX
   etableDefaults()
-  tex_output <- etable(mod, 
+  
+  note <- paste("Note: Table presents results of estimation equation
+  \\eqref{eq:sw22}.", PeriodInsert(t), "Observations are at the city-period 
+  level. Dependent variables are indicators that take the value 1 if 
+  construction activity of the respective type was recorded. Standard errors are 
+  clustered at the city level.", SignifInsert(), sep = " ") |> 
+    str_replace_all("\n ", "")
+  
+  tex_output <- etable(mod_all, mod_state, 
+                       mod_priv, mod_pub,
                        tex=TRUE,
                        title="Dynamic effects of switching",
-                       label = sprintf("tab:SW22_replication_%iy", t))
+                       label = sprintf("tab:SW22_replication_%iy", t),
+                       postprocess.tex = PostProcessSW22,
+                       notes = note)
   
   filename <- sprintf("paper/output/regressions/SW22_replication_%iy.tex", t)
   write(tex_output, file=filename)
@@ -44,7 +66,7 @@ Main <- function(){
   # Produce replication of Fig. 5 and save as PNG
   filename <- sprintf("paper/output/regressions/SW22_replication_%iy.png", t)
   png(filename=filename, width = 800, height = 800, pointsize = 20)
-  iplot(mod) 
+  iplot(mod_all)
   dev.off()
   
   return(0)
@@ -76,6 +98,17 @@ PrepareData <- function(build, max_switches, years_pre, years_post,
       )
 
   return(clean)
+}
+
+
+PostProcessSW22 <- function(tex_output){
+  # Post-processing the TeX string to make it neater
+  # If the number of columns changes, the last two lines may show up again
+  # because they specifically contain \multicolumn{5}
+  tex_post <- tex_output |> 
+    str_replace(fixed("\\multicolumn{5}{l}{\\emph{Clustered (City) standard-errors in parentheses}}\\\\"), "") |> 
+    str_replace(fixed("\\multicolumn{5}{l}{\\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\\\"), "")
+  return(tex_post)
 }
 
 

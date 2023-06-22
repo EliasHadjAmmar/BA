@@ -28,7 +28,7 @@ AddLeadsLags <- function(with_e_dummies, years_pre, years_post){
   
   # Join treatment periods to data and add TREAT
   with_timing <- with_e_dummies |> 
-    left_join(timing, by="city_id", multiple = "all") |> # duplicate cities with multiple switches
+    left_join(timing, by="city_id", relationship = "many-to-many") |> # duplicate cities with multiple switches
     arrange(city_id, treat_time, period) |> 
     mutate(key = sprintf("id%i_t%i_s%i", city_id, period, treat_time)) |> # unique keys just in case
     mutate(treat = ifelse(is.na(treat_time), 0, 1)) # add TREAT dummy
@@ -53,7 +53,7 @@ AddTreatXPost <- function(with_e_dummies){
   
   # Join treatment periods to data and add D (TREAT x POST)
   with_D <- with_e_dummies |> 
-    left_join(timing, by="city_id", multiple = "all") |> # duplicate cities with multiple switches
+    left_join(timing, by="city_id", relationship = "many-to-many") |> # duplicate cities with multiple switches
     arrange(city_id, treat_time, period) |> 
     mutate(key = sprintf("id%i_t%i_s%i", city_id, period, treat_time)) |> # unique keys just in case
     mutate(D = case_when(
