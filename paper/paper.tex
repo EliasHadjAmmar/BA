@@ -144,23 +144,26 @@ For this purpose I extend Equation \eqref{eq:sw22} by interacting the treatment 
     construction_{it} &= \alpha_i + \delta_t + \mathbf{1}(S_{it} > 0)\beta +
     \mathbf{1}(t \ge e^{NewState}_i)\pi \\
     &+ \mathbf{1}(t \ge e^{NewState}_i) \times
-    \mathbf{1}(Switchtype = conquest) \times \theta_{conquest} \\
+    \mathbf{1}(Conquest_{it}) \times \theta_{conquest} \\
     &+ \mathbf{1}(t \ge e^{NewState}_i) \times
-    \mathbf{1}(Switchtype = other) \times \theta_{other} + \varepsilon_{it},
+    \mathbf{1}(Other_{it}) \times \theta_{other} + \varepsilon_{it},
 \end{split}
 \end{equation}
 
-For clarity I move from the event study to a basic difference-in-differences specification; this way there is only a single coefficient of interest. I simply replace the lead and lag dummies with the post-treatment indicator $\mathbf{1}(t \ge e^{NewState}_i)$. The more important novelty are the interaction terms: I interact the type of switch with the post-treatment indicator to obtain estimates of how the trends in construction activity differ after different types of switches. I distinguish three categories: conquests, successions, and other. In all cases this refers to how the state currently owning the city came into power --- for example $conquest_{it} = 1$ means that the state that holds city $i$ at time $t$ acquired city $i$ by conquest. It will be useful to denote the state ruling city $i$ at time $t$ by $\mathbf{J}(i, t)$ in the following.
+For clarity I move from the event study to a basic difference-in-differences specification; this way there is only a single coefficient of interest. I simply replace the lead and lag dummies with the post-treatment indicator $\mathbf{1}(t \ge e^{NewState}_i)$. The more important novelty are the interaction terms: I interact the type of switch with the post-treatment indicator to obtain estimates of how the trends in construction activity differ after different types of switches. I distinguish three categories: $Conquest$, $Succession$, and $Other$. In all cases this refers to how the state currently owning the city came into power --- for example $Conquest_{it} = 1$ means that the state that holds city $i$ at time $t$ acquired city $i$ by conquest. It will be useful in the following to adopt one more bit of notation from \cite{schoenholzer2022} and let $\mathbf{J}(i, t)$ denote the state ruling city $i$ at time $t$.
 
-A key economic assumption is needed, in addition to the econometric ones, for these interaction terms to tell us anything about state power. It is this: the state power of a city's owner $\mathbf{J}(i, t)$ is correlated with the manner in which the city was acquired by that owner. In particular, I assume that conquests are more strongly positively correlated with state power than successions. Support for this assumption comes from \cite{levine2021}'s model of conflict-driven evolution. BLANK. I will discuss its validity at length later on.
+A key economic assumption is needed, even before the econometric ones, for these interaction terms to tell us anything about state power. It is this: the state power of a city's owner $\mathbf{J}(i, t)$ is correlated with the manner in which the city was acquired by that owner. In particular, I assume that conquests are more strongly positively correlated with state power than successions. Support for this assumption comes from \cite{levine2021}'s model of conflict-driven evolution. BLANK. I will discuss its validity at length later on.
 
-The coefficient of interest in this regression is no longer $\pi$ but $\theta_{conquest}$. Note that there is no interaction term between the post-treatment indicator and $\mathbf{1}(Switchtype = succession)$ --- successions are the omitted category. $\theta_{conquest}$, then, captures the difference between the trend of a city acquired by conquest and the trend of a city acquired by succession. 
+If this assumption holds true, the effect of state power should manifest itself in the difference between the trend of cities acquired by conquest and the trend of a cities acquired by succession. Note that successions are the omitted category --- there is no interaction term between the post-treatment indicator and $\mathbf{1}(Succession_{it})$ in Equation \eqref{eq:baseline} --- so that the coefficient $\theta_{conquest}$ captures exactly what we want: the difference in trends after conquests vis-a-vis successions.
+
+The econometric assumption necessary to allow causal interpretation of $\theta_{conquest}$ is again a version of the parallel trends assumption. In particular, it must hold that, had a conquered city i counterfactually been acquired by succession rather than conquest, it would have trended the same as the other cities acquired by succession. BLANK.
+
 
 % ######################################################
 
 \section{Results}
 
-I can barely believe it myself, but I replicate their finding. Table 
+\subsection{More construction events after switching states}
 Figure \ref{fig:SW_replication} shows the dynamic effect of switching. Cities were on average 
 
 
@@ -177,7 +180,7 @@ successions may also select for state power
 
 different switch sizes for conquests vs extinctions; maybe larger switch sizes caused neglect (-) or integration (+)
 
-
+new construction vs repairs (!!!)
 
 
 % ######################################################
