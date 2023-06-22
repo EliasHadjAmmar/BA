@@ -78,7 +78,7 @@ NO MORE THAN TWO PAGES TOTAL
 
 % ######################################################
 
-\section{Data}
+\section{Data} \label{sec:data}
 
 I use data from the \textit{Princes and Townspeople} database which is largely based on the \textit{Deutsches Städtebuch} \citep{keyser1939} and \cite{kobler2007}'s \textit{Historisches Lexikon der Deutschen Länder}. The specific datasets I use are those on city locations \citep{pt1}, territorial histories \citep{pt2}, construction activity \citep{pt5} and conflict incidents \citep{pt6}.\footnote{I thank Davide Cantoni and Matthias Weigand for giving me access to unpublished yearly versions of the construction and territorial histories data.} I aggregate data from these sources to obtain a city-by-year panel of switching events, construction activity, and conflict. 
 
@@ -126,7 +126,7 @@ Since the outcome is binary in this case, we can interpret Equation \eqref{eq:sw
 
 Based on the theory of conflict-driven evolution we would expect any such difference to stem from the fact that switching states generally means switching to a higher-quality state (due to selection). As such, even though it would be possible in principle to include state fixed effects, it is not a good idea here: state fixed effects would absorb the effect of differences in state quality which we want to capture in $\pi_\tau$. 
 
-The basic assumption that needs to be satisfied for a causal interpretation of TWFE estimates is parallel trends. This means that, absent treatment, the outcome in cities that received treatment would have followed the same time trend as the outcome in never-treated cities. While it is impossible to empirically prove this assumption (because we cannot observe the counterfactual trend), it is common to check its validity by estimating pre-treatment effects: if the treatment and control group already showed different trends before being treated, there may be an unobserved variable correlated both with receiving treatment and with the outcome, biasing the estimate. For this reason I also include leads reaching 100 years into the past in my regression (as do \cite{schoenholzer2022}.)
+The basic assumption that needs to be satisfied for a causal interpretation of TWFE estimates is parallel trends. This means that, absent treatment, the outcome in cities that received treatment would have followed the same time trend as the outcome in never-treated cities. While it is impossible to empirically prove this assumption (because we cannot observe the counterfactual trend), it is common to check its validity by estimating pre-treatment effects: if the treatment and control group already showed different trends before being treated, there may be an unobserved variable correlated both with receiving treatment and with the outcome, biasing the estimate. For this reason I include a lead reaching 100 years into the past in my regression (as do \cite{schoenholzer2022}.)
 
 
 \subsection{Differential effects of switching}
@@ -165,9 +165,14 @@ The econometric assumption necessary to allow causal interpretation of $\theta_{
 
 \subsection{More construction events after switching states}
 
-Table \ref{tab:SW22_replication_50y} shows estimates for Equation \eqref{eq:sw22}. Figure \ref{fig:SW_replication} plots the coefficients in column (1) to visualise how the effect evolves dynamically.
+Table \ref{tab:SW22_replication_50y} contains estimates from Equation \eqref{eq:sw22}. Each column reports the effect of switching states on a different subset of observed construction activity: Column (1) for all types of buildings, Column (2) for administrative, military and representative buildings, Column (3) for private construction, and Column (4) for buildings that provide public goods. The exact definitions of these categories are as described in Section \ref{sec:data}.
 
-The 
+We can see in Column (1) that switching states has no immediate effect (relative to the period that precedes the switch) on the probability of recorded construction activity; over the following 200 years, however, the effect grows positive and significant. 
+
+Figure \ref{fig:SW_replication} plots the coefficients in Column (1) to visualise how the effect evolves dynamically.
+
+
+
 
 
 
