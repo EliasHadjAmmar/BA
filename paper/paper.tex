@@ -142,11 +142,11 @@ For this purpose I extend Equation \eqref{eq:sw22} by interacting the treatment 
 \label{eq:baseline}
 \begin{split}
     construction_{it} &= \alpha_i + \delta_t + \mathbf{1}(S_{it} > 0)\beta +
-    \mathbf{1}(t \ge e^{NewState}_i)\pi \\
+    \mathbf{1}(t \ge e^{NewState}_i) \pi \\
     &+ \mathbf{1}(t \ge e^{NewState}_i) \times
-    \mathbf{1}(Conquest_{it}) \times \theta_{conquest} \\
+    \mathbf{1}(Conquest_{it}) \cdot \theta_{conquest} \\
     &+ \mathbf{1}(t \ge e^{NewState}_i) \times
-    \mathbf{1}(Other_{it}) \times \theta_{other} + \varepsilon_{it},
+    \mathbf{1}(Other_{it}) \cdot \theta_{other} + \varepsilon_{it},
 \end{split}
 \end{equation}
 
