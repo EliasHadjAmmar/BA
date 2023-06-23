@@ -1,0 +1,36 @@
+\begin{table}[htbp]
+   \caption{\label{tab:controls_10y} Heterogeneous effects - different controls}
+   \centering
+   \begin{tabular}{lcccc}
+      \tabularnewline \midrule \midrule
+      Dependent Variable: & \multicolumn{4}{c}{All construction}\\
+      Model:                                     & (1)           & (2)          & (3)          & (4)\\  
+      \midrule
+      \emph{Variables}\\
+      Switch to another state                    & 0.02$^{**}$   & 0.02$^{***}$ & 0.02         & 0.03\\   
+                                                 & (0.01)        & (0.01)       & (0.03)       & (0.03)\\   
+      Switch to another state $\times$ Conquest  & -0.01         & -0.01        & -0.06$^{**}$ & -0.06$^{*}$\\   
+                                                 & (0.01)        & (0.01)       & (0.03)       & (0.03)\\   
+      Switch to another state $\times$ Other     & -0.01         & -0.01        & -0.02        & -0.02\\   
+                                                 & (0.01)        & (0.01)       & (0.04)       & (0.04)\\   
+      Switching indicator                        & -0.03$^{***}$ &              & -0.06$^{*}$  &   \\   
+                                                 & (0.01)        &              & (0.04)       &   \\   
+      Conflict                                   &               &              & 0.01         & 0.01\\   
+                                                 &               &              & (0.02)       & (0.02)\\   
+      \midrule
+      \emph{Fixed-effects}\\
+      City                                       & Yes           & Yes          & Yes          & Yes\\  
+      Period                                     & Yes           & Yes          & Yes          & Yes\\  
+      \midrule
+      \emph{Fit statistics}\\
+      Observations                               & 35,168        & 35,168       & 7,135        & 7,135\\  
+      R$^2$                                      & 0.1771        & 0.1769       & 0.2214       & 0.2210\\  
+      Within R$^2$                               & 0.0005        & 0.0002       & 0.0010       & 0.0005\\  
+      \midrule \midrule
+      
+      
+   \end{tabular}
+   
+   \par \raggedright 
+   Note: Table presents results of estimation equation \eqref{eq:baseline} but using different control variables. The switch type  "Succession" is omitted as the reference category. Yearly data was aggregated into periods of 10 years. Observations are at the city-period level. The dependent variable is an  indicator that takes the value 1 if any construction activity was recorded.  Standard errors are clustered at the city level. *, **, and *** denote significance on the 10 percent, 5 percent, and 1 percent  level, respectively.
+\end{table}

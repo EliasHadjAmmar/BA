@@ -67,7 +67,7 @@ for t in [100, 50, 10, 1]:
                           HandleCommandArgs, DataPrepSuite, etableDefaults], 
                          f'Rscript {script} {t}')
     
-    # This produces the baseline regression.
+    # This produces the baseline regression for all levels of aggregation.
     script = "source/analysis/baseline/Baseline.R"
     target = f'paper/output/regressions/baseline_{t}y.tex'
     baseline = Command(target, 
@@ -75,10 +75,18 @@ for t in [100, 50, 10, 1]:
                         HandleCommandArgs, DataPrepSuite, etableDefaults], 
                         f'Rscript {script} {t}')
     
-    # This produces the baseline regression with the post-window limited to 200 years.
+    # This produces the baseline regression with post-dummies deactivating after 200 years.
     script = "source/analysis/baseline/Window.R"
     target = f'paper/output/regressions/window_{t}y.tex'
     window = Command(target,
                      [build, script,
                       HandleCommandArgs, DataPrepSuite, etableDefaults],
                       f'Rscript {script} {t}')
+
+    # This produces the baseline regression with different controls.    
+    script = "source/analysis/baseline/Controls.R"
+    target = f'paper/output/regressions/controls_{t}y.tex'
+    baseline = Command(target, 
+                        [build, script, 
+                        HandleCommandArgs, DataPrepSuite, etableDefaults], 
+                        f'Rscript {script} {t}')
