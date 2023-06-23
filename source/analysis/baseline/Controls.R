@@ -46,10 +46,9 @@ Main <- function(){
   note <- paste("Note: Table presents results of estimation equation
   \\eqref{eq:baseline} but using different control variables. The switch type 
   \"Succession\" is omitted as the reference category.", PeriodInsert(t), 
-  "Observations are at the city-period level. Dependent variables are indicators 
-  that take the value 1 if construction activity of the respective type was 
-  recorded. Standard errors are clustered at the city level.", SignifInsert(), 
-  sep = " ") |> 
+  "Observations are at the city-period level. The dependent variable is an 
+  indicator that takes the value 1 if any construction activity was recorded. 
+  Standard errors are clustered at the city level.", SignifInsert(), sep = " ") |> 
     str_replace_all("\n ", "")
   
   tex_output <- etable(mod_baseline, mod_noswitches,
