@@ -58,7 +58,7 @@ Main <- function(){
   tex_output <- etable(mod_all_basic, mod_state_basic,
                        mod_priv_basic, mod_pub_basic,
                        tex=TRUE,
-                       title="Heterogeneous effects of switching, by switch type",
+                       title="Heterogeneous effects of switching: Baseline",
                        label = sprintf("tab:baseline_%iy", t),
                        postprocess.tex = PostProcessBaseline,
                        notes = note)

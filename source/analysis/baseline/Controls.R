@@ -54,7 +54,7 @@ Main <- function(){
   tex_output <- etable(mod_baseline, mod_noswitches,
                        mod_conflict, mod_conf_nosw,
                        tex=TRUE,
-                       title="Heterogeneous effects - different controls",
+                       title="Heterogeneous effects of switching: Robustness",
                        label = sprintf("tab:controls_%iy", t),
                        postprocess.tex = PostProcessBaseline,
                        notes = note
