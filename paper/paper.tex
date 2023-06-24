@@ -62,27 +62,33 @@ The analysis in this paper builds upon that of \cite{schoenholzer2022} and exten
 
 While I am able to replicate \cite{schoenholzer2022}'s result that the long-run effect of switching to another state is positive, I fail to identify a statistically significant effect of state power on urban development. This does not necessarily mean that conflict-driven evolution played no role in the rise of Europe --- several issues limit the statistical power of my test, which might prevent me from finding an effect even if there is one. One of them is that the data I use may not be fully adequate for answering the research question.
 
-The rest of the paper proceeds as follows. Section 2 presents some background information. Section 3 describes the data used in the analysis. Section 4 details the empirical approach. Section 5 presents results. Section 6 discusses implications and robustness of the results. Section 7 concludes.
+The rest of the paper proceeds as follows. Section \ref{sec:data} describes the data used in the analysis. Section \ref{sec:empirics} details the empirical approach. Section \ref{sec:results} presents results. Section \ref{sec:discussion} discusses implications and robustness of the results. Section \ref{sec:conclusion} concludes.
 
-% ######################################################
-
-\section{Historical background}
-
-Early modern Europe consisted of many large and small states. 
-
-One story about a city's territory switch
-
-Two pithy figures, and a no-nonsense table
-
-NO MORE THAN TWO PAGES TOTAL
 
 % ######################################################
 
 \section{Data} \label{sec:data}
 
-I use data from the \textit{Princes and Townspeople} database which is largely based on the \textit{Deutsches Städtebuch} \citep{keyser1939} and \cite{kobler2007}'s \textit{Historisches Lexikon der Deutschen Länder}. The specific datasets I use are those on city locations \citep{pt1}, territorial histories \citep{pt2}, construction activity \citep{pt5} and conflict incidents \citep{pt6}.\footnote{I thank Davide Cantoni and Matthias Weigand for giving me access to unpublished yearly versions of the construction and territorial histories data.} I aggregate data from these sources to obtain a city-by-year panel of switching events, construction activity, and conflict. 
+I use data from the \textit{Princes and Townspeople} database which is largely based on the \textit{Deutsches Städtebuch} \citep{keyser1939} and \cite{kobler2007}'s \textit{Historisches Lexikon der Deutschen Länder}. The specific datasets I use are those on city locations \citep{pt1}, territorial histories \citep{pt2}, construction activity \citep{pt5} and conflict incidents \citep{pt6}.\footnote{I thank Davide Cantoni and Matthias Weigand for giving me access to unpublished yearly versions of the construction and territorial histories data.} 
 
-Switching: describe format; total number of recorded switches; territory id.
+I aggregate data from these sources to obtain a panel of 
+
+- unit of observation: city-year / city-period
+- precision of time points
+- aggregation of years
+- unbalanced panel
+- definition of territory holding
+- definition of switch in period
+- justification for using construction
+- different groupings of construction
+- scope of the data / regions included
+- time period recorded
+- missing values / full sequence of event years
+- dropNA construction -> sample size
+
+
+
+
 
 Construction: describe format / split and rationale. This can be two paragraphs.
 
@@ -94,7 +100,7 @@ I also build coarsened versions of this dataset in which I aggregate years into 
 
 % ######################################################
 
-\section{Regression equations}
+\section{Regression equations} \label{sec:empirics}
 
 \subsection{Dynamic effects of switching to a new state}
 
@@ -163,7 +169,7 @@ The econometric assumption necessary to allow causal interpretation of $\theta_{
 
 % ######################################################
 
-\section{Results}
+\section{Results} \label{sec:results}
 
 \subsection{Construction activity increases after switching states}
 
@@ -184,7 +190,7 @@ I report estimates of the coefficient of interest $\theta_{conquest}$ in the sec
 
 % ######################################################
 
-\section{Discussion}
+\section{Discussion} \label{sec:discussion}
 
 How robust this null result is to other specifications: I limit post-window to 200 years; I try Sun and Abraham, I use population data; I use different granularity.
 
@@ -221,7 +227,7 @@ It doesn't make sense. It has to be something about the sample. Johannes must ha
 
 % ######################################################
 
-\section{Conclusion}
+\section{Conclusion} \label{sec:conclusion}
 
 \newpage
 \onehalfspacing
@@ -235,6 +241,13 @@ It doesn't make sense. It has to be something about the sample. Johannes must ha
 
 \subsection*{Figures}
 
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
 \begin{figure}[ht]
     \centering
     \includegraphics[scale = 0.4]{paper/output/regressions/SW22_replication_50y.png}
@@ -244,8 +257,8 @@ It doesn't make sense. It has to be something about the sample. Johannes must ha
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[scale = 0.4]{paper/output/descriptive/map_conflict_NA_50y.png}
-    \caption{Note: Data was aggregated into periods of 50 years.}
+    \includegraphics[scale = 0.15]{paper/output/descriptive/map_conflict_NA_50y.png}
+    \caption{Share of observations remaining from each \textit{Städtebuch} region when controlling for conflict incidents in Equation \eqref{eq:baseline}. Geo-referenced borders of the regions were not available; this makeshift visualisation shows convex hulls of the city locations in each region (which results in some overlap.)}
     \label{fig:conflict_map}
 \end{figure}
 
