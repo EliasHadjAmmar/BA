@@ -21,6 +21,7 @@ GetStackedData = "source/utils/GetStackedData.R"
 DataPrepSuite = "source/utils/DataPrepSuite.R"
 etableDefaults = "source/utils/etableDefaults.R"
 PrepareBaselineData = "source/utils/PrepareBaselineData.R"
+MapUtils = "source/utils/MapUtils.R"
 
 # Scripts that will be sourced from the build lib:
 ConstructionLib = "source/build/lib/ProcessConstruction.R"
@@ -98,5 +99,16 @@ for t in [100, 50, 10, 1]:
         target = f'paper/output/descriptive/map_conflict_NA_{t}y.png'
         SW_rep = Command(target, 
                             [build, script, 
-                            HandleCommandArgs, DataPrepSuite, PrepareBaselineData], 
+                            HandleCommandArgs, DataPrepSuite, PrepareBaselineData, MapUtils], 
                             f'Rscript {script} {t}')
+        
+    # This produces the map of city count and locations by region.
+    if t in [50]:
+        script = "source/analysis/summarystats/MapCities.R"
+        target = f'paper/output/descriptive/map_cities.png'
+        SW_rep = Command(target, 
+                            [build, script, 
+                            HandleCommandArgs, MapUtils], 
+                            f'Rscript {script} {t}')
+
+    
