@@ -29,13 +29,14 @@ Main <- function(){
     select(city_id, region_id, name, nat)
   
   na_shares <- GetNAShares(dat, locs) |> 
-    mutate(remaining = 1-share)
+    mutate(remaining = 1-share) |> 
+    arrange(region_id)
   
   
   # Get a spatial outline of each region
   locs_spatial <- st_read("drive/raw/attributes/city_borders")
   
-  regions <- unique(locs_spatial$region_id)
+  regions <- unique(locs_spatial$region_id) |> sort()
   
   polygons <- regions |> 
     purrr::map(\(id)(RegionIDtoUnion(id, locs_spatial))) |> 
@@ -60,7 +61,6 @@ Main <- function(){
               title.fontface = 2,
               legend.title.size = 1.3,
               legend.text.size = 1)
-  
   
   # Add an unlabelled dot for each city in the build
   allpoints_sf <- locs_spatial |> 

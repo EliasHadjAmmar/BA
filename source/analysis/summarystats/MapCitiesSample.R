@@ -24,10 +24,11 @@ Main <- function(){
   locs_spatial <- st_read("drive/raw/attributes/city_borders")
   
   # Compute no. of cities in each region
-  region_stats <- GetRegionLevelInfo(dat, locs)
+  region_stats <- GetRegionLevelInfo(dat, locs) |> 
+    arrange(region_id)
   
   # Make a spatial dataset of region polygons
-  regions <- unique(locs_spatial$region_id)
+  regions <- unique(locs_spatial$region_id) |> sort()
   
   polygons <- regions |> 
     purrr::map(\(id)(RegionIDtoUnion(id, locs_spatial))) |> 
