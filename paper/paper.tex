@@ -141,7 +141,7 @@ For this purpose I extend Equation \eqref{eq:sw22} by interacting the treatment 
 \begin{equation}
 \label{eq:baseline}
 \begin{split}
-    construction_{it} &= \alpha_i + \delta_t + \mathbf{1}(S_{it} > 0)\beta +
+    construction_{it} &= \alpha_i + \delta_t + \mathbf{X}_{it} \beta + 
     \mathbf{1}(t \ge e^{NewState}_i) \pi \\
     &+ \mathbf{1}(t \ge e^{NewState}_i) \times
     \mathbf{1}(Conquest_{it}) \cdot \theta_{conquest} \\
@@ -150,7 +150,9 @@ For this purpose I extend Equation \eqref{eq:sw22} by interacting the treatment 
 \end{split}
 \end{equation}
 
-For clarity I move from the event study to a basic difference-in-differences specification; this way there is only a single coefficient of interest. I simply replace the lead and lag dummies with the post-treatment indicator $\mathbf{1}(t \ge e^{NewState}_i)$. The more important novelty are the interaction terms: I interact the post-treatment indicator with the type of switch to obtain estimates of how the trends in construction activity differ after different types of switches. I distinguish three categories: $Conquest$, $Succession$, and $Other$. In all cases this refers to how the state currently owning the city came into power --- for example $Conquest_{it} = 1$ means that the state that holds city $i$ at time $t$ acquired city $i$ by conquest. It will be useful to adopt one final bit of notation from \cite{schoenholzer2022} and let $\mathbf{J}(i, t)$ denote the state ruling city $i$ at time $t$.
+For clarity I move from the event study to a basic difference-in-differences specification; this way there is only a single coefficient of interest. I simply replace the lead and lag dummies with the post-treatment indicator $\mathbf{1}(t \ge e^{NewState}_i)$. Also, this equation features a vector of city-year level control variables $\mathbf{X}_{it}$. In the baseline version of this specification I control only for the dummy $\mathbf{1}(S_{it} > 0)$ that indicates switches in the same period, exactly like in Equation \eqref{eq:sw22}. In a robustness check I will additionally control for conflict incidents.
+
+The more important novelty are the interaction terms: I interact the post-treatment indicator with the type of switch to obtain estimates of how the trends in construction activity differ after different types of switches. I distinguish three categories: $Conquest$, $Succession$, and $Other$. In all cases this refers to how the state currently owning the city came into power --- for example $Conquest_{it} = 1$ means that the state that holds city $i$ at time $t$ acquired city $i$ by conquest. It will be useful to adopt one final bit of notation from \cite{schoenholzer2022} and let $\mathbf{J}(i, t)$ denote the state ruling city $i$ at time $t$.
 
 A key economic assumption is needed, even before the econometric ones, for these interaction terms to tell us anything about state power. It is this: the state power of a city's owner $\mathbf{J}(i, t)$ is correlated with the manner in which the city was acquired by that owner. In particular, I assume that conquests are more strongly positively correlated with state power than successions. Support for this assumption comes from \cite{levine2021}'s model of conflict-driven evolution. BLANK. I will discuss its validity at length later on.
 
@@ -193,6 +195,28 @@ successions may also select for state power
 different switch sizes for conquests vs extinctions; maybe larger switch sizes caused neglect (-) or integration (+)
 
 new construction vs repairs (!!!)
+
+
+
+table 3: why neg? conflict NA may be systematocally correlated
+
+are some regions more common in the conflict NAs?
+
+The first explanation is that conflict is an important omitted variable, in the sense that it is correlated both with the treatment and with construction activity.
+
+If omitting  bias in $\theta_{conflict}$ from omitting conflict has the same sign as 
+$$\beta_{conflict} \cdot \frac{\mathbf{Cov}({Conflict},\: {Switching\: to\: another\: state \times Conquest})}{\mathbf{Var}(Conflict)}$$
+
+The whole term is negative. We can see in Columns (3) and (4) of Table \ref{tab:controls_50y} that $\beta_{conflict}$ has a positive sign. It follows that the correlation between must be negative (which makes sense - an owner with higher state power is likely better able to protect a city from attacks.
+
+But if $\beta_{conflict}$ is around zero, then why does it introduce bias at all?
+
+
+
+
+
+It doesn't make sense. It has to be something about the sample. Johannes must have been spot on.
+
 
 
 % ######################################################
