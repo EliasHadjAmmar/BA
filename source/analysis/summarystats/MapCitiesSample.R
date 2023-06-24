@@ -8,6 +8,7 @@ setwd("~/GitHub/BA")
 
 source("source/utils/HandleCommandArgs.R")
 source("source/utils/MapUtils.R")
+source("source/utils/DataPrepSuite.R")
 source("source/utils/PrepareBaselineData.R")
 
 Main <- function(){

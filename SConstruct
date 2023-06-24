@@ -44,6 +44,15 @@ population = Command('drive/derived/population.csv',
     'Rscript source/build/population/MatchBairoch.R')
 
 
+# This produces the map of all cities in the data.
+script = "source/analysis/summarystats/MapCitiesRaw.R"
+target = f'paper/output/descriptive/map_cities_raw.png'
+SW_rep = Command(target, 
+                    [switches, script, 
+                    HandleCommandArgs, MapUtils], 
+                    f'Rscript {script}')
+
+
 for t in [100, 50, 10, 1]:
 
     # This builds the full data, in multiple versions aggregated to different period lengths t
@@ -88,27 +97,27 @@ for t in [100, 50, 10, 1]:
     # This produces the baseline regression with different controls.    
     script = "source/analysis/baseline/Controls.R"
     target = f'paper/output/regressions/controls_{t}y.tex'
-    baseline = Command(target, 
+    controls = Command(target, 
                         [build, script, 
                         HandleCommandArgs, DataPrepSuite, etableDefaults], 
                         f'Rscript {script} {t}')
     
     # This produces the map of missing conflict data by regions.
     if t in [50]:
-        script = "source/analysis/robustness/ConflictNA.R"
+        script = "source/analysis/robustness/MapConflictNA.R"
         target = f'paper/output/descriptive/map_conflict_NA_{t}y.png'
-        SW_rep = Command(target, 
+        map_conflict_NA = Command(target, 
                             [build, script, 
-                            HandleCommandArgs, DataPrepSuite, PrepareBaselineData, MapUtils], 
+                            HandleCommandArgs, MapUtils, DataPrepSuite, PrepareBaselineData], 
                             f'Rscript {script} {t}')
         
     # This produces the map of city count and locations by region.
     if t in [50]:
-        script = "source/analysis/summarystats/MapCities.R"
-        target = f'paper/output/descriptive/map_cities.png'
-        SW_rep = Command(target, 
+        script = "source/analysis/summarystats/MapCitiesSample.R"
+        target = f'paper/output/descriptive/map_cities_sample.png'
+        map_cities_sample = Command(target, 
                             [build, script, 
-                            HandleCommandArgs, MapUtils], 
+                            HandleCommandArgs, MapUtils, DataPrepSuite, PrepareBaselineData], 
                             f'Rscript {script} {t}')
 
     
