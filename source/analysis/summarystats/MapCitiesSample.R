@@ -42,7 +42,7 @@ Main <- function(){
   bbox_new <- BiggerBoundingBox(stats_sf, scale_top = 0.1)
   
   # Define breaks myself (so that I can use the same ones in MapAllCities.R)
-  my.breaks <- c(0, 31, 61, 91, 121, 151)
+  my.breaks <- c(0, 31, 61, 91, 121, 151, 200)
   
   # Create basic map
   map1 <- tm_shape(stats_sf, 
