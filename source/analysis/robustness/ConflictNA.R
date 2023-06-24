@@ -61,6 +61,15 @@ Main <- function(){
               legend.title.size = 1.3,
               legend.text.size = 1)
   
+  
+  # Add an unlabelled dot for each city in the build
+  allpoints_sf <- locs_spatial |> 
+    filter(city_id %in% unique(dat$city_id))
+  
+  map2 <- map1 + 
+    tm_shape(allpoints_sf)+
+    tm_dots(alpha = 0.3)
+  
   # Add some city names as reference points
   citynames <- c("Muenchen", "Berlin", "Koenigsberg Pr.", "Koeln", 
                  "Hannover", "Breslau", "Wuerzburg", "Dresden",
@@ -70,7 +79,7 @@ Main <- function(){
     filter(name %in% citynames) |> 
     CleanNames()
   
-  map2 <- map1 +
+  map3 <- map2 +
     tm_shape(points_sf)+
     tm_dots()+
     tm_text("name", size=1, just="bottom", ymod=0.35
@@ -78,7 +87,7 @@ Main <- function(){
   
   # Save map as PNG
   filename <- sprintf("paper/output/descriptive/map_conflict_NA_%iy.png", t)
-  tmap_save(map2, filename)
+  tmap_save(map3, filename)
   
   return(0)
 }
