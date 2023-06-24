@@ -250,10 +250,20 @@ It doesn't make sense. It has to be something about the sample. Johannes must ha
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[scale=0.15]{paper/output/descriptive/map_cities.png}
-    \caption{Distribution of cities in the assembled dataset. Each dot represents a city. Some major cities are identified with labels. Polygons on the map do \textbf{not} represent historical borders; they merely represent regions by which cities are clustered in the \textit{Städtebuch}. The polygons are computed as convex hulls of the city locations in each region because geo-referenced borders of regions were not available --- this results in some overlap.}
-    \label{fig:map_cities}
+    \includegraphics[scale=0.15]{paper/output/descriptive/map_cities_raw.png}
+    \caption{Distribution of cities in the \textit{Territorial Histories} dataset \citep{pt2}. Each dot represents a city. Some major cities are identified with labels. Polygons on the map do \textbf{not} represent historical borders; they merely represent regions by which cities are clustered in the \textit{Städtebuch}.}
+    \label{fig:map_cities_raw}
 \end{figure}
+
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.15]{paper/output/descriptive/map_cities_sample.png}
+    \caption{Distribution of cities in the baseline sample. Excludes cities that underwent more than two lifetime switches, and cities without any recorded construction activity. Each dot represents a city. Some major cities are identified with labels. Polygons on the map do \textbf{not} represent historical borders; they merely represent regions by which cities are clustered in the \textit{Städtebuch}.}
+    \label{fig:map_cities_sample}
+\end{figure}
+
+
 
 \begin{figure}[ht]
     \centering
@@ -265,7 +275,7 @@ It doesn't make sense. It has to be something about the sample. Johannes must ha
 \begin{figure}[ht]
     \centering
     \includegraphics[scale = 0.15]{paper/output/descriptive/map_conflict_NA_50y.png}
-    \caption{Share of observations remaining from each \textit{Städtebuch} region when controlling for conflict incidents in Equation \eqref{eq:baseline}. Note that this map shows fewer cities than Figure \ref{fig:map_cities} because Figure \ref{fig:map_cities} was produced from the full dataset, while this map only plots cities that satisfy the baseline sample restrictions.}
+    \caption{Share of observations from each \textit{Städtebuch} region with non-missing data on conflict incidents. The $Conflict$ variable is coded as missing for a period if it is earlier than the first recorded incident or later than the last recorded incident in a city. Observations with missing conflict data are excluded from the regressions in Columns (3) and (4) of Table \ref{tab:controls_50y}.}
     \label{fig:conflict_map}
 \end{figure}
 
