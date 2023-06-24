@@ -69,6 +69,15 @@ for t in [100, 50, 10, 1]:
 
     # Continues in the for-loop because I often want to run them on multiple builds
 
+    # This produces the map of city count and locations by region.
+    if t in [50]:
+        script = "source/analysis/summarystats/MapCitiesSample.R"
+        target = f'paper/output/descriptive/map_cities_sample.png'
+        map_cities_sample = Command(target, 
+                            [build, script, 
+                            HandleCommandArgs, MapUtils, DataPrepSuite, PrepareBaselineData], 
+                            f'Rscript {script} {t}')
+
     # This replicates Fig. 5 in Schoenholzer and Weese (2022), with t = (50, 100)
     if t in [50, 100]:
         script = "source/analysis/baseline/ReplicateSW22.R"
@@ -87,7 +96,7 @@ for t in [100, 50, 10, 1]:
                         f'Rscript {script} {t}')
     
     # This produces the baseline regression with post-dummies deactivating after 200 years.
-    script = "source/analysis/baseline/Window.R"
+    script = "source/analysis/robustness/Window.R"
     target = f'paper/output/regressions/window_{t}y.tex'
     window = Command(target,
                      [build, script,
@@ -95,7 +104,7 @@ for t in [100, 50, 10, 1]:
                       f'Rscript {script} {t}')
 
     # This produces the baseline regression with different controls.    
-    script = "source/analysis/baseline/Controls.R"
+    script = "source/analysis/robustness/Controls.R"
     target = f'paper/output/regressions/controls_{t}y.tex'
     controls = Command(target, 
                         [build, script, 
@@ -111,13 +120,3 @@ for t in [100, 50, 10, 1]:
                             HandleCommandArgs, MapUtils, DataPrepSuite, PrepareBaselineData], 
                             f'Rscript {script} {t}')
         
-    # This produces the map of city count and locations by region.
-    if t in [50]:
-        script = "source/analysis/summarystats/MapCitiesSample.R"
-        target = f'paper/output/descriptive/map_cities_sample.png'
-        map_cities_sample = Command(target, 
-                            [build, script, 
-                            HandleCommandArgs, MapUtils, DataPrepSuite, PrepareBaselineData], 
-                            f'Rscript {script} {t}')
-
-    
