@@ -52,9 +52,11 @@ Main <- function(){
                 title="Share missing",
                 palette = "Reds")+
     tm_layout(title = "Sample composition after controlling for conflict",
-              title.size = 1,
+              title.size = 1.3,
               title.position = c("center", "top"),
-              title.fontface = 2)
+              title.fontface = 2,
+              legend.title.size = 1.3,
+              legend.text.size = 1)
   
   # Add some city names as reference points
   citynames <- c("Muenchen", "Berlin", "Koenigsberg Pr.", "Koeln", 
@@ -68,7 +70,7 @@ Main <- function(){
   map2 <- map1 +
     tm_shape(points_sf)+
     tm_dots()+
-    tm_text("name", size=0.8, just="bottom", ymod=0.35
+    tm_text("name", size=1, just="bottom", ymod=0.35
     )
   
   # Save map as PNG
