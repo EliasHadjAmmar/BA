@@ -62,16 +62,23 @@ The analysis in this paper builds upon that of \cite{schoenholzer2022} and exten
 
 While I am able to replicate \cite{schoenholzer2022}'s result that the long-run effect of switching to another state is positive, I fail to identify a statistically significant effect of state power on urban development. This does not necessarily mean that conflict-driven evolution played no role in the rise of Europe --- several issues limit the statistical power of my test, which might prevent me from finding an effect even if there is one. One of them is that the data I use may not be fully adequate for answering the research question.
 
-The rest of the paper proceeds as follows. Section \ref{sec:data} describes the data used in the analysis. Section \ref{sec:empirics} details the empirical approach. Section \ref{sec:results} presents results. Section \ref{sec:discussion} discusses implications and robustness of the results. Section \ref{sec:conclusion} concludes.
+The rest of the paper proceeds as follows. Section \ref{sec:background} gives essential historical background information. Section \ref{sec:data} describes the data used in the analysis. Section \ref{sec:empirics} details the empirical approach. Section \ref{sec:results} presents results. Section \ref{sec:discussion} discusses implications and robustness of the results. Section \ref{sec:conclusion} concludes.
 
 
 % ######################################################
 
+\section{State system of the HRE} \label{sec:background}
+
+The Holy Roman Empire was a powerful monarchy that existed in Central Europe from the Middle Ages until its dissolution in 1806. Though ruled by the Holy Roman Emperor at the Imperial level, it consisted of many small and large territories with their own regional rulers. Before Germany first became a republic in 1918, it is not helpful to think of "states" in the modern sense: while territories may have existed as political entities on paper, they were ruled by aristocrats who handled power in their familial structures \citep[pp. 2-3]{pt2}. These aristocratic families defined the territorial history of the HRE: territories were split by inheritances, joined by marriages and extinctions, and driven to war by struggles for dominance among the noble lineages ruling them. 
+
+When I say "state" in the context of this paper I mean its early modern German equivalent --- the territory of a lineage of rulers, or the lineage itself.
+
+
 \section{Data} \label{sec:data}
 
-I use data from the \textit{Princes and Townspeople} database which is largely based on the \textit{Deutsches Städtebuch} \citep{keyser1939} and \cite{kobler2007}'s \textit{Historisches Lexikon der Deutschen Länder}. The specific datasets I use are those on city locations \citep{pt1}, territorial histories \citep{pt2}, construction activity \citep{pt5} and conflict incidents \citep{pt6}.\footnote{I thank Davide Cantoni and Matthias Weigand for giving me access to unpublished yearly versions of the construction and territorial histories data.} 
+I use data from the \textit{Princes and Townspeople} database which is based on the \textit{Deutsches Städtebuch} \citep{keyser1939} and \cite{kobler2007}'s \textit{Historisches Lexikon der Deutschen Länder}. \cite{keyser1939} claim to  list "every settlement that at one point in the history of the Holy Roman Empire was awarded the status of a city" \citep[p. 2]{pt1}. The raw \textit{Princes and Townspeople} database contains those 2,390 cities. The reporting boundaries are those of the German Empire in 1937 plus the Free City of Danzig. The specific datasets I use are those on city locations \citep{pt1}, territorial histories \citep{pt2}, construction activity \citep{pt5} and conflict incidents \citep{pt6}.\footnote{I thank Davide Cantoni and Matthias Weigand for giving me access to unpublished yearly versions of the construction and territorial histories data.} 
 
-I aggregate data from these sources to obtain a panel of 
+The most important There are detailed records of the territorial histories of cities (among many other things): we know to which lineage's territory a city belonged to at every time point in which it shows up in the data. Records begin in 1300 at the earliest and end at the latest with the abolition of the German monarchy and the foundation of the Weimar Republic in 1918. 
 
 - unit of observation: city-year / city-period
 - precision of time points
