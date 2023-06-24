@@ -1,29 +1,21 @@
-#!/usr/bin/env Rscript --vanilla
-
 library(tidyverse) |> suppressPackageStartupMessages()
 library(sf)
 library(tmap)
 
 setwd("~/GitHub/BA")
 
-source("source/utils/HandleCommandArgs.R")
 source("source/utils/MapUtils.R")
-source("source/utils/PrepareBaselineData.R")
 
 Main <- function(){
   # Read data
-  t <- HandleCommandArgs(default_length = 50)
-  read_path <- sprintf("drive/derived/cities_data_%iy.csv", t)
+  read_path <- "drive/derived/cities_switches.csv"
   build <- read_csv(read_path, show_col_types = F)
-  
-  dat <- PrepareBaselineData(build, max_switches = 2, T, T)
-  
   locs <- read_csv("drive/raw/attributes/city_locations.csv", show_col_types = F) |> 
     select(city_id, region_id, name, nat)
   locs_spatial <- st_read("drive/raw/attributes/city_borders")
   
   # Compute no. of cities in each region
-  region_stats <- GetRegionLevelInfo(dat, locs)
+  region_stats <- GetRegionLevelInfo(build, locs)
   
   # Make a spatial dataset of region polygons
   regions <- unique(locs_spatial$region_id)
@@ -39,8 +31,11 @@ Main <- function(){
   # Increase the bounding box of the spatial data to leave space for title
   bbox_new <- BiggerBoundingBox(stats_sf, scale_top = 0.1)
   
+  # Increase the bounding box of the spatial data to leave space for title
+  bbox_new <- BiggerBoundingBox(stats_sf, scale_top = 0.1)
+  
   # Define breaks myself (so that I can use the same ones in MapAllCities.R)
-  my.breaks <- c(0, 31, 61, 91, 121, 151)
+  my.breaks <- c(0, 31, 61, 91, 121, 151, 200)
   
   # Create basic map
   map1 <- tm_shape(stats_sf, 
@@ -50,7 +45,7 @@ Main <- function(){
                 palette = "Greens",
                 breaks = my.breaks,
                 legend.reverse = TRUE) +
-    tm_layout(title = "Spatial distribution of cities - Sample",
+    tm_layout(title = "Spatial distribution of cities - All cities",
               title.size = 1.3,
               title.position = c("center", "top"),
               title.fontface = 2,
@@ -59,12 +54,12 @@ Main <- function(){
   
   # Add an unlabelled dot for each city in the build
   allpoints_sf <- locs_spatial |> 
-    filter(city_id %in% unique(dat$city_id))
+    filter(city_id %in% unique(build$city_id))
   
   map2 <- map1 + 
     tm_shape(allpoints_sf)+
     tm_dots(alpha = 0.3)
-
+  
   
   # Add some city names as reference points
   citynames <- c("Muenchen", "Berlin", "Koenigsberg Pr.", "Koeln", 
@@ -84,7 +79,7 @@ Main <- function(){
             fontface = 2)
   
   # Save map as PNG
-  filename <- "paper/output/descriptive/map_cities_sample.png"
+  filename <- "paper/output/descriptive/map_cities_raw.png"
   tmap_save(map3, filename)
   
   return(0)

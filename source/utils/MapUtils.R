@@ -1,3 +1,11 @@
+RegionIDtoUnion <- function(id, locs_spatial){
+  locs_spatial |> 
+    filter(region_id == id) |> 
+    st_union() |> 
+    st_sf()
+}
+
+
 RegionIDtoPolygon <- function(id, locs){
   # Returns the convex hull of the set of cities in each region
   

@@ -32,13 +32,13 @@ Main <- function(){
     mutate(remaining = 1-share)
   
   
-  # Get a spatial outline (convex hull) of each region
-  locs_spatial <- st_read("drive/raw/attributes/city_locations")
+  # Get a spatial outline of each region
+  locs_spatial <- st_read("drive/raw/attributes/city_borders")
   
   regions <- unique(locs_spatial$region_id)
   
   polygons <- regions |> 
-    purrr::map(\(id)(RegionIDtoPolygon(id, locs_spatial))) |> 
+    purrr::map(\(id)(RegionIDtoUnion(id, locs_spatial))) |> 
     bind_rows()
   
   # Bind the NA shares to the spatial data
