@@ -20,6 +20,7 @@ GetAssignment = "source/utils/GetAssignment.R"
 GetStackedData = "source/utils/GetStackedData.R"
 DataPrepSuite = "source/utils/DataPrepSuite.R"
 etableDefaults = "source/utils/etableDefaults.R"
+PrepareBaselineData = "source/utils/PrepareBaselineData.R"
 
 # Scripts that will be sourced from the build lib:
 ConstructionLib = "source/build/lib/ProcessConstruction.R"
@@ -90,3 +91,12 @@ for t in [100, 50, 10, 1]:
                         [build, script, 
                         HandleCommandArgs, DataPrepSuite, etableDefaults], 
                         f'Rscript {script} {t}')
+    
+    # This produces the map of missing conflict data by regions.
+    if t in [50]:
+        script = "source/analysis/robustness/ConflictNA.R"
+        target = f'paper/output/descriptive/map_conflict_NA_{t}y.png'
+        SW_rep = Command(target, 
+                            [build, script, 
+                            HandleCommandArgs, DataPrepSuite, PrepareBaselineData], 
+                            f'Rscript {script} {t}')

@@ -1,16 +1,14 @@
 #!/usr/bin/env Rscript --vanilla
 
 library(tidyverse) |> suppressPackageStartupMessages()
-library(sf)
-library(tmap)
-library(viridis)
+library(sf) |> suppressPackageStartupMessages()
+library(tmap) |> suppressPackageStartupMessages()
 
 setwd("~/GitHub/BA")
 
 source("source/utils/HandleCommandArgs.R")
 source("source/utils/DataPrepSuite.R")
 source("source/utils/PrepareBaselineData.R")
-
 
 Main <- function(){
   # Read data
@@ -55,9 +53,8 @@ Main <- function(){
                 palette = "Reds")+
     tm_layout(title = "Sample composition after controlling for conflict",
               title.size = 1,
-              title.position = c("center", "TOP"),
-              title.fontface = 2,
-              frame = FALSE)
+              title.position = c("center", "top"),
+              title.fontface = 2)
   
   # Add some city names as reference points
   citynames <- c("Muenchen", "Berlin", "Koenigsberg Pr.", "Koeln", 
@@ -76,9 +73,9 @@ Main <- function(){
   
   # Save map as PNG
   filename <- sprintf("paper/output/descriptive/map_conflict_NA_%iy.png", t)
-  png(filename=filename, width = 800, height = 800, pointsize = 20)
-  map2
-  dev.off()
+  tmap_save(map2, filename)
+  
+  return(0)
 }
 
 
