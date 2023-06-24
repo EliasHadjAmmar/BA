@@ -27,7 +27,8 @@ Main <- function(){
   locs <- read_csv("drive/raw/attributes/city_locations.csv", show_col_types = F) |> 
     select(city_id, region_id, name, nat)
   
-  na_shares <- GetNAShares(dat, locs)
+  na_shares <- GetNAShares(dat, locs) |> 
+    mutate(remaining = 1-share)
   
   
   # Get a spatial outline (convex hull) of each region
@@ -48,9 +49,10 @@ Main <- function(){
   
   map1 <- tm_shape(na_shares_sf, 
                    bbox = bbox_new)+
-    tm_polygons(col="share", 
-                title="Share missing",
-                palette = "Reds")+
+    tm_polygons(col="remaining", 
+                title="Share remaining",
+                palette = "Reds",
+                legend.reverse = TRUE) +
     tm_layout(title = "Sample composition after controlling for conflict",
               title.size = 1.3,
               title.position = c("center", "top"),
