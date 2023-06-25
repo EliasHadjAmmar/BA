@@ -54,3 +54,6 @@ Main <- function(){
 
 pop_build |> drop_na(population) |> GetBuildLevelInfo()
 
+conf_build <-  sample |> drop_na(conflict)
+cor(conf_build$conflict, conf_build$c_all)
+
