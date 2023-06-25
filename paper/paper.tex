@@ -84,23 +84,34 @@ Figure \ref{fig:map_cities_raw} shows the spatial distribution of the 2,390 citi
 
 \paragraph{Territorial histories.} 
 
-A city-by-year panel of territorial history, taken from \cite{pt2}, forms the backbone of my dataset. For each city and each year it identifies the noble lineage to whose territory the city belonged in that year. I use this information to find years in which cities switch from one territory to another. The original data also records how each city came into the possession of the lineage ruling it. I combine the original 13 types of switches into 3 types: \textit{Conquests}, \textit{successions}, and \textit{other.} I code a switch as a conquest if the original data records it as either "conquest" or "acquisition by conflict", and as a succession if the record says "extinction of lineage" or "inheritance". The remaining categories are classified as \textit{other}.\footnote
+A city-by-year panel of territorial history, taken from \cite{pt2}, forms the backbone of my dataset. For each city and each year it identifies the noble lineage to whose territory the city belonged in that year. I use this information to find years in which cities switch from one territory to another. The median city in the original dataset switches territories 5.64 times in its history. 
+
+The original data also records how each city came into the possession of the lineage ruling it. I combine the original 13 types of switches into 3 types: \textit{Conquests}, \textit{successions}, and \textit{other.} I code a switch as a conquest if the original data records it as either "conquest" or "acquisition by conflict", and as a succession if the record says "extinction of lineage" or "inheritance". The remaining categories are classified as \textit{other}.\footnote
 {
 The other categories are: "no data or regular status", "personal union or marriage", "purchase", "foundation", "secularisation", "decision of the emperor", "gift", "exchange" and "mediatisation".
+} 
+Cities are ruled by conquering states 16\% of the time, by succeeding states 34\% of the time, and by states that gained possession of them in another way 50\% of the time.
+
+\paragraph{Construction activity.}
+
+The data on construction activity \citep{pt5} and conflict incidents \citep{pt6} both resemble lists of events. The unit of observation is the event, occurring in a specified city at a specified time point. Each entry contains additional information about the type of event and the range of uncertainty for the timing.
+
+I will regress construction activity on breaks in the territorial history of cities throughout the main part of this paper --- this is not self-explanatory. After all, the research question deals with the effect of switching states on urban economic development. I use construction as a proxy for development because it is available for most cities: out of the 2,390 cities in the \textit{Städtebuch}, 2,177 have at least one construction event linked to them. By contrast, only 207 cities from the \textit{Städtebuch} appear in \cite{bairoch1988}'s dataset of city populations.
+
+The record of construction events is unfortunately not exhaustive and mostly contains notable buildings --- churches, palaces, fortifications, malls, schools, libraries, opera houses, gardens. It contains residential buildings of some noble families and notable citizens but not of the general population. Even so, there are theoretical justifications for using construction activity as a proxy for growth: If buildings are a normal good, then demand for them should increase with income. While the types of buildings listed do seem to represent state and elite consumption more than general economic activity, the income of these groups is also dependent on the broader economy --- an upturn will increase tax revenues and by extension the disposable income of the state. On a basic level we would expect more new buildings, of any type, in cities that are booming (although the error term is likely large).
+
+In an attempt to understand more about the effects I estimate, I use certain subsets of construction activity as the outcome in alternative specifications. There are 16 types of construction activity in the original data, which I combine into 4 facets: \textit{State construction} consists of palaces, castles, administrative and military buildings. \textit{Private construction} includes malls, economic (banks, factories, restaurants, and more) and private (residential) buildings. Lastly, \textit{construction of public goods} includes infrastructure, social, cultural, and educational buildings, memorials, gardens and parcs.\footnote
+{
+Churches, monasteries, clerical buildings and town halls are not included in any of the custom subsets of construction activity. They are, however, included in the "All construction" specifications.
 }
 
-\paragraph{Events.}
 
-The data on construction activity \citep{pt5} and conflict incidents \citep{pt6} resemble lists of events. The unit of observation is Each entry contains a
-
-I mainly care about construction events.
-
-Problems with construction -> To get more info out of it: Different types of construction
-
-Since I use some subset of construction as the outcome variable in all regressions, it is necessary to drop missing values. I code "event" variables as missing for periods that are earlier than the first recorded event or later than the last recorded event in a city.
+Because I drop city-period observations with missing construction data from the sample, it is worth briefly noting how I transform a list of events into a city-period panel of construction activity. First I group and count events that occur in the same city and period. Then I fill the observations in between the events with the value zero. Finally, I code values as missing for periods that are earlier than the first recorded event or later than the last recorded event in a city. I do not set these out-of-range values to zero because I have no way of knowing whether nothing actually happened, or whether the record simply does not cover these periods anymore.
 
 
-Additionally, conflict.
+\paragraph{Conflict incidents.}
+
+I include conflict as a control variable in a robustness check. Conflict in my dataset is simply coded as an indicator whether a conflict incident of any type is recorded in this city and period. I code missing values exactly as I do for construction events. 
 
 
 \paragraph{Aggregation.}
