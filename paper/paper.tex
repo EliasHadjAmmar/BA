@@ -1,6 +1,6 @@
 \documentclass[11pt, a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[left=2cm,right=6cm,top=2.5cm,bottom=2.5cm]{geometry}  
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}  
 % set 11pt and right=6cm for submission
 
 \usepackage{natbib} % we need this so we can use citation and bib properly
@@ -28,7 +28,7 @@ I thank Davide Cantoni, Matthias Weigand, and my RA colleagues at the Chair of E
 \thispagestyle{empty}
 
 \begin{abstract}
-How does switching between states affect the long-run development of cities, and why? I study this question in the setting of the Holy Roman Empire, using historical data on construction activity and the territorial history of cities. I specifically test the hypothesis that competition between states, in which higher-quality states dominated, caused cities to benefit from permanent ownership changes. I find evidence in support of this.
+How does switching between states affect the long-run development of cities, and why? I study this question in the setting of the Holy Roman Empire, using historical data on construction activity and the territorial history of cities. I specifically test the hypothesis that cities benefitted from permanent ownership changes because competition between states selected for higher-quality government. While I show that cities grow faster in the long run after switching states, I do not find evidence that conflict-driven selection played a role in this.
 \end{abstract}
 
 \newpage
@@ -223,9 +223,9 @@ The hypothesis was that conflict-driven selection for state power boosts urban g
 
 \section{Discussion} \label{sec:discussion}
 
-The results in Table \ref{tab:baseline_50y} corroborate part of my hypothesis: switching states within the Holy Roman Empire had a positive effect on the development of cities in the long run. However, the second part of my analysis yields a null result. I do not find evidence in support of the hypothesis that selection for state power is responsible for the positive effect of switching.
+The results in Table \ref{tab:SW22_replication_50y} corroborate part of my hypothesis: switching states within the Holy Roman Empire had a positive effect on the development of cities in the long run. However, the second part of my analysis yields a null result: Table \ref{tab:baseline_50y} shows that the the positive overall effect we saw in Table \ref{tab:SW22_replication_50y} was not driven by conquests. I do not find evidence in support of the hypothesis that selection for state power is responsible for the positive effect of switching.
 
-Table \ref{tab:controls_50y} shows estimates of Equation \eqref{eq:baseline} obtained with different sets of control variables. The outcome is $All \, construction$ in all regressions. Column (1) is identical to Column (1) in Table \ref{tab:baseline_50y} and controls only for switching in the same period. In Column (2) I remove this control. Columns (3) and (4) add conflict as a control variable, once in addition to switching and once without.
+I test the robustness of this result by estimating some alternative specifications. Table \ref{tab:controls_50y} shows estimates of Equation \eqref{eq:baseline} obtained with different sets of control variables. The outcome is $All \, construction$ in all regressions. Column (1) is identical to Column (1) in Table \ref{tab:baseline_50y} and controls only for switching in the same period. In Column (2) I remove this control. Columns (3) and (4) add conflict as a control variable, once in addition to switching and once without.
 
 Comparing Column (2) to (1), and (4) to (3), we can see that it makes no difference whether we control for switches in the same period or not; the estimates are barely distinguishable. When we control for conflict, however, the coefficient $\theta_{conquest}$ suddenly turns negative, highly significant and large in magnitude. If we trust these regressions, the difference between conquests and successions lowers probability of observing construction in a given year is 15 percentage points lower.
 
