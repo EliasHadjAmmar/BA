@@ -76,32 +76,27 @@ When I say "state" in the context of this paper I mean its early modern German e
 
 \section{Data} \label{sec:data}
 
-I use data from the \textit{Princes and Townspeople} database which is based on the \textit{Deutsches Städtebuch} \citep{keyser1939} and \cite{kobler2007}'s \textit{Historisches Lexikon der Deutschen Länder}. \cite{keyser1939} claim to  list "every settlement that at one point in the history of the Holy Roman Empire was awarded the status of a city" \citep[p. 2]{pt1}. The raw \textit{Princes and Townspeople} database contains those 2,390 cities. The reporting boundaries are those of the German Empire in 1937 plus the Free City of Danzig. The specific datasets I use are those on city locations \citep{pt1}, territorial histories \citep{pt2}, construction activity \citep{pt5} and conflict incidents \citep{pt6}.\footnote{I thank Davide Cantoni and Matthias Weigand for giving me access to unpublished yearly versions of the construction and territorial histories data.} 
+I use data from the \textit{Princes and Townspeople} collection which is based on the \textit{Deutsches Städtebuch} \citep{keyser1939} and \cite{kobler2007}'s \textit{Historisches Lexikon der Deutschen Länder}. Out of the six datasets currently published in the collection, I use those on territorial histories \citep{pt2}, construction activity \citep{pt5} and conflict incidents \citep{pt6} in my analysis.\footnote{I thank Davide Cantoni and Matthias Weigand for giving me access to unpublished yearly versions of the construction and territorial histories data.} I also use the geo-referenced city locations \citep{pt1} to create visualisations. 
 
-\paragraph{Territorial histories.}
+From these sources I assemble a panel of cities. The unique unit of observation is the city-period. The ultimate dataset contains, in abstract terms, two types of variables: ones that code the \textit{territorial history} of cities, and ones that code the occurrence of certain \textit{events}. Records for each city begin in the 14th century at the earliest and end at the latest with the abolition of the German monarchy in the early 20th century. 
 
-A city-by-year panel of territorial history, taken from \cite{pt2}, forms the backbone of my dataset. For each city in each year it identifies the noble lineage to whose territory the city belonged in that year. This is what I 
+Figure \ref{fig:map_cities_raw} shows the spatial distribution of the 2,390 cities in the original \textit{Princes and Townspeople} data. The reporting boundaries are those of the German Empire in 1937 plus the Free City of Danzig; within those boundaries \cite{keyser1939} claim to list "every settlement that at one point in the history of the Holy Roman Empire was awarded the status of a city" \citep[p. 2]{pt1}.
 
-The most important There are detailed records of the territorial histories of cities (among many other things): we know to which lineage's territory a city belonged to at every time point in which it shows up in the data. Records begin in 1300 at the earliest and end at the latest with the abolition of the German monarchy and the foundation of the Weimar Republic in 1918. 
+\paragraph{Territorial histories.} 
 
-- unit of observation: city-year / city-period
-- precision of time points
-- aggregation of years
-- unbalanced panel
-- definition of territory holding
-- definition of switch in period
-- justification for using construction
-- different groupings of construction
-- scope of the data / regions included: 1937 germany
-- time period recorded
+A city-by-year panel of territorial history, taken from \cite{pt2}, forms the backbone of my dataset. For each city and each year it identifies the noble lineage to whose territory the city belonged in that year. I use this information to identify years in which cities switch from one territory to another. The original data also records how each city came into the possession of the lineage ruling it. I combine the original 13 types of switches into 3 types: \textit{Conquests}, \textit{successions}, and \textit{other.} I code a switch as a conquest if the original data records it as either "conquest" or "acquisition by conflict", and as a succession if the record says "extinction of lineage" or "inheritance". The remaining categories are classified as \textit{other}.\footnote
+{
+The other categories are "no data or regular status", "personal union or marriage", "purchase", "foundation", "secularisation", "decision of the emperor", "gift", "exchange" and "mediatisation".
+}
 
-\paragraph{Event variables.}
+\paragraph{Events.}
 
-Different types of construction
-
-Additionally, conflict
+Problems with construction -> To get more info out of it: Different types of construction
 
 Since I use some subset of construction as the outcome variable in all regressions, it is necessary to drop missing values. I code "event" variables as missing for periods that are earlier than the first recorded event or later than the last recorded event in a city.
+
+
+Additionally, conflict.
 
 
 \paragraph{Aggregation.}
