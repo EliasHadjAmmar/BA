@@ -50,4 +50,4 @@ Main <- function(){
   return(0)
 }
 
-test <- Main()
+Main()

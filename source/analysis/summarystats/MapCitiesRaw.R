@@ -46,7 +46,7 @@ Main <- function(){
                 palette = "Greens",
                 breaks = my.breaks,
                 legend.reverse = TRUE) +
-    tm_layout(title = "Spatial distribution of cities - All cities",
+    tm_layout(title = "Spatial distribution of cities - Full set",
               title.size = 1.3,
               title.position = c("center", "top"),
               title.fontface = 2,
