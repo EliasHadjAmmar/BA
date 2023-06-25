@@ -20,7 +20,7 @@ I thank Davide Cantoni, Matthias Weigand, and my RA colleagues at the Chair of E
 }
 }
 \author{Elias Hadj Ammar}
-\date{May 2023}
+\date{June 27, 2023}
 
 \begin{document}
 \onehalfspacing
@@ -28,7 +28,7 @@ I thank Davide Cantoni, Matthias Weigand, and my RA colleagues at the Chair of E
 \thispagestyle{empty}
 
 \begin{abstract}
-How does switching between states affect the long-run development of cities, and why? I study this question in the setting of the Holy Roman Empire, using historical data on construction activity and the territorial history of cities. I specifically test the hypothesis that cities benefitted from permanent ownership changes because competition between states selected for higher-quality government. While I show that cities grow faster in the long run after switching states, I do not find evidence that conflict-driven selection played a role in this.
+How does switching between states affect the long-run development of cities, and why? I study this question in the setting of the Holy Roman Empire, using historical data on construction activity and the territorial history of cities. I specifically test the hypothesis that cities benefitted from ownership changes because competition between states selected for higher-quality government. While I show that cities grow faster in the long run after switching states, I do not find evidence that conflict-driven selection played a role in this.
 \end{abstract}
 
 \newpage
@@ -43,9 +43,9 @@ How does switching between states affect the long-run development of cities, and
 
 
 
-The European state system was forged in conflict. No other continent at any time experienced more war than Europe in the early modern era (\citealp{voigtlnder2013}, p. 174). Wars brought death and devastation to the societies affected by them, but their effects also manifested on the political map --- they play out in a diverse ecosystem of polities that come and go and change size over time. Borders get redrawn and territory changes hands. One can indeed imagine this as an evolutionary process: states compete for resources and powerful states eventually absorb weaker ones. As a result, traits that increase state power --- the ability to win conflicts against rivals --- get selected for, while unfavourable traits are doomed to disappear \citep{levine2021}.
+The European state system was forged in conflict. No other continent at any time experienced more war than Europe in the early modern era (\citealp{voigtlnder2013}, p. 174). Wars bring death and devastation to the societies affected by them, but their effects also manifest on the political map --- they play out in a diverse ecosystem of polities that come and go and change size over time. Borders are redrawn and territory changes hands. One can indeed imagine this as an evolutionary process: states compete for resources and powerful states eventually absorb weaker ones. As a result, traits that increase state power --- the ability to win conflicts against rivals --- get selected for, while unfavourable traits are doomed to disappear \citep{levine2021}.
 
-In this paper I study the role of this process in the economic development of Europe. In particular, I estimate the effect of state power, the trait that conflict selects for, on urban development. If the effect is positive, then the conflict driven evolution of states may partially explain the eventual ascendancy of Europe: by selecting for military success, Europe's violent history may have accidentally produced fiscal capacity, efficient legal systems, and prospering middle classes.
+In this paper I study the role of this process in the economic development of the Holy Roman Empire. In particular, I estimate the effect of state power, the trait that conflict selects for, on urban development. If the effect is positive, then the conflict driven evolution of states may partially explain the eventual ascendancy of Europe: by selecting for military success, Europe's violent history may have accidentally produced fiscal capacity, efficient legal systems, and prospering middle classes.
 
 I build my paper on the theory of conflict driven evolution, outlined above, developed by \cite{levine2013, levine2021, levine2022}. Its main contribution is to explain why hegemonies arose in East Asia while balances of power could prevail in Europe: unlike China, the major powers of continental Europe were frequently preyed upon by strong outsiders --- the Vikings, the Swedes, and the English --- which prevented any one state from growing too strong (\citealp{levine2021}, p. 439). It is worth highlighting how the authors model war between states: you win with state power, and state power is simply free resources, i.e. resources above subsistence. If the most successful states are the ones with the biggest surplus, selection should have made Europe increasingly prosperous.\footnote{The basic idea of Darwinian selection has previously been borrowed by economists - for example \cite{galor2002} do the literal version, where humans are subject to selection and accumulate favourable traits over the course of history. More infamously, \cite{clark2007} employs it in an attempt to explain why the Industrial Revolution took place in Europe, arguing that the rich out-bred the poor and passed favourable traits on to their offspring (in Europe but not elsewhere for some reason.)}
 
@@ -60,7 +60,7 @@ The closest relative to this paper is \cite{schoenholzer2022} who investigate ho
 
 The analysis in this paper builds upon that of \cite{schoenholzer2022} and extends it by identifying special cases of switching events: in \textit{conquests} a city is forcefully absorbed into a new state, while in \textit{successions} a city is absorbed into a new state after the rulers of the old state have gone extinct. Comparing the effects of these two types of switches allows me to tease out the effect of state power. Identification is based on the economic assumption that conquests imply state power differentials but successions do not. Specifically, if we consider the universe of all switching events, the average increase in state power from the old to the new owner would be higher for the conquests than for the successions. The reasoning is that conflict --- as in a conquest --- selects the new state for power, but conflict-free successions, depending mainly on dynastic marriages, are more "random". This assumption allows me to use conquests as a stand-in for an increase in state power. Several other assumptions are needed to interpret my results causally.
 
-While I am able to replicate \cite{schoenholzer2022}'s result that the long-run effect of switching to another state is positive, I fail to identify a statistically significant effect of state power on urban development. This does not necessarily mean that conflict-driven evolution played no role in the rise of Europe --- several issues limit the statistical power of my test, which might prevent me from finding an effect even if there is one. One of them is that the data I use may not be fully adequate for answering the research question.
+While I am able to replicate \cite{schoenholzer2022}'s result that switching to another state has a positive effect one century later, I fail to identify a statistically significant effect of state power on urban development. This does not necessarily mean that conflict-driven evolution played no role in the rise of Europe --- several issues limit the statistical power of my test, which might prevent me from finding an effect even if there is one. One of them is that the data I use may not be fully adequate for answering the research question.
 
 The rest of the paper proceeds as follows. Section \ref{sec:background} gives essential historical background information. Section \ref{sec:data} describes the data used in the analysis. Section \ref{sec:empirics} details the empirical approach. Section \ref{sec:results} presents results. Section \ref{sec:discussion} discusses implications and robustness of the results. Section \ref{sec:conclusion} concludes.
 
@@ -94,11 +94,11 @@ Cities are ruled by conquering states 16\% of the time, by succeeding states 34\
 
 \paragraph{Construction activity.}
 
-The data on construction activity \citep{pt5} and conflict incidents \citep{pt6} both resemble lists of events. The unit of observation is the event, occurring in a specified city at a specified time point. Each entry contains additional information about the type of event and the range of uncertainty for the timing.
+The data on construction activity \citep{pt5} and conflict incidents \citep{pt6} both resemble lists of events. The unit of observation is the event, occurring in a specified city at a specified time point. Each entry contains additional information about the type of event and the range of uncertainty for the timing. Because I drop city-period observations with missing construction data from the sample, it is worth briefly outlining how I transform a list of events into a city-period panel of construction activity. First I group and count events that occur in the same city and period. Then I fill the observations in between the events with the value zero. Finally, I code values as missing for periods that are earlier than the first recorded event or later than the last recorded event in a city. I do not set these out-of-range values to zero because I have no way of knowing whether nothing actually happened, or whether the record simply does not cover these periods anymore.
 
 I will regress construction activity on breaks in the territorial history of cities throughout the main part of this paper --- this is not self-explanatory. After all, the research question deals with the effect of switching states on urban economic development. I use construction as a proxy for development because it is available for most cities: out of the 2,390 cities in the \textit{Städtebuch}, 2,177 have at least one construction event linked to them. By contrast, only 207 cities from the \textit{Städtebuch} appear in \cite{bairoch1988}'s dataset of city populations.
 
-The record of construction events is unfortunately not exhaustive and mostly contains notable buildings --- churches, palaces, fortifications, malls, schools, libraries, opera houses, gardens. It contains residential buildings of some noble families and notable citizens but not of the general population. Even so, there are theoretical justifications for using construction activity as a proxy for growth: If buildings are a normal good, then demand for them should increase with income. While the types of buildings listed do seem to represent state and elite consumption more than general economic activity, the income of these groups is also dependent on the broader economy --- an upturn will increase tax revenues and by extension the disposable income of the state. On a basic level we would expect more new buildings, of any type, in cities that are booming (although the error term is likely large).
+The record of construction events is unfortunately not exhaustive and mostly contains notable buildings --- churches, palaces, fortifications, malls, schools, libraries, opera houses, gardens, and the like. It contains residential buildings of some noble families and notable citizens but not of the general population. Even so, there are theoretical justifications for using construction activity as a proxy for growth: If buildings are a normal good, then demand for them should increase with income. While the types of buildings listed do seem to represent state and elite consumption more than general economic activity, the income of these groups is also dependent on the broader economy --- an upturn will increase tax revenues and by extension the disposable income of the state. On a basic level we would expect more new buildings, of any type, in cities that are booming (although the error term is likely large - we might also expect more new buildings in cities that were devastated by war or environmental catastrophes).
 
 In an attempt to understand more about the effects I estimate, I use certain subsets of construction activity as the outcome in alternative specifications. There are 16 types of construction activity in the original data, which I combine into 4 facets: \textit{State construction} consists of palaces, castles, administrative and military buildings. \textit{Private construction} includes malls, economic (banks, factories, restaurants, and more) and private (residential) buildings. Lastly, \textit{construction of public goods} includes infrastructure, social, cultural, and educational buildings, memorials, gardens and parcs.\footnote
 {
@@ -106,19 +106,17 @@ Churches, monasteries, clerical buildings and town halls are not included in any
 }
 
 
-Because I drop city-period observations with missing construction data from the sample, it is worth briefly noting how I transform a list of events into a city-period panel of construction activity. First I group and count events that occur in the same city and period. Then I fill the observations in between the events with the value zero. Finally, I code values as missing for periods that are earlier than the first recorded event or later than the last recorded event in a city. I do not set these out-of-range values to zero because I have no way of knowing whether nothing actually happened, or whether the record simply does not cover these periods anymore.
-
-
 \paragraph{Conflict incidents.}
 
-I include conflict as a control variable in a robustness check. Conflict in my dataset is simply coded as an indicator whether a conflict incident of any type is recorded in this city and period. I code missing values exactly as I do for construction events. 
+I include conflict incidents (sieges, plunders, civil unrest) as a control variable in a robustness check. Conflict in my dataset is simply coded as an indicator whether a conflict incident of any type is recorded in this city and period. I code missing values exactly as I do for construction events.
 
+Note that conflict \textit{incidents} are distinct from conflict as a driver of improvements in institutions. Conflict incidents are events recorded at the city level that often involve the destruction of life or property in that city. The statement "conflict causes weak states to disappear "
 
 \paragraph{Aggregation.}
 
-I aggregate this yearly data into periods of different length. I build yearly, 10-yearly, 50-yearly and 100-yearly versions. I use the 50-yearly version throughout the regressions in the paper. Events are rare enough that this avoids losing too much information to having to drop missing values. Also, some events (conflict as well as construction) are recorded with uncertain timing --- descriptors like "beginning of the 16th century" rather than an exact year. In the aggregated version I include such events if their timing can be assigned with certainty to a 50-year period.
+I aggregate this yearly data into periods of different length. I build yearly, 10-yearly, 50-yearly and 100-yearly versions. I use the 50-yearly version throughout the regressions in the paper. Events are rare enough that this avoids losing too much information to having to drop missing values. Also, some events (conflict as well as construction) are recorded with uncertain timing --- descriptors like "beginning of the 16th century" rather than an exact year. In the aggregated version I include such events if their timing can be assigned with certainty to a 50-year period. The 
 
-The aggregated indicators for construction and conflict take the value 1 if at least one event was recorded during the period. The switches and rule types
+The switch indicators are aggregated by summing, to obtain the total number of switches that happen in a period, and the aggregated indicators for construction and conflict take the value 1 if at least one event was recorded during the period. 
 
 \paragraph{Accounting for dropped observations.}
 
@@ -227,7 +225,7 @@ The results in Table \ref{tab:SW22_replication_50y} corroborate part of my hypot
 
 I test the robustness of this result by estimating some alternative specifications. Table \ref{tab:controls_50y} shows estimates of Equation \eqref{eq:baseline} obtained with different sets of control variables. The outcome is $All \, construction$ in all regressions. Column (1) is identical to Column (1) in Table \ref{tab:baseline_50y} and controls only for switching in the same period. In Column (2) I remove this control. Columns (3) and (4) add conflict as a control variable, once in addition to switching and once without.
 
-Comparing Column (2) to (1), and (4) to (3), we can see that it makes no difference whether we control for switches in the same period or not; the estimates are barely distinguishable. When we control for conflict, however, the coefficient $\theta_{conquest}$ suddenly turns negative, highly significant and large in magnitude. If we trust these regressions, the difference between conquests and successions lowers probability of observing construction in a given year is 15 percentage points lower.
+Comparing Column (2) to (1), and (4) to (3), we can see that it makes no difference whether we control for switches in the same period or not; the estimates are barely distinguishable. When we control for conflict, however, the coefficient $\theta_{conquest}$ suddenly turns negative, highly significant and large in magnitude. If we trust these regressions, the probability of observing construction in a different year increases by 15 percentage points \textit{less} after conquests relative to successions.
 
 At first glance this may suggest that conflict is an omitted variable in Column (1), biasing the baseline estimate. A closer look at the coefficients on $Conflict$ in Columns (3) and (4) makes this seem unlikely, though: they are very close to zero and not significant by any stretch of the imagination. For conflict to be an omitted variable it would need to be correlated both with the post-$Conquest$ dummy and construction. The first correlation seems plausible --- once-conquered cities may continue to be highly contested, which would imply a positive relationship, or they may enjoy protection from further attacks by their powerful new owner, which would imply a negative relationship --- but the second correlation is zero in my sample.\footnote
 {
@@ -235,6 +233,8 @@ The coefficients on $Conflict$ in Table \ref{tab:controls_50y} are conditional c
 } The difference cannot be the result of omitted variable bias.
 
 I investigate one alternative explanation: because there are many missing values in the $Conflict$ variable, more than two thirds of observations are dropped between Columns (2) and (3). If the distribution of missing values across observations is not random, the different estimates may be due to starkly different samples. Figure \ref{fig:conflict_map} visualises how including conflict in the regression affects the distribution of the sample across space. The colour of each region codes the share of observations from the baseline sample that remain after dropping observations with missing conflict data. If the spatial composition of the sample stayed exactly the same, the entire map would be a uniform shade. Instead we immediately see big discrepancies: Thuringia and most northern regions all but disappear from the sample, while the more darkly shaded west and south retain between 30\% and 60\% of their observations.
+
+I conduct a number of other robustness checks.
 
 Other things I did:
 \begin{itemize}
@@ -251,6 +251,7 @@ Other explanations for no effect:
     \item successions may also select for state power - maybe you get to enter more advantageous marriages if you are the leader of a powerful state
     \item cities are normally conquered one at a time, while successions usually see many cities switch at the same time - maybe there is a crowding-out of the positive effect, e.g. because the ruler likes one of his newly acquired cities most and neglects the others
     \item the data is just not that well suited to the task; within-R2 is super low in Table \ref{tab:baseline_50y}
+    \item had I found an effect, it would have been difficult to show that 
 
 \end{itemize}
 
@@ -311,6 +312,8 @@ Other explanations for no effect:
 \input{paper/output/regressions/baseline_50y}
 
 \input{paper/output/regressions/controls_50y}
+
+\section*{Appendix}
 
 
 
