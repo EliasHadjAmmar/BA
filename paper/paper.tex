@@ -216,46 +216,43 @@ I report estimates of the coefficient of interest $\theta_{conquest}$ in the sec
 
 The only subset of construction that shows a significant effect is state construction --- palaces, castles, military and administrative buildings. We can see in Column (2) that these are 5 percentage points \textit{less} likely to be built in a city after it was conquered; the effect is significant at the 5\% level. 
 
+The hypothesis was that conflict-driven selection for state power boosts urban growth. Given that my assumption about the difference in selectivity of conquests and successions holds true, the theory would have predicted a positive coefficient $\theta_{conquest}$. The results I obtain instead range from insignificant to negative. They offer no support to the hypothesis.
 
 
 % ######################################################
 
 \section{Discussion} \label{sec:discussion}
 
-How robust this null result is to other specifications: I limit post-window to 200 years; I try Sun and Abraham, I use population data; I use different granularity.
+The results in Table \ref{tab:baseline_50y} corroborate part of my hypothesis: switching states within the Holy Roman Empire had a positive effect on the development of cities in the long run. However, the second part of my analysis yields a null result. I do not find evidence in support of the hypothesis that selection for state power is responsible for the positive effect of switching.
 
-differences within HRE may not have been large enough
+Table \ref{tab:controls_50y} shows estimates of Equation \eqref{eq:baseline} obtained with different sets of control variables. The outcome is $All \, construction$ in all regressions. Column (1) is identical to Column (1) in Table \ref{tab:baseline_50y} and controls only for switching in the same period. In Column (2) I remove this control. Columns (3) and (4) add conflict as a control variable, once in addition to switching and once without.
 
-successions may also select for state power
+Comparing Column (2) to (1), and (4) to (3), we can see that it makes no difference whether we control for switches in the same period or not; the estimates are barely distinguishable. When we control for conflict, however, the coefficient $\theta_{conquest}$ suddenly turns negative, highly significant and large in magnitude. If we trust these regressions, the difference between conquests and successions lowers probability of observing construction in a given year is 15 percentage points lower.
 
-different switch sizes for conquests vs extinctions; maybe larger switch sizes caused neglect (-) or integration (+)
+At first glance this may suggest that conflict is an omitted variable in Column (1), biasing the baseline estimate. A closer look at the coefficients on $Conflict$ in Columns (3) and (4) makes this seem unlikely, though: they are very close to zero and not significant by any stretch of the imagination. For conflict to be an omitted variable it would need to be correlated both with the post-$Conquest$ dummy and construction. The first correlation seems plausible --- once-conquered cities may continue to be highly contested, which would imply a positive relationship, or they may enjoy protection from further attacks by their powerful new owner, which would imply a negative relationship --- but the second correlation is zero in my sample.\footnote
+{
+The coefficients on $Conflict$ in Table \ref{tab:controls_50y} are conditional correlations. Simply computing the correlation coefficient between $Conflict$ and $All\,construction$ yields a value of -0.01.
+} The difference cannot be the result of omitted variable bias.
 
-new construction vs repairs (!!!)
+I investigate one alternative explanation: because there are many missing values in the $Conflict$ variable, more than two thirds of observations are dropped between Columns (2) and (3). If the distribution of missing values across observations is not random, the different estimates may be due to starkly different samples. Figure \ref{fig:conflict_map} visualises how including conflict in the regression affects the distribution of the sample across space. The colour of each region codes the share of observations from the baseline sample that remain after dropping observations with missing conflict data. If the spatial composition of the sample stayed exactly the same, the entire map would be a uniform shade. Instead we immediately see big discrepancies: Thuringia and most northern regions all but disappear from the sample, while the more darkly shaded west and south retain between 30\% and 60\% of their observations.
 
-super low within-R2
-
-
-
-table 3: why neg? conflict NA may be systematocally correlated
-
-are some regions more common in the conflict NAs?
-
-The first explanation is that conflict is an important omitted variable, in the sense that it is correlated both with the treatment and with construction activity.
-
-If omitting  bias in $\theta_{conflict}$ from omitting conflict has the same sign as 
-$$\beta_{conflict} \cdot \frac{\mathbf{Cov}({Conflict},\: {Switching\: to\: another\: state \times Conquest})}{\mathbf{Var}(Conflict)}$$
-
-The whole term is negative. We can see in Columns (3) and (4) of Table \ref{tab:controls_50y} that $\beta_{conflict}$ has a positive sign. It follows that the correlation between must be negative (which makes sense - an owner with higher state power is likely better able to protect a city from attacks.
-
-But if $\beta_{conflict}$ is around zero, then why does it introduce bias at all?
-
-Conflict is not actually correlated with construction, but controlling for it has the side effect of dropping two thirds of all observations from the sample. This is because 
+Other things I did:
+\begin{itemize}
+    \item I limit post-window of the diff-in-diff to 200 years like in the event study; null results
+    \item try robust TWFE estimator by Sun and Abraham (2021); null results
+    \item use \cite{bairoch1988}'s population data as outcome; null results
+    \item regress on data aggregated to 1, 10, and 100 years instead; null results
+\end{itemize}
 
 
+Explanations for no effect:
+\begin{itemize}
+    \item states within the HRE may be too similar / competition between them not large enough
+    \item successions may also select for state power - maybe you get to enter more advantageous marriages if you are the leader of a powerful state
+    \item cities are normally conquered one at a time, while successions usually see many cities switch at the same time - maybe there is a crowding-out of the positive effect, e.g. because the ruler likes one of his newly acquired cities most and neglects the others
+    \item the data is just not that well suited to the task; within-R2 is super low in Table \ref{tab:baseline_50y}
 
-
-
-It doesn't make sense. It has to be something about the sample. Johannes must have been spot on.
+\end{itemize}
 
 
 
