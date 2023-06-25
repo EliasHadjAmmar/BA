@@ -78,6 +78,8 @@ When I say "state" in the context of this paper I mean its early modern German e
 
 I use data from the \textit{Princes and Townspeople} database which is based on the \textit{Deutsches Städtebuch} \citep{keyser1939} and \cite{kobler2007}'s \textit{Historisches Lexikon der Deutschen Länder}. \cite{keyser1939} claim to  list "every settlement that at one point in the history of the Holy Roman Empire was awarded the status of a city" \citep[p. 2]{pt1}. The raw \textit{Princes and Townspeople} database contains those 2,390 cities. The reporting boundaries are those of the German Empire in 1937 plus the Free City of Danzig. The specific datasets I use are those on city locations \citep{pt1}, territorial histories \citep{pt2}, construction activity \citep{pt5} and conflict incidents \citep{pt6}.\footnote{I thank Davide Cantoni and Matthias Weigand for giving me access to unpublished yearly versions of the construction and territorial histories data.} 
 
+\paragraph{Territorial histories.}
+
 The most important There are detailed records of the territorial histories of cities (among many other things): we know to which lineage's territory a city belonged to at every time point in which it shows up in the data. Records begin in 1300 at the earliest and end at the latest with the abolition of the German monarchy and the foundation of the Weimar Republic in 1918. 
 
 - unit of observation: city-year / city-period
@@ -90,20 +92,24 @@ The most important There are detailed records of the territorial histories of ci
 - different groupings of construction
 - scope of the data / regions included: 1937 germany
 - time period recorded
-- missing values / full sequence of event years
-- dropNA construction -> sample size
+
+\paragraph{Event variables.}
+
+I code such an "event" variable as missing for periods that are earlier than the first recorded event or later than the last
+recorded event in a city.
+
+Since I use some subset of construction as the outcome variable in all regressions, it is necessary to drop missing values.
 
 
+\paragraph{Aggregation.}
 
+I aggregate this yearly data into periods of different length. I build yearly, 10-yearly, 50-yearly and 100-yearly versions. I use the 50-yearly version throughout the regressions in the paper. Events are rare enough that this avoids losing too much information to having to drop missing values. Also, some events (conflict as well as construction) are recorded with uncertain timing --- descriptors like "beginning of the 16th century" rather than an exact year. In the aggregated version I include such events if their timing can be assigned with certainty to a 50-year period.
 
+\paragraph{Accounting for dropped observations.}
 
-Construction: describe format / split and rationale. This can be two paragraphs.
+The raw \textit{Territorial Histories} dataset starts out with 1,471,934 yearly observations. Two observations per city --- the first and the last year --- are lost while coding switches, for a total of 4,780. The remaining 1,467,154 yearly observations are aggregated into 30,980 observations with 50-year spacing. Of these I drop 16,110 that are not covered by the construction data. Finally, the baseline versions of all specifications in this paper restrict the sample to cities with no more than two lifetime switches. This will remove another 9,975 observations, leaving 6,635 in the baseline sample.
 
-Conflict: describe format (just a dummy).
-
-
-I also build coarsened versions of this dataset in which I aggregate years into longer periods (10, 50, and 100 years). Not only does this aggregation make event studies nicer to look at, it also allows me to use more of the conflict and construction data as periods get longer: the 50-year and 100-year versions contain events that aren't recorded with a precise year, but only "beginning of the 16th century" and the like. While the 1-year and 10-year data builds contain BLANK construction events with sufficiently precise timing, the 50-year version contains BLANK and the 100-year version contains BLANK.
-
+Figure \ref{fig:map_cities_sample} plots the spatial distribution of the cities that make it into the baseline sample. The total number of cities has shrunken visibly compared to Figure \ref{fig:map_cities_raw} --- we can also see, however, that the shrinking appears to have been roughly uniform, preserving the proportions between regions. Only Brandenburg (containing Berlin) and Silesia (containing Breslau) seem to lose disproportionately many observations.
 
 % ######################################################
 
@@ -223,6 +229,8 @@ $$\beta_{conflict} \cdot \frac{\mathbf{Cov}({Conflict},\: {Switching\: to\: anot
 The whole term is negative. We can see in Columns (3) and (4) of Table \ref{tab:controls_50y} that $\beta_{conflict}$ has a positive sign. It follows that the correlation between must be negative (which makes sense - an owner with higher state power is likely better able to protect a city from attacks.
 
 But if $\beta_{conflict}$ is around zero, then why does it introduce bias at all?
+
+Conflict is not actually correlated with construction, but controlling for it has the side effect of dropping two thirds of all observations from the sample. This is because 
 
 
 
