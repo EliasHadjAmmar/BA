@@ -84,12 +84,16 @@ Figure \ref{fig:map_cities_raw} shows the spatial distribution of the 2,390 citi
 
 \paragraph{Territorial histories.} 
 
-A city-by-year panel of territorial history, taken from \cite{pt2}, forms the backbone of my dataset. For each city and each year it identifies the noble lineage to whose territory the city belonged in that year. I use this information to identify years in which cities switch from one territory to another. The original data also records how each city came into the possession of the lineage ruling it. I combine the original 13 types of switches into 3 types: \textit{Conquests}, \textit{successions}, and \textit{other.} I code a switch as a conquest if the original data records it as either "conquest" or "acquisition by conflict", and as a succession if the record says "extinction of lineage" or "inheritance". The remaining categories are classified as \textit{other}.\footnote
+A city-by-year panel of territorial history, taken from \cite{pt2}, forms the backbone of my dataset. For each city and each year it identifies the noble lineage to whose territory the city belonged in that year. I use this information to find years in which cities switch from one territory to another. The original data also records how each city came into the possession of the lineage ruling it. I combine the original 13 types of switches into 3 types: \textit{Conquests}, \textit{successions}, and \textit{other.} I code a switch as a conquest if the original data records it as either "conquest" or "acquisition by conflict", and as a succession if the record says "extinction of lineage" or "inheritance". The remaining categories are classified as \textit{other}.\footnote
 {
-The other categories are "no data or regular status", "personal union or marriage", "purchase", "foundation", "secularisation", "decision of the emperor", "gift", "exchange" and "mediatisation".
+The other categories are: "no data or regular status", "personal union or marriage", "purchase", "foundation", "secularisation", "decision of the emperor", "gift", "exchange" and "mediatisation".
 }
 
 \paragraph{Events.}
+
+The data on construction activity \citep{pt5} and conflict incidents \citep{pt6} resemble lists of events. The unit of observation is Each entry contains a
+
+I mainly care about construction events.
 
 Problems with construction -> To get more info out of it: Different types of construction
 
@@ -283,7 +287,7 @@ It doesn't make sense. It has to be something about the sample. Johannes must ha
 \begin{figure}[ht]
     \centering
     \includegraphics[scale = 0.15]{paper/output/descriptive/map_conflict_NA_50y.png}
-    \caption{Share of observations from each \textit{Städtebuch} region with non-missing data on conflict incidents. The $Conflict$ variable is coded as missing for a period if it is earlier than the first recorded incident or later than the last recorded incident in a city. Observations with missing conflict data are excluded from the regressions in Columns (3) and (4) of Table \ref{tab:controls_50y}.}
+    \caption{Share of observations from each \textit{Städtebuch} region with non-missing data on conflict incidents. I code the $Conflict$ variable as missing for a period if it is earlier than the first recorded incident or later than the last recorded incident in a city. Observations with missing conflict data are excluded from the regressions in Columns (3) and (4) of Table \ref{tab:controls_50y}.}
     \label{fig:conflict_map}
 \end{figure}
 
