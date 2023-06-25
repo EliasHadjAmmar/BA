@@ -80,6 +80,8 @@ I use data from the \textit{Princes and Townspeople} database which is based on 
 
 \paragraph{Territorial histories.}
 
+A city-by-year panel of territorial history, taken from \cite{pt2}, forms the backbone of my dataset. For each city in each year it identifies the noble lineage to whose territory the city belonged in that year. This is what I 
+
 The most important There are detailed records of the territorial histories of cities (among many other things): we know to which lineage's territory a city belonged to at every time point in which it shows up in the data. Records begin in 1300 at the earliest and end at the latest with the abolition of the German monarchy and the foundation of the Weimar Republic in 1918. 
 
 - unit of observation: city-year / city-period
@@ -95,19 +97,22 @@ The most important There are detailed records of the territorial histories of ci
 
 \paragraph{Event variables.}
 
-I code such an "event" variable as missing for periods that are earlier than the first recorded event or later than the last
-recorded event in a city.
+Different types of construction
 
-Since I use some subset of construction as the outcome variable in all regressions, it is necessary to drop missing values.
+Additionally, conflict
+
+Since I use some subset of construction as the outcome variable in all regressions, it is necessary to drop missing values. I code "event" variables as missing for periods that are earlier than the first recorded event or later than the last recorded event in a city.
 
 
 \paragraph{Aggregation.}
 
 I aggregate this yearly data into periods of different length. I build yearly, 10-yearly, 50-yearly and 100-yearly versions. I use the 50-yearly version throughout the regressions in the paper. Events are rare enough that this avoids losing too much information to having to drop missing values. Also, some events (conflict as well as construction) are recorded with uncertain timing --- descriptors like "beginning of the 16th century" rather than an exact year. In the aggregated version I include such events if their timing can be assigned with certainty to a 50-year period.
 
+The aggregated indicators for construction and conflict take the value 1 if at least one event was recorded during the period. The switches and rule types
+
 \paragraph{Accounting for dropped observations.}
 
-The raw \textit{Territorial Histories} dataset starts out with 1,471,934 yearly observations. Two observations per city --- the first and the last year --- are lost while coding switches, for a total of 4,780. The remaining 1,467,154 yearly observations are aggregated into 30,980 observations with 50-year spacing. Of these I drop 16,110 that are not covered by the construction data. Finally, the baseline versions of all specifications in this paper restrict the sample to cities with no more than two lifetime switches. This will remove another 9,975 observations, leaving 6,635 in the baseline sample.
+The raw \textit{Territorial Histories} dataset starts out with 1,471,934 yearly observations. I lose two observations per city --- the first and the last year --- while coding switches, for a total of 4,780. I aggregate the remaining 1,467,154 yearly observations into 30,980 observations with 50-year spacing. Of these I drop 16,110 that are not covered by the construction data. Finally, the baseline versions of all specifications in this paper restrict the sample to cities with no more than two lifetime switches. This will remove another 9,975 observations, leaving 6,635 in the baseline sample.
 
 Figure \ref{fig:map_cities_sample} plots the spatial distribution of the cities that make it into the baseline sample. The total number of cities has shrunken visibly compared to Figure \ref{fig:map_cities_raw} --- we can also see, however, that the shrinking appears to have been roughly uniform, preserving the proportions between regions. Only Brandenburg (containing Berlin) and Silesia (containing Breslau) seem to lose disproportionately many observations.
 
