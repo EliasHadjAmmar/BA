@@ -1,36 +1,36 @@
 \begin{table}[htbp]
    \caption{\label{tab:controls_50y} Heterogeneous effects of switching: Robustness}
    \centering
-   \begin{tabular}{lcccc}
+   \begin{tabular}{lccccc}
       \tabularnewline \midrule \midrule
-      Dependent Variable: & \multicolumn{4}{c}{All construction}\\
-      Model:                                     & (1)    & (2)    & (3)           & (4)\\  
+      Dependent Variable: & \multicolumn{5}{c}{All construction}\\
+      Model:                                     & (1)    & (2)    & (3)           & (4)          & (5)\\  
       \midrule
       \emph{Variables}\\
-      Switch to another state                    & 0.02   & 0.02   & -0.01         & 0.03\\   
-                                                 & (0.03) & (0.02) & (0.05)        & (0.05)\\   
-      Switch to another state $\times$ Conquest  & 0.04   & 0.04   & -0.15$^{***}$ & -0.14$^{**}$\\   
-                                                 & (0.04) & (0.04) & (0.05)        & (0.06)\\   
-      Switch to another state $\times$ Other     & 0.01   & 0.01   & 0.05          & 0.05\\   
-                                                 & (0.03) & (0.03) & (0.05)        & (0.05)\\   
-      Switching indicator                        & -0.01  &        & -0.09         &   \\   
-                                                 & (0.02) &        & (0.06)        &   \\   
-      Conflict                                   &        &        & 0.01          & 0.01\\   
-                                                 &        &        & (0.03)        & (0.03)\\   
+      Switch to another state                    & 0.02   & 0.02   & -0.01         & 0.03         & -0.01\\   
+                                                 & (0.03) & (0.02) & (0.05)        & (0.05)       & (0.05)\\   
+      Switch to another state $\times$ Conquest  & 0.04   & 0.04   & -0.15$^{***}$ & -0.14$^{**}$ & -0.15$^{***}$\\   
+                                                 & (0.04) & (0.04) & (0.05)        & (0.06)       & (0.05)\\   
+      Switch to another state $\times$ Other     & 0.01   & 0.01   & 0.05          & 0.05         & 0.05\\   
+                                                 & (0.03) & (0.03) & (0.05)        & (0.05)       & (0.05)\\   
+      Switching indicator                        & -0.01  &        & -0.09         &              & -0.09\\   
+                                                 & (0.02) &        & (0.06)        &              & (0.06)\\   
+      Conflict                                   &        &        & 0.01          & 0.01         &   \\   
+                                                 &        &        & (0.03)        & (0.03)       &   \\   
       \midrule
       \emph{Fixed-effects}\\
-      City                                       & Yes    & Yes    & Yes           & Yes\\  
-      Period                                     & Yes    & Yes    & Yes           & Yes\\  
+      City                                       & Yes    & Yes    & Yes           & Yes          & Yes\\  
+      Period                                     & Yes    & Yes    & Yes           & Yes          & Yes\\  
       \midrule
       \emph{Fit statistics}\\
-      Observations                               & 6,635  & 6,635  & 1,955         & 1,955\\  
-      R$^2$                                      & 0.3553 & 0.3553 & 0.4245        & 0.4230\\  
-      Within R$^2$                               & 0.0009 & 0.0008 & 0.0071        & 0.0045\\  
+      Observations                               & 6,635  & 6,635  & 1,955         & 1,955        & 1,955\\  
+      R$^2$                                      & 0.3553 & 0.3553 & 0.4245        & 0.4230       & 0.4244\\  
+      Within R$^2$                               & 0.0009 & 0.0008 & 0.0071        & 0.0045       & 0.0069\\  
       \midrule \midrule
       
       
    \end{tabular}
    
    \par \raggedright 
-   Note: Table presents results of estimation equation \eqref{eq:baseline} but using different control variables. The switch type  "Succession" is omitted as the reference category. Yearly data was aggregated into periods of 50 years. Observations are at the city-period level. The dependent variable is an  indicator that takes the value 1 if any construction activity was recorded.  Standard errors are clustered at the city level. *, **, and *** denote significance on the 10 percent, 5 percent, and 1 percent  level, respectively.
+   Note: Table presents results of estimation equation \eqref{eq:baseline} but using different control variables. Columns (3)-(5) drop observations with missing data on conflict incidents from the sample. Yearly data was aggregated into periods of 50 years. Observations are at the city-period level. The dependent variable is an  indicator that takes the value 1 if any construction activity was recorded.  Standard errors are clustered at the city level. *, **, and *** denote significance on the 10 percent, 5 percent, and 1 percent  level, respectively.
 \end{table}
