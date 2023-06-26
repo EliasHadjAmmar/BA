@@ -15,6 +15,15 @@
 \usepackage{graphicx} % we need this so we can add figures
 \usepackage{booktabs}
 
+\newcommand{\decoline}{% pretty "scene change" macro
+  \par
+  \vspace{\baselineskip}
+  \hfill
+  {\Large*}
+  \hfill
+  \vspace{\baselineskip}
+\par}
+
 \title{Conflict Driven Evolution and Urban Development: \\ Evidence from the Holy Roman Empire\footnote{
 I thank Lara Andermann, Leonie Bielefeld, Daniel Bursian, Davide Cantoni, Emilio Esguerra, Filip Milojevic, Johannes Vorbach and Matthias Weigand for helpful comments and feedback.
 }
@@ -236,14 +245,17 @@ The coefficients on $Conflict$ in Table \ref{tab:controls_50y} are conditional c
 } 
 Rather, I suggest that the estimates for $\theta_{conquest}$ are different because they are estimated on different samples. More than two thirds of observations are lost between Columns (2) and (3) because of missing values in the $Conflict$ variable. Figure \ref{fig:conflict_map} shows that the remaining observations follow quite a different distribution across space --- if the spatial composition of the smaller sample was the same, the entire map would be a uniform shade. Instead we see big discrepancies: the west, the south, and Brandenburg retain 30\% to 60\% of their observations, while many northern and eastern regions all but vanish from the sample.
 
-If we accept that the difference between the $\theta_{conquest}$ coefficients in (1) and (3) is due to the different spatial distribution of the sample, that has the interesting implication of spatially heterogeneous treatment effects. The null effect in (1) could be an average of the negative effect in the southwest and a hypothetical positive effect in the northeast. Outsiders could play a role, in a similar vein to \cite{levine2021, levine2022}'s theory: the south and the west are bordered by the Habsburg Empire and France, two stable major powers, while the northeast is somewhat sheltered by the North Sea, the Baltic Sea, and the territory that comprises 1937 Poland, which was fragmented throughout much of its history.\footnote
+If we accept that the disagreement between the interaction coefficients in (1) and (3) is due to the different spatial distribution of the sample, that has the interesting implication of spatially heterogeneous differences in treatment effects. The null difference in (1) could be an average of the negative difference in the southwest and a hypothetical positive difference in the northeast. Outsiders could play a role, in a similar vein to \cite{levine2021, levine2022}'s theory: the south and the west are bordered by the Habsburg Empire and France, two stable major powers, while the northeast is somewhat sheltered by the North Sea, the Baltic Sea, and the territory that comprises 1937 Poland, which was fragmented throughout much of its history.\footnote
 {
 Of course, England and Sweden would attack via the North and Baltic seas, but it seems a reasonable assumption that competition for territory would be more intense between states that share a land border.
 } 
 BLANK \cite{cervellati2022}. I leave this for future research to explore.
 
-I conduct a number of other robustness checks, which are summarised in the Appendix. Table \ref{tab:robustness_50y} contains regressions using different definitions of the sample and treatment. Columns (2) and (3) use larger samples that include cities with a higher number of lifetime switches. Column (4) shows the results of a regression in which the post-treatment dummy reverts back to 0 after 200 years. With this I intend to replicate the same event window as in Equation \eqref{eq:sw22} and to zero in on the effect over the first two centuries following a switch. While increasing the cutoff for lifetime switches increases the significance of the overall treatment effect (likely because the sample contains many duplicates of cities that switch often), none of these alternative specifications affect the estimates of the interactions.
+I conduct a number of other robustness checks, which are summarised in the Appendix. Table \ref{tab:robustness_50y} contains regressions using different definitions of the sample and treatment. Columns (2) and (3) use larger samples that include cities with a higher number of lifetime switches. Column (4) shows the results of a regression in which the post-treatment dummy reverts back to 0 after 200 years. With this I intend to replicate the same event window as in Equation \eqref{eq:sw22} and to zero in on the effect over the first two centuries following a switch. While increasing the cutoff for lifetime switches increases the significance of the overall treatment effect (likely because the sample contains many duplicates of cities that switch often), none of these alternative specifications give the coefficient we care about statistical significance.
 
+\decoline
+
+To sum these results up, I have found fairly robust non-evidence for the hypothesis that selection for state power drove city growth in the Holy Roman Empire between 1300 and 1800. 
 
 Other explanations for no effect:
 \begin{itemize}
