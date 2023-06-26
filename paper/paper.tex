@@ -115,17 +115,17 @@ Note that conflict \textit{incidents} are distinct from conflict as a driver of 
 
 \paragraph{Aggregation.}
 
-I aggregate this yearly data into periods of different length. I build yearly, 10-yearly, 50-yearly and 100-yearly versions. I use the 50-yearly version throughout the regressions in the paper. Events are rare enough that this avoids losing too much information to having to drop missing values. Also, some events (conflict as well as construction) are recorded with uncertain timing --- descriptors like "beginning of the 16th century" rather than an exact year. In the aggregated version I include such events if their timing can be assigned with certainty to a 50-year period. The 
+I aggregate this yearly data into periods of different length. I build yearly, 10-yearly, 50-yearly and 100-yearly versions. I use the 50-yearly version throughout the regressions in the paper. Events are rare enough that this avoids losing too much information to having to drop missing values. Also, some events (conflict as well as construction) are recorded with uncertain timing --- descriptors like "beginning of the 16th century" rather than an exact year. In the aggregated version I include such events if their timing can be assigned with certainty to a 50-year period.
 
 The switch indicators are aggregated by summing, to obtain the total number of switches that happen in a period, and the aggregated indicators for construction and conflict take the value 1 if at least one event was recorded during the period. 
 
 \paragraph{Accounting for dropped observations.}
 
-The raw \textit{Territorial Histories} dataset starts out with 1,471,934 yearly observations. I lose two observations per city --- the first and the last year --- while coding switches, for a total of 4,780. I aggregate the remaining 1,467,154 yearly observations into 30,980 observations with 50-year spacing. Of these I drop 16,110 that are not covered by the construction data. Finally, following \cite{schoenholzer2022}, for the baseline versions of all specifications I restrict the sample to cities with no more than two lifetime switches.\footnote
+The raw \textit{Territorial Histories} dataset starts out with 1,471,934 yearly observations, of which I lose a small number while coding switches. I aggregate the rest into 30,980 observations with 50-year spacing. Of these I drop 16,110 that are not covered by the construction data. Finally, following \cite{schoenholzer2022}, for the baseline versions of all specifications I restrict the sample to cities with no more than two lifetime switches.\footnote
 {
 I relax this restriction in a robustness check.
 } 
-This will remove another 9,975 observations, leaving 6,635 in the baseline sample.
+This removes another 9,975 observations, leaving 6,635 in the baseline sample.
 
 Figure \ref{fig:map_cities_sample} plots the spatial distribution of the cities that make it into the baseline sample. The total number of cities has shrunken visibly compared to Figure \ref{fig:map_cities_raw} --- we can also see, however, that the shrinking appears to have been roughly uniform, preserving the proportions between regions. Only Brandenburg (containing Berlin) and Silesia (containing Breslau) seem to lose disproportionately many observations.
 
