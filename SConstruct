@@ -22,6 +22,7 @@ DataPrepSuite = "source/utils/DataPrepSuite.R"
 etableDefaults = "source/utils/etableDefaults.R"
 PrepareBaselineData = "source/utils/PrepareBaselineData.R"
 MapUtils = "source/utils/MapUtils.R"
+PrepareWindowData = "source/utils/PrepareWindowData.R"
 
 # Scripts that will be sourced from the build lib:
 ConstructionLib = "source/build/lib/ProcessConstruction.R"
@@ -95,24 +96,17 @@ for t in [100, 50, 10, 1]:
                         HandleCommandArgs, DataPrepSuite, etableDefaults], 
                         f'Rscript {script} {t}')
     
-    # This produces the baseline regression with post-dummies deactivating after 200 years.
-    script = "source/analysis/robustness/Window.R"
-    target = f'paper/output/regressions/window_{t}y.tex'
-    window = Command(target,
-                     [build, script,
-                      HandleCommandArgs, DataPrepSuite, etableDefaults],
-                      f'Rscript {script} {t}')
-
-    # This produces the baseline regression with different controls.    
-    script = "source/analysis/robustness/Controls.R"
-    target = f'paper/output/regressions/controls_{t}y.tex'
-    controls = Command(target, 
-                        [build, script, 
-                        HandleCommandArgs, DataPrepSuite, etableDefaults], 
-                        f'Rscript {script} {t}')
-    
-    # This produces the map of missing conflict data by regions.
     if t in [50]:
+        # This produces the baseline regression with different controls.    
+        script = "source/analysis/robustness/Controls.R"
+        target = f'paper/output/regressions/controls_{t}y.tex'
+        controls = Command(target, 
+                            [build, script, 
+                            HandleCommandArgs, DataPrepSuite, etableDefaults], 
+                            f'Rscript {script} {t}')
+
+
+        # This produces the map of missing conflict data by regions.
         script = "source/analysis/robustness/MapConflictNA.R"
         target = f'paper/output/descriptive/map_conflict_NA_{t}y.png'
         map_conflict_NA = Command(target, 
@@ -120,3 +114,13 @@ for t in [100, 50, 10, 1]:
                             HandleCommandArgs, MapUtils, DataPrepSuite, PrepareBaselineData], 
                             f'Rscript {script} {t}')
         
+        # This produces the table with additional robustness checks.    
+        script = "source/analysis/robustness/Robustness.R"
+        target = f'paper/output/regressions/robustness_{t}y.tex'
+        robustness = Command(target, 
+                            [build, script, 
+                            HandleCommandArgs, DataPrepSuite, PrepareBaselineData, 
+                            PrepareWindowData, etableDefaults], 
+                            f'Rscript {script} {t}')
+    
+    
