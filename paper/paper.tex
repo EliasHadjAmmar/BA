@@ -263,29 +263,20 @@ I justify this assumption with the fact that a conqueror is, by definition, the 
 
 These arguments could imply that the difference between conquering and inheriting a city does not really capture state power differentials --- that my measure does not actually contain much information about the independent variable. If conquests are at best a noisy measure of state power, we essentially have measurement error in the independent variable. Accordingly, we should expect attenuation bias to push the result towards zero. The estimate for $\theta_{conquest}$ has the expected positive sign in my baseline regression --- it just lacks statistical significance. If we could regress differences in construction trends on directly observed differences in state power, we would sidestep this measurement error and likely find larger and significant effects.
 
-Econometrics come on top of this basic assumption about the interpretation of the independent variable. The parallel trends assumption is: Had a conquered city $i$ counterfactually been acquired by succession rather than conquest, it would have trended the same as the other cities acquired by succession. 
+Econometrics come on top of this basic assumption about the interpretation of the independent variable. We can interpret the interaction coefficient $\theta_{conquest}$ as a causal effect if the following holds: had a conquered city $i$ counterfactually been acquired by succession rather than conquest, it would have trended the same as the other cities acquired by succession. 
 
-The first implication of that is that cities did not select into treatment based on uncontrolled-for characteristics that . 
-There are no uncontrolled-for characteristics that made a city more or less likely to be conquered and also had an effect on construction activity. Note that I control for all time-invariant characteristics of cities in the city fixed effect.
+This assumption requires that there are no uncontrolled-for variables that are correlated with being conquered and also have an effect on construction activity (while not being outcomes of state power themselves). Note that I control for all time-invariant characteristics of cities in the city fixed effect. However, there is one thing that comes to mind: maybe switching to another state had a more positive effect on a city's development if no other cities switched to the same state at the same time. A single city may be more easy for the new state to integrate into its economy than many, or alternatively, rulers who win multiple cities at the same time may invest only in their favourite cities and neglect the rest. 
 
-The second implication is there is nothing else happening at the same time as the conquest that affects conquered vs. inherited cities differently.
+The entire territory goes to another state (or multiple) when a ruling lineage goes extinct, but conquests usually happen one at a time. The average number of simultaneous switches is likely much larger for successions than for conquests. If conquests had an effect on construction activity not just through the change in state power but also through the number of cities that switched simultaneously, then the coefficient $\theta_{conquest}$ no longer captures only the causal effect of switching. I believe this is one of the remaining threats to the internal validity of my regression analysis. It should be possible to compute the number of cities that switch to the same state as city $i$ in period $t$ and then to control for it, which would solve the problem. I leave this for a future extension of the paper.
 
-If conquests had an effect on construction activity not just through state power but also through the number of cities that also switched - maybe switching to a new state alone is better than switching with all cities of an entire territory.
-
-External validity
-
-
-Other explanations for no effect:
-\begin{itemize}
-    \item states within the HRE may be too similar / competition between them not large enough
-    \item cities are normally conquered one at a time, while successions usually see many cities switch at the same time - maybe there is a crowding-out of the positive effect, e.g. because the ruler likes one of his newly acquired cities most and neglects the others
-    \item the data is just not that well suited to the task; within-R2 is super low in Table \ref{tab:baseline_50y}
-\end{itemize}
+External validity BLANK
+Switches barely explain variation in construction activity (super low within-R2) - possible solution: add lags for controls BLANK
 
 Improvements / future research:
 \begin{itemize}
     \item differences in timing - do early switchers in my sample experience different effects than late switchers?
-    \item lag controls because construction takes a while and the years probably record completion
+    \item further explore differences across regions
+    \item better measures of state power
 \end{itemize}
 
 
