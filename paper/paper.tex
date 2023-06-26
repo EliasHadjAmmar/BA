@@ -1,6 +1,6 @@
 \documentclass[11pt, a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[left=3cm,right=3cm,top=2.5cm,bottom=2.5cm]{geometry}  
+\usepackage[left=2cm,right=6cm,top=2.5cm,bottom=2.5cm]{geometry}  
 % set 11pt and right=6cm for submission
 
 \usepackage{natbib} % we need this so we can use citation and bib properly
@@ -17,11 +17,11 @@
 
 \newcommand{\decoline}{% pretty "scene change" macro
   \par
-  \vspace{\baselineskip}
+  \vspace{0.33\baselineskip}
   \hfill
-  {\Large*}
+  {\large* * *}
   \hfill
-  \vspace{\baselineskip}
+  \vspace{0.33\baselineskip}
 \par}
 
 \title{Conflict Driven Evolution and Urban Development: \\ Evidence from the Holy Roman Empire\footnote{
@@ -56,7 +56,7 @@ The European state system was forged in conflict. No other continent at any time
 
 In this paper I study the role of this process in the economic development of the Holy Roman Empire. In particular, I estimate the effect of state power, the trait that conflict selects for, on urban development. If the effect is positive, then the conflict driven evolution of states may partially explain the eventual ascendancy of Europe: by selecting for military success, Europe's violent history may have accidentally produced fiscal capacity, efficient legal systems, and prospering middle classes.
 
-I build my paper on the theory of conflict driven evolution, outlined above, developed by \cite{levine2013, levine2021, levine2022}. Its main contribution is to explain why hegemonies arose in East Asia while balances of power could prevail in Europe: unlike China, the major powers of continental Europe were frequently preyed upon by strong outsiders --- the Vikings, the Swedes, and the English --- which prevented any one state from growing too strong (\citealp{levine2021}, p. 439). It is worth highlighting how the authors model war between states: you win with state power, and state power is simply free resources, i.e. resources above subsistence. If the most successful states are the ones with the biggest surplus, selection should have made Europe increasingly prosperous.\footnote
+I build my paper on the theory of conflict driven evolution, outlined above, developed by \cite{levine2013, levine2021, levine2022}. Its main contribution is to explain why hegemonies arose in East Asia while balances of power could prevail in Europe: unlike China, the major powers of continental Europe were frequently preyed upon by strong outsiders --- the Vikings, the Swedes, and the English --- which prevented any one state from growing too strong (\citealp{levine2021}, p. 439). It is worth highlighting how the authors model war between states: you win them with state power, and state power is simply aggregate production in excess of the subsistence level. If the most successful states are the ones with the biggest surplus, selection should have made Europe increasingly prosperous.\footnote
 {
 The basic idea of Darwinian selection has previously been borrowed by economists - for example by \cite{galor2002} who argue that humans are subject to selection and accumulate (economically) favourable traits over the course of history. More infamously, \cite{clark2007} employs it in an attempt to explain why the Industrial Revolution took place in Europe, arguing that at some point the European rich began to out-breed the poor and passed their favourable traits on to their offspring.
 }
@@ -68,7 +68,7 @@ By contrast, my story is not about population dynamics but institutions (althoug
 \cite{diamond1997} and \cite{landes1969, landes2006} have argued for the economic benefits of political fragmentation and state competition. \cite{diamond1997} asserts that geography 
 remoteness of China deprived it of the benefits of state competition that European states enjoyed throughout their history. \cite{landes2006} makes a similar argument, pointing out how the totalitarianism and bureaucratism that stifled the spread of innovation in medieval China would not have survived long in a more fragmented state system. Geography and fragmentation also play central roles in \cite{cervellati2022}'s theory of European state history.
 
-The closest relative to this paper is \cite{schoenholzer2022} who investigate how switching between states affects the development of cities. They find that switching states affects population negatively in the short run but positively in the long run. Further, they show that this long-run benefit is driven by improved state quality after switching. Similar to the evolution metaphor, they interpret this as "creative destruction": the short run cost of destruction is compensated by the long-run benefit of becoming part of a higher-quality state. However, they do not show explicitly how these improvements in state quality are driven by selection through conflict. They use a dataset with a bigger geographical scope (all of Europe) but lower resolution: they use urban population from \cite{bairoch1988} as a proxy for development, which is available for fewer cities and fewer years.
+The closest relative of this paper is \cite{schoenholzer2022} who investigate how switching between states affects the development of cities. They find that switching states affects population negatively in the short run but positively in the long run. Further, they show that this long-run benefit is driven by improved state quality after switching. Similar to the evolution metaphor, they interpret this as "creative destruction": the short run cost of destruction is compensated by the long-run benefit of becoming part of a higher-quality state. However, they do not show explicitly how these improvements in state quality are driven by selection through conflict. They use a dataset with a bigger geographical scope (all of Europe) but lower resolution: they use urban population from \cite{bairoch1988} as a proxy for development, which is available for fewer cities and fewer years.
 
 The analysis in this paper builds upon that of \cite{schoenholzer2022} and extends it by identifying special cases of switching events: in \textit{conquests} a city is forcefully absorbed into a new state, while in \textit{successions} a city is absorbed into a new state after the rulers of the old state have gone extinct. Comparing the effects of these two types of switches allows me to tease out the effect of state power. Identification is based on the economic assumption that conquests imply state power differentials but successions do not. Specifically, if we consider the universe of all switching events, the average increase in state power from the old to the new owner would be higher for the conquests than for the successions. The reasoning is that conflict --- as in a conquest --- selects the new state for power, but conflict-free successions, depending mainly on dynastic marriages, are more "random". This assumption allows me to use conquests as a stand-in for an increase in state power. Several other assumptions are needed to interpret my results causally.
 
@@ -255,7 +255,20 @@ I conduct a number of other robustness checks, which are summarised in the Appen
 
 \decoline
 
-To sum these results up, I have found fairly robust non-evidence for the hypothesis that selection for state power drove city growth in the Holy Roman Empire between 1300 and 1800. 
+To summarize these results: I find robust non-evidence for the hypothesis that selection for state power drove city growth in the Holy Roman Empire between 1300 and 1800. The question is, can we trust this non-finding?
+
+The key economic assumption underlying the identification strategy for the effect of state power was that states that acquire a city by conquest are more powerful on average than states that acquire a city by succession. If this assumption does not hold, then the difference between the treatment effect of a conquest and the treatment effect of a succession is just that: a heterogeneity with no obvious meaning.
+
+I justify this assumption with the fact that a conqueror is, by definition, the winner of an armed conflict. State power is not the only determinant of winning armed conflicts, though: luck plays a central role, as do many other time-varying factors for which I cannot control. If the correlation between state power differentials (the independent variable whose effects we want to measure) and winning conflicts (how we measure it) is small then we essentially have measurement error in the independent variable. This leads to attenuation bias. The estimate for $\theta_conquest$ has the expected positive sign in my baseline regression --- it just lacks statistical significance. If we could regress differences in construction trends directly on observed differences in state power, we would sidestep this measurement error and likely find larger and significant effects.
+
+On the flip side, winning armed conflicts is also not the only consequence of state power. 
+That the 
+It could even be the opposite: while successions are about familial ties on a superficial level, how this network of familial ties links different lineages is not necessarily uncorrelated with state power. It is a possibility that 
+
+On top of this basic assumption about the interpretation of the independent variable come econometric assumptions.
+
+External validity
+
 
 Other explanations for no effect:
 \begin{itemize}
