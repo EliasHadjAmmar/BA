@@ -267,10 +267,19 @@ Econometrics come on top of this basic assumption about the interpretation of th
 
 This assumption requires that there are no uncontrolled-for variables that are correlated with being conquered and also have an effect on construction activity (while not being outcomes of state power themselves). Note that I control for all time-invariant characteristics of cities in the city fixed effect. However, there is one thing that comes to mind: maybe switching to another state had a more positive effect on a city's development if no other cities switched to the same state at the same time. A single city may be more easy for the new state to integrate into its economy than many, or alternatively, rulers who win multiple cities at the same time may invest only in their favourite cities and neglect the rest. 
 
-The entire territory goes to another state (or multiple) when a ruling lineage goes extinct, but conquests usually happen one at a time. The average number of simultaneous switches is likely much larger for successions than for conquests. If conquests had an effect on construction activity not just through the change in state power but also through the number of cities that switched simultaneously, then the coefficient $\theta_{conquest}$ no longer captures only the causal effect of switching. I believe this is one of the remaining threats to the internal validity of my regression analysis. It should be possible to compute the number of cities that switch to the same state as city $i$ in period $t$ and then to control for it, which would solve the problem. I leave this for a future extension of the paper.
+An entire territory goes to another state (or multiple) when a ruling lineage goes extinct, but conquests usually happen one at a time. The average number of simultaneous switches is likely much larger for successions than for conquests. If conquests had an effect on construction activity not just through the change in state power but also through the number of cities that switched simultaneously, then the coefficient $\theta_{conquest}$ no longer captures only the causal effect of switching. I believe this is one of the remaining threats to the internal validity of my regression analysis. It should be possible to compute the number of cities that switch to the same state as city $i$ in period $t$ and then to control for it in Equation \ref{eq:baseline}, which would solve the problem. I leave this for a future extension of this paper.
 
-External validity BLANK
-Switches barely explain variation in construction activity (super low within-R2) - possible solution: add lags for controls BLANK
+Having discussed issues with internal validity now, I will briefly talk about external validity. For this purpose it is helpful to first put the goal of my paper into context. 
+\cite{cantoni2021}
+
+I doubt that we can learn anything about present conflicts or present growth rates from my results. 
+
+
+In terms of \cite{levine2021, levine2022}'s model of state systems, most international conflict nowadays is defined by the presence of multiple extremely strong outsiders who act to keep the balance of power in the status quo.
+
+% ######################################################
+
+\section{Conclusion} \label{sec:conclusion}
 
 Improvements / future research:
 \begin{itemize}
@@ -278,11 +287,6 @@ Improvements / future research:
     \item further explore differences across regions
     \item better measures of state power
 \end{itemize}
-
-
-% ######################################################
-
-\section{Conclusion} \label{sec:conclusion}
 
 \newpage
 \onehalfspacing
