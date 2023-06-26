@@ -64,8 +64,7 @@ Main <- function(){
   \\eqref{eq:baseline}. Column (1) uses the baseline sample, Column (2) includes cities
   with up to 4 lifetime switches, Column (3) includes all cities regardless of the number
   of lifetime switches, and Column (4) uses a post-treatment indicator that is only active
-  in the first 200 years after the treatment. Dependent variable is \"All construction\" in 
-  all regressions.The switch type \"Succession\" is omitted as the reference category.", 
+  in the first 200 years after the treatment.", 
   PeriodInsert(t), "Observations are at the city-period level. Standard errors are 
   clustered at the city level.", SignifInsert(), sep = " ") |> 
     str_replace_all("\n ", "")
