@@ -1,0 +1,35 @@
+\begin{table}[htbp]
+   \caption{\label{tab:robustness_50y} Heterogeneous effects of switching: More robustness}
+   \centering
+   \begin{tabular}{lcccc}
+      \tabularnewline \midrule \midrule
+      Dependent Variable: & \multicolumn{4}{c}{All construction}\\
+                                                 & Baseline & 4 Switches   & All switches & Window \\   
+      Model:                                     & (1)      & (2)          & (3)          & (4)\\  
+      \midrule
+      \emph{Variables}\\
+      Switch to another state                    & 0.02     & 0.04$^{***}$ & 0.02$^{***}$ & 0.02\\   
+                                                 & (0.03)   & (0.01)       & (0.01)       & (0.02)\\   
+      Switch to another state $\times$ Conquest  & 0.04     & 0.03         & -0.01        & 0.04\\   
+                                                 & (0.04)   & (0.02)       & (0.01)       & (0.04)\\   
+      Switch to another state $\times$ Other     & 0.01     & -0.02        & 0.00         & 0.01\\   
+                                                 & (0.03)   & (0.01)       & (0.01)       & (0.03)\\   
+      Switching indicator                        & -0.01    & -0.02        & -0.01        & -0.01\\   
+                                                 & (0.02)   & (0.02)       & (0.01)       & (0.02)\\   
+      \midrule
+      \emph{Fixed-effects}\\
+      City                                       & Yes      & Yes          & Yes          & Yes\\  
+      Period                                     & Yes      & Yes          & Yes          & Yes\\  
+      \midrule
+      \emph{Fit statistics}\\
+      Observations                               & 6,635    & 12,979       & 31,754       & 6,635\\  
+      R$^2$                                      & 0.3553   & 0.3664       & 0.3518       & 0.3553\\  
+      Within R$^2$                               & 0.0009   & 0.0019       & 0.0003       & 0.0009\\  
+      \midrule \midrule
+      
+      
+   \end{tabular}
+   
+   \par \raggedright 
+   Note: Table presents results of estimation equation \eqref{eq:baseline}. Column (1) uses the baseline sample, Column (2) includes cities with up to 4 lifetime switches, Column (3) includes all cities regardless of the number of lifetime switches, and Column (4) uses a post-treatment indicator that is only active in the first 200 years after the treatment. Dependent variable is "All construction" in  all regressions.The switch type "Succession" is omitted as the reference category. Yearly data was aggregated into periods of 50 years. Observations are at the city-period level. Standard errors are  clustered at the city level. *, **, and *** denote significance on the 10 percent, 5 percent, and 1 percent  level, respectively.
+\end{table}
