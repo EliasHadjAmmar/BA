@@ -1,6 +1,6 @@
 \documentclass[11pt, a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[left=2cm,right=6cm,top=2.5cm,bottom=2.5cm]{geometry}  
+\usepackage[left=3cm,right=3cm,top=2.5cm,bottom=2.5cm]{geometry}  
 % set 11pt and right=6cm for submission
 
 \usepackage{natbib} % we need this so we can use citation and bib properly
@@ -259,21 +259,15 @@ To summarize these results: I find robust non-evidence for the hypothesis that s
 
 The key economic assumption underlying the identification strategy for the effect of state power was that states that acquire a city by conquest are more powerful on average than states that acquire a city by succession. If this assumption does not hold, then the difference between the treatment effect of a conquest and the treatment effect of a succession is just that: a heterogeneity with no obvious meaning.
 
-I justify this assumption with the fact that a conqueror is, by definition, the winner of an armed conflict. State power is not the only determinant of winning armed conflicts, though: luck plays a central role, as do many other time-varying factors for which I cannot control. If the correlation between state power differentials (the independent variable whose effects we want to measure) and winning conflicts (how we measure it) is small then we essentially have measurement error in the independent variable. This leads to attenuation bias. The estimate for $\theta_conquest$ has the expected positive sign in my baseline regression --- it just lacks statistical significance. If we could regress differences in construction trends directly on observed differences in state power, we would sidestep this measurement error and likely find larger and significant effects.
+I justify this assumption with the fact that a conqueror is, by definition, the winner of an armed conflict. State power is not the only determinant of winning armed conflicts, though: luck plays a central role, as do many other time-varying factors for which I cannot control. On the flip side, winning armed conflicts is also not the only consequence of state power. Importantly, the rulers of more powerful states may be able to make more advantageous matches for their children --- dynastic marriages that eventually result in the expansion of their territory. Exhibit A in this argument is the House of Habsburg: they became a dominant power in Europe at the turn of the 16th century when strategic marriages made them rulers of Burgundy and Castille, but Habsburgs had been the Holy Roman Emperors for decades prior.
 
-On the flip side, winning armed conflicts is also not the only consequence of state power. 
-That the 
-It could even be the opposite: while successions are about familial ties on a superficial level, how this network of familial ties links different lineages is not necessarily uncorrelated with state power. It is a possibility that 
+These arguments could imply that the difference between conquering and inheriting a city does not really capture state power differentials --- that my measure does not actually contain much information about the independent variable. If conquests are at best a noisy measure of state power, we essentially have measurement error in the independent variable. Accordingly, we should expect attenuation bias to push the result towards zero. The estimate for $\theta_{conquest}$ has the expected positive sign in my baseline regression --- it just lacks statistical significance. If we could regress differences in construction trends directly on observed differences in state power, we would sidestep this measurement error and likely find larger and significant effects.
 
-On top of this basic assumption about the interpretation of the independent variable come econometric assumptions.
-
-External validity
-
+On top of this basic assumption about the interpretation of the independent variable come econometric assumptions. BLANK. External validity
 
 Other explanations for no effect:
 \begin{itemize}
     \item states within the HRE may be too similar / competition between them not large enough
-    \item successions may also select for state power - maybe you get to enter more advantageous marriages if you are the leader of a powerful state
     \item cities are normally conquered one at a time, while successions usually see many cities switch at the same time - maybe there is a crowding-out of the positive effect, e.g. because the ruler likes one of his newly acquired cities most and neglects the others
     \item the data is just not that well suited to the task; within-R2 is super low in Table \ref{tab:baseline_50y}
 \end{itemize}
