@@ -72,7 +72,7 @@ The closest relative of this paper is \cite{schoenholzer2022} who investigate ho
 
 The analysis in this paper builds upon that of \cite{schoenholzer2022} and extends it by identifying special cases of switching events: in \textit{conquests} a city is forcefully absorbed into a new state, while in \textit{successions} a city is absorbed into a new state after the rulers of the old state have gone extinct. Comparing the effects of these two types of switches allows me to tease out the effect of state power. Identification is based on the economic assumption that conquests imply state power differentials but successions do not. Specifically, if we consider the universe of all switching events, the average increase in state power from the old to the new owner would be higher for the conquests than for the successions. The reasoning is that conflict --- as in a conquest --- selects the new state for power, but conflict-free successions, depending mainly on dynastic marriages, are more "random". This assumption allows me to use conquests as a stand-in for an increase in state power. Several other assumptions are needed to interpret my results causally.
 
-While I am able to replicate \cite{schoenholzer2022}'s result that switching to another state has a positive effect one century later, I fail to identify a statistically significant effect of state power on urban development. This does not necessarily mean that conflict-driven evolution played no role in the rise of Europe --- several issues limit the statistical power of my test, which might prevent me from finding an effect even if there is one. One of them is that the data I use may not be fully adequate for answering the research question.
+While I am able to replicate \cite{schoenholzer2022}'s result that switching to another state has a positive effect one century later, I fail to identify a statistically significant effect of state power on urban development. This does not necessarily mean that conflict-driven evolution played no role in the rise of Europe --- there are fundamental issues with the data and the approach which limit the statistical power of my analysis. I argue that the effect would likely be significant in the absence of these issues.
 
 The rest of the paper proceeds as follows. Section \ref{sec:background} gives essential historical background information. Section \ref{sec:data} describes the data used in the analysis. Section \ref{sec:empirics} details the empirical approach. Section \ref{sec:results} presents results. Section \ref{sec:discussion} discusses implications and robustness of the results. Section \ref{sec:conclusion} concludes.
 
@@ -204,7 +204,7 @@ A key economic assumption is needed, even before the econometric ones, for these
 
 If this assumption holds true, the effect of state power should manifest itself in the difference between the trend of cities acquired by conquest and the trend of cities acquired by succession. Note that successions are the omitted category --- there is no interaction term between the post-treatment indicator and $\mathbf{1}(Succession_{it})$ in Equation \eqref{eq:baseline} --- so that the coefficient $\theta_{conquest}$ captures exactly what I want to estimate: the difference in trends after conquests vis-a-vis successions.
 
-The econometric assumption that must hold true for $\theta_{conquest}$ to be a causal effect is a different version of the parallel trends assumption. In particular, it must hold that, had a conquered city i counterfactually been acquired by succession rather than conquest, it would have trended the same as the other cities acquired by succession. BLANK.
+The econometric assumption that must hold true for $\theta_{conquest}$ to be a causal effect is a different version of the parallel trends assumption. In particular, it must hold that, had a conquered city $i$ counterfactually been acquired by succession rather than conquest, it would have trended the same as the other cities acquired by succession. BLANK.
 
 
 % ######################################################
@@ -261,9 +261,19 @@ The key economic assumption underlying the identification strategy for the effec
 
 I justify this assumption with the fact that a conqueror is, by definition, the winner of an armed conflict. State power is not the only determinant of winning armed conflicts, though: luck plays a central role, as do many other time-varying factors for which I cannot control. On the flip side, winning armed conflicts is also not the only consequence of state power. Importantly, the rulers of more powerful states may be able to make more advantageous matches for their children --- dynastic marriages that eventually result in the expansion of their territory. Exhibit A in this argument is the House of Habsburg: they became a dominant power in Europe at the turn of the 16th century when strategic marriages made them rulers of Burgundy and Castille, but Habsburgs had been the Holy Roman Emperors for decades prior.
 
-These arguments could imply that the difference between conquering and inheriting a city does not really capture state power differentials --- that my measure does not actually contain much information about the independent variable. If conquests are at best a noisy measure of state power, we essentially have measurement error in the independent variable. Accordingly, we should expect attenuation bias to push the result towards zero. The estimate for $\theta_{conquest}$ has the expected positive sign in my baseline regression --- it just lacks statistical significance. If we could regress differences in construction trends directly on observed differences in state power, we would sidestep this measurement error and likely find larger and significant effects.
+These arguments could imply that the difference between conquering and inheriting a city does not really capture state power differentials --- that my measure does not actually contain much information about the independent variable. If conquests are at best a noisy measure of state power, we essentially have measurement error in the independent variable. Accordingly, we should expect attenuation bias to push the result towards zero. The estimate for $\theta_{conquest}$ has the expected positive sign in my baseline regression --- it just lacks statistical significance. If we could regress differences in construction trends on directly observed differences in state power, we would sidestep this measurement error and likely find larger and significant effects.
 
-On top of this basic assumption about the interpretation of the independent variable come econometric assumptions. BLANK. External validity
+Econometrics come on top of this basic assumption about the interpretation of the independent variable. The parallel trends assumption is: Had a conquered city $i$ counterfactually been acquired by succession rather than conquest, it would have trended the same as the other cities acquired by succession. 
+
+The first implication of that is that cities did not select into treatment based on uncontrolled-for characteristics that . 
+There are no uncontrolled-for characteristics that made a city more or less likely to be conquered and also had an effect on construction activity. Note that I control for all time-invariant characteristics of cities in the city fixed effect.
+
+The second implication is there is nothing else happening at the same time as the conquest that affects conquered vs. inherited cities differently.
+
+If conquests had an effect on construction activity not just through state power but also through the number of cities that also switched - maybe switching to a new state alone is better than switching with all cities of an entire territory.
+
+External validity
+
 
 Other explanations for no effect:
 \begin{itemize}
