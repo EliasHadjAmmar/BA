@@ -244,14 +244,6 @@ BLANK \cite{cervellati2022}. I leave this for future research to explore.
 
 I conduct a number of other robustness checks, which are summarised in the Appendix. Table \ref{tab:robustness_50y} contains regressions using different definitions of the sample and treatment. Columns (2) and (3) use larger samples that include cities with a higher number of lifetime switches. Column (4) shows the results of a regression in which the post-treatment dummy reverts back to 0 after 200 years. With this I intend to replicate the same event window as in Equation \eqref{eq:sw22} and to zero in on the effect over the first two centuries following a switch. While increasing the cutoff for lifetime switches increases the significance of the overall treatment effect (likely because the sample contains many duplicates of cities that switch often), none of these alternative specifications affect the estimates of the interactions.
 
-Other things I did:
-\begin{itemize}
-    \item I limit post-window of the diff-in-diff to 200 years like in the event study; null results
-    \item try robust TWFE estimator by Sun and Abraham (2021); null results
-    \item use \cite{bairoch1988}'s population data as outcome; null results
-    \item regress on data aggregated to 1, 10, and 100 years instead; null results
-\end{itemize}
-
 
 Other explanations for no effect:
 \begin{itemize}
