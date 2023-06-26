@@ -69,7 +69,7 @@ Main <- function(){
   clustered at the city level.", SignifInsert(), sep = " ") |> 
     str_replace_all("\n ", "")
   
-  header <- c("Baseline", "4 switches", "All switches", "Window")
+  header <- c("Baseline", "4 switches", "All switches", "200 years")
   
   tex_output <- etable(mod_baseline, mod_4switches, 
                        mod_allswitches, mod_window,
