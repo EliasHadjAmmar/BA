@@ -259,7 +259,7 @@ The key economic assumption underlying the identification strategy for the effec
 
 I justify this assumption with the fact that a conqueror is, by definition, the winner of an armed conflict. State power is not the only determinant of winning armed conflicts, though: luck plays a central role, as do many other time-varying factors for which I cannot control. On the flip side, winning armed conflicts is also not the only consequence of state power. Importantly, the rulers of more powerful states may be able to make more advantageous matches for their children --- dynastic marriages that eventually result in the expansion of their territory. Exhibit A in this argument is the House of Habsburg: they became a dominant power in Europe at the turn of the 16th century when strategic marriages made them rulers of Burgundy and Castille, but Habsburgs had been the Holy Roman Emperors for decades prior.
 
-These arguments could imply that the difference between conquering and inheriting a city does not really capture state power differentials --- that my measure does not actually contain much information about the independent variable. If conquests are at best a noisy measure of state power, we essentially have measurement error in the independent variable. Accordingly, we should expect attenuation bias to push the result towards zero. The estimate for $\theta_{conquest}$ has the expected positive sign in my baseline regression --- it just lacks statistical significance. If we could regress differences in construction trends on directly observed differences in state power, we would sidestep this measurement error and likely find larger and significant effects.
+These arguments could imply that the difference between conquering and inheriting a city does not really capture state power differentials --- that my measure does not actually contain much information about the independent variable. If conquests are at best a noisy measure of state power, we essentially have measurement error in the independent variable. Accordingly, we should expect attenuation bias to push the result towards zero. The estimate for $\theta_{conquest}$ has the expected positive sign in my baseline regression --- it just lacks statistical significance. If we could regress differences in construction trends on directly observed differences in state power, we would sidestep this measurement error and likely find larger and significant effects. 
 
 Econometrics come on top of this basic assumption about the interpretation of the independent variable. We can interpret the interaction coefficient $\theta_{conquest}$ as a causal effect if the following holds: had a conquered city $i$ counterfactually been acquired by succession rather than conquest, it would have trended the same as the other cities acquired by succession. 
 
@@ -267,17 +267,14 @@ This assumption requires that there are no uncontrolled-for variables that are c
 
 An entire territory goes to another state (or multiple) when a ruling lineage goes extinct, but conquests usually happen one at a time. The average number of simultaneous switches is likely much larger for successions than for conquests. If conquests had an effect on construction activity not just through the change in state power but also through the number of cities that switched simultaneously, then the coefficient $\theta_{conquest}$ no longer captures only the causal effect of switching. I believe this is one of the remaining threats to the internal validity of my regression analysis. It should be possible to compute the number of cities that switch to the same state as city $i$ in period $t$ and then to control for it in Equation \ref{eq:baseline}, which would solve the problem. I leave this for a future extension of this paper.
 
-Having discussed issues with internal validity now, I will briefly talk about external validity. For this purpose it is helpful to first put the goal of my paper into context. 
-\cite{cantoni2021}
+Having discussed issues with internal validity now, I will briefly talk about external validity. The hypothesis I test is a prediction of the theory of conflict-driven evolution. While the theory itself can be applied widely --- \cite{levine2021} use it to explain stylised facts about pre-modern Europe, pre-modern India, the present-day United Kingdom and Spain, and 20th-century China --- my empirical results only test whether the theory can explain what happens in my dataset. 
 
-I doubt that we can learn anything about present conflicts or present growth rates from my results. 
-
-
-In terms of \cite{levine2021, levine2022}'s model of state systems, most international conflict nowadays is defined by the presence of multiple extremely strong outsiders who act to keep the balance of power in the status quo.
 
 % ######################################################
 
 \section{Conclusion} \label{sec:conclusion}
+
+Accounting for the possibility of attenuation bias from measurement error makes the null result look less unexpected and more like suggestive evidence.
 
 Improvements / future research:
 \begin{itemize}
