@@ -1,6 +1,6 @@
 \documentclass[11pt, a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[left=3cm,right=3cm,top=2.5cm,bottom=2.5cm]{geometry}  
+\usepackage[left=2cm,right=6cm,top=2.5cm,bottom=2.5cm]{geometry}  
 % set 11pt and right=6cm for submission
 
 \usepackage{natbib} % we need this so we can use citation and bib properly
@@ -109,7 +109,7 @@ How does switching between states affect the long-run development of cities, and
 
 
 
-The European state system was forged in conflict. No other continent at any time experienced more war than Europe in the early modern era (\citealp{voigtlnder2013}, p. 174). Wars bring death and devastation to the societies affected by them, but their effects also manifest on the political map --- they play out in a diverse ecosystem of polities that come and go and change size over time. Borders are redrawn and territory changes hands. One can indeed imagine this as an evolutionary process: states compete for resources and powerful states eventually absorb weaker ones. As a result, traits that increase state power --- the ability to win conflicts against rivals --- get selected for, while unfavourable traits are doomed to disappear \citep{levine2021}.
+The European state system was forged in conflict. No other continent at any time experienced more war than Europe in the early modern era (\citealp{voigtlnder2013}, p. 174). Wars bring death and devastation to the societies affected by them, but their effects also manifest on the political map --- they play out in a diverse ecosystem of polities that come and go and change size over time. Borders are redrawn and territory changes hands. One can indeed imagine this as an evolutionary process: states compete for resources and powerful states eventually absorb weaker ones. As a result, traits that increase state power --- the ability to win conflicts against rivals --- are selected for, while unfavourable traits are doomed to disappear \citep{levine2021}.
 
 In this paper I study the role of this process in the economic development of the Holy Roman Empire. In particular, I estimate the effect of state power, the trait that conflict selects for, on urban development. If the effect is positive, then the conflict driven evolution of states may partially explain the eventual ascendancy of Europe: by selecting for military success, Europe's violent history may have accidentally produced fiscal capacity, efficient legal systems, and prospering middle classes.
 
@@ -120,7 +120,7 @@ The basic idea of Darwinian selection has previously been borrowed by economists
 
 The idea that war and conflict can raise the standard of living dates back to \cite{malthus1798}. He reasoned that "positive checks" on the population (war, disease, famine) lead to higher land-labour ratios and therefore higher levels of income per capita. \cite{voigtlnder2013} build upon this Malthusian mechanism and add an explanation for the incessant wars: taxes on those higher incomes filled the treasuries of the rulers, which increased their demand for war --- a luxury good ---, which in turn kept population low. 
 
-By contrast, my story is not about population dynamics but institutions (although it is compatible with Malthusianism). A longstanding tradition in economics emphasises the role of institutional factors in long-run growth (e.g. \cite{north1970}, \cite{delong1993}, \cite{ajr2001}). From this vast literature one theme is especially relevant here: the institution of fiscal capacity, or the state's ability to collect taxes. \cite{tilly1985} argues that the main reason for states to collect taxes is to be able to wage war. In other words, fiscal capacity and state power are tightly linked --- so if conflict selects for state power, then it also selects for fiscal capacity. \cite{gennaioli2015} and \cite{cantoni2023} show that conflict drove state consolidation. \cite{dincecco2012} show that fiscal capacity had a positive effect on growth.
+By contrast, my story is not about population dynamics but institutions (although it is compatible with Malthusianism). A longstanding tradition in economics emphasises the role of institutional factors in long-run growth (e.g. \cite{north1970}, \cite{delong1993}, \cite{ajr2001}). From this vast literature one theme may be especially relevant here: the institution of fiscal capacity, or the state's ability to collect taxes. \cite{tilly1985} argues that the main reason for states to collect taxes is to be able to wage war. In other words, fiscal capacity and state power are tightly linked --- so if conflict selects for state power, then it also selects for fiscal capacity. \cite{gennaioli2015} and \cite{cantoni2023} show that conflict drove state consolidation, with the latter set of authors using the same data as this paper. \cite{dincecco2012} show that fiscal capacity had a positive effect on growth.
 
 \cite{diamond1997} and \cite{landes1969, landes2006} have argued for the economic benefits of political fragmentation and state competition. \cite{diamond1997} asserts that geography 
 remoteness of China deprived it of the benefits of state competition that European states enjoyed throughout their history. \cite{landes2006} makes a similar argument, pointing out how the totalitarianism and bureaucratism that stifled the spread of innovation in medieval China would not have survived long in a more fragmented state system. Geography and fragmentation also play central roles in \cite{cervellati2022}'s theory of European state history.
@@ -129,9 +129,9 @@ The closest relative of this paper is \cite{schoenholzer2022} who investigate ho
 
 The analysis in this paper builds upon that of \cite{schoenholzer2022} and extends it by identifying special cases of switching events: in \textit{conquests} a city is forcefully absorbed into a new state, while in \textit{successions} a city is absorbed into a new state after the rulers of the old state have gone extinct. Comparing the effects of these two types of switches allows me to tease out the effect of state power. Identification is based on the economic assumption that conquests imply state power differentials but successions do not. Specifically, if we consider the universe of all switching events, the average increase in state power from the old to the new owner would be higher for the conquests than for the successions. The reasoning is that more state power is necessary to conquer a city, which generally involves winning an armed conflict, than to inherit it from an extinct lineage, which mainly requires favourable marriages. This assumption allows me to use conquests as a stand-in for an increase in state power. Additional assumptions are needed to interpret my results causally.
 
-While I am able to replicate \cite{schoenholzer2022}'s result that switching to another state has a positive effect one century later, I fail to identify a statistically significant effect of state power on urban development. This does not necessarily mean that conflict-driven evolution played no role in the rise of Europe --- there are fundamental issues with the data and the approach which limit the statistical power of my analysis. The most important one is attenuation bias from measurement error in the independent variable, and I argue that the effect may well be significant in its absence.
+While I am able to replicate \cite{schoenholzer2022}'s result that switching to another state has a positive effect one century later, I fail to identify a statistically significant effect of state power on urban development. This does not necessarily mean that conflict-driven evolution played no role in the rise of Europe, though --- I recognise some issues with the data and the approach which limit the statistical power of my analysis. The most important one is attenuation bias from measurement error in the independent variable, and I argue that the effect may well be significant in its absence.
 
-The rest of the paper proceeds as follows. Section \ref{sec:background} gives essential historical background information. Section \ref{sec:data} describes the data used in the analysis. Section \ref{sec:empirics} details the empirical approach. Section \ref{sec:results} presents results. Section \ref{sec:discussion} discusses implications and robustness of the results. Section \ref{sec:conclusion} concludes.
+The rest of the paper proceeds as follows. Section \ref{sec:background} gives some very brief historical background information. Section \ref{sec:data} describes the data used in the analysis. Section \ref{sec:empirics} details the empirical approach. Section \ref{sec:results} presents results. Section \ref{sec:discussion} discusses implications and robustness of the results. Section \ref{sec:conclusion} concludes.
 
 
 % ######################################################
@@ -148,6 +148,13 @@ I use data from the \textit{Princes and Townspeople} collection which is based o
 From these sources I assemble a panel of cities. City-periods are the unique units of observation. The ultimate dataset contains, in abstract terms, two types of variables: ones that code the territorial history of cities, and ones that code the incidence of construction and conflict events. Records for each city begin in 1300 at the earliest and end at the latest in 1800 (after which no construction events are recorded). The median city is observed over a time span of 290 years.
 
 Figure \ref{fig:map_cities_raw} shows the spatial distribution of the 2,390 cities in the original \textit{Princes and Townspeople} data. The reporting boundaries are those of the German Empire in 1937 plus the Free City of Danzig; within those boundaries \cite{keyser1939} claim to list "every settlement that at one point in the history of the Holy Roman Empire was awarded the status of a city" \citep[p. 2]{pt1}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.15]{paper/output/descriptive/map_cities_raw.png}
+    \caption{Distribution of cities in the \textit{Territorial Histories} dataset \citep{pt2}. Each dot represents a city. Some major cities are identified with labels. Polygons on the map do \textbf{not} represent historical borders; they merely represent regions by which cities are clustered in the \textit{Städtebuch}.}
+    \label{fig:map_cities_raw}
+\end{figure}
 
 \paragraph{Territorial histories.} 
 
@@ -194,6 +201,13 @@ This is to avoid creating an excessive amount of duplicate observations. Allowin
 This removes another 9,975 observations, leaving 6,635 in the baseline sample.
 
 Figure \ref{fig:map_cities_sample} plots the spatial distribution of the cities that make it into the baseline sample. The total number of cities has shrunken visibly compared to Figure \ref{fig:map_cities_raw} --- we can also see, however, that the shrinking appears to have been roughly uniform, preserving the proportions between regions. Only Brandenburg (containing Berlin) and Silesia (containing Breslau) seem to lose disproportionately many observations.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.15]{paper/output/descriptive/map_cities_sample.png}
+    \caption{Distribution of cities in the baseline sample. Excludes cities that underwent more than two lifetime switches, and cities without any recorded construction activity. Each dot represents a city. Some major cities are identified with labels. Polygons on the map do \textbf{not} represent historical borders; they merely represent regions by which cities are clustered in the \textit{Städtebuch}.}
+    \label{fig:map_cities_sample}
+\end{figure}
 
 % ######################################################
 
@@ -272,7 +286,17 @@ The econometric assumption that must hold true for $\theta_{conquest}$ to be a c
 
 Table \ref{tab:SW22_replication_50y} contains estimates for the coefficients $\pi_\tau$ from Equation \eqref{eq:sw22}. Each column reports the effect of switching states on a different subset of observed construction activity: Column (1) for all types of buildings, Column (2) for administrative, military and representative buildings, Column (3) for private construction, and Column (4) for buildings that provide public goods. The exact definitions of these categories are as described in Section \ref{sec:data}. Note also that a $Period$ is an interval of 50 years that begins with the given year. $Period = -50$ is omitted as the reference category for treated cities. Reassuringly, as the coefficients on $Treat \times Period = -100$ show, there are no significant pre-trends in any of the outcome variables. 
 
+\input{paper/output/regressions/SW22_replication_50y}
+
 We can see in Column (1) that switching states has no immediate effect on the probability of recorded construction activity. Over the next two centuries, however, the effect grows positive and significant: 100 years after a city switches states, the probability of construction activity is 5 percentage points higher than in cities that did not switch. After 200 years this difference grows to 9 percentage points. These estimates are statistically significant at the 5\% and 1\% level, respectively. Figure \ref{fig:SW_replication} plots the coefficients in Column (1) to visualise these dynamics.
+
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale = 0.3]{paper/output/regressions/SW22_replication_50y.png}
+    \caption{Dynamic effects of switching to another state. Coefficient estimates from Table \ref{eq:sw22}, Column (1). The outcome variable is the probability that construction activity of any type is observed in the period. The period beginning 50 years before the switch is omitted.}
+    \label{fig:SW_replication}
+\end{figure}
 
 The regression in Column (1) uses all construction as the outcome, while Columns (2), (3), and (4) use the subsets of construction activity defined in Section \ref{sec:data}. Almost all the coefficients in the last three columns are insignificant, suggesting that neither of these specific subsets of construction is driving the overall results. Curiously, though, 50 years after switching there is a small, transient, but significant increase in construction of public goods. Since many of these would have been provided by the state, an explanation could be that rulers are initially reluctant to invest into their new territory --- the coefficient for the 50 years immediately following the switch ($\tau = 0$) is insignificant but negative --- but catch up once their rule is established.
 
@@ -280,6 +304,8 @@ The regression in Column (1) uses all construction as the outcome, while Columns
 \subsection{No evidence for the state power hypothesis}
 
 Table \ref{tab:baseline_50y} shows estimates from Equation \eqref{eq:baseline}. This is a difference-in-differences specification with added interactions to capture heterogeneous treatment effects. As before, different columns use different subsets of construction as the outcome variable. Since successions are omitted from the interaction terms, the coefficient $\pi$ on the post-treatment dummy $Switch\,to\,another\,state$ captures the treatment effect of switching states via succession. The interaction terms are relative to that: the coefficient $\theta_{conquest}$ on $Switch\,to\,another\,state \times Conquest$ is the difference between the treatment effect of switching via succession, and the treatment effect of switching via conquest.
+
+\input{paper/output/regressions/baseline_50y}
 
 In Column (1) we can see that the probability of construction activity in a given period is 4 percentage points higher following a conquest vis-a-vis following a succession. The treatment effect of a conquest (compared to no treatment) is $0.02 + 0.04 = 0.06$, while the treatment effect of a succession is $0.02$. Crucially, though, the difference between them is not statistically significant. Given that my assumption about the difference in selectivity of conquests and successions holds true, we would have expected the treatment effect of conquests to be significantly higher.
 
@@ -294,9 +320,19 @@ The results in Table \ref{tab:SW22_replication_50y} corroborate part of my hypot
 
 As a first check I include different controls $\textbf{X}_{it}$ in Equation \eqref{eq:baseline}. Table \ref{tab:controls_50y} shows the results of this exercise. Column (1) is identical to Column (1) in Table \ref{tab:baseline_50y} and controls only for switching in the same period. In Column (2) I remove this control. Columns (3) and (4) add conflict incidents as a control variable, once in addition to switching and once without. Finally, Column (5) runs the baseline specification from (1) on the smaller sample used in (3) and (4). The outcome is $All \, construction$ in all regressions. 
 
+\input{paper/output/regressions/controls_50y}
+
 Comparing Column (2) to (1), and (4) to (3), we can see that it makes no difference whether we control for switches in the same period or not; the estimates are barely distinguishable. When we control for conflict incidents, however, the coefficient $\theta_{conquest}$ suddenly turns negative, highly significant and large in magnitude. After a conquest the probability of observing construction in a given period now increases by 15 percentage points \textit{less} than after a succession.
 
 While this result may seem like evidence for omitted variable bias in the baseline estimate, that explanation is ultimately not plausible. Column (5) shows that the disagreement between the estimates does not come from controlling for conflict, but from the sample composition: more than two thirds of observations are lost between Columns (2) and (3) because of missing values in the $Conflict$ variable. When I run the baseline specification on this partial sample, I obtain the exact same estimates as in Column (3) --- even without controlling for conflict.
+
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale = 0.15]{paper/output/descriptive/map_conflict_NA_50y.png}
+    \caption{Share of observations from each \textit{Städtebuch} region with non-missing data on conflict incidents. I code the $Conflict$ variable as missing for a period if it is earlier than the first recorded incident or later than the last recorded incident in a city. Observations with missing conflict data are excluded from the regressions in Columns (3) and (4) of Table \ref{tab:controls_50y}.}
+    \label{fig:conflict_map}
+\end{figure}
 
 Figure \ref{fig:conflict_map} shows that the observations that remain in the partial sample follow quite a different distribution across space --- if the spatial composition of the partial sample was the same as that of the original sample, the entire map would be a uniform shade. Instead we see big discrepancies: the west, the south, and Brandenburg retain 30\% to 60\% of their observations, while many northern and eastern regions all but vanish from the sample.
 
@@ -306,7 +342,7 @@ Of course, England and Sweden would attack via the North and Baltic seas, but it
 } 
 However, I leave this topic for future research to explore.
 
-I conduct a number of other robustness checks, which are summarised in the Appendix. Table \ref{tab:robustness_50y} contains regressions using different definitions of the sample and treatment. Columns (2) and (3) use larger samples that include cities with a higher number of lifetime switches. Column (4) shows the results of a regression in which the post-treatment dummy reverts back to 0 after 200 years. With this I intend to replicate the same event window as in Equation \eqref{eq:sw22} and to zero in on the effect over the first two centuries following a switch. While increasing the cutoff for lifetime switches increases the significance of the overall treatment effect (likely because the sample contains many duplicates of cities that switch often), none of these alternative specifications give the coefficient we care about statistical significance.
+I conduct a number of other robustness checks, which are included as an Appendix. Table \ref{tab:robustness_50y} contains regressions using different definitions of the sample and treatment. Columns (2) and (3) use larger samples that include cities with a higher number of lifetime switches. Column (4) shows the results of a regression in which the post-treatment dummy reverts back to 0 after 200 years. With this I intend to replicate the same event window as in Equation \eqref{eq:sw22} and to zero in on the effect over the first two centuries following a switch. While increasing the cutoff for lifetime switches increases the significance of the overall treatment effect (likely because the sample contains many duplicates of cities that switch often), none of these alternative specifications give the coefficient we care about statistical significance.
 
 \decoline
 
@@ -356,11 +392,11 @@ It would be a big improvement on my research strategy to find a clearer measure 
 
 Future research in the setting of my thesis could explore the spatial heterogeneity for which I find evidence in Table \ref{tab:controls_50y} and Figure \ref{fig:conflict_map}. It would be interesting to learn why the coefficient on the conquest interaction is so dramatically different when the sample is skewed towards the southern and western regions. One could also take a much deeper dive into \cite{levine2021}'s theory and use the detailed geospatial and territorial histories data to test other implications of their model.
 
-While the research question may not seem hugely relevant for the present-day Western world, I want to close, briefly, with the Democratic Republic of the Congo (DRC). This African state's central government is weak and large parts of its territory are controlled by independent armed groups \citep[p. 34]{sierra2020}. Recent research has studied the DRC to investigate questions about state formation \citep{sierra2020}, taxation and state capacity \citep{balan2022}, and conflict \citep{henn2021}. One could argue that we are witnessing economic history "in real time" there.\footnote
+While the research question may not seem hugely relevant for the present-day Western world, I want to conclude by talking, briefly, about the Democratic Republic of the Congo (DRC). This African state has a weak central government and large parts of its territory are controlled by independent armed groups that are in many ways like small proto-states. \citep[p. 34]{sierra2020}. Recent research has studied state formation \citep{sierra2020}, taxation and state capacity \citep{balan2022}, and conflict \citep{henn2021} in the setting of the DRC. One could argue that we are witnessing economic history "in real time" there.\footnote
 {
-This thought is not my own; Davide Cantoni said it to me in conversation.
+This thought is not my own; I got it from Davide Cantoni.
 } 
-My point is that a better understanding of how the European state system evolved may not only deepen our knowledge of the origins of institutions --- it could also inform our perspective on regions of the world that do not have a stable state system at present.
+In this sense a better understanding of how the European state system evolved may not only deepen our knowledge of the origins of institutions --- it could also inform our perspective, and those of policy makers, on regions of the world that do not have a stable state system at present.
 
 \newpage
 \onehalfspacing
@@ -368,53 +404,8 @@ My point is that a better understanding of how the European state system evolved
 \bibliography{references.bib}
 
 \newpage
-\section*{Tables and figures}
 
 
-
-\subsection*{Figures}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[scale=0.15]{paper/output/descriptive/map_cities_raw.png}
-    \caption{Distribution of cities in the \textit{Territorial Histories} dataset \citep{pt2}. Each dot represents a city. Some major cities are identified with labels. Polygons on the map do \textbf{not} represent historical borders; they merely represent regions by which cities are clustered in the \textit{Städtebuch}.}
-    \label{fig:map_cities_raw}
-\end{figure}
-
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[scale=0.15]{paper/output/descriptive/map_cities_sample.png}
-    \caption{Distribution of cities in the baseline sample. Excludes cities that underwent more than two lifetime switches, and cities without any recorded construction activity. Each dot represents a city. Some major cities are identified with labels. Polygons on the map do \textbf{not} represent historical borders; they merely represent regions by which cities are clustered in the \textit{Städtebuch}.}
-    \label{fig:map_cities_sample}
-\end{figure}
-
-
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[scale = 0.4]{paper/output/regressions/SW22_replication_50y.png}
-    \caption{Dynamic effects of switching to another state. Coefficient estimates from Table \ref{eq:sw22}, Column (1). The outcome variable is the probability that construction activity of any type is observed in the period. The period beginning 50 years before the switch is omitted.}
-    \label{fig:SW_replication}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[scale = 0.15]{paper/output/descriptive/map_conflict_NA_50y.png}
-    \caption{Share of observations from each \textit{Städtebuch} region with non-missing data on conflict incidents. I code the $Conflict$ variable as missing for a period if it is earlier than the first recorded incident or later than the last recorded incident in a city. Observations with missing conflict data are excluded from the regressions in Columns (3) and (4) of Table \ref{tab:controls_50y}.}
-    \label{fig:conflict_map}
-\end{figure}
-
-\clearpage
-\subsection*{Tables}
-
-\input{paper/output/regressions/SW22_replication_50y}
-
-\input{paper/output/regressions/baseline_50y}
-
-\input{paper/output/regressions/controls_50y}
-
-\clearpage
 \section*{Appendix}
 
 \setcounter{table}{0}
