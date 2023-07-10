@@ -1,8 +1,28 @@
-# Instructions for replication
+## Structure of the repo
 
-The `SConstruct` file specifies the dependencies between the code, data and utility files. The easiest way to replicate the results is to install the Open Source build utility [SCons](https://scons.org/pages/download.html), which I use. Once you have it on your computer, you can conveniently run all the code in the correct order from the command line by following these steps:
-- change the `setwd("~/GitHub/BA")` to the file path of this folder on your machine.
-- open the command line / Terminal and open this folder.
-- Enter `scons` into the command line. 
+- `source`: contains all code.
+  - `source/build` assembles the dataset.
+  - `source/analysis` runs regressions and creates tables, figures and maps.
+  - `source/utils` contains utility code that is used by multiple scripts.
+  - `source/slides` contains code that I added after the submission (for my presentation slides, WIP)
+- `paper`: contains all materials for compiling PDFs.
+  - `paper/output`: contains figures, tables and maps created by code in `source`.
+  - `paper/paper.tex`: compiles into the submitted PDF.
+  - `paper/references.bib`: bibliography (I don't cite every paper in it)
+  - `paper/slides.tex`: not part of my submission, compiles into my presentation slides (WIP).
+- `drive`: contains data and literature.
+  - `drive/raw`: raw datasets from which I build everything else.
+  - `drive/derived`: my data build(s).
+  - `drive/literature`: downloaded PDFs of papers I cite (and some more I don't cite).
 
-After creating tables and figures, open `paper.tex` in your LaTeX editor of choice and compile. This should output the thesis in PDF format.
+## Instructions for replication
+
+The easiest way to replicate my paper is to install the open-source build utility [SCons](https://scons.org/pages/download.html), which I use. SCons relies on a `SConstruct` file in the root directory of the project which functions like a blueprint and tracks the dependencies between code, data, and output files. With SCons installed, running the entire pipeline in the correct order is a breeze:
+- clone this repo to your computer.
+- move the `drive` folder from Dropbox into the `BA` root directory.
+- at the beginning of every R script in `BA/source`, change the `setwd("~/GitHub/BA")` to the correct file path if necessary.
+- open the command line / Terminal and `cd` to the `BA` root directory.
+- Enter `scons` into the command line. This will automatically execute the whole pipeline in the correct order.
+
+Tables, figures, and maps are written to `BA/paper/output`. The submitted PDF was separately compiled from `BA/paper/paper.tex`.
+
