@@ -15,6 +15,8 @@
   - `drive/derived`: my data build(s).
   - `drive/literature`: downloaded PDFs of papers I cite (and some more I don't cite).
 
+Note: The branch `main_submission` contains the code as it was on June 27, without additions made after the deadline.
+
 ## Instructions for replication
 
 The easiest way to replicate my paper is to install the open-source build utility [SCons](https://scons.org/pages/download.html), which I use. SCons relies on a `SConstruct` file in the root directory of the project which functions like a blueprint and tracks the dependencies between code, data, and output files. With SCons installed, running the entire pipeline in the correct order is a breeze:
